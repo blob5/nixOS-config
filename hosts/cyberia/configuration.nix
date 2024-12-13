@@ -19,6 +19,12 @@
   # Bootloader.
   #boot.loader.systemd-boot.enable = true;
 
+  services.pcscd.enable = true;
+     programs.gnupg.agent = {
+     enable = true;
+     enableSSHSupport = true;
+  };
+
   boot.loader = {
    # efi.canTouchEfiVariable = true; #zfs config specifies false, so...
    # efi.efiSysMountPoint = "/boot/efi";

@@ -43,6 +43,7 @@
     # text/code editors/readers
     vim
     vscode
+    neovide
 
     # Languages
     python312
