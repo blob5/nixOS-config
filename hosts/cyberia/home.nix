@@ -40,6 +40,7 @@
     hollywood
     aalib
     pipes
+    asciiquarium-transparent
     
     # text/code editors/readers
     vim
