@@ -44,6 +44,7 @@
     vim
     vscode
     neovide
+    neovim
 
     # Languages
     python312
