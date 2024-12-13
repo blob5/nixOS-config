@@ -39,6 +39,7 @@
     cmatrix
     hollywood
     aalib
+    pipes
     
     # text/code editors/readers
     vim
