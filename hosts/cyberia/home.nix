@@ -32,6 +32,11 @@
     metasploit
     iw
     aircrack-ng
+    inetutils # telnet
+    john
+    hashcat
+    gobuster
+    
 
     # because I can
     sl
