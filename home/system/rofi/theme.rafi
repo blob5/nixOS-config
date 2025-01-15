@@ -30,7 +30,7 @@
     highlight:        bold underline rgba ( 255, 255, 255, 100 % );
 }
 window {
-    text-color:       var(magenta);
+    text-color:       var(white);
     transparency:     "screenshot";
     padding:          10px ;
     children:         [ mainbox ];
