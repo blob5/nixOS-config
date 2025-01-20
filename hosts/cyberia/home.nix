@@ -14,6 +14,11 @@
     packages = (with pkgs; [
     # essentials
     git
+
+    # system
+    papirus-icon-theme
+    killall
+    pkgs.gnome-bluetooth
     
     # programs
     vesktop # Modded discord client
@@ -46,6 +51,7 @@
     aalib
     pipes
     asciiquarium-transparent
+    bsdgames
     
     # text/code editors/readers
     vim

@@ -59,7 +59,7 @@ in {
           dots_center = true;
           font_size = 18;
           #font_family = font + " Bold";
-          position = "0, -180";
+          position = "0, -90";
           halign = "center";
           valign = "center";
         }
@@ -80,7 +80,7 @@ in {
         #font_family = font + " Bold";
         placeholder_text = "<i>🔒 Enter Password</i>";
         hide_input = false;
-        position = "0, -250";
+        position = "0, -200";
         halign = "center";
         valign = "center";
       };

@@ -1,150 +1,206 @@
-/**
- * rofi -dump-theme output (based on arthur theme).
- * Rofi version: 1.5.4
- **/
-* {
-    yellow:           rgba ( 232, 174, 91, 100 % );
-    red:              rgba ( 205, 92, 92, 100 % );
-    tcyan:            rgba ( 204, 176, 196, 87 % );
-    backlight:        rgba ( 204, 255, 238, 87 % );
-    lightgreen:       rgba ( 136, 204, 34, 100 % );
-    lightcyan:        rgba ( 176, 196, 222, 100 % );
-    green:            rgba ( 134, 175, 128, 100 % );
-    background-color: rgba ( 0, 0, 0, 0 % );
-    lightred:         rgba ( 204, 85, 51, 100 % );
-    font:             "JetBrainsMono Nerd Font 24";
-    tlightblack:      rgba ( 85, 68, 68, 80 % );
-    lightmagenta:     rgba ( 153, 102, 0, 100 % );
-    dark:             rgba ( 28, 28, 28, 100 % );
-    lightblack:       rgba ( 85, 68, 68, 100 % );
-    magenta:          rgba ( 222, 184, 135, 100 % );
-    black:            rgba ( 61, 53, 42, 100 % );
-    transparent:      rgba ( 0, 0, 0, 0 % );
-    lightwhite:       rgba ( 221, 204, 187, 100 % );
-    lightblue:        rgba ( 135, 206, 235, 100 % );
-    lightyellow:      rgba ( 255, 167, 93, 100 % );
-    cyan:             rgba ( 176, 196, 222, 100 % );
-    white:            rgba ( 187, 170, 153, 100 % );
-    foreground:       rgba ( 255, 238, 221, 100 % );
-    blue:             rgba ( 100, 149, 237, 100 % );
-    highlight:        bold underline rgba ( 255, 255, 255, 100 % );
+/*****----- Configuration -----*****/
+configuration {
+    modi:                       "drun,run";
+    show-icons:                 false;
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+	drun-display-format:        "{name}";
+	window-format:              "{w} · {c} · {t}";
+	kb-element-next:            "";
+	kb-mode-next:               "Tab";
 }
+
+/*****----- Global Properties -----*****/
+@import                          "./.config/nixos/home/system/rofi/colors.rasi"
+@import                          "./.config/nixos/home/system/rofi/fonts.rasi"
+
+/*****----- Main Window -----*****/
 window {
-    text-color:       var(white);
-    transparency:     "screenshot";
-    padding:          10px ;
-    children:         [ mainbox ];
-    orientation:      horizontal;
-    location:         center;
-    anchor:           center;
-    background-color: var(transparent);
-    border-radius:    10px ;
-    border:           0px ;
-    spacing:          0;
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       1000px;
+    height:                      500px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    border-radius:               8px;
+    cursor:                      "default";
+    background-color:            @background;
+    border:                      2px 2px 3px 2px;
 }
+
+/*****----- Main Box -----*****/
 mainbox {
-    spacing:  0;
-    children: [ inputbar,message,listview ];
+    enabled:                     true;
+    spacing:                     0px;
+    background-color:            transparent;
+    orientation:                 horizontal;
+    children:                    [ "imagebox", "listbox" ];
 }
-message {
-    padding:          5;
-    background-color: var(tcyan);
-    border-color:     var(foreground);
-    font:             "JetBrainsMono Nerd Font 20";
-    border:           0px 2px 2px ;
-    text-color:       var(black);
+
+imagebox {
+    padding:                     20px;
+    background-color:            transparent;
+    /** background-image:        url("~/wallpapers/dragon.webp", height); **/
+    orientation:                 vertical;
+    children:                    [ "inputbar", "dummy", "mode-switcher" ];
 }
+
+listbox {
+    spacing:                     20px;
+    padding:                     20px 20px 0px 20px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "message", "listview" ];
+}
+
+dummy {
+    background-color:            transparent;
+}
+
+/*****----- Inputbar -----*****/
 inputbar {
-    padding:          11px ;
-    background-color: var(tlightblack);
-    border:           2px ;
-    font:             "JetBrainsMono Nerd Font 30";
-    border-color:     var(foreground);
-    border-radius:    15px 15px 0px 0px ;
-    text-color:       var(lightgreen);
+    enabled:                     true;
+    spacing:                     10px;
+    padding:                     15px;
+    border-radius:               10px;
+    text-color:                  @foreground;
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "";
+    background-color:            inherit;
+    text-color:                  inherit;
 }
 entry {
-    text-font:  inherit;
-    text-color: inherit;
+    enabled:                     true;
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search";
+    placeholder-color:           inherit;
 }
-prompt {
-    text-font:  inherit;
-    margin:     0px 0.3000em 0.0000em 0.0000em ;
-    text-color: inherit;
-}
-case-indicator {
-    text-font:  inherit;
-    text-color: inherit;
-}
-listview {
-    padding:          8px ;
-    background-color: rgba ( 28, 28, 28, 80 % );
-    dynamic:          false;
-    border-color:     var(foreground);
-    lines:            10;
-    border-radius:    0px 0px 15px 15px ;
-    border:           0px 2px 2px ;
-}
-element {
-    padding:          3px ;
-    background-color: rgba ( 0, 0, 0, 0 % );
-    vertical-align:   0.50;
-    font:             inherit;
-    border-radius:    4px ;
-    text-color:       var(foreground);
-}
-element selected.normal {
-    background-color: var(blue);
-}
-element selected.active {
-    foreground:       var(dark);
-    background-color: var(lightblue);
-}
-element selected.urgent {
-    foreground:       var(dark);
-    background-color: var(lightred);
-}
-element normal.active {
-    foreground: var(lightblue);
-}
-element normal.urgent {
-    foreground: var(lightred);
-}
-element alternate.active {
-    foreground: var(lightblue);
-}
-element alternate.urgent {
-    foreground: var(lightred);
-}
-vertb {
-    expand:   false;
-    children: [ dummy0,mode-switcher,dummy1 ];
-}
-dummy0 {
-    expand: true;
-}
-dummy1 {
-    expand: true;
-}
-mode-switcher {
-    orientation: vertical;
-    expand:      false;
-    spacing:     0px ;
-    border:      0px ;
+
+/*****----- Mode Switcher -----*****/
+mode-switcher{
+    enabled:                     true;
+    spacing:                     50px;
+    background-color:            transparent;
+    text-color:                  @foreground;
 }
 button {
-    text-color:       var(foreground);
-    padding:          6px ;
-    background-color: var(tlightblack);
-    border-radius:    4px 0px 0px 4px ;
-    font:             "FontAwesome 22";
-    border:           2px 0px 2px 2px ;
-    horizontal-align: 0.50;
-    border-color:     var(foreground);
+    padding:                     15px;
+    border-radius:               10px;
+    text-color:                  inherit;
+    cursor:                      pointer;
+    font:                        "JetBrainsMono Patched Glyphs 20";
 }
-button selected.normal {
-    background-color: var(backlight);
-    border-color:     var(foreground);
-    text-color:       var(dark);
-    border:           2px 0px 2px 2px ;
+button selected {
+    background-color:            @selected;
+    text-color:                  @foreground;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       5;
+    cycle:                       false;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    border:                      0px solid;
+    spacing:                     10px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     15px;
+    padding:                     8px;
+    border-radius:               10px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+element normal.urgent {
+    background-color:            @urgent;
+    text-color:                  @foreground;
+}
+element normal.active {
+    background-color:            @active;
+    text-color:                  @foreground;
+}
+element selected.normal {
+    background-color:            @selected;
+    text-color:                  @foreground;
+}
+element selected.urgent {
+    background-color:            @urgent;
+    text-color:                  @foreground;
+}
+element selected.active {
+    background-color:            @urgent;
+    text-color:                  @foreground;
+}
+element alternate.normal {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+element alternate.urgent {
+    background-color:            @urgent;
+    text-color:                  @foreground;
+}
+element alternate.active {
+    background-color:            @active;
+    text-color:                  @foreground;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        32px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Message -----*****/
+message {
+    background-color:            transparent;
+    border:                      0px solid;
+}
+textbox {
+    padding:                     15px;
+    border-radius:               10px;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+error-message {
+    padding:                     15px;
+    border-radius:               20px;
+    background-color:            @background;
+    text-color:                  @foreground;
 }

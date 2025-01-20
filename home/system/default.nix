@@ -6,5 +6,6 @@
     ./hyprlock
     #./hyprpaper
     ./rofi
+    #./tuigreet
   ];
 }
