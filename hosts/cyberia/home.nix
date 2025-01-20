@@ -19,6 +19,9 @@
     papirus-icon-theme
     killall
     pkgs.gnome-bluetooth
+
+
+    starship
     
     # programs
     vesktop # Modded discord client
