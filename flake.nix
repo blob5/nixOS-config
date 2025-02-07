@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
+      url = "github:nixos/nixpkgs/nixpkgs-unstable";
     };
 
     home-manager = {
@@ -22,7 +22,7 @@
     };
   minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
   hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-  hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";  
+  hyprland.url = "github:hyprwm/Hyprland";  
 
 };
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
