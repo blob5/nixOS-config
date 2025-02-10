@@ -8,6 +8,8 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./variables.nix
+
       ./imports/amd-drivers.nix
       ./imports/bootloader.nix
       ./imports/internationalization.nix
