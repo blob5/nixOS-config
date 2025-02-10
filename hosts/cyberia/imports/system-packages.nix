@@ -1,6 +1,6 @@
-{ pkgs }:
-{
+{ config, pkgs, ... }:
 
+{
   # nix packages
   environment.systemPackages = with pkgs; [
     git
@@ -12,5 +12,4 @@
   # nix modules
   programs.firefox.enable = true;
   programs.steam.enable = true;
-
 }
