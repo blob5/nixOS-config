@@ -14,4 +14,4 @@
     ];
 
   system.stateVersion = "24.05";
-  system = "x86_64-linux";
+}
