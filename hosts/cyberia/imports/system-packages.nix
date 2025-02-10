@@ -1,9 +1,15 @@
 {
+
+  # nix packages
   environment.systemPackages = with pkgs; [
     git
     nodejs
     kitty
     neofetch
-    programs.firefox.enable = true;
   ];
+
+  # nix modules
+  programs.firefox.enable = true;
+  programs.steam.enable = true;
+
 }
