@@ -1,11 +1,9 @@
-{
+# home/system/default.nix
+{ config, lib, pkgs, ... }: {
   imports = [
     ./hyprland
     ./hyprpanel
-    #./hyprspace
     ./hyprlock
-    #./hyprpaper
     ./rofi
-    #./tuigreet
   ];
 }
