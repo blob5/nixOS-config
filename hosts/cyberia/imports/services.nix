@@ -3,7 +3,7 @@
 {
   services.tailscale.enable = true;
 
-  programs.steam.enable = true;
+  services.displayManager.ly.enable
 
   services.printing.enable = true;
 
