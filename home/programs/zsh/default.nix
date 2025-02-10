@@ -1,15 +1,15 @@
+# home/programs/zsh/default.nix
 { config, lib, pkgs, ... }: {
   programs.zsh = {
-  enable = true;
-  enableCompletion = true;
-  autosuggestions.enable = true;
-  syntaxHighlighting.enable = true;
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
 
-  shellAliases = {
-    ll = "ls -l";
-    update = "sudo nixos-rebuild switch --flake ~/.config/nixos";
+    shellAliases = {
+      ll = "ls -l";
+      update = "sudo nixos-rebuild switch --flake ~/.config/nixos";
+    };
+    histSize = 10000;
   };
-  histSize = 10000;
-};
-
 }
