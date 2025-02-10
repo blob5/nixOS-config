@@ -1,6 +1,7 @@
+# home/programs/packages/default.nix
 { config, lib, pkgs, ... }: {
-  home.packages = [
-    pkgs.font-awesome
-    pkgs.nerd-fonts.jetbrains-mono
+  home.packages = with pkgs; [
+    font-awesome
+    nerd-fonts.jetbrains-mono
   ];
 }
