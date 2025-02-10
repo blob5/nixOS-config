@@ -12,4 +12,5 @@
   # nix modules
   programs.firefox.enable = true;
   programs.steam.enable = true;
+  programs.fish.enable = true;
 }
