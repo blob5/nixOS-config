@@ -68,6 +68,11 @@
     ]);
   };
 
+  programs.git = {
+    enable = true;
+    userName = "blob";
+    userEmail = "101657201+blob5@users.noreply.github.com";
+  };
 
   programs.home-manager.enable = true;
 
