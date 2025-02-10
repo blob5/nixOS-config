@@ -19,7 +19,7 @@
     papirus-icon-theme
     killall
     pkgs.gnome-bluetooth
-
+    gnupg
 
     starship
     
