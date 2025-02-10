@@ -8,6 +8,8 @@
   services.printing.enable = true;
 
   services.openssh.enable = true;
+  
+  services.pcscd.enable = true; # needed for gpg
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
