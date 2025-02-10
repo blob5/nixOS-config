@@ -3,7 +3,7 @@
 {
   services.tailscale.enable = true;
 
-  services.displayManager.ly.enable
+  services.displayManager.ly.enable = true;
 
   services.printing.enable = true;
 
