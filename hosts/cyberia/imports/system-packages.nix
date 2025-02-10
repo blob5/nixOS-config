@@ -1,7 +1,7 @@
 {
 
   # nix packages
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with nixpkgs.pkgs; [
     git
     nodejs
     kitty
