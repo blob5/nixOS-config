@@ -19,15 +19,16 @@
     papirus-icon-theme
     killall
     pkgs.gnome-bluetooth
-    gnupg
-
     starship
-    
+
+ 
     # programs
     vesktop # Modded discord client
     waypaper # wallpaper utility
     swww # wallpaper backend 
-    
+    obsidian # note app
+    syncthing # for syncing directories    
+
     # Utils
     htop # process viewer
     networkmanagerapplet # networkmanager util
