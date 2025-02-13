@@ -18,4 +18,9 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  };
 }

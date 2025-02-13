@@ -2,6 +2,8 @@
 
 {
   services.tailscale.enable = true;
+ 
+  services.automatic-timezoned.enable = true;
 
   services.displayManager.ly.enable = true;
 
