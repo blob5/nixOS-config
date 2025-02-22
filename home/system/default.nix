@@ -5,5 +5,6 @@
     ./hyprpanel
     ./hyprlock
     ./rofi
+    #./ly
   ];
 }
