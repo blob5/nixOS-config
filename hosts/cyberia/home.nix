@@ -38,6 +38,7 @@
     networkmanagerapplet # networkmanager util
     git
     unzip
+    wget
 
     # Tomfoolery
     nmap
