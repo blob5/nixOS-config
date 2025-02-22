@@ -4,6 +4,7 @@
   services.tailscale.enable = true;
 
   services.displayManager.ly.enable = true;
+  services.displayManager.defaultSession = "hyprland";
 
   services.printing.enable = true;
 

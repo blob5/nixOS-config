@@ -12,26 +12,32 @@
     stateVersion = systemSettings.version;
     
     packages = (with pkgs; [
-    # essentials
-    git
+    
+    # development
+    openjdk
+    python312
 
     # system
     papirus-icon-theme
     killall
     pkgs.gnome-bluetooth
-    starship
 
+    # terminal stuff
+    foot
+    starship
+    wezterm
  
     # programs
     vesktop # Modded discord client
     waypaper # wallpaper utility
     swww # wallpaper backend 
     obsidian # note app
-    syncthing # for syncing directories    
 
     # Utils
     htop # process viewer
     networkmanagerapplet # networkmanager util
+    git
+    unzip
 
     # Tomfoolery
     nmap
@@ -55,16 +61,13 @@
     aalib
     pipes
     asciiquarium-transparent
-    bsdgames
+    # bsdgames
     
     # text/code editors/readers
     vim
     vscode
     neovide
     neovim
-
-    # Languages
-    python312
    
     ]);
   };
