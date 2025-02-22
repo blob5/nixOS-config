@@ -1,7 +1,7 @@
 {
   imports = [
     ./packages
-    #./zsh
+    ./zsh
     ./wezterm
   ];
 }
