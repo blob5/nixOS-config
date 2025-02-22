@@ -7,8 +7,17 @@
     nodejs
     kitty
     neofetch
+
+    # editor
     zed-editor
+
+    # Terminal theme
     oh-my-posh
+    # zsh plugins
+    zsh-autosuggestions    
+    zsh-syntax-highlighting
+
+    # Util
     wl-clipboard
   ];
 

@@ -1,12 +1,3 @@
-# home/programs/wezterm/default.nix
-{ config, lib, pkgs, ... }: {
-  
-  programs.wezterm = {
-    enable = true;
-    enableZshIntegration = true;
-    enableBashIntegration = true;
-    extraConfig = ''
-
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
@@ -20,8 +11,3 @@ config.color_scheme = 'Catppuccin Frappé (Gogh)'
 
 -- and finally, return the configuration to wezterm
 return config
-
-'';
-
-  };
-}
