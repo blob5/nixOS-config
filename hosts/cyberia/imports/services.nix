@@ -15,7 +15,9 @@
   services.printing.enable = true;
 
   services.openssh.enable = true;
-  
+ 
+  services.upower.enable = true; # needed for hyprpanel
+   
   services.pcscd.enable = true; # needed for gpg
 
   services.pulseaudio.enable = false;
