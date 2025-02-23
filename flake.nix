@@ -5,11 +5,13 @@
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixpkgs-unstable";
     };
+  
+  ags.url = "github:Aylur/ags";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+  home-manager = {
+    url = "github:nix-community/home-manager";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 
   hyprspace = {
       url = "github:KZDKM/Hyprspace";
