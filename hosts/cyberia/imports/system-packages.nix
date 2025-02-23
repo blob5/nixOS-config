@@ -7,6 +7,7 @@
     nodejs
     kitty
     neofetch
+    fastfetch
 
     # editor
     zed-editor
