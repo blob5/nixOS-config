@@ -8,6 +8,7 @@
     shellAliases = {
       ll = "ls -l";
       update = "sudo nixos-rebuild switch --flake ~/.config/nixos";
+      upgrade = "sudo nixos-rebuild switch --flake ~/.config/nixos --upgrade";
       n = "neovide";
       vi = "vim";
       nv = "nvim";
