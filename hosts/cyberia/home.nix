@@ -21,6 +21,8 @@
     papirus-icon-theme
     killall
     pkgs.gnome-bluetooth
+    swayosd
+    playerctl
 
     # terminal stuff
     foot
