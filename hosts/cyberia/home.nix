@@ -34,6 +34,8 @@
     waypaper # wallpaper utility
     swww # wallpaper backend 
     obsidian # note app
+    inputs.zen-browser.packages."${system}".default
+
 
     # Utils
     htop # process viewer
