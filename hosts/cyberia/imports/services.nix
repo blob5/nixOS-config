@@ -3,13 +3,15 @@
 {
   services.tailscale.enable = true;
 
-  services.displayManager.sddm.wayland.enable = true;
-
-  services.displayManager.sddm = {
+  services.displayManager = {
+    sessionPackages = [pkgs.hyprland];
+    sddm = {
+      wayland.enable = true;
       enable = true;
-      theme = "sddm-astronaut";
+      theme = "catppuccin-mocha";
+      package = pkgs.kdePackages.sddm;
     };
-
+  };
   services.printing.enable = true;
 
   services.openssh.enable = true;

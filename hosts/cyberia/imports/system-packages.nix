@@ -22,7 +22,7 @@
     
 
     # sddm theme
-    sddm-astronaut
+    catppuccin-sddm
 
   ];
 
