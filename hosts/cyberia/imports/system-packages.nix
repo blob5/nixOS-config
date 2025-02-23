@@ -19,6 +19,11 @@
 
     # Util
     wl-clipboard
+    
+
+    # sddm theme
+    sddm-astronaut
+
   ];
 
   # nix modules

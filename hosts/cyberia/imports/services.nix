@@ -3,8 +3,12 @@
 {
   services.tailscale.enable = true;
 
-  services.displayManager.ly.enable = true;
-  services.displayManager.defaultSession = "hyprland";
+  services.displayManager.sddm.wayland.enable = true;
+
+  services.displayManager.sddm = {
+      enable = true;
+      theme = "sddm-astronaut";
+    };
 
   services.printing.enable = true;
 

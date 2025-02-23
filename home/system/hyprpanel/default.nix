@@ -5,8 +5,6 @@
   ];
   home.packages = with pkgs; [
     power-profiles-daemon
-    jq
-    vulnix
     pavucontrol
     pulseaudio
     brightnessctl
@@ -28,7 +26,6 @@
               "dashboard"
               "workspaces"
               "windowtitle"
-              "updates"
               "storage"
             ] ++ (if showBattery then [ "battery" ] else [ ]);
             "middle" = [
@@ -78,9 +75,6 @@
       menus.dashboard.shortcuts.right.shortcut1.command = "gcolor3";
       menus.media.displayTime = true;
       menus.power.lowBatteryNotification = true;
-      bar.customModules.updates.updateCommand = "jq '[.[].cvssv3_basescore | to_entries | add | select(.value > 5)] | length' <<< $(vulnix -S --json)";
-      bar.customModules.updates.icon.updated = "󰋼";
-      bar.customModules.updates.icon.pending = "󰋼";
       bar.volume.rightClick = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
       bar.volume.middleClick = "pavucontrol";
       bar.media.format = "{title}";
