@@ -12,6 +12,8 @@
     url = "github:0xc000022070/zen-browser-flake";
   };
  
+  textfox.url = "github:adriankarlen/textfox";
+ 
   home-manager = {
     url = "github:nix-community/home-manager";
     inputs.nixpkgs.follows = "nixpkgs";
@@ -56,6 +58,7 @@
         inputs.minegrub-world-sel-theme.nixosModules.default
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
+          home-manager.backupFileExtension = "backup";
           home-manager.useUserPackages = true;
           home-manager.users.${userSettings.username} = import ./hosts/${systemSettings.hostname}/home.nix;
           home-manager.extraSpecialArgs = {

@@ -3,8 +3,7 @@
   imports = [
     ./hyprland
     ./hyprpanel
-    ./hyprlock
+    #./hyprlock
     ./rofi
-    #./ly
   ];
 }

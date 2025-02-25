@@ -3,5 +3,6 @@
     ./packages
     ./zsh
     ./wezterm
+    ./textfox
   ];
 }

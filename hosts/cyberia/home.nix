@@ -4,7 +4,6 @@
     ../../home/programs
     ../../home/wallpapers
   ];
-  
 
   home = {
     username = userSettings.username;
@@ -34,7 +33,8 @@
     waypaper # wallpaper utility
     swww # wallpaper backend 
     obsidian # note app
-    inputs.zen-browser.packages."${system}".default
+    inputs.zen-browser.packages."${system}".twilight # browser
+    superfile # file explorer
 
 
     # Utils
@@ -76,6 +76,7 @@
    
     ]);
   };
+  
 
   programs.git = {
     enable = true;
