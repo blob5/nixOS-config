@@ -16,6 +16,8 @@
 
   services.openssh.enable = true;
  
+  programs.sway.enable = true;
+
   services.upower.enable = true; # needed for hyprpanel
    
   services.pcscd.enable = true; # needed for gpg

@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }: {
 
   home.packages = [
-    pkgs.hyprpaper
-    pkgs.hypridle
+    # pkgs.hyprpaper
+    # pkgs.hypridle
   ];
 
   wayland.windowManager.hyprland = {

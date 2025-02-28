@@ -7,6 +7,10 @@
     };
   
   ags.url = "github:Aylur/ags";
+   
+  matugen = {
+    url = "github:/InioX/Matugen";
+  };
 
   zen-browser = {
     url = "github:0xc000022070/zen-browser-flake";

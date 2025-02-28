@@ -35,7 +35,7 @@
     obsidian # note app
     inputs.zen-browser.packages."${system}".twilight # browser
     superfile # file explorer
-
+    inputs.matugen.packages.${system}.default
 
     # Utils
     htop # process viewer
