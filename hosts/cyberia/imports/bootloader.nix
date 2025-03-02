@@ -14,7 +14,7 @@
         enable = true;
         customIcons = [{
           name = "nixos";
-          lineTop = "NixOS (23/10/2024, 23:03)";
+          lineTop = "NixOS (Thu Nov 21 21:44:02 2024)";
           lineBottom = "Survival Mode, No Cheats, Version: 24.05";
           imgName = "nixos";
         }];

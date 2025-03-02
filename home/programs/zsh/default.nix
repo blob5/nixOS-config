@@ -14,10 +14,18 @@
       nv = "nvim";
       q = "exit";
       spf = "superfile";
+
+      nixos-btw = "myfsinfo";
     };
 
     initExtra = ''
     
+    myfsinfo() {
+      DEVICE=$(df / | awk 'NR==2 {print $1}')
+      sudo tune2fs -l "$DEVICE" | grep 'Filesystem created:'
+    }
+
+
       bindkey "^[[1;5C" forward-word  # ctrl+left arrow
       bindkey "^[[1;5D" backward-word # ctrl+right arrow
       bindkey "^H" backward-kill-word # ctrl+backspace
