@@ -73,7 +73,7 @@
     vscode
     neovide
     neovim
-   
+    code-cursor
     ]);
   };
   
