@@ -43,6 +43,7 @@
     git
     unzip
     wget
+    speedtest-cli # speedtest.net cli
 
     # Tomfoolery
     nmap
