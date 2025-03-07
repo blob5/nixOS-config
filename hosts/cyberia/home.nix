@@ -44,6 +44,8 @@
     unzip
     wget
     speedtest-cli # speedtest.net cli
+    zoxide
+    fzf
 
     # Tomfoolery
     nmap

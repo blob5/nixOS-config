@@ -14,6 +14,7 @@
       nv = "nvim";
       q = "exit";
       spf = "superfile";
+      cd= "z"; # replace cd with zoxide
 
       nixos-btw = "myfsinfo";
     };
@@ -30,6 +31,7 @@
       bindkey "^[[1;5D" backward-word # ctrl+right arrow
       bindkey "^H" backward-kill-word # ctrl+backspace
 
+      eval "$(zoxide init zsh)"
     '';
 
     
