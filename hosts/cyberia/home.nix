@@ -36,6 +36,7 @@
     obsidian # note app
     inputs.zen-browser.packages."${system}".twilight # browser
     superfile # file explorer
+    libreoffice-qt
 
     # Utils
     htop # process viewer
