@@ -23,6 +23,8 @@
     swayosd
     playerctl
     pywal
+    bluez
+    bluez-tools
 
     # terminal stuff
     foot
@@ -60,7 +62,7 @@
     john
     hashcat
     gobuster
-    
+    burpsuite
 
     # because I can
     sl

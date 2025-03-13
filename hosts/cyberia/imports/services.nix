@@ -3,6 +3,8 @@
 {
   services.tailscale.enable = true;
 
+  virtualisation.docker.enable = true;  
+
   services.displayManager = {
     sessionPackages = [pkgs.hyprland];
     sddm = {
