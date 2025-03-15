@@ -51,7 +51,12 @@
       dotfilesDir = "~/.config/nixos";
     };
 
-    pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+    overlayPkgs = import nixpkgs {
+      system = systemSettings.system;
+      overlays = [
+        inputs.hyprpanel.overlay
+      ];
+    };
   in {
     nixosConfigurations.${systemSettings.hostname} = nixpkgs.lib.nixosSystem {
       system = systemSettings.system;
@@ -63,7 +68,10 @@
           home-manager.useGlobalPkgs = true;
           home-manager.backupFileExtension = "backup";
           home-manager.useUserPackages = true;
-          home-manager.users.${userSettings.username} = import ./hosts/${systemSettings.hostname}/home.nix;
+          home-manager.users.${userSettings.username} = { config, ... }: {
+            imports = [ ./hosts/${systemSettings.hostname}/home.nix ];
+            _module.args.pkgs = overlayPkgs;
+          };
           home-manager.extraSpecialArgs = {
             inherit inputs;
             inherit systemSettings;
