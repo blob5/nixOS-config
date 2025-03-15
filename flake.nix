@@ -53,6 +53,9 @@
 
     overlayPkgs = import nixpkgs {
       system = systemSettings.system;
+      config = {
+        allowUnfree = true;
+      };
       overlays = [
         inputs.hyprpanel.overlay
       ];
