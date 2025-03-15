@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  boot.plymouth.enable = true;
+  boot.plymouth.theme = "dark_planet";
+  boot.plymouth.themePackages = [ pkgs.adi1090x-plymouth-themes ];
+  
   boot.loader = {
     grub = {
       useOSProber = true;
