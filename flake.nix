@@ -38,7 +38,7 @@
   outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
   let
     systemSettings = {
-      system = "aarch64-linux";
+      system = "x86_64-linux";
       hostname = "cyberia";
       timezone = "Europe/Amsterdam";
       locale = "en_US.UTF-8";
