@@ -2,7 +2,6 @@
   imports = [
     ../../home/system
     ../../home/programs
-    ../../home/wallpapers
   ];
 
   home = {

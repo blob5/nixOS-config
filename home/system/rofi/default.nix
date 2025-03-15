@@ -4,7 +4,7 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    theme = builtins.toPath ./spotlight-dark.rasi;
+    # theme = builtins.toPath ./spotlight-dark.rasi;
   };
    
   

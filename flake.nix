@@ -7,11 +7,9 @@
     };
   
   ags.url = "github:Aylur/ags";
+ 
+  stylix.url = "github:danth/stylix";  
    
-  matugen = {
-    url = "github:/InioX/Matugen";
-  };
-
   zen-browser = {
     url = "github:0xc000022070/zen-browser-flake";
   };
@@ -37,7 +35,7 @@
   hyprland.url = "github:hyprwm/Hyprland";  
 
 };
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
   let
     systemSettings = {
       system = "aarch64-linux";
@@ -60,6 +58,7 @@
       modules = [
         ./hosts/${systemSettings.hostname}/configuration.nix
         inputs.minegrub-world-sel-theme.nixosModules.default
+        stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.backupFileExtension = "backup";

@@ -4,5 +4,6 @@
     ./zsh
     ./wezterm
     ./textfox
+    ./stylix
   ];
 }
