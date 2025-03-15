@@ -6,35 +6,35 @@
       url = "github:nixos/nixpkgs/nixpkgs-unstable";
     };
   
-  ags.url = "github:Aylur/ags";
+    ags.url = "github:Aylur/ags";
  
-  stylix.url = "github:danth/stylix";  
+    stylix.url = "github:danth/stylix";  
    
-  zen-browser = {
-    url = "github:0xc000022070/zen-browser-flake";
-  };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+    };
  
-  textfox.url = "github:adriankarlen/textfox";
+    textfox.url = "github:adriankarlen/textfox";
  
-  home-manager = {
-    url = "github:nix-community/home-manager";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-  hyprspace = {
+    hyprspace = {
       url = "github:KZDKM/Hyprspace";
       inputs.hyprland.follows = "hyprland";
     };
 
-  spicetify-nix = {
+    spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
-  hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-  hyprland.url = "github:hyprwm/Hyprland";  
+    minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    hyprland.url = "github:hyprwm/Hyprland";  
+  };
 
-};
   outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
   let
     systemSettings = {
@@ -70,9 +70,6 @@
             inherit userSettings;
           };
         }
-      {
-          nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
-      }
       ];
       specialArgs = {
         inherit inputs;

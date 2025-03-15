@@ -15,6 +15,7 @@
   };
   programs.hyprpanel = {
     enable = true;
+    overlay.enable = true;
     overwrite.enable = true;
     hyprland.enable = true;
     theme = "catppuccin_mocha";
