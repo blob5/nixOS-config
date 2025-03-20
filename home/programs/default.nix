@@ -5,5 +5,6 @@
     ./wezterm
     ./textfox
     ./stylix
+    ./spicetify
   ];
 }

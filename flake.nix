@@ -7,7 +7,12 @@
     };
   
     ags.url = "github:Aylur/ags";
- 
+
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }; 
+
     stylix.url = "github:danth/stylix";  
    
     zen-browser = {
@@ -26,10 +31,6 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     hyprland.url = "github:hyprwm/Hyprland";  
