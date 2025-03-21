@@ -50,7 +50,7 @@
     git
     unzip
     wget
-    speedtest-cli # speedtest.net cli
+    ookla-speedtest # speedtest.net cli
     zoxide
     fzf
 
