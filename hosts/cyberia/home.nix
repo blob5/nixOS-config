@@ -24,6 +24,8 @@
     pywal
     bluez
     bluez-tools
+    shotman
+    slurp
 
     # terminal stuff
     foot
