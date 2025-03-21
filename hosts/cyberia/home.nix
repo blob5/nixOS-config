@@ -24,8 +24,11 @@
     pywal
     bluez
     bluez-tools
-    shotman
+    hyprshot
+    jq
+    libnotify
     slurp
+    wl-clipboard
 
     # terminal stuff
     foot
