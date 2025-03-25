@@ -37,57 +37,61 @@
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
-  let
-    systemSettings = {
-      system = "x86_64-linux";
-      hostname = "cyberia";
-      timezone = "Europe/Amsterdam";
-      locale = "en_US.UTF-8";
-      version = "24.05";
-    };
-
-    userSettings = {
-      username = "blob";
-      name = "blob";
-      dotfilesDir = "~/.config/nixos";
-    };
-
-    overlayPkgs = import nixpkgs {
-      system = systemSettings.system;
-      config = {
-        allowUnfree = true;
+    let
+      # Import host settings from their respective directories
+      hosts = {
+        cyberia = import ./hosts/cyberia/settings.nix;
+        # Add more hosts as needed
       };
-      overlays = [
-        inputs.hyprpanel.overlay
-      ];
-    };
-  in {
-    nixosConfigurations.${systemSettings.hostname} = nixpkgs.lib.nixosSystem {
-      system = systemSettings.system;
-      modules = [
-        ./hosts/${systemSettings.hostname}/configuration.nix
-        inputs.minegrub-world-sel-theme.nixosModules.default
-        stylix.nixosModules.stylix
-        home-manager.nixosModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.backupFileExtension = "backup";
-          home-manager.useUserPackages = true;
-          home-manager.users.${userSettings.username} = { config, ... }: {
-            imports = [ ./hosts/${systemSettings.hostname}/home.nix ];
-            _module.args.pkgs = overlayPkgs;
+
+      userSettings = {
+        username = "blob";
+        name = "blob";
+        dotfilesDir = "~/.config/nixos";
+      };
+
+      # Function to create a NixOS configuration for a given host
+      mkNixosConfiguration = hostName: hostSettings:
+        let
+          overlayPkgs = import nixpkgs {
+            system = hostSettings.system;
+            config = {
+              allowUnfree = true;
+            };
+            overlays = [
+              inputs.hyprpanel.overlay
+            ];
           };
-          home-manager.extraSpecialArgs = {
+        in
+        nixpkgs.lib.nixosSystem {
+          system = hostSettings.system;
+          modules = [
+            ./hosts/${hostName}/configuration.nix
+            inputs.minegrub-world-sel-theme.nixosModules.default
+            stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.backupFileExtension = "backup";
+              home-manager.useUserPackages = true;
+              home-manager.users.${userSettings.username} = { config, ... }: {
+                imports = [ ./hosts/${hostName}/home.nix ];
+                _module.args.pkgs = overlayPkgs;
+              };
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+                systemSettings = hostSettings;
+                inherit userSettings;
+              };
+            }
+          ];
+          specialArgs = {
             inherit inputs;
-            inherit systemSettings;
+            systemSettings = hostSettings;
             inherit userSettings;
           };
-        }
-      ];
-      specialArgs = {
-        inherit inputs;
-        inherit systemSettings;
-        inherit userSettings;
-      };
+        };
+    in {
+      # Generate configurations for all hosts
+      nixosConfigurations = nixpkgs.lib.mapAttrs mkNixosConfiguration hosts;
     };
   };
-}
