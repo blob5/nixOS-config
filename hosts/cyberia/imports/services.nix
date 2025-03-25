@@ -3,6 +3,14 @@
 {
   services.tailscale.enable = true;
 
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+    
+  };
+
   virtualisation.docker.enable = true;  
 
   services.displayManager = {

@@ -94,4 +94,4 @@
       # Generate configurations for all hosts
       nixosConfigurations = nixpkgs.lib.mapAttrs mkNixosConfiguration hosts;
     };
-  };
+  }
