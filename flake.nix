@@ -41,7 +41,7 @@
       # Import host settings from their respective directories
       hosts = {
         cyberia = import ./hosts/cyberia/settings.nix;
-        # Add more hosts as needed
+        navi = import ./hosts/navi/settings.nix;
       };
 
       userSettings = {
