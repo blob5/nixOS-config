@@ -22,11 +22,11 @@ in
     #ncsVisualizer
   ];
   enabledSnippets = with spicePkgs.snippets; [
-    rotatingCoverart
+    #rotatingCoverart
     pointer
   ];
 
   #theme = spicePkgs.themes.catppuccin; # managed by stylix
-  #colorScheme = "mocha";
+  colorScheme = "mocha";
  };
 }
