@@ -18,8 +18,18 @@
     overlay.enable = true;
     overwrite.enable = true;
     hyprland.enable = true;
-    theme = "catppuccin_mocha";
-    layout = {
+    
+    settings = {
+      theme = {
+        name = "catppuccin_mocha";
+        bar.floating = false;
+        bar.buttons.enableBorders = true;
+        bar.transparent = true;
+        font.size = "14px";
+        bar.buttons.modules.ram.enableBorder = false;
+      };
+
+      layout = {
       "bar.layouts" =
         let
           layout = { showBattery ? true }: {
@@ -50,24 +60,18 @@
           };
         in
         {
-          "0" = layout { };
-          "1" = none;
+          "0" = none;
+          "1" = layout { };
           "2" = layout { showBattery = false; };
           "3" = none;
         };
     };
-    settings = {
       bar.customModules.updates.pollingInterval = 1440000;
-      theme.bar.floating = false;
-      theme.bar.buttons.enableBorders = true;
-      theme.bar.transparent = true;
-      theme.font.size = "14px";
       menus.clock.time.military = true;
       menus.clock.time.hideSeconds = false;
       bar.clock.format = "%y/%m/%d  %H:%M";
       bar.media.show_active_only = true;
       bar.notifications.show_total = false;
-      theme.bar.buttons.modules.ram.enableBorder = false;
       bar.launcher.autoDetectIcon = true;
       bar.battery.hideLabelWhenFull = true;
       menus.dashboard.controls.enabled = false;
