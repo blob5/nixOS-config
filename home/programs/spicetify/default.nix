@@ -15,10 +15,11 @@ in
   enabledExtensions = with spicePkgs.extensions; [
     adblock
     hidePodcasts
+    autoVolume
     shuffle # shuffle+ (special characters are sanitized out of extension names)
   ];
   enabledCustomApps = with spicePkgs.apps; [
-    #newReleases
+    newReleases
     #ncsVisualizer
   ];
   enabledSnippets = with spicePkgs.snippets; [
