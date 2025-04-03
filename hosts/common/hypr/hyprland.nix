@@ -96,6 +96,7 @@
       bind = $mainMod, P, pseudo,
       bind = $mainMod, J, togglesplit,
       bind = $mainMod, F, fullscreen,
+      bind = $mainMod, T, togglegroup,
 
       # Move focus
       bind = $mainMod, left, movefocus, l
