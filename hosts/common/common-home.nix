@@ -37,6 +37,7 @@
       obsidian
       superfile
       libreoffice-qt
+      signal-desktop
 
       # Utils
       htop
@@ -45,8 +46,9 @@
       unzip
       wget
       ookla-speedtest
-      zoxide
-      fzf
+      zoxide # replacement for cd
+      fzf # fuzzy finder
+      eza # replacement for ls
 
       # Network tools
       nmap

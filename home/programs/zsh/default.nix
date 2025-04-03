@@ -17,6 +17,7 @@
       q = "exit";
       spf = "superfile";
       cd= "z"; # replace cd with zoxide
+      ls = "eza"; # replace ls with eza
 
       # aliases for my custom functions
       nixos-btw = "myfsinfo";
