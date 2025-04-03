@@ -38,6 +38,7 @@
       superfile
       libreoffice-qt
       signal-desktop
+      inputs.zen-browser.packages."${system}".twilight
 
       # Utils
       htop
