@@ -15,6 +15,10 @@
 
       # Navi-specific settings
       # Add any Navi-specific configurations here
+
+      # To fix the flickering issue with Vesktop
+      env = ELECTRON_ENABLE_GPU_RASTERIZATION,1
+      
     '';
   };
 
