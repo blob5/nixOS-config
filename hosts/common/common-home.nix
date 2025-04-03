@@ -1,4 +1,9 @@
 { inputs, pkgs, systemSettings, userSettings, ... }: {
+  imports = [
+    ../../home/programs
+    ../../home/system
+  ];
+
   home = {
     packages = with pkgs; [
       # Development
