@@ -1,0 +1,94 @@
+{ inputs, pkgs, systemSettings, userSettings, ... }: {
+  home = {
+    packages = with pkgs; [
+      # Development
+      openjdk
+      python312
+
+      # System
+      papirus-icon-theme
+      killall
+      gnome-bluetooth
+      swayosd
+      playerctl
+      pywal
+      bluez
+      bluez-tools
+      hyprshot
+      jq
+      libnotify
+      slurp
+      wl-clipboard
+
+      # Terminal
+      foot
+      starship
+      wezterm
+
+      # Programs
+      vesktop
+      waypaper
+      swww
+      obsidian
+      superfile
+      libreoffice-qt
+
+      # Utils
+      htop
+      networkmanagerapplet
+      git
+      unzip
+      wget
+      ookla-speedtest
+      zoxide
+      fzf
+
+      # Network tools
+      nmap
+      traceroute
+      whois
+      dig
+      metasploit
+      iw
+      aircrack-ng
+      inetutils
+      john
+      hashcat
+      gobuster
+      burpsuite
+
+      # Fun
+      sl
+      cowsay
+      cmatrix
+      hollywood
+      aalib
+      pipes
+      asciiquarium-transparent
+
+      # Editors
+      vim
+      vscode
+      neovide
+      neovim
+      code-cursor
+    ];
+
+    pointerCursor = {
+      gtk.enable = true;
+      x11.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic"; 
+      size = 24;
+    };
+  };
+
+  programs.git = {
+    enable = true;
+    userEmail = "101657201+blob5@users.noreply.github.com";
+  };
+
+  programs.home-manager.enable = true;
+
+  systemd.user.startServices = "sd-switch";
+} 
