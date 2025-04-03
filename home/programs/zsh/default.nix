@@ -4,11 +4,13 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
 
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nixos-rebuild switch --flake ~/.config/nixos";
+      rebuild = "sudo nixos-rebuild switch --flake ~/.config/nixos";
       upgrade = "sudo nixos-rebuild switch --flake ~/.config/nixos --upgrade";
+      update = "nix flake update --flake ~/.config/nixos";
       n = "neovide";
       vi = "vim";
       nv = "nvim";
@@ -17,6 +19,30 @@
       cd= "z"; # replace cd with zoxide
 
       nixos-btw = "myfsinfo";
+
+      # Text manipulation aliases
+      clr = "clear";  # Clear screen
+      cll = "clear && ls";  # Clear screen and list files
+      cla = "clear && ls -la";  # Clear screen and list all files
+      
+      # Git aliases
+      gs = "git status";
+      ga = "git add";
+      gc = "git commit";
+      gp = "git push";
+      gl = "git pull";
+      
+      # System aliases
+      clean = "sudo nix-collect-garbage -d";
+      
+      # Navigation aliases
+      .. = "cd ..";
+      
+      # File operations
+      cp = "cp -i";  # Interactive copy
+      mv = "mv -i";  # Interactive move
+      rm = "rm -i";  # Interactive remove
+      
     };
 
     initExtra = ''
@@ -32,6 +58,53 @@
       bindkey "^H" backward-kill-word # ctrl+backspace
 
       eval "$(zoxide init zsh)"
+
+      # Enable color support
+      export CLICOLOR=1
+      export LSCOLORS=GxFxCxDxBxegedabagaced
+
+      # Set default editor
+      export EDITOR=nvim
+
+      # Add custom functions
+      function mkcd() {
+        mkdir -p "$1" && cd "$1"
+      }
+
+      function extract() {
+        if [ -f "$1" ] ; then
+          case "$1" in
+            *.tar.bz2)   tar xjf "$1"     ;;
+            *.tar.gz)    tar xzf "$1"     ;;
+            *.bz2)       bunzip2 "$1"     ;;
+            *.rar)       unrar e "$1"     ;;
+            *.gz)        gunzip "$1"      ;;
+            *.tar)       tar xf "$1"      ;;
+            *.tbz2)      tar xjf "$1"     ;;
+            *.tgz)       tar xzf "$1"     ;;
+            *.zip)       unzip "$1"       ;;
+            *.Z)         uncompress "$1"  ;;
+            *.7z)        7z x "$1"        ;;
+            *)           echo "'$1' cannot be extracted via extract()" ;;
+          esac
+        else
+          echo "'$1' is not a valid file"
+        fi
+      }
+
+      # Quick directory navigation
+      function qcd() {
+        cd "$(find . -type d | fzf)"
+      }
+
+      # Quick grep
+      function qgrep() {
+        grep -r "$1" . | fzf
+      }
+
+      # Add these keybindings for text manipulation
+      bindkey '^U' backward-kill-line  # Ctrl+U to delete to start of line
+      bindkey '^K' kill-line          # Ctrl+K to delete to end of line
     '';
 
     
