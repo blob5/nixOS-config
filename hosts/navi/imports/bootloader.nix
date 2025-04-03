@@ -5,6 +5,8 @@
   boot.plymouth.theme = "dark_planet";
   boot.plymouth.themePackages = [ pkgs.adi1090x-plymouth-themes ];
   
+  boot.kernelParams = [ "nvidia_drm.modeset=1" ];
+
   boot.loader = {
     grub = {
       useOSProber = true;
