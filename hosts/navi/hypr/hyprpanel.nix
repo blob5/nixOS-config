@@ -61,9 +61,7 @@
         in
         {
           "0" = none;
-          "1" = layout { };
-          "2" = layout { showBattery = false; };
-          "3" = none;
+          "1" = layout { showBattery = false; };
         };
     };
       bar.customModules.updates.pollingInterval = 1440000;
@@ -85,4 +83,4 @@
       bar.media.format = "{title}";
     };
   };
-}
+} 

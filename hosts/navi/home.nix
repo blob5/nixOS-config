@@ -1,12 +1,10 @@
 { config, pkgs, ... }:
 
-let
-  hyprlandModule = import ../common/hyprland.nix { hostname = "navi"; };
-in
 {
   imports = [
     ../common/common-home.nix
-    hyprlandModule
+    ./hypr/hyprland.nix
+    ./hypr/hyprpanel.nix
   ];
 
   # Host-specific home-manager settings

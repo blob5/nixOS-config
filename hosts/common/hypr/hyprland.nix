@@ -1,10 +1,5 @@
-{ hostname }:
-
 { config, lib, pkgs, ... }:
 
-let
-  hostConfigDir = ../${hostname}/hyprland;
-in
 {
   # Common hyprland settings that apply to all hosts
   wayland.windowManager.hyprland = {
@@ -145,15 +140,15 @@ in
     '';
   };
 
-  # Create symlinks for host-specific configurations
+  # Create symlinks for configurations
   home.activation.hyprlandConfig = lib.hm.dag.entryAfter ["writeBoundary"] ''
     # Create config directory if it doesn't exist
     mkdir -p ~/.config/hypr
     
-    # Symlink the appropriate monitor configuration
-    ln -sf ${hostConfigDir}/monitors.conf ~/.config/hypr/monitors.conf
+    # Symlink the monitor configuration
+    ln -sf ${./monitors.conf} ~/.config/hypr/monitors.conf
     
-    # Symlink the appropriate input configuration
-    ln -sf ${hostConfigDir}/input.conf ~/.config/hypr/input.conf
+    # Symlink the input configuration
+    ln -sf ${./input.conf} ~/.config/hypr/input.conf
   '';
 } 
