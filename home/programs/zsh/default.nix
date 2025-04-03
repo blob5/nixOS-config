@@ -18,6 +18,7 @@
       spf = "superfile";
       cd= "z"; # replace cd with zoxide
 
+      # aliases for my custom functions
       nixos-btw = "myfsinfo";
 
       # Text manipulation aliases
@@ -35,8 +36,6 @@
       # System aliases
       clean = "sudo nix-collect-garbage -d";
       
-      # Navigation aliases
-      .. = "cd ..";
       
       # File operations
       cp = "cp -i";  # Interactive copy
@@ -57,7 +56,6 @@
       bindkey "^[[1;5D" backward-word # ctrl+right arrow
       bindkey "^H" backward-kill-word # ctrl+backspace
 
-      eval "$(zoxide init zsh)"
 
       # Enable color support
       export CLICOLOR=1
@@ -102,9 +100,7 @@
         grep -r "$1" . | fzf
       }
 
-      # Add these keybindings for text manipulation
-      bindkey '^U' backward-kill-line  # Ctrl+U to delete to start of line
-      bindkey '^K' kill-line          # Ctrl+K to delete to end of line
+      eval "$(zoxide init zsh)"
     '';
 
     
