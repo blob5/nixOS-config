@@ -39,17 +39,23 @@
       libreoffice-qt
       signal-desktop
       inputs.zen-browser.packages."${system}".twilight
+      kdePackages.dolphin
 
       # Utils
       htop
       networkmanagerapplet
       git
-      unzip
       wget
       ookla-speedtest
       zoxide # replacement for cd
       fzf # fuzzy finder
       eza # replacement for ls
+      
+      # extracting tools
+      p7zip
+      unzip
+      zip
+      xz
 
       # Network tools
       nmap
