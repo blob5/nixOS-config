@@ -18,6 +18,9 @@
 
       # To fix the flickering issue with Vesktop
       env = ELECTRON_ENABLE_GPU_RASTERIZATION,1
+      env = XWAYLAND_NO_GRAB,1
+      env = _XWAYLAND_ALLOW_COMMITS,1
+
       
     '';
   };
