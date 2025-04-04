@@ -17,6 +17,7 @@
       ./imports/services.nix
       ./imports/system-packages.nix
       ./imports/users.nix
+      ./imports/virtualization.nix
       ../common/common-packages.nix
     ];
 
