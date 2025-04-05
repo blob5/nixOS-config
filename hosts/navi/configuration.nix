@@ -19,6 +19,7 @@
       ./imports/users.nix
       ./imports/virtualization.nix
       ./imports/bluetooth.nix
+      ./imports/games.nix
       ../common/common-packages.nix
     ];
 
