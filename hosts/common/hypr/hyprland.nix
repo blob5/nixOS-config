@@ -22,7 +22,6 @@
       # Window rules
       $&=override
       windowrulev2 = opacity 1 $&,class:^(zen-twilight)$
-      windowrulev2 = suppressevent maximize, class:.*
 
       # General settings
       general { 
@@ -103,6 +102,10 @@
       bind = $mainMod, right, movefocus, r
       bind = $mainMod, up, movefocus, u
       bind = $mainMod, down, movefocus, d
+      
+      # Move tabs
+      bind = $mainMod, Tab, changegroupactive, r
+      bind = $mainMod SHIFT, Tab, changegroupactive, l
 
       # Workspace switching
       bind = $mainMod, 1, workspace, 1
