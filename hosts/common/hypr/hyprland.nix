@@ -25,9 +25,9 @@
 
       # General settings
       general { 
-          gaps_in = 2
-          gaps_out = 5
-          border_size = 2
+          gaps_in = 0
+          gaps_out = 0
+          border_size = 1
           col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
           col.inactive_border = rgba(595959aa)
           resize_on_border = false 
@@ -35,11 +35,22 @@
           layout = dwindle
       }
 
+      # Groupbar
+      group {
+        groupbar {
+          enabled = true
+          render_titles = false
+        }
+      }
+
+
+
+
       # Decoration
       decoration {
           rounding = 10
-          active_opacity = 0.85
-          inactive_opacity = 0.9
+          active_opacity = 1
+          inactive_opacity = 0.8
           blur {
               enabled = true
               size = 8
