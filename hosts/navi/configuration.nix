@@ -18,6 +18,7 @@
       ./imports/system-packages.nix
       ./imports/users.nix
       ./imports/virtualization.nix
+      ./imports/bluetooth.nix
       ../common/common-packages.nix
     ];
 
