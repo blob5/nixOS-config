@@ -24,6 +24,8 @@
   };
   services.printing.enable = true;
 
+  services.resolved.enable = true;
+
   services.openssh.enable = true;
  
   programs.sway.enable = true;

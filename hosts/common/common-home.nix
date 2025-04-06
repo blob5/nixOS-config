@@ -24,6 +24,7 @@
       libnotify
       slurp
       wl-clipboard
+      wireguard-tools
 
       # Terminal
       foot
@@ -42,6 +43,7 @@
       kdePackages.dolphin
       protonvpn-gui
       qbittorrent
+      vlc
 
       # Utils
       htop
@@ -52,7 +54,7 @@
       zoxide # replacement for cd
       fzf # fuzzy finder
       eza # replacement for ls
-      
+
       # extracting tools
       p7zip
       unzip
@@ -94,7 +96,7 @@
       gtk.enable = true;
       x11.enable = true;
       package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic"; 
+      name = "Bibata-Modern-Classic";
       size = 24;
     };
   };
@@ -107,4 +109,4 @@
   programs.home-manager.enable = true;
 
   systemd.user.startServices = "sd-switch";
-} 
+}
