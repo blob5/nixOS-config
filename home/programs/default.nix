@@ -4,7 +4,7 @@
     ./zsh
     ./wezterm
     ./textfox
-    ./stylix
+    #./stylix
     ./spicetify
   ];
 }
