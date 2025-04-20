@@ -3,8 +3,8 @@
 {
   imports = [
     ../common/common-home.nix
-    ./hypr/hyprland.nix
-    ./hypr/hyprpanel.nix
+    ./niri/niri.nix
+    
   ];
 
   # Host-specific home-manager settings

@@ -1,0 +1,57 @@
+include "monitors.kdl"
+include "input.kdl"
+
+[general]
+    layout = "stacked"  # can also be "floating", "vertical", etc.
+    focus_follows_mouse = true
+
+[keybindings]
+    # Launch terminal
+    bind = "Mod+Return", "spawn", "foot"
+
+    # Quit Niri
+    bind = "Mod+Shift+Q", "exit"
+
+    # Reload config
+    bind = "Mod+Shift+C", "reload"
+
+    # Move focus
+    bind = "Mod+H", "focus-left"
+    bind = "Mod+L", "focus-right"
+    bind = "Mod+J", "focus-down"
+    bind = "Mod+K", "focus-up"
+
+    # Move windows
+    bind = "Mod+Shift+H", "move-left"
+    bind = "Mod+Shift+L", "move-right"
+    bind = "Mod+Shift+J", "move-down"
+    bind = "Mod+Shift+K", "move-up"
+
+    # Switch layouts
+    bind = "Mod+Space", "toggle-layout"
+
+    # Close focused window
+    bind = "Mod+Q", "close"
+
+    # Switch workspaces
+    bind = "Mod+1", "workspace", "1"
+    bind = "Mod+2", "workspace", "2"
+    bind = "Mod+3", "workspace", "3"
+    bind = "Mod+4", "workspace", "4"
+    bind = "Mod+5", "workspace", "5"
+
+    # Move to workspace
+    bind = "Mod+Shift+1", "move-to-workspace", "1"
+    bind = "Mod+Shift+2", "move-to-workspace", "2"
+    bind = "Mod+Shift+3", "move-to-workspace", "3"
+    bind = "Mod+Shift+4", "move-to-workspace", "4"
+    bind = "Mod+Shift+5", "move-to-workspace", "5"
+
+[workspace]
+    # Optional: configure workspace-specific layouts
+    workspace "1" {
+        layout = "stacked"
+    }
+    workspace "2" {
+        layout = "floating"
+    }
