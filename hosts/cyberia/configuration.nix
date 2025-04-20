@@ -36,6 +36,8 @@
       ./imports/system-packages.nix
       ./imports/users.nix
       ../common/common-packages.nix
+      ../common/common-configuration.nix
+
     ];
 
   system.stateVersion = "24.05";
