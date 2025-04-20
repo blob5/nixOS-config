@@ -8,10 +8,18 @@
     autoStart = true;
     capSysAdmin = true;
     openFirewall = true;
-    
+
   };
 
-  virtualisation.docker.enable = true;  
+  services.hardware.openrgb.enable = true;
+
+  programs.adb.enable = true;
+
+  programs.appimage.enable = true;
+
+  programs.nix-ld.enable = true;
+
+  virtualisation.docker.enable = true;
 
   services.displayManager = {
     sessionPackages = [pkgs.hyprland];
@@ -27,11 +35,11 @@
   services.resolved.enable = true;
 
   services.openssh.enable = true;
- 
+
   programs.sway.enable = true;
 
   services.upower.enable = true; # needed for hyprpanel
-   
+
   services.pcscd.enable = true; # needed for gpg
 
   services.pulseaudio.enable = false;
