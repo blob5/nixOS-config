@@ -30,6 +30,6 @@ in
   ];
 
   #theme = spicePkgs.themes.catppuccin; # managed by stylix
-  colorScheme = "mocha";
+  colorScheme = "Ocean";
  };
 }
