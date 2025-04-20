@@ -25,6 +25,7 @@
       slurp
       wl-clipboard
       wireguard-tools
+      file
 
       # Terminal
       foot
@@ -44,6 +45,7 @@
       protonvpn-gui
       qbittorrent
       vlc
+      protonup-qt
 
       # Utils
       htop
@@ -61,7 +63,7 @@
       zip
       xz
 
-      # Network tools
+      # Cyber Security
       nmap
       traceroute
       whois
@@ -74,6 +76,8 @@
       hashcat
       gobuster
       burpsuite
+      wireshark-qt
+      bettercap
 
       # Fun
       sl
