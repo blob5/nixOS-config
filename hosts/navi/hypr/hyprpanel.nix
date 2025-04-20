@@ -18,7 +18,7 @@
     overlay.enable = true;
     overwrite.enable = true;
     hyprland.enable = true;
-    
+
     settings = {
       theme = {
         name = "catppuccin_mocha";
@@ -60,8 +60,8 @@
           };
         in
         {
-          "0" = none;
-          "1" = layout { showBattery = false; };
+          "0" = layout { showBattery = false; };
+          "1" = none;
         };
     };
       bar.customModules.updates.pollingInterval = 1440000;
@@ -83,4 +83,4 @@
       bar.media.format = "{title}";
     };
   };
-} 
+}
