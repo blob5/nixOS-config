@@ -16,6 +16,8 @@
     catppuccin-sddm
   ];
 
+  programs.wireshark.enable = true;
+
   # Common nix modules
   programs.firefox.enable = true;
   programs.fish.enable = true;
