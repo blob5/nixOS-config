@@ -3,8 +3,7 @@
 {
   imports = [
     ../common/common-home.nix
-    ./niri/niri.nix
-    
+    ./niri
   ];
 
   # Host-specific home-manager settings
