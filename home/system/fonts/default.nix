@@ -5,5 +5,7 @@
 		otf-font-awesome
 		noto-fonts-cjk
 		ubuntu-font-family
+		papirus-icon-theme
+		font-awesome
 	];
 }
