@@ -30,6 +30,7 @@ in {
         {command = ["wl-paste" "--type text" "--watch" "cliphist" "store"];}
       ];
       input = {
+        mod-key "Super"
         keyboard.xkb.layout = "us";
         touchpad = {
           click-method = "button-areas";
