@@ -26,13 +26,13 @@
     "Print".action.screenshot-screen = {write-to-disk = true;};
     "Mod+Shift+Alt+S".action = screenshot-window;
     "Mod+Shift+S".action = screenshot;
-    "Mod+R".action = spawn "${pkgs.rofi}/bin/rofi" "-show" "drun" "-show-icons";
-	"Mod+T".action = spawn "${pkgs.wezterm}/bin/wezterm";
-    "Ctrl+Alt+L".action = spawn "sh -c pgrep hyprlock || hyprlock";
+    "Mod+R".action = spawn "rofi" "-show" "drun" "-show-icons";
+	  "Mod+T".action = spawn "wezterm";
+    "Ctrl+Alt+L".action = spawn "hyprlock";
 
     "Mod+U".action = spawn "env XDG_CURRENT_DESKTOP=gnome gnome-control-center";
 
-    "Mod+Q".action = close-window;
+    "Mod+C".action = close-window;
     "Mod+S".action = switch-preset-column-width;
     "Mod+F".action = maximize-column;
     # "Mod+Shift+F".action = fullscreen-window;
