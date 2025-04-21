@@ -30,7 +30,7 @@ in {
         {command = ["wl-paste" "--type text" "--watch" "cliphist" "store"];}
       ];
       input = {
-        keyboard.xkb.layout = "latam";
+        keyboard.xkb.layout = "us";
         touchpad = {
           click-method = "button-areas";
           dwt = true;
