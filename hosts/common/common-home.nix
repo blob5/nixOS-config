@@ -42,7 +42,6 @@
       signal-desktop
       inputs.zen-browser.packages."${system}".twilight
       kdePackages.dolphin
-      protonvpn-gui
       qbittorrent
       vlc
       protonup-qt
