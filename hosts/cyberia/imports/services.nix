@@ -14,7 +14,7 @@
   virtualisation.docker.enable = true;  
 
   services.displayManager = {
-    sessionPackages = [pkgs.hyprland];
+    sessionPackages = [pkgs.hyprland pkgs.niri];
     sddm = {
       wayland.enable = true;
       enable = true;
@@ -26,8 +26,6 @@
 
   services.openssh.enable = true;
  
-  programs.sway.enable = true;
-
   services.upower.enable = true; # needed for hyprpanel
    
   services.pcscd.enable = true; # needed for gpg
