@@ -26,10 +26,8 @@
     "Print".action.screenshot-screen = {write-to-disk = true;};
     "Mod+Shift+Alt+S".action = screenshot-window;
     "Mod+Shift+S".action = screenshot;
-    "Mod+D".action = spawn "${pkgs.anyrun}/bin/anyrun";
-    "Mod+Return".action = spawn "${
-      inputs.ghostty.packages.${pkgs.system}.default
-    }/bin/ghostty";
+    "Mod+R".action = spawn "${pkgs.rofi}/bin/rofi" "-show" "drun" "-show-icons";
+	"Mod+T".action = spawn "${pkgs.wezterm}/bin/wezterm";
     "Ctrl+Alt+L".action = spawn "sh -c pgrep hyprlock || hyprlock";
 
     "Mod+U".action = spawn "env XDG_CURRENT_DESKTOP=gnome gnome-control-center";

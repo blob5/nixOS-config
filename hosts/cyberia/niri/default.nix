@@ -10,6 +10,7 @@
       seatd
       jaq
       niri
+      hyprlock
     ];
   };
 }
