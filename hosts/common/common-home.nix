@@ -39,7 +39,7 @@
       obsidian
       superfile
       libreoffice-qt
-      signal-desktop
+      signal-desktop-bin
       inputs.zen-browser.packages."${system}".twilight
       kdePackages.dolphin
       qbittorrent
