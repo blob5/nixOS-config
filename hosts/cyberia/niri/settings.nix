@@ -35,7 +35,6 @@ in {
           click-method = "button-areas";
           dwt = true;
           dwtp = true;
-          natural-scroll = true;
           scroll-method = "two-finger";
           tap = true;
           tap-button-map = "left-right-middle";
