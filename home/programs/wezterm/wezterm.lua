@@ -14,6 +14,7 @@ bar.apply_to_config(config)
 
 config.window_background_opacity = 0.95
 
+max_fps = 165
 
 -- and finally, return the configuration to wezterm
 return config
