@@ -26,6 +26,7 @@
       wl-clipboard
       wireguard-tools
       file
+      brightnessctl
 
       # Terminal
       foot
@@ -45,6 +46,7 @@
       qbittorrent
       vlc
       protonup-qt
+      ani-cli
 
       # Utils
       htop
