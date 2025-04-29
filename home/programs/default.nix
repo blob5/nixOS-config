@@ -4,5 +4,6 @@
     ./wezterm
     #./stylix
     ./spicetify
+    ./kitty
   ];
 }

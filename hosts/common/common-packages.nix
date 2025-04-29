@@ -5,7 +5,6 @@
   environment.systemPackages = with pkgs; [
     git
     nodejs
-    kitty
     neofetch
     fastfetch
     zed-editor
