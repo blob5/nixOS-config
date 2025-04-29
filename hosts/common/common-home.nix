@@ -46,8 +46,10 @@
       qbittorrent
       vlc
       protonup-qt
-      inputs.lobster.packages."${system}".default
-      
+
+      # lobster
+      inputs.lobster.packages."${system}".lobster
+
       # fastanime
       inputs.fastanime.packages."${system}".default
       mpv

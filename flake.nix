@@ -9,7 +9,8 @@
     ags.url = "github:Aylur/ags";
 
     fastanime.url = "github:Benexl/fastanime";
-    lobster.url = "github:justchokingaround/lobster";
+    lobster.url = "github:blob5/lobster?ref=fix-from-old-fork";
+
 
     niri = {
       url = "github:sodiboo/niri-flake";
