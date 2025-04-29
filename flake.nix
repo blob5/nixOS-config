@@ -8,6 +8,9 @@
   
     ags.url = "github:Aylur/ags";
 
+    fastanime.url = "github:Benexl/fastanime";
+    lobster.url = "github:justchokingaround/lobster";
+
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -46,7 +46,15 @@
       qbittorrent
       vlc
       protonup-qt
-      ani-cli
+      inputs.lobster.packages."${system}".default
+      
+      # fastanime
+      inputs.fastanime.packages."${system}".default
+      mpv
+      mpvScripts.uosc
+      mpvScripts.thumbfast
+      ffmpeg
+      chafa
 
       # Utils
       htop
