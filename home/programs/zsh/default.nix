@@ -45,7 +45,7 @@
       
     };
 
-    initExtra = ''
+    initContent = ''
     
     myfsinfo() {
       DEVICE=$(df / | awk 'NR==2 {print $1}')
@@ -100,6 +100,9 @@
       function qgrep() {
         grep -r "$1" . | fzf
       }
+
+      source $FASTANIME_PATH/completions/fastanime.zsh
+
 
       eval "$(zoxide init zsh)"
     '';
