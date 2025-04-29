@@ -1,5 +1,12 @@
 # home/programs/zsh/default.nix
 { config, lib, pkgs, ... }: {
+
+  # Import the fastanime zsh completions
+  home.file.".config/zsh/completions/fastanime.zsh".source = builtins.fetchurl {
+    url = "https://raw.githubusercontent.com/Benexl/FastAnime/refs/heads/master/completions/fastanime.zsh";
+    sha256 = "1bqgfvfwjxk0kl7fqc3vspza4w8cgnq8w6n1k616f45in7hl87c9";
+  };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -101,7 +108,8 @@
         grep -r "$1" . | fzf
       }
 
-      source $FASTANIME_PATH/completions/fastanime.zsh
+      # Load zsh fastanime completions
+      source ~/.config/zsh/completions/fastanime.zsh
 
 
       eval "$(zoxide init zsh)"
