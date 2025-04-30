@@ -57,6 +57,7 @@
       mpvScripts.thumbfast
       ffmpeg
       chafa
+      ani-skip
 
       # Utils
       htop
