@@ -26,7 +26,7 @@
       cd= "z"; # replace cd with zoxide
       ls = "eza"; # replace ls with eza
 
-      anime = "fastanime --dub --preview --icons --skip --fzf anilist";
+      anime = "fastanime --dub --preview --icons --fzf anilist";
 
       # aliases for my custom functions
       nixos-btw = "myfsinfo";
