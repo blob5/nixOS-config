@@ -3,7 +3,8 @@
 {
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
-    # Add any Cyberia-specific packages here
+    # Notification daemon
+    mako
   ];
 
   # Host-specific nix modules
