@@ -58,6 +58,7 @@
       ffmpeg
       chafa
       ani-skip
+      feh
 
       # Utils
       htop
