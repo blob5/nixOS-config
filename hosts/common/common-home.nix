@@ -27,6 +27,7 @@
       wireguard-tools
       file
       brightnessctl
+      pavucontrol
 
       # Terminal
       foot
@@ -46,6 +47,7 @@
       qbittorrent
       vlc
       protonup-qt
+      inputs.better-control.packages."${system}".better-control
 
       # lobster
       inputs.lobster.packages."${system}".lobster
