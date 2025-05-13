@@ -10,6 +10,8 @@
     twemoji-color-font
     fira-code
     fira-code-symbols
+    gnome-icon-theme
+    adwaita-icon-theme
   ];
 
   fonts.fontconfig.enable = true;
