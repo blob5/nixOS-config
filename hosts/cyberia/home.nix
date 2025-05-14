@@ -4,7 +4,7 @@
   imports = [
     ../common/common-home.nix
     ./niri
-    ../../home/programs/waybar
+    ../common/waybar
   ];
 
   # Host-specific home-manager settings
