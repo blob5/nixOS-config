@@ -2,6 +2,7 @@
   imports = [
     ../../home/programs
     ../../home/system
+    ./waybar
   ];
 
   home = {
@@ -29,6 +30,7 @@
       brightnessctl
       pavucontrol
       ncdu
+      blueman
 
       # Terminal
       foot
