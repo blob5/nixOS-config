@@ -22,7 +22,7 @@
             margin-right = 10;
             margin-bottom = 0;
 
-            modules-left = ["hyprland/workspaces" "cava"];
+            modules-left = ["cava"];
             # modules-center = ["clock" "custom/notification"];
             modules-center = ["idle_inhibitor" "clock"];
             modules-right = ["custom/gpuinfo" "cpu" "memory" "backlight" "pulseaudio" "bluetooth" "network" "tray" "battery"];
@@ -70,9 +70,9 @@
               on-click = "playerctl play-pause";
             };
             "custom/gpuinfo" = {
-              exec = "${../scripts/gpuinfo.sh}";
+              exec = "${pkgs.writeShellScriptBin "gpuinfo" (builtins.readFile ../scripts/gpuinfo.sh)}/bin/gpuinfo";
               return-type = "json";
-              format = " {}";
+              format = " {}";
               interval = 5; # once every 5 seconds
               tooltip = true;
               max-length = 1000;
@@ -109,20 +109,6 @@
               format-icons = ["" "" ""];
               interval = 10;
             };
-            "hyprland/language" = {
-              format = "{short}"; # can use {short} and {variant}
-              on-click = "${../scripts/keyboardswitch.sh}";
-            };
-            "hyprland/workspaces" = {
-              disable-scroll = true;
-              all-outputs = true;
-              active-only = false;
-              on-click = "activate";
-              persistent-workspaces = {
-                "*" = [1 2 3 4 5 6 7 8 9 10];
-              };
-            };
-
             "hyprland/window" = {
               format = "  {}";
               separate-outputs = true;
