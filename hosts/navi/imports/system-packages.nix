@@ -3,7 +3,13 @@
 {
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
-    # Add any Navi-specific packages here
+    # Drawing
+    krita
+    opentabletdriver
+
+    # Development
+    pwntools
+    gdb
   ];
 
   # Host-specific nix modules
