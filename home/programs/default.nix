@@ -2,7 +2,7 @@
   imports = [
     ./zsh
     ./wezterm
-    #./stylix
+    ./stylix
     ./spicetify
     ./kitty
   ];

@@ -2,7 +2,14 @@
 
 {
   stylix.enable = true;
-  stylix.image = ../../../wall/gruvbox_girl.png;
-  stylix.targets.rofi.enable = false;
-  stylix.targets.spicetify.enable = false;
+
+  stylix.autoEnable = false;
+
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+
+  stylix.targets = {
+    gtk.enable = true;
+    kde.enable = true;
+    mpv.enable = true;
+  };
 }
