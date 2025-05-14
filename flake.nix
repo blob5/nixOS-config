@@ -11,6 +11,7 @@
     fastanime.url = "github:Benexl/fastanime";
     lobster.url = "github:justchokingaround/lobster";
 
+    better-control.url = "github:rishabh5321/better-control-flake";
 
     niri = {
       url = "github:sodiboo/niri-flake";

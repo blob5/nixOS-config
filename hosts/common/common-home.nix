@@ -27,6 +27,7 @@
       wireguard-tools
       file
       brightnessctl
+      pavucontrol
       ncdu
 
       # Terminal
