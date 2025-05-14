@@ -10,6 +10,7 @@
   stylix.targets = {
     gtk.enable = true;
     kde.enable = true;
+    qt.enable = true;
     mpv.enable = true;
   };
 }
