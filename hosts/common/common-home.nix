@@ -38,7 +38,7 @@
       # Programs
       vesktop
       waypaper
-      swww
+      inputs.swww.packages."${system}".swww
       obsidian
       superfile
       libreoffice-qt
