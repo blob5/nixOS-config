@@ -14,6 +14,9 @@
       $fileManager = dolphin
       $menu = rofi -show drun -show-icons
 
+      # Set the wallpaper
+      exec = swww-daemon
+
       # Environment variables
       env = XCURSOR_SIZE,24
       env = XCURSOR_THEME,Bibata-Modern-Classic
