@@ -31,6 +31,7 @@
       pavucontrol
       ncdu
       blueman
+      dconf
 
       # Terminal
       foot
