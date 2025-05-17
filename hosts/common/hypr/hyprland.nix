@@ -154,7 +154,7 @@
       bindm = $mainMod, mouse:273, resizewindow
 
       # Screenshot
-      bind = $mainMod SHIFT, S, exec, hyprshot -m region --clipboard-only
+      bind = $mainMod SHIFT, S, exec, hyprshot -m region --clipboard-only -z
     '';
   };
 
