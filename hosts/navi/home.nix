@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
   imports = [
     ../common/common-home.nix
     ./hypr/hyprland.nix
