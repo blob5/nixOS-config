@@ -64,30 +64,19 @@
 
       # Function to create a NixOS configuration for a given host
       mkNixosConfiguration = hostName: hostSettings:
-        let
-          overlayPkgs = import nixpkgs {
-            system = hostSettings.system;
-            config = {
-              allowUnfree = true;
-            };
-            overlays = [
-              inputs.hyprpanel.overlay
-            ];
-          };
-        in
         nixpkgs.lib.nixosSystem {
           system = hostSettings.system;
           modules = [
             ./hosts/${hostName}/configuration.nix
             inputs.minegrub-world-sel-theme.nixosModules.default
             stylix.nixosModules.stylix
+            # Add the HyprPanel overlay to the NixOS system configuration
+            { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
             home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
               home-manager.backupFileExtension = "backup";
               home-manager.useUserPackages = true;
               home-manager.users.${userSettings.username} = { config, ... }: {
                 imports = [ ./hosts/${hostName}/home.nix ];
-                _module.args.pkgs = overlayPkgs;
               };
               home-manager.extraSpecialArgs = {
                 inherit inputs;
