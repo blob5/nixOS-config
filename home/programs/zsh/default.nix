@@ -26,6 +26,7 @@
       spf = "superfile";
       cd= "z"; # replace cd with zoxide
       ls = "eza"; # replace ls with eza
+      please = "sudo !!";
 
       anime = "fastanime --dub --preview --icons --fzf anilist";
 
