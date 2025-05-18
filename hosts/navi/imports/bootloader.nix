@@ -1,11 +1,16 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
-{
-  boot.plymouth.enable = true;
-  boot.plymouth.theme = "dark_planet";
-  boot.plymouth.themePackages = [ pkgs.adi1090x-plymouth-themes ];
-  
+{  
   boot.kernelParams = [ "nvidia_drm.modeset=1" ];
+
+
+  stylix.targets.plymouth.enable = false;
+
+  boot.plymouth = {
+    enable = true;
+    theme = lib.mkForce "dark_planet";
+    themePackages = [ pkgs.adi1090x-plymouth-themes ];
+  };
 
   boot.loader = {
     grub = {
