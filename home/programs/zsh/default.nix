@@ -18,6 +18,7 @@
       rebuild = "sudo nixos-rebuild switch --flake ~/.config/nixos";
       upgrade = "sudo nixos-rebuild switch --flake ~/.config/nixos --upgrade";
       update = "nix flake update --flake ~/.config/nixos";
+      repair = "sudo nix-store --verify --repair";
       n = "neovide";
       vi = "vim";
       nv = "nvim";
