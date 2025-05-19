@@ -13,7 +13,7 @@
   virtualisation.docker.enable = true;  
 
   services.displayManager = {
-    sessionPackages = [pkgs.hyprland pkgs.niri];
+    sessionPackages = [pkgs.niri];
     sddm = {
       wayland.enable = true;
       enable = true;
