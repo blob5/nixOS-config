@@ -13,6 +13,8 @@
     zsh-syntax-highlighting
     wl-clipboard
     catppuccin-sddm
+    ghostty
+    home-manager
   ];
 
   programs.wireshark.enable = true;
