@@ -13,6 +13,8 @@
 
     better-control.url = "github:rishabh5321/better-control-flake";
 
+    nixvim.url = "github:nix-community/nixvim";
+
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";

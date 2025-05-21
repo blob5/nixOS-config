@@ -19,9 +19,9 @@
       upgrade = "sudo nixos-rebuild switch --flake ~/.config/nixos --upgrade";
       update = "nix flake update --flake ~/.config/nixos";
       repair = "sudo nix-store --verify --repair";
-      n = "neovide";
+      nv = "neovide";
       vi = "vim";
-      nv = "nvim";
+      n = "nvim";
       q = "exit";
       spf = "superfile";
       cd= "z"; # replace cd with zoxide

@@ -5,5 +5,6 @@
     ./stylix
     ./spicetify
     ./kitty
+    ./nixvim
   ];
 }
