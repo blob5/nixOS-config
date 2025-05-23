@@ -90,7 +90,7 @@ in {
         ];
         default-column-width = {proportion = 0.5;};
 
-        gaps = 2;
+        gaps = 0;
         struts = {
           left = 0;
           right = 0;
