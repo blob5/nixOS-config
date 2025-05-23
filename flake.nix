@@ -2,50 +2,27 @@
   description = "NixOS";
 
   inputs = {
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    home-manager.url = "github:nix-community/home-manager";
   
-    ags.url = "github:Aylur/ags";
-
     fastanime.url = "github:Benexl/fastanime";
     lobster.url = "github:justchokingaround/lobster";
 
     better-control.url = "github:rishabh5321/better-control-flake";
 
-    nixvim.url = "github:nix-community/nixvim";
-
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    }; 
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
 
     stylix.url = "github:danth/stylix";  
    
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-    };
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
  
-    textfox.url = "github:adriankarlen/textfox";
- 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
 
     swww.url = "github:LGFae/swww";
 
-    hyprspace = {
-      url = "github:KZDKM/Hyprspace";
-      inputs.hyprland.follows = "hyprland";
-    };
+    niri.url = "github:sodiboo/niri-flake";
 
-    minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
+    ags.url = "github:Aylur/ags";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     hyprland.url = "github:hyprwm/Hyprland";  
   };
