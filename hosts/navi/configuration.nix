@@ -23,6 +23,7 @@
       ./imports/games.nix
       ../common/common-packages.nix
       ../common/common-configuration.nix
+      ../../programs/editors/neovim/lazyvim.nix
     ];
 
 
