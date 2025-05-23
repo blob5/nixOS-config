@@ -17,9 +17,10 @@
     home-manager
   ];
 
-  programs.wireshark.enable = true;
 
-  # Common nix modules
+
+  # Programs
+  programs.wireshark.enable = true;
   programs.firefox.enable = true;
   programs.fish.enable = true;
   programs.zsh.enable = true;
@@ -28,6 +29,12 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+
+  # Services
+  programs.nix-ld.enable = true;
+
+  services.envfs.enable = true;
 
   systemd.services.syncthing.environment.STNODEFAULTFOLDER = "true";
   services.syncthing = {

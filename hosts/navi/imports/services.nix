@@ -17,8 +17,6 @@
 
   programs.appimage.enable = true;
 
-  programs.nix-ld.enable = true;
-
   virtualisation.docker.enable = true;
 
   services.displayManager = {
