@@ -21,14 +21,33 @@ let
         black
       ];
       
-      # Create a derivation for the configuration
+      # Create a custom keymaps file
+      customKeymapsFile = pkgs.writeText "keymaps.lua" ''
+        -- Add Ctrl+Backspace to delete previous word in insert mode
+        vim.keymap.set('i', '<C-BS>', '<C-w>', { noremap = true, desc = 'Delete previous word' })
+      '';
+      
+      # Create a derivation for the configuration with added custom keymaps
       configDerivation = pkgs.stdenv.mkDerivation {
         name = "${name}-config";
         src = configDir;
-        phases = [ "unpackPhase" "installPhase" ];
+        buildInputs = [ pkgs.coreutils ];
+        phases = [ "unpackPhase" "buildPhase" "installPhase" ];
+        
+        buildPhase = ''
+          # Create the lua/config directory structure
+          mkdir -p lua/config
+          
+          # Create custom keymaps file
+          cat ${customKeymapsFile} > lua/config/keymaps.lua
+          
+          # Ensure the custom keymaps are loaded by adding to the init.lua
+          echo "require('config.keymaps')" >> init.lua
+        '';
+        
         installPhase = ''
           mkdir -p $out
-          cp -r $src/* $out/
+          cp -r . $out/
         '';
       };
       
