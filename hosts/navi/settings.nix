@@ -3,6 +3,12 @@
   hostname = "navi";
   timezone = "Europe/Amsterdam";
   locale = "en_US.UTF-8";
-  version = "24.11";
+  version = "25.11";
   hasNvidia = true;
+  fileSystemCreationDate = "24 March 18:17:35 2025";
+
+  bootloader = {
+    efiSupport = false;
+    device = "/dev/nvme0n1";
+  };
 }

@@ -12,7 +12,7 @@
     [
       ./hardware-configuration.nix
 
-      ./imports/bootloader.nix
+      ../../modules/core/boot.nix
       ./imports/internationalization.nix
       ./imports/networking.nix
       ./imports/services.nix

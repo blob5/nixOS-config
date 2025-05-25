@@ -26,6 +26,8 @@
 
   imports =
     [
+      ../../modules/core/boot.nix
+
       ./hardware-configuration.nix
       
       ./imports/amd-drivers.nix
