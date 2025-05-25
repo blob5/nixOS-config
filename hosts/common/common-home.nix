@@ -2,7 +2,6 @@
   imports = [
     ../../home/programs
     ../../home/system
-    ./waybar
   ];
 
   home = {
