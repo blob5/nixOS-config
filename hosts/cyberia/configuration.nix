@@ -31,7 +31,6 @@
       ./hardware-configuration.nix
       
       ./imports/amd-drivers.nix
-      ./imports/bootloader.nix
       ./imports/internationalization.nix
       ./imports/networking.nix
       ./imports/services.nix
