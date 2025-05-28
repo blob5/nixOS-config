@@ -25,8 +25,8 @@ in {
       spawn-at-startup = [
         (makeCommand "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1")
         (makeCommand "swww-daemon")
-        {command = ["wl-paste" "--watch" "cliphist" "store"];}
-        {command = ["wl-paste" "--type text" "--watch" "cliphist" "store"];}
+        {command = ["wl-paste"];}
+        {command = ["wl-paste" "--type text"];}
       ];
       input = {
         keyboard.xkb.layout = "us";
