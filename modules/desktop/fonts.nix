@@ -9,9 +9,11 @@
     noto-fonts-cjk-sans
     noto-fonts-emoji
     symbola
-    twemoji-color-font
     gnome-icon-theme
     adwaita-icon-theme
+    roboto
+    roboto-mono
+    dejavu_fonts
   ];
 
   fonts.fontconfig.enable = true;

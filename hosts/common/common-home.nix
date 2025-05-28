@@ -2,6 +2,8 @@
   imports = [
     ../../home/programs
     ../../home/system
+    ../../modules/desktop/fonts.nix
+    ../../modules/desktop/stylix.nix
   ];
 
   home = {
