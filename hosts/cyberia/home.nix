@@ -4,6 +4,7 @@
   imports = [
     ../common/common-home.nix
     ./niri
+    ../../modules/services/mako.nix
   ];
 
   # Host-specific home-manager settings

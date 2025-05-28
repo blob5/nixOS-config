@@ -3,8 +3,6 @@
 {
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
-    # Notification daemon
-    mako
   ];
 
   # Host-specific nix modules
