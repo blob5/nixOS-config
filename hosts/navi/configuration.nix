@@ -13,7 +13,6 @@
       ./hardware-configuration.nix
 
       ../../modules/core/boot.nix
-      ./imports/internationalization.nix
       ./imports/networking.nix
       ./imports/services.nix
       ./imports/system-packages.nix
@@ -47,19 +46,19 @@
   time.timeZone = "Europe/Amsterdam";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_AU.UTF-8"; # AM and PM but dd/mm/yy
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "nl_NL.UTF-8";
-    LC_IDENTIFICATION = "nl_NL.UTF-8";
-    LC_MEASUREMENT = "nl_NL.UTF-8";
-    LC_MONETARY = "nl_NL.UTF-8";
-    LC_NAME = "nl_NL.UTF-8";
-    LC_NUMERIC = "nl_NL.UTF-8";
-    LC_PAPER = "nl_NL.UTF-8";
-    LC_TELEPHONE = "nl_NL.UTF-8";
-    LC_TIME = "nl_NL.UTF-8";
+    LC_ADDRESS = "en_AU.UTF-8";
+    LC_IDENTIFICATION = "en_AU.UTF-8";
+    LC_MEASUREMENT = "en_AU.UTF-8";
+    LC_MONETARY = "en_AU.UTF-8";
+    LC_NAME = "en_AU.UTF-8";
+    LC_NUMERIC = "en_AU.UTF-8";
+    LC_PAPER = "en_AU.UTF-8";
+    LC_TELEPHONE = "en_AU.UTF-8";
   };
+
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;

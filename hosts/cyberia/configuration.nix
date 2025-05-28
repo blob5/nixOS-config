@@ -21,7 +21,10 @@
           KernelExperimental = "true";
       };
     };
-    
+  
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_AU.UTF-8"; # AM and PM but dd/mm/yy
+
   time.timeZone = "Europe/Amsterdam";
 
   imports =
@@ -31,7 +34,6 @@
       ./hardware-configuration.nix
       
       ./imports/amd-drivers.nix
-      ./imports/internationalization.nix
       ./imports/networking.nix
       ./imports/services.nix
       ./imports/system-packages.nix
