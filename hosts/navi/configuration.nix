@@ -19,10 +19,10 @@
       ./imports/users.nix
       ./imports/virtualization.nix
       ./imports/bluetooth.nix
-      ./imports/games.nix
       ../common/common-packages.nix
       ../common/common-configuration.nix
-      ../../programs/editors/neovim/lazyvim.nix
+      ../../modules/programs/editors/lazyvim.nix
+      ../../modules/programs/gaming/steam.nix
     ];
 
 
