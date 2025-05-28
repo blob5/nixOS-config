@@ -17,6 +17,7 @@
       platform = "qtct";
     };
     mpv.enable = true;
+    spicetify.enable = true;
   };
 
   stylix.iconTheme ={

@@ -28,8 +28,5 @@ in
     #rotatingCoverart
     pointer
   ];
-
-  #theme = spicePkgs.themes.catppuccin; # managed by stylix
-  colorScheme = "Ocean";
  };
 }
