@@ -21,6 +21,10 @@
       "files.autoSave" = "onWindowChange";
       "redhat.telemetry.enabled" = false;
       "workbench.colorTheme" = "One Dark Theme";
+
+      # Git settings
+      "git.autofetch" = true;
+      
     };
   };
 
