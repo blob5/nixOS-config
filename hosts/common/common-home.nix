@@ -4,6 +4,7 @@
     ../../home/system
     ../../modules/desktop/fonts.nix
     ../../modules/desktop/stylix.nix
+    ../../modules/programs/editors/vscode.nix
   ];
 
   home = {
@@ -110,8 +111,6 @@
 
       # Editors
       vim
-      vscode
-      neovide
       code-cursor
     ];
 
