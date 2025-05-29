@@ -23,6 +23,7 @@
       ../common/common-configuration.nix
       ../../modules/programs/editors/lazyvim.nix
       ../../modules/programs/gaming/steam.nix
+      ../../modules/programs/media-tools/media-tools.nix
     ];
 
 
