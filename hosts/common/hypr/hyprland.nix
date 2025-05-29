@@ -30,8 +30,8 @@
       general { 
           gaps_in = 0
           gaps_out = 0
-          border_size = 1
-          col.active_border = rgba(8770ffed) rgba(ff55dded) 45deg
+          border_size = 2
+          col.active_border=rgba(cba6f7ff) rgba(89b4faff) rgba(94e2d5ff) 10deg
           col.inactive_border = rgba(595959aa)
           resize_on_border = false 
           allow_tearing = false
@@ -65,15 +65,14 @@
 
       # Animations
       animations {
-          enabled = true
-          bezier = myBezier, 0.05, 0.9, 0.1, 1.05
-          animation = windows, 1, 7, myBezier
-          animation = windowsOut, 1, 7, default, popin 80%
-          animation = border, 1, 10, default
-          animation = borderangle, 1, 8, default
-          animation = fade, 1, 7, default
-          animation = workspaces, 1, 6, default
-      }
+        enabled=1
+        # bezier=overshot,0.05,0.9,0.1,1.1
+        bezier=overshot,0.13,0.99,0.29,1.1
+        animation=windows,1,4,overshot,slide
+        animation=border,1,10,default
+        animation=fade,1,10,default
+        animation=workspaces,1,6,overshot,slidevert
+    }
 
       # Layouts
       dwindle {
