@@ -46,12 +46,10 @@
       
       ./imports/amd-drivers.nix
       ./imports/networking.nix
-      ./imports/services.nix
       ./imports/system-packages.nix
       ./imports/users.nix
       ../common/common-packages.nix
       ../common/common-configuration.nix
-
     ];
 
   system.stateVersion = "24.05";

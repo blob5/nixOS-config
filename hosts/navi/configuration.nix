@@ -14,7 +14,7 @@
 
       ../../modules/core/boot.nix
       ./imports/networking.nix
-      ./imports/services.nix
+      ./services.nix
       ./imports/system-packages.nix
       ./imports/users.nix
       ./imports/virtualization.nix

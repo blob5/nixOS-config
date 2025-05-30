@@ -1,35 +1,7 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
-  services.tailscale.enable = true;
-
-  services.sunshine = {
-    enable = true;
-    autoStart = false;
-    capSysAdmin = true;
-    openFirewall = true;
-  };
-
-  virtualisation.docker.enable = true;  
-
-  services.displayManager = {
-    sessionPackages = [pkgs.niri];
-    sddm = {
-      wayland.enable = true;
-      enable = true;
-      theme = "catppuccin-mocha";
-      package = pkgs.kdePackages.sddm;
-    };
-  };
-  services.printing.enable = true;
-
-  services.openssh.enable = true;
- 
-  services.upower.enable = true; # needed for hyprpanel
-   
-  services.pcscd.enable = true; # needed for gpg
-
-  services.pulseaudio.enable = false;
+   # Audio
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -77,4 +49,5 @@
       };
     };
   };
+
 }

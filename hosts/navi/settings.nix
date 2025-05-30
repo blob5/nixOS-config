@@ -6,6 +6,7 @@
   version = "25.11";
   hasNvidia = true;
   fileSystemCreationDate = "24 March 18:17:35 2025";
+  compositor = "hyprland";
 
   bootloader = {
     efiSupport = false;
