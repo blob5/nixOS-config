@@ -26,6 +26,8 @@
     [
       ../../modules/core/boot.nix
 
+      ./services.nix
+
       ./hardware-configuration.nix
       
       ./imports/amd-drivers.nix
