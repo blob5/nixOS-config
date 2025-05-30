@@ -1,10 +1,9 @@
-{ config, pkgs, ... }:
+{pkgs, ... }:
 
 {
 	hardware.bluetooth = {
       enable = true;
       powerOnBoot = true;
-      #package = pkgs.bluez5-experimental;
       package = pkgs.bluez;
       settings.Policy.AutoEnable = "true";
       settings.General = {

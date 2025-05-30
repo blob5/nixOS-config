@@ -18,7 +18,6 @@
       ./imports/system-packages.nix
       ./imports/users.nix
       ./imports/virtualization.nix
-      ./imports/bluetooth.nix
       ../common/common-packages.nix
       ../common/common-configuration.nix
       ../../modules/programs/editors/lazyvim.nix
