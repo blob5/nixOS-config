@@ -6,7 +6,7 @@ in
 {
   # sddm
   services.displayManager = {
-    sessionPackages = [pkgs.${hostSettings.compositor}];
+    sessionPackages = with pkgs; [systemSettings.compositor]
     sddm = {
       wayland.enable = true;
       enable = true;
