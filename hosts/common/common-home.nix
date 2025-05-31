@@ -60,9 +60,6 @@
 
       # fastanime
       inputs.fastanime.packages."${system}".default
-      mpv
-      mpvScripts.uosc
-      mpvScripts.thumbfast
       ffmpeg
       chafa
       ani-skip

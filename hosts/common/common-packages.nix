@@ -15,6 +15,11 @@
     catppuccin-sddm
     ghostty
     home-manager
+
+    mpv
+    mpvScripts.uosc
+    mpvScripts.thumbfast
+
   ];
 
 
