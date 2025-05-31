@@ -4,6 +4,11 @@
 
 	imports = [
 		../../modules/core/bluetooth.nix
+		../../modules/core/networking.nix
+		../../modules/core/boot.nix
+
+		../../modules/programs/editors/lazyvim.nix
+
 		];
 
 	nix.settings.auto-optimise-store = true;
@@ -15,17 +20,5 @@
 	};
 	services.dbus.enable = true;
 
-	systemd.services.tailscale-autoconnect = {
-		description = "Auto-connect to Tailscale";
-		after = [ "network-online.target" "tailscaled.service" ];
-		wants = [ "network-online.target" ];
-		wantedBy = [ "multi-user.target" ];
 
-		serviceConfig = {
-			Type = "oneshot";
-			ExecStart = ''
-			${pkgs.tailscale}/bin/tailscale up
-			'';
-		};
-		};
 }

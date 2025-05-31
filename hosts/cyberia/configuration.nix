@@ -24,14 +24,12 @@
 
   imports =
     [
-      ../../modules/core/boot.nix
 
       ./services.nix
 
       ./hardware-configuration.nix
       
       ./imports/amd-drivers.nix
-      ./imports/networking.nix
       ./imports/system-packages.nix
       ./imports/users.nix
       ../common/common-packages.nix
