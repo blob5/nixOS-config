@@ -59,9 +59,8 @@
     {
       matches = [
         {app-id = "zen";}
-        {app-id = "firefox";}
-        {app-id = "chromium-browser";}
-        {app-id = "edge";}
+        {app-id = "obsidian";}
+        {app-id = "vesktop";}
       ];
       open-maximized = true;
     }
