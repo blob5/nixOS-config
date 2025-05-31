@@ -19,12 +19,11 @@
       upgrade = "sudo nixos-rebuild switch --flake ~/.config/nixos --upgrade";
       update = "nix flake update --flake ~/.config/nixos";
       repair = "sudo nix-store --verify --repair";
-      nv = "neovide";
       vi = "vim";
       n = "nvim";
       q = "exit";
       spf = "superfile";
-      cd= "z"; # replace cd with zoxide
+      cd = "z"; # replace cd with zoxide
       ls = "eza"; # replace ls with eza
       please = "sudo !!";
 
