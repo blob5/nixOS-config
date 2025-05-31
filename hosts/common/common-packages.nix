@@ -5,13 +5,8 @@
   environment.systemPackages = with pkgs; [
     git
     nodejs
-    neofetch
     fastfetch
     zed-editor
-    oh-my-posh
-    zsh-autosuggestions    
-    zsh-syntax-highlighting
-    wl-clipboard
     catppuccin-sddm
     ghostty
     home-manager

@@ -17,12 +17,9 @@
       python312
 
       # System
-      papirus-icon-theme
       killall
       gnome-bluetooth
-      swayosd
       playerctl
-      pywal
       bluez
       bluez-tools
       hyprshot
@@ -39,8 +36,6 @@
       dconf
 
       # Terminal
-      foot
-      starship
       wezterm
 
       # Programs
@@ -50,12 +45,10 @@
       obsidian
       superfile
       libreoffice-qt
-      signal-desktop-bin
       inputs.zen-browser.packages."${system}".twilight
       kdePackages.dolphin
       qbittorrent
       vlc
-      protonup-qt
       inputs.better-control.packages."${system}".better-control
 
       # lobster
@@ -110,7 +103,6 @@
       asciiquarium-transparent
 
       # Editors
-      vim
       code-cursor
     ];
 
