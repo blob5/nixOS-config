@@ -69,7 +69,7 @@
       bar.customModules.updates.pollingInterval = 1440000;
       menus.clock.time.military = true;
       menus.clock.time.hideSeconds = false;
-      bar.clock.format = "%y/%m/%d  %H:%M";
+      bar.clock.format = "%d/%m/%y  %H:%M:%S";
       bar.media.show_active_only = true;
       bar.notifications.show_total = false;
       bar.launcher.autoDetectIcon = true;
