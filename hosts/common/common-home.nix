@@ -1,6 +1,5 @@
 { inputs, pkgs, systemSettings, userSettings, ... }: {
   imports = [
-    ../../home/system
     ../../modules/desktop/fonts.nix
     ../../modules/desktop/stylix.nix
     ../../modules/programs/editors/vscode.nix
@@ -8,6 +7,7 @@
     ../../modules/programs/terminals/kitty/kitty.nix
     ../../modules/programs/terminals/zsh/zsh.nix
     ../../modules/programs/spicetify/spicetify.nix
+    ../../modules/desktop/rofi/rofi.nix
   ];
 
   home = {
