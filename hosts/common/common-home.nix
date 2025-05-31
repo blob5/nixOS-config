@@ -1,10 +1,13 @@
 { inputs, pkgs, systemSettings, userSettings, ... }: {
   imports = [
-    ../../home/programs
     ../../home/system
     ../../modules/desktop/fonts.nix
     ../../modules/desktop/stylix.nix
     ../../modules/programs/editors/vscode.nix
+    ../../modules/programs/terminals/wezterm/wezterm.nix
+    ../../modules/programs/terminals/kitty/kitty.nix
+    ../../modules/programs/terminals/zsh/zsh.nix
+    ../../modules/programs/spicetify/spicetify.nix
   ];
 
   home = {

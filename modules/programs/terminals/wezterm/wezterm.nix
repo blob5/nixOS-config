@@ -1,4 +1,4 @@
-# home/programs/wezterm/default.nix
+# modules/programs/terminals/wezterm/wezterm.nix
 { config, lib, pkgs, ... }: {
   
   programs.wezterm = {

@@ -1,4 +1,4 @@
-# home/programs/spicetify/default.nix
+# modules/programs/spicetify/spicetify.nix
 { inputs, config, lib, pkgs, ... }: {
 imports = [
   # For home-manager

@@ -1,4 +1,4 @@
-# home/programs/zsh/default.nix
+# modules/programs/terminals/zsh/zsh.nix
 { config, lib, pkgs, ... }: {
 
   # Import the fastanime zsh completions
