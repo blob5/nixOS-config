@@ -14,10 +14,10 @@
 
       ./hardware-configuration.nix
       
-      ./imports/amd-drivers.nix
       ./imports/system-packages.nix
       ../common/common-packages.nix
       ../common/common-configuration.nix
+      ../../modules/drivers/amd.nix
     ];
 
   system.stateVersion = "24.05";
