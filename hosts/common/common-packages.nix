@@ -12,6 +12,8 @@
     ghostty
     home-manager
 
+    nixfmt-rfc-style
+
     mpv
     mpvScripts.uosc
     mpvScripts.thumbfast
