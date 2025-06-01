@@ -17,4 +17,10 @@
   };
 
   virtualisation.docker.enable = true;
+
+  # COnfigure keymap
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
 }
