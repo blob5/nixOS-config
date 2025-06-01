@@ -68,11 +68,6 @@
       bindkey "^[[1;5D" backward-word # ctrl+right arrow
       bindkey "^H" backward-kill-word # ctrl+backspace
 
-      # Fix for niri when running wayland
-      if pgrep -x niri >/dev/null; then
-        export DISPLAY=:0
-      fi
-
 
       # Enable color support
       export CLICOLOR=1
