@@ -19,5 +19,9 @@
       ../../modules/drivers/amd.nix
     ];
 
+  environment.systemPackages = with pkgs; [
+    xwayland-satellite # For XWayland support
+  ];
+
   system.stateVersion = "24.05";
 }
