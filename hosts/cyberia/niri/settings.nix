@@ -76,7 +76,14 @@ in {
         border = {
           enable = true;
           width = 1;
-          active.color = "#8a9e6b";
+          active.gradient = {
+            angle = 10.0;
+            stops = [
+              { color = "rgba(cba6f7ff)"; position = 0.0; }
+              { color = "rgba(89b4faff)"; position = 0.5; }
+              { color = "rgba(94e2d5ff)"; position = 1.0; }
+            ];
+          };
           inactive.color = "#2a2e2a";
         };
         shadow = {
