@@ -14,10 +14,10 @@
 
       ./services.nix
       ./imports/system-packages.nix
-      ./imports/users.nix
       ./imports/virtualization.nix
       ../common/common-packages.nix
       ../common/common-configuration.nix
+      ../../modules/core/users.nix
       ../../modules/programs/gaming/steam.nix
       ../../modules/programs/media-tools/media-tools.nix
     ];
