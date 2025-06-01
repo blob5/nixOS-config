@@ -27,6 +27,7 @@ in {
         (makeCommand "swww-daemon")
         {command = ["wl-paste"];}
         {command = ["wl-paste" "--type text"];}
+        {command = ["xwayland-satellite"];}
       ];
       input = {
         keyboard.xkb.layout = "us";
