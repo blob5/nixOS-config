@@ -78,8 +78,8 @@ in {
           width = 1;
           active.gradient = {
             angle = 10;
-            from = "rgba(cba6f7ff)";
-            to = "rgba(94e2d5ff)";
+            from = "rgb(203, 166, 247)";
+            to = "rgb(148, 226, 213)";
           };
           inactive.color = "#2a2e2a";
         };
