@@ -14,7 +14,6 @@
 
       ./hardware-configuration.nix
       
-      ./imports/system-packages.nix
       ../common/common-packages.nix
       ../common/common-configuration.nix
       ../../modules/drivers/amd.nix

@@ -13,7 +13,6 @@
       ./hardware-configuration.nix
 
       ./services.nix
-      ./imports/system-packages.nix
       ../../modules/virtualization/virtualization.nix
       ../common/common-packages.nix
       ../common/common-configuration.nix
@@ -29,7 +28,16 @@
   };
 
 
+  # Host-specific system packages
+  environment.systemPackages = with pkgs; [
+    # Drawing
+    krita
+    opentabletdriver
 
+    # Development
+    pwntools
+    gdb
+  ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
