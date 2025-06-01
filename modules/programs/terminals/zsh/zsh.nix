@@ -22,6 +22,7 @@
       vi = "vim";
       n = "nvim";
       q = "exit";
+      c = "code .";
       spf = "superfile";
       cd = "z"; # replace cd with zoxide
       ls = "eza"; # replace ls with eza
