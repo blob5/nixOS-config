@@ -14,8 +14,7 @@
 
       # Nix LSP settings
       "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nil";
-      "nix.serverSettings.nil.formatting.command" = "nixfmt";
+      "nix.serverPath" = "nixfmt";
 
       # General settings
       "files.autoSave" = "onWindowChange";
