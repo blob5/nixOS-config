@@ -41,6 +41,7 @@
             ] ++ (if showBattery then [ "battery" ] else [ ]);
             "middle" = [
               "media"
+              "cava"
             ];
             "right" = [
               "cpu"
@@ -72,6 +73,9 @@
       bar.notifications.show_total = false;
       bar.launcher.autoDetectIcon = true;
       bar.battery.hideLabelWhenFull = true;
+      bar.customModules.cava.showIcon = false;
+      bar.customModules.cava.stereo = true;
+      bar.customModules.cava.showActiveOnly = true;
       menus.dashboard.controls.enabled = false;
       menus.dashboard.shortcuts.enabled = true;
       menus.clock.weather.enabled = false;
