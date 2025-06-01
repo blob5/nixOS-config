@@ -8,6 +8,7 @@
     fastfetch
     zed-editor
     catppuccin-sddm
+    sddm-astronaut
     ghostty
     home-manager
 

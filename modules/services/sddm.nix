@@ -10,7 +10,7 @@ in
     sddm = {
       wayland.enable = true;
       enable = true;
-      theme = "catppuccin-mocha";
+      theme = "sddm-astronaut-theme";
       package = pkgs.kdePackages.sddm;
     };
   };
