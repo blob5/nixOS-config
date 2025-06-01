@@ -6,6 +6,8 @@
 		../../modules/core/bluetooth.nix
 		../../modules/core/networking.nix
 		../../modules/core/boot.nix
+		../../modules/core/locale.nix
+		../../modules/core/users.nix
 
 		../../modules/programs/editors/lazyvim.nix
 
