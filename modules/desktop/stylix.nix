@@ -16,7 +16,7 @@
       enable = true;
       platform = "qtct";
     };
-    mpv.enable = true;
+    vesktop.enable = true;
     spicetify.enable = true;
   };
 
