@@ -50,6 +50,7 @@
       qbittorrent
       vlc
       inputs.better-control.packages."${system}".better-control
+      kdePackages.gwenview
 
       # lobster
       inputs.lobster.packages."${system}".lobster
@@ -92,6 +93,7 @@
       burpsuite
       wireshark-qt
       bettercap
+      asn
 
       # Fun
       sl
