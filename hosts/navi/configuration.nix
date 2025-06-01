@@ -14,7 +14,7 @@
 
       ./services.nix
       ./imports/system-packages.nix
-      ./imports/virtualization.nix
+      ../../modules/virtualization/virtualization.nix
       ../common/common-packages.nix
       ../common/common-configuration.nix
       ../../modules/programs/gaming/steam.nix
