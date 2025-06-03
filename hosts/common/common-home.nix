@@ -8,7 +8,7 @@
     ../../modules/programs/terminals/zsh/zsh.nix
     ../../modules/programs/spicetify/spicetify.nix
     ../../modules/desktop/rofi/rofi.nix
-    ../../modules/programs/vesktop.nix
+    ../../modules/programs/nixcord.nix
   ];
 
   home = {

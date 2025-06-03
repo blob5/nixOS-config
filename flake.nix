@@ -16,7 +16,8 @@
     niri.url = "github:sodiboo/niri-flake";
     ags.url = "github:Aylur/ags";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    hyprland.url = "github:hyprwm/Hyprland";  
+    hyprland.url = "github:hyprwm/Hyprland";
+    nixcord.url = "github:kaylorben/nixcord";
   };
 
   outputs = { self, nixpkgs, libplacebo-pinned, home-manager, stylix, ... }@inputs:
@@ -54,6 +55,10 @@
               home-manager.users.${userSettings.username} = { config, ... }: {
                 imports = [ ./hosts/${hostName}/home.nix ];
               };
+              home-manager.sharedModules = [
+                inputs.nixcord.homeModules.nixcord
+              ];
+
               home-manager.extraSpecialArgs = {
                 inherit inputs;
                 systemSettings = hostSettings;
