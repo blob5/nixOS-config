@@ -6,12 +6,18 @@
     ../common/common-home.nix
     ./hypr/hyprland.nix
     ./hypr/hyprpanel.nix
+    ../../modules/services/easyeffects.nix
+
   ];
 
   # Host-specific home-manager settings
   home.username = "blob";
   home.homeDirectory = "/home/blob";
   home.stateVersion = "25.05"; # Match your NixOS version
+
+  # audio effects and filters
+  services.easyeffects.enable = true;
+
 
   # Host-specific git settings
   programs.git = {
