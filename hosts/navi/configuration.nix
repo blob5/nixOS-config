@@ -22,6 +22,7 @@
     ];
 
 
+  programs.hyprland.enable = true;
 
 
 
