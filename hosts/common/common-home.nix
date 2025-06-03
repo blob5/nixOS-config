@@ -8,6 +8,7 @@
     ../../modules/programs/terminals/zsh/zsh.nix
     ../../modules/programs/spicetify/spicetify.nix
     ../../modules/desktop/rofi/rofi.nix
+    ../../modules/programs/vesktop.nix
   ];
 
   home = {
@@ -39,7 +40,6 @@
       wezterm
 
       # Programs
-      vesktop
       waypaper
       inputs.swww.packages."${system}".swww
       obsidian
@@ -121,6 +121,7 @@
     enable = true;
     userEmail = "101657201+blob5@users.noreply.github.com";
   };
+
 
   programs.home-manager.enable = true;
 
