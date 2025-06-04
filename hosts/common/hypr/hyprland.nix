@@ -13,6 +13,7 @@
       $terminal = wezterm
       $fileManager = dolphin
       $menu = rofi -show drun -show-icons
+      $lock = waylock
 
       # Set the wallpaper
       exec = swww-daemon
@@ -109,6 +110,7 @@
       bind = $mainMod, J, togglesplit,
       bind = $mainMod, F, fullscreen,
       bind = $mainMod, T, togglegroup,
+      bind = $mainMod, L, exec, $lock
 
       # Move focus
       bind = $mainMod, left, movefocus, l

@@ -28,7 +28,7 @@
     "Mod+Shift+S".action = screenshot;
     "Mod+R".action = spawn "rofi" "-show" "drun" "-show-icons";
 	  "Mod+T".action = spawn "wezterm";
-    "Ctrl+Alt+L".action = spawn "hyprlock";
+    "Mod+L".action = spawn "waylock";
 
     "Mod+U".action = spawn "env XDG_CURRENT_DESKTOP=gnome gnome-control-center";
 
