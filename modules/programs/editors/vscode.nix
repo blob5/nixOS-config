@@ -6,6 +6,9 @@
     profiles.default.userSettings = {
       # Appearance
       "window.titleBarStyle" = "custom";
+      "window.menuBarVisibility" = "compact";
+
+
       "editor.smoothScrolling" = true;
       "editor.cursorBlinking" = "smooth";
       "editor.cursorSmoothCaretAnimation" = "on";
