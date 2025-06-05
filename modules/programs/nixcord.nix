@@ -18,7 +18,10 @@
       fixSpotifyEmbeds.enable = true;
       forceOwnerCrown.enable = true;
       friendsSince.enable = true;
-      imageZoom.enable = true;
+      imageZoom = {
+        enable = true;
+        size = 500.0;
+      };
       memberCount.enable = true;
       loadingQuotes = {
         enable = true;
