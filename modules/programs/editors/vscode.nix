@@ -23,7 +23,7 @@
       "files.autoSave" = "onWindowChange";
       "redhat.telemetry.enabled" = false;
       "workbench.colorTheme" = "One Dark Theme";
-
+      "editor.fontFamily" =  "'JetBrainsMono Nerd Font', 'FiraCode Nerd Font', 'Font Awesome 6 Free Solid', 'Font Awesome 5 Free Solid', 'Font Awesome 6 Free', 'Font Awesome 5 Free', 'Symbola', monospace";
       # Git settings
       "git.autofetch" = true;
       
