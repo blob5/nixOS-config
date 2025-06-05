@@ -38,6 +38,9 @@
       cll = "clear && ls";  # Clear screen and list files
       cla = "clear && ls -la";  # Clear screen and list all files
       
+      # Development alias
+      waybar-dev = "_waybar_dev";
+
       # Git aliases
       gs = "git status";
       ga = "git add";
@@ -57,11 +60,34 @@
     };
 
     initContent = ''
-    
-    myfsinfo() {
-      DEVICE=$(df / | awk 'NR==2 {print $1}')
-      sudo tune2fs -l "$DEVICE" | grep 'Filesystem created:'
-    }
+      
+      myfsinfo() {
+        DEVICE=$(df / | awk 'NR==2 {print $1}')
+        sudo tune2fs -l "$DEVICE" | grep 'Filesystem created:'
+      }
+
+      _waybar_dev() {
+        # Kill existing waybar processes
+        pkill waybar 2>/dev/null
+
+        # Start Waybar
+        waybar -c ~/.config/nixos/modules/desktop/waybar/config.jsonc \
+              -s ~/.config/nixos/modules/desktop/waybar/style.css &
+        WAYBAR_PID=$!
+
+        echo "Started Waybar with PID: $WAYBAR_PID"
+
+        # Create a file watcher for waybar using entr
+        echo ~/.config/nixos/modules/desktop/waybar/config.jsonc \
+            ~/.config/nixos/modules/desktop/waybar/style.css | \
+          tr ' ' '\n' | \
+          entr -p sh -c "kill -12 $WAYBAR_PID"
+
+        # Clean up when entr exits
+        kill "$WAYBAR_PID" 2>/dev/null
+      }
+
+
 
 
       bindkey "^[[1;5C" forward-word  # ctrl+left arrow

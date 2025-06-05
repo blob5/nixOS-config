@@ -9,6 +9,7 @@
     ../../modules/programs/spicetify/spicetify.nix
     ../../modules/desktop/rofi/rofi.nix
     ../../modules/programs/nixcord.nix
+    ../../modules/desktop/waybar/waybar.nix
   ];
 
   home = {
@@ -35,6 +36,7 @@
       ncdu
       blueman
       dconf
+      entr # file watcher
 
       # Terminal
       wezterm
