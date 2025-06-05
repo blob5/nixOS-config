@@ -5,7 +5,6 @@
   imports = [
     ../common/common-home.nix
     ./hypr/hyprland.nix
-    ./hypr/hyprpanel.nix
     ../../modules/services/easyeffects.nix
 
   ];

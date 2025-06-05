@@ -25,7 +25,7 @@
 
   programs.hyprland.enable = true;
 
-
+  systemd.user.units.swaync.enable = true;
 
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
@@ -36,6 +36,7 @@
     # Development
     pwntools
     gdb
+    swaynotificationcenter
   ];
 
   system.stateVersion = "24.11";
