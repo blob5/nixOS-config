@@ -51,6 +51,7 @@
       vlc
       inputs.better-control.packages."${system}".better-control
       kdePackages.gwenview
+      foliate
 
       # lobster
       inputs.lobster.packages."${system}".lobster
