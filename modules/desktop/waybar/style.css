@@ -211,9 +211,11 @@ color: #6F8FDB;
     padding-right: 3px;
 }
 #cpu{
-font-weight: normal;
-font-size: 22px;
-color: #915CAF;
+font-size: 15px;
+font-weight: 900;;
+color: #b37cd3;
+padding-left: 1em;
+padding-right: 1em;
 }
 #custom-led{
 background: #427287;
@@ -228,8 +230,8 @@ margin-right: 6px;
 #custom-keybindhint,
 #language,
 #memory{
-font-weight: normal;
-font-size: 22px;
+font-size: 15px;
+font-weight: 900;
 color: #E4C9AF;
 }
 #mpris{
