@@ -6,10 +6,10 @@
 }
 
 #custom-notification {
-  font-family: "JetBrains Mono Nerd Font";
-  font-size: 17px;
- color: #A1BDCE;
- margin: 2px 0px 0px 0px;
+    font-family: "JetBrains Mono Nerd Font";
+    font-size: 17px;
+    color: #A1BDCE;
+    padding-right: 0.8em;
 }
 
 window#waybar {
@@ -157,15 +157,6 @@ background:  #161320;
  
 }
 #bluetooth,
-#custom-cliphist{
-    color: #E6E7E7;
-    background:  #161320;
-    opacity: 1;
-    margin: 4px 0px 4px 0px;
-    padding-left: 4px;
-    padding-right: 4px;
- 
-}
 #battery{
     font-weight: normal;
     font-size: 22px;
@@ -178,15 +169,6 @@ background:  #161320;
  
 }
 
-#idle_inhibitor{
-color: #24966e;
-background: @bar-bg;
-    opacity: 1;
-    margin: 4px 0px 4px 0px;
-    padding-left: 4px;
-    padding-right: 4px;
-
-}
 #clock{
     color: #A1BDCE;
     font-size: 15px;
@@ -195,8 +177,8 @@ background: @bar-bg;
     background: rgba(23, 23, 23, 0.0);
     opacity: 1;
     margin: 3px 0px 0px 0px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
     border: none;
     
 }
@@ -207,22 +189,22 @@ color: #6F8FDB;
     background:  rgba(22, 19, 32, 0.0);
     opacity: 1;
     margin: 0px 0px 0px 0px;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 #cpu{
 font-size: 15px;
 font-weight: 900;;
 color: #b37cd3;
-padding-left: 1em;
-padding-right: 1em;
+padding-left: 0.5em;
+padding-right: 0.5em;
 }
 #custom-led{
 background: #427287;
 color: #FFFFFF;
 margin-top: 7px;
 margin-bottom: 7px;
-padding-left: 6px;
+padding-left: 0.5em;
 border-radius: 7px;
 margin-right: 6px;
 }
@@ -257,7 +239,6 @@ font-size: 19px;
 padding-right: 0px;
 padding-left: 4px
 }
-#custom-notifications,
 #custom-spotify,
 #taskbar,
 #custom-theme,

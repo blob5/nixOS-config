@@ -30,7 +30,6 @@
     "custom/l_end",
     "custom/r_end",
     "hyprland/window",
-    "custom/padd"
   ],
 
   "modules-right": [
@@ -44,7 +43,6 @@
     "cpu",
     "clock",
     "custom/notification",
-    "custom/padd"
   ],
 
   // sourced from modules based on config.ctl //
@@ -106,16 +104,11 @@
 
   "memory": {
     "interval": 1,
-    "rotate": 270,
-    "format": "{icon}",
-    "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
-    "max-length": 10
+    "format": " {used:0.1f}G/{total:0.1f}G",
   },
   "cpu": {
     "interval": 1,
-    "format": "{icon}",
-    "rotate": 270,
-    "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"]
+    "format": " {usage}%",
   },
 
   "mpris": {
@@ -233,21 +226,6 @@
     }
   },
 
-  "custom/script": {
-    "on-click": "~/.config/waybar/volume.sh toggle",
-    "format": ""
-  },
-
-  "custom/cliphist": {
-    "format": "{}",
-    "rotate": 0,
-    "exec": "echo ; echo 󰅇 clipboard history",
-    "on-click": "sleep 0.1 && cliphist.sh c",
-    "on-click-right": "sleep 0.1 && cliphist.sh d",
-    "on-click-middle": "sleep 0.1 && cliphist.sh w",
-    "interval": 86400, // once every day
-    "tooltip": true
-  },
 
   "custom/wbar": {
     "format": "𐌏{}", //    //
@@ -321,15 +299,6 @@
     "max-length": 25,
     "escape": true,
     "tooltip": true
-  },
-
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "rotate": 0,
-    "format-icons": {
-      "activated": "󰥔",
-      "deactivated": ""
-    }
   },
 
   "clock": {
@@ -427,11 +396,11 @@
   },
 
   "pulseaudio": {
-    "format": "{icon}",
+    "format": "{icon} {volume}%",
     "rotate": 0,
     "format-muted": "婢",
     "tooltip-format": "{icon} {desc} // {volume}%",
-    "scroll-step": 5,
+    "scroll-step": 1,
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -444,7 +413,7 @@
   },
 
   "pulseaudio#microphone": {
-    "format": "{format_source}",
+    "format": "{format_source} ",
     "rotate": 0,
     "format-source": "",
     "format-source-muted": "",
