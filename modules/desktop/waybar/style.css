@@ -255,6 +255,8 @@ margin: 0px 0px 0px 0px;
 #custom-wallchange,
 #custom-wbar,
 #window{
+padding-left: 2em;
+padding-right: 2em;
 color: #A1BDCE;
 font-family: "Martian Mono";
 }
