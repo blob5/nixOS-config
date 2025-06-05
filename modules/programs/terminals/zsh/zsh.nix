@@ -67,24 +67,31 @@
       }
 
       _waybar_dev() {
-        # Kill existing waybar processes
-        pkill waybar 2>/dev/null
+        CONFIG="$HOME/.config/nixos/modules/desktop/waybar/config.jsonc"
+        STYLE="$HOME/.config/nixos/modules/desktop/waybar/style.css"
 
-        # Start Waybar
-        waybar -c ~/.config/nixos/modules/desktop/waybar/config.jsonc \
-              -s ~/.config/nixos/modules/desktop/waybar/style.css &
-        WAYBAR_PID=$!
+        echo "Starting Waybar dev mode..."
+        
+        # Start Waybar in a loop that restarts it if it crashes
+        (
+          while true; do
+            echo "[waybar-dev] Launching Waybar..."
+            waybar -c "$CONFIG" -s "$STYLE"
+            echo "[waybar-dev] Waybar crashed or exited. Restarting in 2s..."
+            sleep 2
+          done
+        ) &
+        WAYBAR_LOOP_PID=$!
 
-        echo "Started Waybar with PID: $WAYBAR_PID"
+        # Watch files and reload (send SIGUSR2) on changes
+        echo "$CONFIG\n$STYLE" | entr -r sh -c "
+          echo '[waybar-dev] Change detected. Sending SIGUSR2...'
+          pkill -SIGUSR2 waybar 2>/dev/null || echo '[waybar-dev] No Waybar to reload.'
+        "
 
-        # Create a file watcher for waybar using entr
-        echo ~/.config/nixos/modules/desktop/waybar/config.jsonc \
-            ~/.config/nixos/modules/desktop/waybar/style.css | \
-          tr ' ' '\n' | \
-          entr -p sh -c "kill -12 $WAYBAR_PID"
-
-        # Clean up when entr exits
-        kill "$WAYBAR_PID" 2>/dev/null
+        # Cleanup
+        echo "[waybar-dev] Stopping Waybar..."
+        kill "$WAYBAR_LOOP_PID" 2>/dev/null
       }
 
 
