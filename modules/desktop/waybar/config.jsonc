@@ -20,7 +20,6 @@
   "modules-left": [
     "hyprland/workspaces",
     "mpris",
- 
   ],
   "modules-center": [
 		"cava",
@@ -30,11 +29,14 @@
 
   "modules-right": [
     "group/expand",
-    "group/expand-3",
-    "group/expand-2",
-    "group/expand-4",
+    "pulseaudio",
+    "network",
+    "temperature",
+    "bluetooth",
     "memory",
     "cpu",
+    "disk",
+    "backlight",
     "clock",
     "custom/notification",
   ],
@@ -86,20 +88,38 @@
       "error": "" // icon when errot occurs
     }
   },
-
-  "memory": {
+"memory": {
+    "interval": 10,
+    "format": "{used:0.1f}G 󰾆",
+    "format-alt": "{percentage}% 󰾆",
+    "format-alt-click": "click",
+    "tooltip": true,
+    "tooltip-format": "{used:0.1f}GB/{total:0.1f}G"
+},
+"cpu": {
+    "format": "{usage}% 󰍛",  
     "interval": 1,
-    "format": " {used:0.1f}G/{total:0.1f}G",
-  },
-  "cpu": {
-    "interval": 1,
-    "format": " {usage}%",
+    "format-alt-click": "click",
+    "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    "on-click": "gnome-system-monitor",
+},
+  "network": {
+    "format-wifi": "<span color='#00FFFF'> 󰤨 </span>{essid} ",
+    "format-ethernet": "<span color='#7FFF00'> </span>Wired ",
+    "tooltip-format": "<span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}",
+    "format-linked": "<span color='#FFA500'> 󱘖 </span>{ifname} (No IP) ",
+    "format-disconnected": "<span color='#FF4040'>  </span>Disconnected ",
+    "format-alt": "<span color='#00FFFF'> 󰤨 </span>{signalStrength}% ",
+    "interval": 1
   },
 
   "mpris": {
-    "format": "{player_icon} {dynamic}",
-    "format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
-    "max-length": 50,
+    "format": "{player_icon} {artist} - {title} [{position}:{length}]",
+    "format-paused": "{status_icon} {artist} - {title} [{position}:{length}]",
+    "on-scroll-up": "playerctl volume 0.1+",
+    "on-scroll-down": "playerctl volume 0.1-",
+    "max-length": 75,
     "player-icons": {
       "default": "⏸",
       "mpv": "🎵"
@@ -109,6 +129,37 @@
     },
     "interval": 1
   },
+
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰌘",
+    "format-disconnected": "󰌙", 
+    "tooltip-format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 50,
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+},
+  
+"network#speed": {
+    "interval": 1,
+    "format": "{ifname}",
+    "format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-ethernet": "󰌘   {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-disconnected": "󰌙", 
+    "tooltip-format": "{ipaddr}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 50,
+    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+},
+
+
   "tray": {
     "icon-size": 16,
     "rotate": 0,
@@ -121,7 +172,6 @@
       "transition-duration": 600,
       "children-class": "not-power",
       "transition-to-left": true
-      //  "click-to-reveal": true
     },
     "modules": ["custom/menu", "custom/spacer", "tray"]
   },
@@ -211,86 +261,10 @@
     }
   },
 
-
-  "custom/wbar": {
-    "format": "𐌏{}", //    //
-    "rotate": 0,
-    "exec": "echo ; echo show app menu",
-    "on-click": "wofi --show drun",
-    "on-click-right": "wbarconfgen.sh p",
-    "on-click-middle": "sleep 0.1 && quickapps.sh kitty firefox spotify code dolphin",
-    "interval": 86400,
-    "tooltip": true
-  },
-
-  "custom/theme": {
-    "format": "{}",
-    "rotate": 0,
-    "exec": "echo ; echo 󰟡 pick color",
-    "on-click": "hyprpicker",
-    "on-click-right": "themeswitch.sh -p",
-    "on-click-middle": "sleep 0.1 && themeselect.sh",
-    "interval": 86400, // once every day
-    "tooltip": true
-  },
-
-  "custom/wallchange": {
-    "format": "{}",
-    "rotate": 0,
-    "exec": "echo ; echo 󰆊 switch wallpaper",
-    "on-click": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/skyway.jpg",
-    "on-click-right": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/cloud.png",
-    "on-click-middle": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/gradient.jpg",
-    "on-scroll-up": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/torvalds.png",
-    "on-scroll-down": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/night.png",
-    "interval": 86400, // once every day
-    "tooltip": true
-  },
-  "custom/mouse": {
-    "format": "",
-    "format-alt": "",
-
-    "on-click": "m8mouse -dpi 1 -led 2 -speed 4",
-    "on-click-right": "m8mouse -dpi 1 -led 4 -speed 4",
-    "on-click-middle": "m8mouse -dpi 1 -led 7 -speed 4",
-    "tooltip": true
-  },
-
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "rotate": 0,
-    "icon-size": 18,
-    "icon-theme": "Tela-circle-dracula",
-    "spacing": 0,
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": ["Alacritty"],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
-    }
-  },
-
-  "custom/spotify": {
-    "exec": "mediaplayer.py --player spotify",
-    "format": " {}",
-    "rotate": 0,
-    "return-type": "json",
-    "on-click": "playerctl play-pause --player spotify",
-    "on-click-right": "playerctl next --player spotify",
-    "on-click-middle": "playerctl previous --player spotify",
-    "on-scroll-up": "volumecontrol.sh -p spotify i",
-    "on-scroll-down": "volumecontrol.sh -p spotify d",
-    "max-length": 25,
-    "escape": true,
-    "tooltip": true
-  },
-
   "clock": {
     "format": "{:%I:%M %p}",
     "rotate": 0,
-    "on-click": "/usr/local/bin/ags -t ActivityCenter",
-    "tooltip-format": "<tt>{calendar}</tt>",
+    "tooltip-format": "{calendar}",
     "calendar": {
       "mode": "month",
       "mode-mon-col": 3,
@@ -317,16 +291,11 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon}",
+    "format": "{icon} {percentage}%",
     "rotate": 0,
-    "format-charging": "<span color='#a6d189'>󱐋</span>",
+    "format-charging": "󱐋",
     "format-plugged": "󰂄",
-    // "format-alt": "<<span weight='bold' color='#c2864a'>{time} <span weight='bold' color='white'>| <span weight='bold' color='#82d457'>{capacity}%</span></span></span>",
-    "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
-    //  "format-icons": ["","","","","","","",""],
-    //"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    "on-click-right": "pkill waybar & hyprctl dispatch exec waybar"
-    //  "format-icons": [<i class='fa-solid fa-wifi-slash'></i>],
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
   },
 
   "backlight": {
@@ -338,63 +307,42 @@
     "min-length": 2
   },
 
-  "group/expand-2": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 600,
-      "children-class": "not-power",
-      "transition-to-left": true,
-      "click-to-reveal": true
-    },
-    "modules": [
-      "backlight",
-      "backlight/slider",
-      "custom/smallspacer",
-      "custom/led"
-    ]
-  },
-
-  "group/expand-3": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 600,
-      "children-class": "not-power",
-      "transition-to-left": true,
-      "click-to-reveal": true
-    },
-    "modules": ["pulseaudio", "pulseaudio/slider"]
-  },
-
-  "network": {
-    "tooltip": true,
-    "format-wifi": "{icon} ",
-    "format-icons": ["󰤟", "󰤢", "󰤥"],
-    //  "format-wifi": "<i class='fa-solid fa-wifi-slash'></i>",
-    "rotate": 0,
-    "format-ethernet": "󰈀 ",
-    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-    "format-linked": "󰈀 {ifname} (No IP)",
-    "format-disconnected": " ",
-    "tooltip-format-disconnected": "Disconnected",
-    "on-click": "/usr/local/bin/ags -t ControlPanel",
-    "interval": 2
+  "temperature": {
+    "interval": 10,
+    "hwmon-path": "/sys/devices/platform/PNP0C14:02/wmi_bus/wmi_bus-PNP0C14:02/466747A0-70EC-11DE-8A39-0800200C9A66/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 100,
+    "format-critical": " {temperatureC}",
+    "format": " {temperatureC}°C"
   },
 
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "rotate": 0,
-    "format-muted": "婢",
-    "tooltip-format": "{icon} {desc} // {volume}%",
-    "scroll-step": 1,
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""]
-    }
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{icon} {volume}%  {format_source}",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": " {format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": "",
+      "format-icons": {
+          "headphone": "",
+          "hands-free": "",
+          "headset": "",
+          "phone": "",
+          "portable": "",
+          "car": "",
+          "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+  },
+
+  "bluetooth": {
+      "format": "",
+      "format-disabled": "󰂳",
+      "format-connected": "󰂱 {num_connections}",
+      "tooltip-format": " {device_alias}",
+      "tooltip-format-connected": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
+      "tooltip": true,
+      "on-click": "blueman-manager",
   },
 
   "pulseaudio#microphone": {
@@ -410,61 +358,10 @@
     "scroll-step": 5
   },
 
-  "custom/notifications": {
-    "tooltip": false,
-    "format": "{icon} {}",
-    "rotate": 0,
-    "format-icons": {
-      "email-notification": "<span foreground='white'><sup></sup></span>",
-      "chat-notification": "󱋊<span foreground='white'><sup></sup></span>",
-      "warning-notification": "󱨪<span foreground='yellow'><sup></sup></span>",
-      "error-notification": "󱨪<span foreground='red'><sup></sup></span>",
-      "network-notification": "󱂇<span foreground='white'><sup></sup></span>",
-      "battery-notification": "󰁺<span foreground='white'><sup></sup></span>",
-      "update-notification": "󰚰<span foreground='white'><sup></sup></span>",
-      "music-notification": "󰝚<span foreground='white'><sup></sup></span>",
-      "volume-notification": "󰕿<span foreground='white'><sup></sup></span>",
-      "notification": "<span foreground='white'><sup></sup></span>",
-      "none": ""
-    },
-    "return-type": "json",
-    "exec-if": "which dunstctl",
-    "exec": "notifications.py",
-    "on-click": "sleep 0.1 && dunstctl history-pop",
-    "on-click-middle": "dunstctl history-clear",
-    "on-click-right": "dunstctl close-all",
-    "interval": 1,
-    "tooltip": true,
-    "escape": true
-  },
-
-  "custom/keybindhint": {
-    "format": " ",
-    "rotate": 0,
-    "on-click": "keybinds_hint.sh"
-  },
-
-  "custom/expand": {
-    "on-click": "~/.config/hypr/scripts/expand_toolbar",
-    "format": "{}",
-    "exec": "~/.config/hypr/scripts/tools/expand arrow-icon"
-  },
-
-
-
-  "backlight/slider": {
-    "min": 5,
-    "max": 100,
-    "rotate": 0,
-    "device": "intel_backlight",
-    "scroll-step": 1
-  },
-
-  "pulseaudio/slider": {
-    "min": 5,
-    "max": 100,
-    "rotate": 0,
-    "device": "pulseaudio",
-    "scroll-step": 1
+  "disk": {
+    "interval": 30,
+    "path": "/",
+    "format": "{percentage_used}% 󰋊",
+    "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
   }
 }

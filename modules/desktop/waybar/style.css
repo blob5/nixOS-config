@@ -76,40 +76,6 @@ background: rgba(23, 23, 23, 0.0);
     transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
-#taskbar button {
-    box-shadow: none;
-	text-shadow: none;
-	font-size: 4px;
-    padding: 0px;
-    border-radius: 9px;
-    margin-bottom: 3px;
-    margin-left: 0px;
-    padding-left: 3px;
-    padding-right: 3px;
-    margin-right: 0px;
-    color: @wb-color;
-    animation: tb_normal 20s ease-in-out 1;
-}
-
-#taskbar button.active {
-    background: @wb-act-bg;
-    color: @wb-act-color;
-    margin-left: 3px;
-    padding-left: 12px;
-    padding-right: 12px;
-    margin-right: 3px;
-    animation: tb_active 20s ease-in-out 1;
-    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
-    min-height: 9px; 
-}
-
-#taskbar button:hover {
-    background: @wb-hvr-bg;
-    color: @wb-hvr-color;
-    animation: tb_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
 #tray menu * {
     min-height: 16px;
     font-weight: bold;
@@ -156,7 +122,16 @@ background:  #161320;
     padding-right: 2px;
  
 }
-#bluetooth,
+#bluetooth{
+    font-weight: normal;
+    font-size: 19px;
+    color: #6F8FDB;
+    background: rgba(23, 23, 23, 0.0);
+    opacity: 1;
+    margin: 0px 0px 0px 0px;
+    padding-left: 0em;
+    padding-right: 0.5em;
+}
 #battery{
     font-weight: normal;
     font-size: 22px;
@@ -182,16 +157,7 @@ background:  #161320;
     border: none;
     
 }
-#pulseaudio{
-font-weight: normal;
-font-size: 18px;
-color: #6F8FDB;
-    background:  rgba(22, 19, 32, 0.0);
-    opacity: 1;
-    margin: 0px 0px 0px 0px;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-}
+#pulseaudio,
 #cpu{
 font-size: 15px;
 font-weight: 900;;
@@ -232,12 +198,21 @@ animation: repeat;
         
     }
 }
+#temperature{
+color: #E8EDF0;
+padding-left: 0.5em;
+padding-right: 0.5em;
+}
+#disk{
+padding-left: 0.2em;
+padding-right: 0.2em;
+}
 #network{
 color: #A1BDCE;
 font-weight: normal;
-font-size: 19px;
-padding-right: 0px;
-padding-left: 4px
+font-size: 1.2em;
+padding-right: 0.4em;
+padding-left: 0.4em;
 }
 #custom-spotify,
 #taskbar,
@@ -248,7 +223,7 @@ background:  rgba(23, 23, 23, 0.0);
 margin: 0px 0px 0px 0px;
     padding-left: 1px;
     padding-right: 1px;
-    opacity: 0.1
+    opacity: 0.3
 }
 #tray,
 #custom-updates,
@@ -293,7 +268,7 @@ font-weight: normal;
   background: #A1BDCE;
   background-color: transparent;
   box-shadow: none;
-  margin-right: 7px;
+  margin-right: 0.5em;
 }
 
 #backlight-slider trough,
@@ -367,7 +342,7 @@ font-weight: normal;
 /* Style for launchers */
 
 #custom-expand {
-    min-width: 25px;
+    min-width: 0px;
     color: #A1BDCE;
     font-size: 16px;
 }
