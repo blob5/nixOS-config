@@ -81,7 +81,7 @@
             echo "[waybar-dev] Launching Waybar..."
             waybar -c "$CONFIG" -s "$STYLE"
             echo "[waybar-dev] Waybar crashed or exited. Restarting in 2s..."
-            sleep 2
+            sleep 1
           done
         ) &
         WAYBAR_LOOP_PID=$!
