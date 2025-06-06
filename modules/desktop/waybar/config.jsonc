@@ -29,7 +29,7 @@
 
   "modules-right": [
     "group/expand",
-    "pulseaudio",
+    "wireplumber",
     "network",
     "temperature",
     "bluetooth",
@@ -315,7 +315,7 @@
     "format": " {temperatureC}°C"
   },
 
-  "pulseaudio": {
+  "wireplumber": {
       "format": "{icon} {volume}%",
       "format-bluetooth": "{icon} {volume}%  {format_source}",
       "format-bluetooth-muted": " {icon} {format_source}",
@@ -331,7 +331,7 @@
           "car": "",
           "default": ["", "", ""]
       },
-      "on-click": "pavucontrol"
+      "on-click": "better-control"
   },
 
   "bluetooth": {
@@ -342,10 +342,10 @@
       "tooltip-format-connected": "{device_enumerate}",
       "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
       "tooltip": true,
-      "on-click": "blueman-manager",
+      "on-click": "better-control -b",
   },
 
-  "pulseaudio#microphone": {
+  "wireplumber#microphone": {
     "format": "{format_source} ",
     "rotate": 0,
     "format-source": "",
