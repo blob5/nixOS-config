@@ -45,7 +45,7 @@
 
       # Programs
       waypaper
-      inputs.swww.packages."${system}".swww
+      swww
       obsidian
       superfile
       libreoffice-qt

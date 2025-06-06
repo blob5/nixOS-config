@@ -12,7 +12,6 @@
     stylix.url = "github:danth/stylix";  
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
-    swww.url = "github:LGFae/swww";
     niri.url = "github:sodiboo/niri-flake";
     ags.url = "github:Aylur/ags";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
