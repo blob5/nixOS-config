@@ -19,6 +19,7 @@
   "modules-center": [
 		"cava",
     "hyprland/window",
+    "niri/workspaces",
 		"cava",
   ],
 
@@ -67,38 +68,24 @@
     "format": " "
   },
 
-  "custom/nix-updates": {
-    "exec": "$HOME/bin/update-checker", // <--- path to script
-    "signal": 12,
-    "on-click": "", // refresh on click
-    "on-click-right": "rm ~/.cache/nix-update-last-run", // force an update
-    "interval": 3600, // refresh every hour
-    "tooltip": true,
-    "return-type": "json",
-    "format": "{} {icon}",
-    "format-icons": {
-      "has-updates": "󰚰", // icon when updates needed
-      "updating": "", // icon when updating
-      "updated": "", // icon when all packages updated
-      "error": "" // icon when errot occurs
-    }
+  "memory": {
+      "interval": 10,
+      "format": "{used:0.1f}G 󰾆",
+      "format-alt": "{percentage}% 󰾆",
+      "format-alt-click": "click",
+      "tooltip": true,
+      "tooltip-format": "{used:0.1f}GB/{total:0.1f}G"
   },
-"memory": {
-    "interval": 10,
-    "format": "{used:0.1f}G 󰾆",
-    "format-alt": "{percentage}% 󰾆",
-    "format-alt-click": "click",
-    "tooltip": true,
-    "tooltip-format": "{used:0.1f}GB/{total:0.1f}G"
-},
-"cpu": {
-    "format": "{usage}% 󰍛",  
-    "interval": 1,
-    "format-alt-click": "click",
-    "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-    "on-click": "gnome-system-monitor",
-},
+
+  "cpu": {
+      "format": "{usage}% 󰍛",  
+      "interval": 1,
+      "format-alt-click": "click",
+      "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+      "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+      "on-click": "gnome-system-monitor",
+  },
+
   "network": {
     "format-wifi": "<span color='#00FFFF'> 󰤨 </span>{essid} ",
     "format-ethernet": "<span color='#7FFF00'> </span>Wired ",
@@ -137,23 +124,22 @@
     "tooltip-format-disconnected": "󰌙 Disconnected",
     "max-length": 50,
     "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
-},
-  
-"network#speed": {
-    "interval": 1,
-    "format": "{ifname}",
-    "format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
-    "format-ethernet": "󰌘   {bandwidthUpBytes}  {bandwidthDownBytes}",
-    "format-disconnected": "󰌙", 
-    "tooltip-format": "{ipaddr}",
-    "format-linked": "󰈁 {ifname} (No IP)",
-    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
-    "tooltip-format-ethernet": "{ifname} 󰌘",
-    "tooltip-format-disconnected": "󰌙 Disconnected",
-    "max-length": 50,
-    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
-},
-
+  },
+    
+  "network#speed": {
+      "interval": 1,
+      "format": "{ifname}",
+      "format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+      "format-ethernet": "󰌘   {bandwidthUpBytes}  {bandwidthDownBytes}",
+      "format-disconnected": "󰌙", 
+      "tooltip-format": "{ipaddr}",
+      "format-linked": "󰈁 {ifname} (No IP)",
+      "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+      "tooltip-format-ethernet": "{ifname} 󰌘",
+      "tooltip-format-disconnected": "󰌙 Disconnected",
+      "max-length": 50,
+      "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+  },
 
   "tray": {
     "icon-size": 16,
@@ -198,7 +184,7 @@
   },
 
   "hyprland/window": {
-    "format": "<span  weight='bold' >{class}</span>",
+    "format": "{class}",
     "max-length": 120,
     "icon": false,
     "icon-size": 13
@@ -215,6 +201,15 @@
       "active": ""
     }
   },
+
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": ""
+    }
+  },
+
   "cava": {
     "framerate": 60,
     "autosens": 1,
