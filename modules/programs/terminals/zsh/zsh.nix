@@ -80,7 +80,7 @@
           while true; do
             echo "[waybar-dev] Launching Waybar..."
             waybar -c "$CONFIG" -s "$STYLE"
-            echo "[waybar-dev] Waybar crashed or exited. Restarting in 2s..."
+            echo "[waybar-dev] Waybar crashed or exited. Restarting in 1..."
             sleep 1
           done
         ) &
