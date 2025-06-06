@@ -70,6 +70,9 @@
         CONFIG="$HOME/.config/nixos/modules/desktop/waybar/config.jsonc"
         STYLE="$HOME/.config/nixos/modules/desktop/waybar/style.css"
 
+        # Kill any existing Waybar processes
+        pkill -f waybar 2>/dev/null || echo "[waybar-dev] No existing Waybar process found."
+
         echo "Starting Waybar dev mode..."
         
         # Start Waybar in a loop that restarts it if it crashes
