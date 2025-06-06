@@ -37,6 +37,8 @@
       blueman
       dconf
       entr # file watcher
+      lm_sensors
+      pulseaudio
 
       # Terminal
       wezterm
