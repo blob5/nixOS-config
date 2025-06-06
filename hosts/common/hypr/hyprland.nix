@@ -17,6 +17,7 @@
 
       # Set the wallpaper
       exec = swww-daemon
+      exec-once = waybar
 
       # Environment variables
       env = XCURSOR_SIZE,24
