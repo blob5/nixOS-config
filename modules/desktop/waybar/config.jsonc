@@ -14,12 +14,12 @@
 
   "modules-left": [
     "hyprland/workspaces",
+    "niri/workspaces",
     "mpris",
   ],
   "modules-center": [
 		"cava",
     "hyprland/window",
-    "niri/workspaces",
 		"cava",
   ],
 
