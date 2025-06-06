@@ -86,8 +86,8 @@
         ) &
         WAYBAR_LOOP_PID=$!
 
-        # Watch files and reload (send SIGUSR2) on changes
-        echo "$CONFIG\n$STYLE" | entr -r sh -c "
+        # Watch config file and reload (send SIGUSR2) on changes
+        echo "$CONFIG" | entr -r sh -c "
           echo '[waybar-dev] Change detected. Sending SIGUSR2...'
           pkill -SIGUSR2 waybar 2>/dev/null || echo '[waybar-dev] No Waybar to reload.'
         "
