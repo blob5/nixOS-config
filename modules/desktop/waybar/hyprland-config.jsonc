@@ -1,0 +1,38 @@
+{
+	"include": "./modules.jsonc",
+	"layer": "top",
+	"position": "top",
+	"mode": "dock",
+	"margin-left": 2,
+	"margin-right": 2,
+	"margin-top": 2,
+	"margin-bottom": 2,
+	"exclusive": true,
+	"passthrough": false,
+	"gtk-layer-shell": true,
+	"reload_style_on_change": true,
+
+	"modules-left": [
+		"hyprland/workspaces",
+		"mpris"
+	],
+	"modules-center": [
+		"cava",
+		"hyprland/window",
+		"cava"
+	],
+
+	"modules-right": [
+		"group/expand",
+		"wireplumber",
+		"network",
+		"bluetooth",
+		"memory",
+		"cpu",
+		"temperature",
+		"disk",
+		"backlight",
+		"clock",
+		"custom/notification"
+  ]
+}

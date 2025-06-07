@@ -1,5 +1,10 @@
 # modules/programs/terminals/zsh/zsh.nix
-{ config, lib, pkgs, ... }: {
+{ inputs, systemSettings, flakeRoot, ... }: 
+
+let
+  hostSettings = import "${inputs.self}/hosts/${systemSettings.hostname}/settings.nix";
+in
+{
 
   # Import the fastanime zsh completions
   home.file.".config/zsh/completions/fastanime.zsh".source = builtins.fetchurl {
@@ -66,34 +71,53 @@
         sudo tune2fs -l "$DEVICE" | grep 'Filesystem created:'
       }
 
-      _waybar_dev() {
-        CONFIG="$HOME/.config/nixos/modules/desktop/waybar/config.jsonc"
-        STYLE="$HOME/.config/nixos/modules/desktop/waybar/style.css"
 
-        # Kill any existing Waybar processes
-        pkill -f waybar 2>/dev/null || echo "[waybar-dev] No existing Waybar process found."
+      # Waybar development mode
+      # This function starts waybar in a loop, 
+      # watching for changes in the config and modules files.
+      _waybar_dev() {
+        local CONFIG="${hostSettings.flakeRoot}/modules/desktop/waybar/${hostSettings.compositor}-config.jsonc"
+        local STYLE="${hostSettings.flakeRoot}/modules/desktop/waybar/style.css"
+        local MODULES="${hostSettings.flakeRoot}/modules/desktop/waybar/modules.jsonc"
+        local configDir="${hostSettings.flakeRoot}/modules/desktop/waybar"
+
+        # Kill existing waybar processes quietly; if none found, notify once
+        if ! pkill -f waybar 2>/dev/null; then
+          echo "[waybar-dev] No existing Waybar process found."
+        else
+          echo "[waybar-dev] Existing Waybar process killed."
+        fi
 
         echo "Starting Waybar dev mode..."
-        
-        # Start Waybar in a loop that restarts it if it crashes
+
         (
+          cd "$configDir" || {
+            echo "[waybar-dev] ERROR: Failed to change directory to $configDir"
+            exit 1
+          }
+
+          # Infinite loop to keep waybar running
           while true; do
             echo "[waybar-dev] Launching Waybar..."
             waybar -c "$CONFIG" -s "$STYLE"
-            echo "[waybar-dev] Waybar crashed or exited. Restarting in 1..."
+            echo "[waybar-dev] Waybar crashed or exited. Restarting in 1 second..."
             sleep 1
           done
         ) &
-        WAYBAR_LOOP_PID=$!
+        local WAYBAR_LOOP_PID=$!
 
-        # Watch config file and reload (send SIGUSR2) on changes
-        echo "$CONFIG" | entr -r sh -c "
-          echo '[waybar-dev] Change detected. Sending SIGUSR2...'
-          pkill -SIGUSR2 waybar 2>/dev/null || echo '[waybar-dev] No Waybar to reload.'
-        "
+        # Use entr to watch config and modules, trigger reload on change
+        {
+          printf "%s\n%s\n" "$CONFIG" "$MODULES"
+        } | entr -r sh -c '
+          echo "[waybar-dev] Change detected. Sending SIGUSR2 to Waybar..."
+          if ! pkill -SIGUSR2 waybar 2>/dev/null; then
+            echo "[waybar-dev] No Waybar process to reload."
+          fi
+        '
 
-        # Cleanup
-        echo "[waybar-dev] Stopping Waybar..."
+        # Cleanup on exit (if entr loop ends, which normally it shouldn't)
+        echo "[waybar-dev] Stopping Waybar loop..."
         kill "$WAYBAR_LOOP_PID" 2>/dev/null
       }
 
