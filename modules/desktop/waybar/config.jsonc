@@ -1,4 +1,13 @@
 {
+	"position": "top",
+	"mode": "dock",
+	"margin-right": 2,
+	"margin-top": 2,
+	"margin-bottom": 2,
+	"exclusive": true,
+	"passthrough": false,
+	"reload_style_on_change": true,
+
     "upower": {
         "icon-size": 20,
         "format": "",
@@ -52,16 +61,7 @@
             "▇",
             "█"
         ],
-        "on-click": "gnome-system-monitor",
-    },
-    "network": {
-        "format-wifi": "<span color='#00FFFF'> 󰤨 </span>{essid} ",
-        "format-ethernet": "<span color='#7FFF00'> </span>Wired ",
-        "tooltip-format": "<span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}",
-        "format-linked": "<span color='#FFA500'> 󱘖 </span>{ifname} (No IP) ",
-        "format-disconnected": "<span color='#FF4040'>  </span>Disconnected ",
-        "format-alt": "<span color='#00FFFF'> 󰤨 </span>{signalStrength}% ",
-        "interval": 1
+        "on-click": "gnome-system-monitor"
     },
     "mpris": {
         "format": "{player_icon} {artist} - {title} [{position}:{length}]",
@@ -256,7 +256,7 @@
             "󰂁",
             "󰂂",
             "󰁹"
-        ],
+        ]
     },
     "backlight": {
         "device": "intel_backlight",
@@ -308,7 +308,7 @@
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
         "tooltip": true,
-        "on-click": "better-control -b",
+        "on-click": "better-control -b"
     },
     "wireplumber#microphone": {
         "format": "{format_source} ",
@@ -326,6 +326,6 @@
         "interval": 30,
         "path": "/",
         "format": "{percentage_used}% 󰋊",
-        "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
+        "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)"
     }
 }

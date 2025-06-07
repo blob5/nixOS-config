@@ -11,12 +11,17 @@ in
   # When you want ot work on the config, 
   # you can use the zsh alias `waybar-dev` to work on the config with hot reloading
 
-  home.file.".config/waybar/config.jsonc".source =
-    config.lib.file.mkOutOfStoreSymlink ./${hostSettings.compositor}-config.jsonc;
+  home.file.".config/waybar/modules.jsonc".source = ./${hostSettings.compositor}-modules.jsonc;
 
-  home.file.".config/waybar/modules.jsonc".source =
-    config.lib.file.mkOutOfStoreSymlink ./modules.jsonc;
 
-  home.file.".config/waybar/style.css".source =
-    config.lib.file.mkOutOfStoreSymlink ./style.css;
+  programs.waybar = {
+    settings = {
+      mainBar = {
+        include = [ "$HOME/.config/waybar/modules.jsonc" "config.jsonc" ];
+      };
+    };
+  };
+  home.file.".config/waybar/config.jsonc".source = ./config.jsonc;
+
+  home.file.".config/waybar/style.css".source = ./style.css;
 }

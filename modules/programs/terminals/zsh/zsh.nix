@@ -76,52 +76,70 @@ in
       # This function starts waybar in a loop, 
       # watching for changes in the config and modules files.
       _waybar_dev() {
-        local CONFIG="${hostSettings.flakeRoot}/modules/desktop/waybar/${hostSettings.compositor}-config.jsonc"
+        local MODULES="${hostSettings.flakeRoot}/modules/desktop/waybar/${hostSettings.compositor}-modules.jsonc"
+        local CONFIG="${hostSettings.flakeRoot}/modules/desktop/waybar/config.jsonc"
         local STYLE="${hostSettings.flakeRoot}/modules/desktop/waybar/style.css"
-        local MODULES="${hostSettings.flakeRoot}/modules/desktop/waybar/modules.jsonc"
-        local configDir="${hostSettings.flakeRoot}/modules/desktop/waybar"
+        local TMP_CONFIG="/tmp/waybar-dev-merged-config.jsonc"
+        local CONFIG_DIR="$(dirname "$CONFIG")"
 
-        # Kill existing waybar processes quietly; if none found, notify once
-        if ! pkill -f waybar 2>/dev/null; then
-          echo "[waybar-dev] No existing Waybar process found."
-        else
-          echo "[waybar-dev] Existing Waybar process killed."
+        # Kill all existing Waybar instances before starting
+        if pidof waybar > /dev/null; then
+          echo "[waybar-dev] Killing all existing Waybar processes..."
+          killall waybar
+          sleep 1  # Give it a moment to shut down cleanly
         fi
 
-        echo "Starting Waybar dev mode..."
-
+        # Start waybar loop in background
         (
-          cd "$configDir" || {
-            echo "[waybar-dev] ERROR: Failed to change directory to $configDir"
+          cd "$CONFIG_DIR" || {
+            echo "[waybar-dev] ERROR: Failed to cd $CONFIG_DIR"
             exit 1
           }
-
-          # Infinite loop to keep waybar running
           while true; do
             echo "[waybar-dev] Launching Waybar..."
-            waybar -c "$CONFIG" -s "$STYLE"
+            waybar -c "$TMP_CONFIG" -s "$STYLE"
             echo "[waybar-dev] Waybar crashed or exited. Restarting in 1 second..."
             sleep 1
           done
         ) &
         local WAYBAR_LOOP_PID=$!
 
-        # Use entr to watch config and modules, trigger reload on change
+        # Watch for config/module changes and reload Waybar
         {
           printf "%s\n%s\n" "$CONFIG" "$MODULES"
         } | entr -r sh -c '
-          echo "[waybar-dev] Change detected. Sending SIGUSR2 to Waybar..."
-          if ! pkill -SIGUSR2 waybar 2>/dev/null; then
-            echo "[waybar-dev] No Waybar process to reload."
+          echo "[waybar-dev] Change detected. Re-merging configs..."
+          jq -s ".[0] * .[1]" "'"$CONFIG"'" "'"$MODULES"'" > "'"$TMP_CONFIG"'"
+
+          # Get fresh PIDs right here
+          WAYBAR_PIDS=$(pidof waybar)
+
+          if [ -z "$WAYBAR_PIDS" ]; then
+            echo "[waybar-dev] No Waybar process to reload, skipping."
+            exit 0
+          fi
+
+          echo "[waybar-dev] Sending SIGUSR2 to Waybar (PID(s): $WAYBAR_PIDS) for reload..."
+          for pid in $WAYBAR_PIDS; do
+            kill -12 "$pid"
+          done
+
+          # Give Waybar some time to reload
+          sleep 1
+
+          # Check if Waybar still runs (fresh check)
+          WAYBAR_PIDS_AFTER=$(pidof waybar)
+
+          if [ -z "$WAYBAR_PIDS_AFTER" ]; then
+            echo "[waybar-dev] Waybar not found after reload, loop will restart it."
+          else
+            echo "[waybar-dev] Waybar still running after reload signal (PID(s): $WAYBAR_PIDS_AFTER)."
           fi
         '
 
-        # Cleanup on exit (if entr loop ends, which normally it shouldn't)
-        echo "[waybar-dev] Stopping Waybar loop..."
+        echo "[waybar-dev] Exiting, killing waybar loop..."
         kill "$WAYBAR_LOOP_PID" 2>/dev/null
       }
-
-
 
 
       bindkey "^[[1;5C" forward-word  # ctrl+left arrow
