@@ -40,14 +40,14 @@
     },
     "memory": {
         "interval": 10,
-        "format": "{used:0.1f}G 󰾆",
+        "format": "{used:0.1f}G  󰾆",
         "format-alt": "{percentage}% 󰾆",
         "format-alt-click": "click",
         "tooltip": true,
         "tooltip-format": "{used:0.1f}GB/{total:0.1f}G"
     },
     "cpu": {
-        "format": "{usage}% 󰍛",
+        "format": "{usage}%  󰍛",
         "interval": 1,
         "format-alt-click": "click",
         "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
@@ -131,7 +131,6 @@
         },
         "modules": [
             "custom/menu",
-            "custom/spacer",
             "tray"
         ]
     },
@@ -190,9 +189,10 @@
     },
 
     "cava": {
-        "framerate": 60,
+        "framerate": 30,
         "autosens": 1,
-        "bars": 14,
+        "bars": 20,
+        "hide_on_silence": true,
         "lower_cutoff_freq": 50,
         "higher_cutoff_freq": 10000,
         "method": "pipewire",
@@ -201,10 +201,11 @@
         "reverse": false,
         "bar_delimiter": 0,
         "monstercat": true,
-        "waves": true,
-        "noise_reduction": 0.77,
-        "input_delay": 2,
+        "waves": false,
+        "noise_reduction": 0.35,
+        "input_delay": 1,
         "format-icons": [
+            " ",
             "▁",
             "▂",
             "▃",
@@ -279,11 +280,11 @@
         "min-length": 2
     },
     "temperature": {
-        "interval": 10,
+        "interval": 5,
         "hwmon-path": "/sys/devices/platform/PNP0C14:02/wmi_bus/wmi_bus-PNP0C14:02/466747A0-70EC-11DE-8A39-0800200C9A66/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 100,
-        "format-critical": " {temperatureC}",
-        "format": " {temperatureC}°C"
+        "critical-threshold": 75,
+        "format-critical": "<span color='red'>  {temperatureC}°C</span>", 
+        "format": "  {temperatureC}°C"
     },
     "wireplumber": {
         "format": "{icon} {volume}%",

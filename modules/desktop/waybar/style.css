@@ -84,22 +84,15 @@ background: rgba(23, 23, 23, 0.0);
 }
 #backlight{
     color: #2096C0;
-    background: rgba(23, 23, 23, 0.0);
-    font-weight: normal;
     font-size: 19px;
-    margin: 1px 0px 0px 0px;
     padding-left: 0px;
     padding-right: 2px;
 }
 #bluetooth{
-    font-weight: normal;
-    font-size: 19px;
+    font-size: 1.2em;
     color: #6F8FDB;
-    background: rgba(23, 23, 23, 0.0);
-    opacity: 1;
-    margin: 0px 0px 0px 0px;
-    padding-left: 0.4em;
-    padding-right: 0.4em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
 }
 #battery{
     font-weight: normal;
@@ -112,28 +105,19 @@ background: rgba(23, 23, 23, 0.0);
     padding-right: 0px;
 }
 #clock{
-    color: #A1BDCE;
-    font-size: 15px;
-    font-weight: 900;
-    font-family: "JetBrains Mono Nerd Font";
-    background: rgba(23, 23, 23, 0.0);
-    opacity: 1;
-    margin: 3px 0px 0px 0px;
+    color: #ffd1dc;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    border: none;
 }
 #cpu{
-    font-size: 15px;
-    font-weight: 900;;
     color: #b37cd3;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
 }
 #memory{
-    font-size: 15px;
-    font-weight: 900;
-    color: #E4C9AF;
+    color: #80e976;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
 }
 #mpris{
     color: white;
@@ -152,17 +136,22 @@ background: rgba(23, 23, 23, 0.0);
     }
 }
 #temperature{
-    color: #E8EDF0;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+    color: #ffb380;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
 }
 #disk{
+    color: #ff80c8;
     padding-left: 0.2em;
     padding-right: 0.2em;
 }
+#wireplumber {
+    color: #cbeaff;
+    padding-right: 0.2em;
+    padding-left: 0.2em;
+}
 #network{
-    color: #A1BDCE;
-    font-weight: normal;
+    color: #00FFF7;
     font-size: 1.2em;
     padding-right: 0.4em;
     padding-left: 0.4em;
