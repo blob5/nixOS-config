@@ -25,6 +25,7 @@ in {
       spawn-at-startup = [
         (makeCommand "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1")
         (makeCommand "swww-daemon")
+        {command = ["waybar"];}
         {command = ["wl-paste"];}
         {command = ["wl-paste" "--type text"];}
         {command = ["xwayland-satellite"];}
