@@ -13,11 +13,13 @@ in
 
   home.file.".config/waybar/modules.jsonc".source = ./${hostSettings.compositor}-modules.jsonc;
 
-
+  # Silly workaround to make waybar work with multple files
+  # I don't put the inlcude inside the files themselves beacuse otherwise the waybar-dev
+  # alias would not work properly
   programs.waybar = {
     settings = {
       mainBar = {
-        include = [ "$HOME/.config/waybar/modules.jsonc" "config.jsonc" ];
+        include = [ "$HOME/.config/waybar/modules.jsonc" "$HOME/.config/waybar/config.jsonc" ];
       };
     };
   };
