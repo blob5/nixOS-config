@@ -6,9 +6,7 @@
 		"mpris"
 	],
 	"modules-center": [
-		"cava",
 		"niri/window",
-		"cava"
 	],
 
 	"modules-right": [
