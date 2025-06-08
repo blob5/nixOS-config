@@ -49,8 +49,6 @@
     "cpu": {
         "format": "{usage}%  󰍛",
         "interval": 1,
-        "format-alt-click": "click",
-        "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
         "format-icons": [
             "▁",
             "▂",
@@ -60,8 +58,7 @@
             "▆",
             "▇",
             "█"
-        ],
-        "on-click": "gnome-system-monitor"
+        ]
     },
     "mpris": {
         "format": "{player_icon} {artist} - {title} [{position}:{length}]",
@@ -83,12 +80,12 @@
         "format-wifi": "{icon}",
         "format-ethernet": "󰌘",
         "format-disconnected": "󰌙",
-        "tooltip-format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
-        "format-linked": "󰈁 {ifname} (No IP)",
+        "format-alt-click": "click",
+        "format-alt": "<span size='x-small'>{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}</span>",        "format-linked": "󰈁 {ifname} (No IP)",
         "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
         "tooltip-format-ethernet": "{ifname} 󰌘",
         "tooltip-format-disconnected": "󰌙 Disconnected",
-        "max-length": 50,
+        "max-length": 100,
         "format-icons": [
             "󰤯",
             "󰤟",
@@ -220,7 +217,7 @@
         }
     },
     "clock": {
-        "format": "{:%I:%M %p}",
+        "format": "{:%I:%M %p}",
         "rotate": 0,
         "tooltip-format": "{calendar}",
         "calendar": {
@@ -283,11 +280,11 @@
         "interval": 5,
         "hwmon-path": "/sys/devices/platform/PNP0C14:02/wmi_bus/wmi_bus-PNP0C14:02/466747A0-70EC-11DE-8A39-0800200C9A66/hwmon/hwmon2/temp1_input",
         "critical-threshold": 75,
-        "format-critical": "<span color='red'>  {temperatureC}°C</span>", 
+        "format-critical": "<span color='red'> {temperatureC}°C</span>", 
         "format": "  {temperatureC}°C"
     },
     "wireplumber": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}  {volume}%",
         "format-bluetooth": "{icon} {volume}%  {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
