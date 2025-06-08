@@ -182,6 +182,13 @@
             "active": ""
         }
     },
+    "niri/window": {
+        "format": "{title}",
+        "max-length": 120,
+        "icon": false,
+        "icon-size": 13
+    },
+
     "cava": {
         "framerate": 60,
         "autosens": 1,
