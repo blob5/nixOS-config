@@ -113,6 +113,7 @@
       aalib
       pipes
       asciiquarium-transparent
+      cava
 
       # Editors
       code-cursor
