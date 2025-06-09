@@ -14,9 +14,6 @@
 
     nixfmt-rfc-style
 
-    mpv
-    mpvScripts.uosc
-    mpvScripts.thumbfast
 
     waylock
 

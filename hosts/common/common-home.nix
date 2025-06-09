@@ -39,6 +39,11 @@
       entr # file watcher
       lm_sensors
       pulseaudio
+      (mpv.override { scripts = [
+        mpvScripts.modernx
+        mpvScripts.thumbfast
+        mpvScripts.mpris
+      ]; })
 
       # Terminal
       wezterm
