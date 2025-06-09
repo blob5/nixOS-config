@@ -40,11 +40,11 @@
       lm_sensors
       pulseaudio
       (mpv.override { scripts = [
-        mpvScripts.modernx
+        mpvScripts.uosc
         mpvScripts.thumbfast
         mpvScripts.mpris
       ]; })
-
+      
       # Terminal
       wezterm
 
