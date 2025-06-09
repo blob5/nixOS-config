@@ -5,7 +5,7 @@
 
   stylix.autoEnable = false;
 
-  stylix.base16Scheme = ./base16-colorscheme.yaml;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
 
   stylix.polarity = "dark";
 
@@ -19,6 +19,15 @@
     vesktop.enable = true;
     spicetify.enable = true;
   };
+
+  stylix.targets.gtk.extraCss = ''
+    /* Button styling - ensures readable text */
+    button {
+      color: @theme_fg_color;
+      background-color: @theme_bg_color;
+      border: 0.1em solid @borders;
+    }
+  '';
 
   stylix.iconTheme ={
     enable = true;
