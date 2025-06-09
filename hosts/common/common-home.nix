@@ -1,7 +1,7 @@
 { inputs, pkgs, systemSettings, userSettings, ... }: {
   imports = [
     ../../modules/desktop/fonts.nix
-    ../../modules/desktop/stylix.nix
+    ../../modules/desktop/stylix/stylix.nix
     ../../modules/programs/editors/vscode.nix
     ../../modules/programs/terminals/wezterm/wezterm.nix
     ../../modules/programs/terminals/kitty/kitty.nix

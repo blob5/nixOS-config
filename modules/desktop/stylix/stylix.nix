@@ -5,7 +5,7 @@
 
   stylix.autoEnable = false;
 
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  stylix.base16Scheme = ./base16-colorscheme.yaml;
 
   stylix.polarity = "dark";
 
