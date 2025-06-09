@@ -180,7 +180,7 @@
     },
     "niri/window": {
         "format": "{title}",
-        "max-length": 120,
+        "max-length": 50,
         "icon": false,
         "icon-size": 13
     },
@@ -290,6 +290,7 @@
         "format-muted": " {format_source}",
         "format-source": " {volume}%",
         "format-source-muted": "",
+        "reverse-scrolling": 1,
         "format-icons": {
             "headphone": "",
             "hands-free": "",
