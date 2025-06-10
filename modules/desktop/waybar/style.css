@@ -47,11 +47,6 @@ tooltip {
 #custom-smallspacer{
     opacity: 0.0;
 }
-#custom-mouse{
-    font-size: 14px;
-    margin-bottom: 6px;
-    background:  #161320;
-}
 #custom-power{
     font-size: 15px;
     color: #FFFFFF;
@@ -73,7 +68,6 @@ tooltip {
     padding-right: 0.3em;
 }
 #battery{
-    font-weight: normal;
     font-size: 22px;
     color: #a6d189;
     background:  rgba(23, 23, 23, 0.0);
