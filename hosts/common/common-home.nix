@@ -58,7 +58,7 @@
       kdePackages.dolphin
       qbittorrent
       vlc
-      inputs.better-control.packages."${system}".better-control
+      better-control
       kdePackages.gwenview
       foliate
 
