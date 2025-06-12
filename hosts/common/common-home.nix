@@ -55,13 +55,14 @@
       superfile
       libreoffice-qt
       inputs.zen-browser.packages."${system}".twilight
-      kdePackages.dolphin
+      kdePackages.dolphin # File manager
+      kdePackages.ark # Archive manager
+      kdePackages.gwenview # Image viewer
       qbittorrent
       vlc
       better-control
-      kdePackages.gwenview
-      foliate
-
+      foliate # E reader
+      
       # lobster
       inputs.lobster.packages."${system}".lobster
 
