@@ -37,6 +37,9 @@
     pwntools
     gdb
     swaynotificationcenter
+    (blender.override {
+      cudaSupport = true;
+    })
   ];
 
   system.stateVersion = "24.11";
