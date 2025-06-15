@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     cudaPackages.cudatoolkit
     cudaPackages.cudnn
+    nvidia-vaapi-driver
   ];
 
   hardware.nvidia = {
