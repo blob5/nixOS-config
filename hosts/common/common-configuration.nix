@@ -25,6 +25,8 @@
 		];
 	};
 
+	systemd.user.units.swaync.enable = true;
+
 
 	nix.settings.auto-optimise-store = true;
 	nix.gc = {

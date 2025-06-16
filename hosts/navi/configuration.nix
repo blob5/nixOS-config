@@ -25,8 +25,6 @@
 
   programs.hyprland.enable = true;
 
-  systemd.user.units.swaync.enable = true;
-
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
     # Drawing
