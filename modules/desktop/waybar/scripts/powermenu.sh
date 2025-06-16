@@ -13,7 +13,7 @@
 theme="~/.config/rofi/powermenu/powermenu.rasi"
 
 # CMDs
-uptime="uptime | sed -E 's/^.*up *([^,]+),.*user.*/\1/'"
+uptime="`uptime | sed -E 's/^.*up *([^,]+),.*user.*/\1/'`"
 host=`hostname`
 
 # Options
