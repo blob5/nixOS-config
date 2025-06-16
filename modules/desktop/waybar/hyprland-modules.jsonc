@@ -21,6 +21,7 @@
 		"disk",
 		"backlight",
 		"clock",
-		"custom/notification"
+		"custom/notification",
+		"custom/power"
   ]
 }

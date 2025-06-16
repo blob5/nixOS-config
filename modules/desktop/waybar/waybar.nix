@@ -26,4 +26,9 @@ in
   home.file.".config/waybar/config.jsonc".source = ./config.jsonc;
 
   home.file.".config/waybar/style.css".source = ./style.css;
+
+  home.file.".config/waybar/scripts/powermenu.sh" = {
+    source = scripts/powermenu.sh;
+    executable = true;
+  };
 }

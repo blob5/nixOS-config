@@ -131,6 +131,11 @@
             "tray"
         ]
     },
+    "custom/power": {
+        "format": "",
+        "on-click": "~/.config/waybar/scripts/powermenu.sh",
+        "tooltip": true
+    },
     "custom/menu": {
         "format": "󰅃",
         "rotate": 90

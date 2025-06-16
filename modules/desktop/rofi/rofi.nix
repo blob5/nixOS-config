@@ -3,6 +3,8 @@
 {
   home.file.".config/rofi/spotlight-dark.rasi".source = ./spotlight-dark.rasi;
 
+  home.file.".config/rofi/powermenu/powermenu.rasi".source = powermenu/powermenu.rasi;
+
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;

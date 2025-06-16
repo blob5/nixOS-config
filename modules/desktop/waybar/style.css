@@ -164,7 +164,12 @@ tooltip {
     padding: 1px;
 }
 #custom-notification {
-    font-size: 17px;
+    font-size: 1.1rem;
     color: #A1BDCE;
-    padding-right: 0.8em;
+    padding-right: 0.4em;
+}
+#custom-power {
+    font-size: 1rem;
+    color: #ffffff;
+    padding-right: 0.7rem;
 }
