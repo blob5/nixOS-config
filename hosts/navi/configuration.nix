@@ -34,7 +34,6 @@
     # Development
     pwntools
     gdb
-    swaynotificationcenter
     (blender.override {
       cudaSupport = true;
     })
