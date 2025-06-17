@@ -14,6 +14,6 @@
 
   bootloader = {
     efiSupport = true;
-    device = "/dev/nvme1n1";
+    device = "/dev/nvme0n1";
   };
 }
