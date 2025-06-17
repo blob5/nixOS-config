@@ -13,7 +13,7 @@
   flakeRoot = "$HOME/.config/nixos";
 
   bootloader = {
-    efiSupport = false;
-    device = "/dev/nvme0n1";
+    efiSupport = true;
+    device = "/dev/nvme1n1";
   };
 }
