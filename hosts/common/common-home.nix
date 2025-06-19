@@ -82,6 +82,7 @@
       zoxide # replacement for cd
       fzf # fuzzy finder
       eza # replacement for ls
+      tree
 
       # extracting tools
       p7zip
