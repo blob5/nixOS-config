@@ -103,9 +103,9 @@ binds {
     "Mod+Shift+9" { move-column-to-workspace 9; }
     
     // Applications  
-    "Mod+Return" { spawn "kitty"; }
+    "Mod+Return" { spawn "wezterm"; }
     "Mod+R" { spawn "rofi" "-show" "drun" "-show-icons"; }
-    "Mod+E" { spawn "nautilus"; }
+    "Mod+E" { spawn "dolphin"; }
     "Mod+B" { spawn "firefox"; }
     
     // System

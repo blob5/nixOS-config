@@ -9,7 +9,7 @@
 
 
   niri = {
-    monitors = [ "eDP-1,1920x1080@60,0x0,1" "DP-1,2560x1440@144,0x0,1" ];
+    monitors = [ "eDP-1,1920x1080@60,0x0,1" ];
     input.sensitivity = 0.5;
     input.kb_layout = "us";
   };

@@ -1,4 +1,4 @@
-# modules/desktop/wm/niri/default.nix
+# modules/desktop/compositors/niri/niri.nix
 { config, lib, pkgs, ... }:
 with lib;
 {
@@ -41,7 +41,7 @@ with lib;
         }'';
       
       monitorConfigs = concatStringsSep "\n" (map parseMonitor config.niri.monitors);
-      baseConfig = builtins.readFile ./config.kdl;
+      baseConfig = builtins.readFile ./niri.kdl;
     in ''
       ${baseConfig}
       
