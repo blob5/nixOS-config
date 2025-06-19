@@ -7,7 +7,7 @@
     fastanime.url = "github:Benexl/fastanime";
     lobster.url = "github:justchokingaround/lobster";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
-    stylix.url = "github:danth/stylix";  
+    stylix.url = "github:danth/stylix?ref=75411fe2b90f67bfb4a2ad9cc3b1379758b64dbb";  
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     niri.url = "github:sodiboo/niri-flake";
