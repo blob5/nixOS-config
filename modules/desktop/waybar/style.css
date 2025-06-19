@@ -17,6 +17,7 @@ tooltip {
     font-size: 1rem;
     border-radius: 0.5rem;
     border: 0.1rem solid #101a24;
+    padding: 0.5rem 1rem;
 }
 #workspaces {
     padding: 0 0.3rem;
@@ -32,14 +33,48 @@ tooltip {
     color: #f38ba8;
     transition: color 0.3s ease;
 }
-#tray menu * {
-    min-height: 16px;
-    font-weight: bold;
-    font-size: 13px;
-    color: #9488e3;
+#tray menu {
+    background-color: #1c1c1c;
+    color: #e5e5e5;
+    font-size: 0.875rem;
+    border: 0.0625rem solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.5rem;
+    padding: 0.375rem 0;
+    margin: 0;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.4), 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+    min-width: 12rem;
 }
+
+#tray menu menuitem {
+    padding: 0.5rem 0.75rem;
+    margin: 0.0625rem 0.375rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.15s ease;
+}
+
+#tray menu menuitem:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+#tray menu menuitem:first-child {
+    margin-top: 0.125rem;
+}
+
+#tray menu menuitem:last-child {
+    margin-bottom: 0.125rem;
+}
+
+#tray menu label {
+    padding: 0;
+    margin: 0;
+    font-weight: 400;
+}
+
 #tray menu separator {
-    min-height: 10px
+    background-color: rgba(255, 255, 255, 0.06);
+    margin: 0.375rem 0.75rem;
+    border: none;
 }
 #custom-spacer{
     opacity: 0.0;
@@ -137,7 +172,6 @@ tooltip {
     padding-right: 1px;
     opacity: 0.5;
 }
-#tray,
 #window{
     padding-left: 2em;
     padding-right: 2em;
