@@ -1,0 +1,160 @@
+// Niri base configuration file
+// This file contains all static configuration that doesn't change per host
+
+// Base input configuration (keyboard layout and mouse sensitivity will be overridden)
+input {
+    touchpad {
+        tap
+        dwt
+        natural-scroll
+        click-method "clickfinger"
+    }
+}
+
+// Layout configuration
+layout {
+    gaps 8
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    default-column-width { proportion 0.5; }
+    focus-ring {
+        width 2
+        active-color "#7fc8e8"
+        inactive-color "#505050"
+    }
+    border {
+        width 1
+        active-color "#505050"
+        inactive-color "#303030"
+    }
+}
+
+// Window rules
+window-rule {
+    match app-id="firefox"
+    default-column-width { proportion 0.75; }
+}
+
+window-rule {
+    match app-id="org.gnome.Nautilus"
+    default-column-width { proportion 0.6; }
+}
+
+window-rule {
+    match app-id="code"
+    default-column-width { proportion 0.7; }
+}
+
+// Spawn at startup
+spawn-at-startup "polkit-gnome-authentication-agent-1"
+spawn-at-startup "swww-daemon"
+spawn-at-startup "waybar"
+spawn-at-startup "wl-paste"
+spawn-at-startup "wl-paste --type text"
+spawn-at-startup "xwayland-satellite"
+
+// Key bindings
+binds {
+    // Window management
+    "Mod+Q" { close-window; }
+    "Mod+H" { focus-column-left; }
+    "Mod+L" { focus-column-right; }
+    "Mod+J" { focus-window-down; }
+    "Mod+K" { focus-window-up; }
+    "Mod+Shift+H" { move-column-left; }
+    "Mod+Shift+L" { move-column-right; }
+    "Mod+Shift+J" { move-window-down; }
+    "Mod+Shift+K" { move-window-up; }
+    
+    // Column management
+    "Mod+Comma" { consume-window-into-column; }
+    "Mod+Period" { expel-window-from-column; }
+    "Mod+BracketLeft" { consume-or-expel-window-left; }
+    "Mod+BracketRight" { consume-or-expel-window-right; }
+    
+    // Column width
+    "Mod+Minus" { set-column-width "-10%"; }
+    "Mod+Equal" { set-column-width "+10%"; }
+    "Mod+Shift+Minus" { set-window-height "-10%"; }
+    "Mod+Shift+Equal" { set-window-height "+10%"; }
+    
+    // Workspaces
+    "Mod+1" { focus-workspace 1; }
+    "Mod+2" { focus-workspace 2; }
+    "Mod+3" { focus-workspace 3; }
+    "Mod+4" { focus-workspace 4; }
+    "Mod+5" { focus-workspace 5; }
+    "Mod+6" { focus-workspace 6; }
+    "Mod+7" { focus-workspace 7; }
+    "Mod+8" { focus-workspace 8; }
+    "Mod+9" { focus-workspace 9; }
+    "Mod+Shift+1" { move-column-to-workspace 1; }
+    "Mod+Shift+2" { move-column-to-workspace 2; }
+    "Mod+Shift+3" { move-column-to-workspace 3; }
+    "Mod+Shift+4" { move-column-to-workspace 4; }
+    "Mod+Shift+5" { move-column-to-workspace 5; }
+    "Mod+Shift+6" { move-column-to-workspace 6; }
+    "Mod+Shift+7" { move-column-to-workspace 7; }
+    "Mod+Shift+8" { move-column-to-workspace 8; }
+    "Mod+Shift+9" { move-column-to-workspace 9; }
+    
+    // Applications  
+    "Mod+Return" { spawn "kitty"; }
+    "Mod+R" { spawn "rofi" "-show" "drun" "-show-icons"; }
+    "Mod+E" { spawn "nautilus"; }
+    "Mod+B" { spawn "firefox"; }
+    
+    // System
+    "Mod+Shift+E" { quit; }
+    "Mod+Shift+S" { screenshot; }
+    "Print" { screenshot; }
+    "Mod+Shift+R" { reload-config; }
+    
+    // Audio controls (if you have them)
+    "XF86AudioRaiseVolume" { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
+    "XF86AudioLowerVolume" { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    "XF86AudioMute" { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    
+    // Brightness controls (if you have them)  
+    "XF86MonBrightnessUp" { spawn "brightnessctl" "set" "10%+"; }
+    "XF86MonBrightnessDown" { spawn "brightnessctl" "set" "10%-"; }
+}
+
+// Cursor configuration
+cursor {
+    theme "Adwaita"
+    size 24
+}
+
+// Animations
+animations {
+    slowdown 1.0
+    window-open {
+        duration-ms 200
+        curve "ease-out-cubic"
+    }
+    window-close {
+        duration-ms 150
+        curve "ease-in-cubic"
+    }
+    horizontal-view-movement {
+        duration-ms 250
+        curve "ease-out-cubic"
+    }
+    workspace-switch {
+        duration-ms 250
+        curve "ease-out-cubic"
+    }
+}
+
+// Screenshot configuration
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// Hotkey overlay
+hotkey-overlay {
+    skip-at-startup
+}

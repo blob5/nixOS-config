@@ -3,9 +3,16 @@
 {
   imports = [
     ../common/common-home.nix
-    ./niri
     ../../modules/desktop/waybar/waybar.nix
+    ../../modules/desktop/compositors/niri/niri.nix
   ];
+
+
+  niri = {
+    monitors = [ "eDP-1,1920x1080@60,0x0,1" "DP-1,2560x1440@144,0x0,1" ];
+    input.sensitivity = 0.5;
+    input.kb_layout = "us";
+  };
 
   # Host-specific home-manager settings
   home.username = "blob";
