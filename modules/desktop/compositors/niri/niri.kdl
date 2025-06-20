@@ -314,8 +314,7 @@ binds {
     "Mod+B" { spawn "zen"; }
     
     // System
-    "Mod+Shift+E" {  ; }
-    "Mod+Shift+S" { screenshot; }
+    "Mod+Shift+S" { screenshot write-to-disk=false show-pointer=false;}
     "Print" { screenshot; }
     
     // Audio controls
