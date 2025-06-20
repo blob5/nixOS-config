@@ -43,7 +43,7 @@ with lib;
       baseConfig = builtins.readFile ./niri.kdl;
     in ''
       ${baseConfig}
-
+      
       // Generated configuration from options
       input {
         keyboard {
@@ -55,8 +55,22 @@ with lib;
           accel-speed ${toString config.niri.input.sensitivity}
           accel-profile "flat"
         }
+        touchpad {
+          tap
+          dwt
+          dwtp
+          natural-scroll
+          click-method "clickfinger"
+          scroll-method "two-finger"
+          tap-button-map "left-right-middle" 
+          middle-emulation
+          accel-profile "adaptive"
+        }
+        focus-follows-mouse
+        warp-mouse-to-focus
+        workspace-auto-back-and-forth
       }
-
+      
       // Output configuration
       ${monitorConfigs}
     '';

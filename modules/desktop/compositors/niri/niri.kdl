@@ -12,24 +12,6 @@ environment {
     SDL_VIDEODRIVER "wayland"
 }
 
-// Base input configuration (keyboard and mouse settings will be added by Nix module)
-input {
-    touchpad {
-        tap
-        dwt
-        dwtp
-        natural-scroll
-        click-method "clickfinger"
-        scroll-method "two-finger"
-        tap-button-map "left-right-middle" 
-        middle-emulation
-        accel-profile "adaptive"
-    }
-    focus-follows-mouse
-    warp-mouse-to-focus
-    workspace-auto-back-and-forth
-}
-
 // Layout configuration with improved aesthetics
 layout {
     gaps 6
@@ -44,36 +26,15 @@ layout {
     }
     default-column-width { proportion 0.5; }
     
-    focus-ring {
-        enable false
-    }
+    // Focus ring is disabled by default - no need for explicit enable/disable
     
     border {
-        enable true
         width 1
-        active {
-            gradient {
-                angle 45
-                from "#7fc8e8"
-                to "#94e2d5"
-            }
-        }
-        inactive {
-            color "#2a2e2a"
-        }
+        active-color "#7fc8e8"
+        inactive-color "#2a2e2a"
     }
     
-    shadow {
-        enable true
-        color "#00000020"
-        blur-sigma 8.0
-        spread 2.0
-        offset {
-            x 0
-            y 4
-        }
-    }
-    
+    // Struts configuration
     struts {
         left 0
         right 0
@@ -84,88 +45,208 @@ layout {
 
 // Comprehensive window rules for better UX
 window-rule {
-    geometry-corner-radius {
-        bottom-left 12.0
-        bottom-right 12.0
-        top-left 12.0
-        top-right 12.0
-    }
+    geometry-corner-radius 12.0
     clip-to-geometry true
     draw-border-with-background false
 }
 
 window-rule {
     match is-floating=true
-    shadow {
-        enable true
-        color "#00000040"
-        blur-sigma 12.0
-        spread 4.0
-    }
+    // Additional shadow configuration for floating windows can be added here
 }
 
 // Privacy: block screencasting for messaging apps
 window-rule {
-    matches app-id="org.telegram.desktop" app-id="app.drey.PaperPlane" app-id="vesktop" app-id="discord"
+    match app-id="org.telegram.desktop"
+    block-out-from "screencast"
+}
+
+window-rule {
+    match app-id="app.drey.PaperPlane"
+    block-out-from "screencast"
+}
+
+window-rule {
+    match app-id="vesktop"
+    block-out-from "screencast"
+}
+
+window-rule {
+    match app-id="discord"
     block-out-from "screencast"
 }
 
 // Better defaults for browsers
 window-rule {
-    matches app-id="firefox" app-id="zen" app-id="chromium-browser" app-id="google-chrome"
+    match app-id="firefox"
     default-column-width { proportion 0.7; }
-    scroll-factor 0.3
+}
+
+window-rule {
+    match app-id="zen"
+    default-column-width { proportion 0.7; }
+}
+
+window-rule {
+    match app-id="chromium-browser"
+    default-column-width { proportion 0.7; }
+}
+
+window-rule {
+    match app-id="google-chrome"
+    default-column-width { proportion 0.7; }
 }
 
 // Maximize productivity apps
 window-rule {
-    matches app-id="zen" app-id="obsidian" app-id="code" app-id="vesktop"
+    match app-id="zen"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="obsidian"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="code"
+    open-maximized true
+}
+
+window-rule {
+    match app-id="vesktop"
     open-maximized true
 }
 
 // Picture-in-picture positioning
 window-rule {
-    matches app-id="firefox" title="Picture-in-Picture"
+    match app-id="firefox" title="Picture-in-Picture"
     open-floating true
-    default-floating-position {
-        x 32
-        y 32
-        relative-to "bottom-right"
-    }
-    default-column-width { fixed 480; }
-    default-window-height { fixed 270; }
+    min-width 480
+    min-height 270
 }
 
 window-rule {
-    matches app-id="zen" title="Picture-in-Picture"
+    match app-id="zen" title="Picture-in-Picture"
     open-floating true
-    default-floating-position {
-        x 32
-        y 32
-        relative-to "bottom-right"
-    }
-    default-column-width { fixed 480; }
-    default-window-height { fixed 270; }
+    min-width 480
+    min-height 270
 }
 
 window-rule {
-    matches title="Picture in picture" title="Discord Popout"
+    match title="Picture in picture"
     open-floating true
-    default-floating-position {
-        x 32
-        y 32
-        relative-to "bottom-right"
-    }
+}
+
+window-rule {
+    match title="Discord Popout"
+    open-floating true
 }
 
 // System dialogs and utilities
 window-rule {
-    matches app-id="pavucontrol" app-id="pavucontrol-qt" app-id="com.saivert.pwvucontrol" app-id="blueman-manager" app-id="nm-connection-editor" app-id="file-roller" app-id="org.gnome.FileRoller" app-id="gcr-prompter" app-id="org.kde.polkit-kde-authentication-agent-1" app-id="pinentry"
+    match app-id="pavucontrol"
     open-floating true
 }
 
 window-rule {
-    matches title="Progress" title="File Operations" title="Properties" title="Authentication Required" title="Copying" title="Moving" title="Downloads" title="Confirm" title="Notice" title="Warning" title="Error"
+    match app-id="pavucontrol-qt"
+    open-floating true
+}
+
+window-rule {
+    match app-id="com.saivert.pwvucontrol"
+    open-floating true
+}
+
+window-rule {
+    match app-id="blueman-manager"
+    open-floating true
+}
+
+window-rule {
+    match app-id="nm-connection-editor"
+    open-floating true
+}
+
+window-rule {
+    match app-id="file-roller"
+    open-floating true
+}
+
+window-rule {
+    match app-id="org.gnome.FileRoller"
+    open-floating true
+}
+
+window-rule {
+    match app-id="gcr-prompter"
+    open-floating true
+}
+
+window-rule {
+    match app-id="org.kde.polkit-kde-authentication-agent-1"
+    open-floating true
+}
+
+window-rule {
+    match app-id="pinentry"
+    open-floating true
+}
+
+// Dialog windows by title
+window-rule {
+    match title="Progress"
+    open-floating true
+}
+
+window-rule {
+    match title="File Operations"
+    open-floating true
+}
+
+window-rule {
+    match title="Properties"
+    open-floating true
+}
+
+window-rule {
+    match title="Authentication Required"
+    open-floating true
+}
+
+window-rule {
+    match title="Copying"
+    open-floating true
+}
+
+window-rule {
+    match title="Moving"
+    open-floating true
+}
+
+window-rule {
+    match title="Downloads"
+    open-floating true
+}
+
+window-rule {
+    match title="Confirm"
+    open-floating true
+}
+
+window-rule {
+    match title="Notice"
+    open-floating true
+}
+
+window-rule {
+    match title="Warning"
+    open-floating true
+}
+
+window-rule {
+    match title="Error"
     open-floating true
 }
 
@@ -225,14 +306,13 @@ binds {
     // Applications  
     "Mod+Return" { spawn "wezterm"; }
     "Mod+R" { spawn "rofi" "-show" "drun" "-show-icons"; }
-    "Mod+E" { spawn "nautilus"; }  // Changed from dolphin to nautilus for consistency
+    "Mod+E" { spawn "dolphin"; }
     "Mod+B" { spawn "zen"; }
     
     // System
     "Mod+Shift+E" { quit; }
     "Mod+Shift+S" { screenshot; }
     "Print" { screenshot; }
-    "Mod+Shift+R" { reload-config; }
     
     // Audio controls
     "XF86AudioRaiseVolume" { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
@@ -246,8 +326,8 @@ binds {
 
 // Cursor configuration
 cursor {
-    theme "Adwaita"
-    size 24
+    xcursor-theme "Adwaita"
+    xcursor-size 24
 }
 
 // Smooth animations for flow
@@ -261,7 +341,7 @@ animations {
     
     window-close {
         duration-ms 150
-        curve "ease-in-cubic"
+        curve "ease-out-cubic"
     }
     
     horizontal-view-movement {
@@ -283,39 +363,7 @@ animations {
         duration-ms 150
         curve "ease-out-cubic"
     }
-
-    shaders {
-        window-resize "
-            vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
-                vec3 coords_next_geo = niri_curr_geo_to_next_geo * coords_curr_geo;
-                vec3 coords_stretch = niri_geo_to_tex_next * coords_curr_geo;
-                vec3 coords_crop = niri_geo_to_tex_next * coords_next_geo;
-
-                bool can_crop_by_x = niri_curr_geo_to_next_geo[0][0] <= 1.0;
-                bool can_crop_by_y = niri_curr_geo_to_next_geo[1][1] <= 1.0;
-
-                vec3 coords = coords_stretch;
-                if (can_crop_by_x) coords.x = coords_crop.x;
-                if (can_crop_by_y) coords.y = coords_crop.y;
-
-                vec4 color = texture2D(niri_tex_next, coords.st);
-
-                if (can_crop_by_x && (coords_curr_geo.x < 0.0 || 1.0 < coords_curr_geo.x))
-                    color = vec4(0.0);
-                if (can_crop_by_y && (coords_curr_geo.y < 0.0 || 1.0 < coords_curr_geo.y))
-                    color = vec4(0.0);
-
-                return color;
-            }
-        "
-    }
 }
 
 // Screenshot configuration
 screenshot-path "~/Pictures/Screenshots/Screenshot-from-%Y-%m-%d-%H-%M-%S.png"
-
-// System preferences
-prefer-no-csd true
-hotkey-overlay {
-    skip-at-startup true
-}
