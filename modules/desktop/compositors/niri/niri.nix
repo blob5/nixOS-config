@@ -23,7 +23,7 @@ with lib;
   };
 
   config = {
-    home.file.".config/niri/niri.kdl".text = let
+    home.file.".config/niri/config.kdl".text = let
       # Parse monitor strings into KDL output blocks
       parseMonitor = monStr: let
         parts = lib.splitString "," monStr;
