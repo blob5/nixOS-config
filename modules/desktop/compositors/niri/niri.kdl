@@ -1,7 +1,7 @@
 // Niri base configuration file
 // This file contains all static configuration that doesn't change per host
 
-// Base input configuration (keyboard layout and mouse sensitivity will be overridden)
+// Base input configuration (keyboard and mouse settings will be added by Nix module)
 input {
     touchpad {
         tap
@@ -40,9 +40,10 @@ window-rule {
 }
 
 window-rule {
-    match app-id="org.gnome.Nautilus"
+    match app-id="org.kde.dolphin"
     default-column-width { proportion 0.6; }
 }
+
 
 window-rule {
     match app-id="code"
@@ -53,8 +54,8 @@ window-rule {
 spawn-at-startup "polkit-gnome-authentication-agent-1"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "waybar"
-spawn-at-startup "wl-paste"
-spawn-at-startup "wl-paste --type text"
+spawn-at-startup "wl-paste" "--type" "text"
+spawn-at-startup "wl-paste" "--type" "image"
 spawn-at-startup "xwayland-satellite"
 
 // Key bindings
@@ -114,12 +115,12 @@ binds {
     "Print" { screenshot; }
     "Mod+Shift+R" { reload-config; }
     
-    // Audio controls (if you have them)
+    // Audio controls
     "XF86AudioRaiseVolume" { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
     "XF86AudioLowerVolume" { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     "XF86AudioMute" { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     
-    // Brightness controls (if you have them)  
+    // Brightness controls
     "XF86MonBrightnessUp" { spawn "brightnessctl" "set" "10%+"; }
     "XF86MonBrightnessDown" { spawn "brightnessctl" "set" "10%-"; }
 }

@@ -1,4 +1,3 @@
-# modules/desktop/compositors/niri/niri.nix
 { config, lib, pkgs, ... }:
 with lib;
 {
@@ -9,7 +8,6 @@ with lib;
       example = ["DP-1,2560x1440@144,0x0,1" "HDMI-A-1,1920x1080@60,2560x0,1"];
       description = "Monitor configurations in format: name,resolution@rate,position,scale";
     };
-    
     input = {
       sensitivity = mkOption {
         type = types.float;
@@ -33,34 +31,33 @@ with lib;
         resolution = lib.elemAt parts 1;
         position = lib.elemAt parts 2;
         scale = if lib.length parts > 3 then lib.elemAt parts 3 else "1";
+        positionParts = lib.splitString "x" position;
       in ''
         output "${name}" {
-            mode "${resolution}"
-            position x=${lib.elemAt (lib.splitString "x" position) 0} y=${lib.elemAt (lib.splitString "x" position) 1}
-            scale ${scale}
+          mode "${resolution}"
+          position x=${lib.elemAt positionParts 0} y=${lib.elemAt positionParts 1}
+          scale ${scale}
         }'';
       
       monitorConfigs = concatStringsSep "\n" (map parseMonitor config.niri.monitors);
       baseConfig = builtins.readFile ./niri.kdl;
     in ''
       ${baseConfig}
-      
+
       // Generated configuration from options
-      
-      // Input configuration
+      // Input configuration  
       input {
-          keyboard {
-              xkb {
-                  layout "${config.niri.input.kb_layout}"
-              }
+        keyboard {
+          xkb {
+            layout "${config.niri.input.kb_layout}"
           }
-          
-          mouse {
-              accel-speed ${toString config.niri.input.sensitivity}
-              accel-profile "flat"
-          }
+        }
+        mouse {
+          accel-speed ${toString config.niri.input.sensitivity}
+          accel-profile "flat"
+        }
       }
-      
+
       // Output configuration
       ${monitorConfigs}
     '';
