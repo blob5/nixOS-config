@@ -5,7 +5,8 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-    
+  
+  programs.niri.enable = true;
 
   imports =
     [
