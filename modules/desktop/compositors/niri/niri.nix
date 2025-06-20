@@ -4,8 +4,8 @@ with lib;
   options.niri = {
     monitors = mkOption {
       type = types.listOf types.str;
-      default = ["eDP-1,1920x1080@60,0x0,1"];
-      example = ["DP-1,2560x1440@144,0x0,1" "HDMI-A-1,1920x1080@60,2560x0,1"];
+      default = ["eDP-1,1920x1080@60,0x0,1.0"];
+      example = ["DP-1,2560x1440@144,0x0,1.0" "HDMI-A-1,1920x1080@60,2560x0,1.0"];
       description = "Monitor configurations in format: name,resolution@rate,position,scale";
     };
     input = {
@@ -30,7 +30,7 @@ with lib;
         name = lib.elemAt parts 0;
         resolution = lib.elemAt parts 1;
         position = lib.elemAt parts 2;
-        scale = if lib.length parts > 3 then lib.elemAt parts 3 else "1";
+        scale = if lib.length parts > 3 then lib.elemAt parts 3 else "1.0";
         positionParts = lib.splitString "x" position;
       in ''
         output "${name}" {
@@ -45,7 +45,6 @@ with lib;
       ${baseConfig}
 
       // Generated configuration from options
-      // Input configuration  
       input {
         keyboard {
           xkb {
