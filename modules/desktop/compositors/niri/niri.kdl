@@ -29,7 +29,7 @@ layout {
     // Focus ring is disabled by default - no need for explicit enable/disable
     
     border {
-        width 1
+        width 0.3
         active-color "#7fc8e8"
         inactive-color "#2a2e2a"
     }
@@ -261,7 +261,7 @@ spawn-at-startup "xwayland-satellite"
 // Key bindings
 binds {
     // Window management
-    "Mod+Q" { close-window; }
+    "Mod+C" { close-window; }
     "Mod+H" { focus-column-left; }
     "Mod+L" { focus-column-right; }
     "Mod+J" { focus-window-down; }
