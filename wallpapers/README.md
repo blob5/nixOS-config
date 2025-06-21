@@ -1,5 +1,7 @@
 # Wallpapers credits
 
+If a wallpaper isn't mentioned here I probably couldn't find the original.
+
 opal58
 https://x.com/Opal_00_58
 
