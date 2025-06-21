@@ -1,5 +1,4 @@
-// Niri base configuration file
-// This file contains all static configuration that doesn't change per host
+// Niri configuration file
 
 // Environment variables for better Wayland support
 environment {
@@ -12,8 +11,10 @@ environment {
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
     SDL_VIDEODRIVER "wayland"
 }
+// this is to ask the clients to omit their client-side decorations if possible.
+prefer-no-csd
 
-// Layout configuration with improved aesthetics
+// Layout configuration
 layout {
     gaps 6
     center-focused-column "never"
@@ -26,14 +27,28 @@ layout {
         proportion 0.75
     }
     default-column-width { proportion 0.5; }
-    
-    // Focus ring is disabled by default - no need for explicit enable/disable
-    
-    border {
-        width 0.3
-        active-color "#7fc8e8"
-        inactive-color "#2a2e2a"
+        
+    focus-ring {
+        width 1
+        /// active-color "#7fc8ff"
+        /// inactive-color "#505050"
+        /// urgent-color "#9b0000"
+        active-gradient from="#92a8d1" to="#f7cac9" angle=45
+        inactive-gradient from="#92a8d1" to="#808080" angle=45 relative-to="workspace-view"
+        urgent-gradient from="#800" to="#a33" angle=45
     }
+
+    border {
+        off
+        width 2
+        // active-color "#ffc87f"
+        // inactive-color "#505050"
+        // urgent-color "#9b0000"
+        active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
+        inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view" in="srgb-linear"
+        urgent-gradient from="#800" to="#a33" angle=45
+    }
+
     
     // Struts configuration
     struts {
@@ -44,7 +59,7 @@ layout {
     }
 }
 
-// Comprehensive window rules for better UX
+// Window rules
 window-rule {
     geometry-corner-radius 12.0
     clip-to-geometry true
@@ -77,7 +92,7 @@ window-rule {
     block-out-from "screencast"
 }
 
-// Better defaults for browsers
+// Defaults for browsers
 window-rule {
     match app-id="firefox"
     default-column-width { proportion 0.7; }
@@ -251,6 +266,11 @@ window-rule {
     open-floating true
 }
 
+hotkey-overlay {
+    //  for disabling the hotkey help at niri startup.
+    skip-at-startup
+}
+
 // Spawn at startup
 spawn-at-startup "polkit-gnome-authentication-agent-1"
 spawn-at-startup "swww-daemon"
@@ -306,6 +326,11 @@ binds {
     "Mod+Shift+7" { move-column-to-workspace 7; }
     "Mod+Shift+8" { move-column-to-workspace 8; }
     "Mod+Shift+9" { move-column-to-workspace 9; }
+
+    Mod+C { close-window; }
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+M { quit; }
     
     // Applications  
     "Mod+Return" { spawn "wezterm"; }
@@ -333,7 +358,7 @@ cursor {
     xcursor-size 24
 }
 
-// Smooth animations for flow
+// Animations
 animations {
     slowdown 0.8
     
@@ -368,5 +393,6 @@ animations {
     }
 }
 
-// Screenshot configuration
-screenshot-path "~/Pictures/Screenshots/Screenshot-from-%Y-%m-%d-%H-%M-%S.png"
+// Screenshot configuration 
+// null to disable screenshot saving
+screenshot-path null
