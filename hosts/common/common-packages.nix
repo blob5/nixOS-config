@@ -1,24 +1,63 @@
 { config, pkgs, ... }:
 
 {
+
+
+  imports = [
+
+    ../../modules/core/default.nix
+
+    ../../modules/programs/editors/lazyvim.nix
+  ];
+
   # System-level configurations
   environment.systemPackages = with pkgs; [
-    git
-    nodejs
-    fastfetch
-    zed-editor
-    catppuccin-sddm
-    sddm-astronaut
-    ghostty
+
+    # System utils
+    killall
+    file
+    wireguard-tools
+    dconf
+    inetutils
+
+
+    # System Services
+    gnome-bluetooth
+    swww
+    brightnessctl
+    bluez
+    bluez-tools
+    lm_sensors
+    iw
     home-manager
 
-    nixfmt-rfc-style
 
+    # sddm
+    catppuccin-sddm
+    sddm-astronaut
 
+    
+
+    # Applications
+    better-control
+    waypaper
+    networkmanagerapplet
+    
+    # Desktop
     waylock
     swaynotificationcenter
+    playerctl
+    hyprshot
+    libnotify
+    slurp
+    wl-clipboard
+    pavucontrol
+    blueman
 
   ];
+
+	systemd.user.units.swaync.enable = true;
+
 
   # waylock PAM configuration
   security.pam.services.waylock = {
@@ -29,9 +68,6 @@
       session   include login
     '';
   };
-
-
-
 
   # Programs
   programs.wireshark.enable = true;

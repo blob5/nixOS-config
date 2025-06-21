@@ -8,8 +8,6 @@
     ../../modules/desktop/compositors/hyprland/hyprland.nix
   ];
 
-
-
   hyprland = {
     monitors = [ "DP-1,2560x1440@165,0x0,1" "HDMI-A-2,1920x1080@75,2560x-130,1,transform,3" ];
     input.sensitivity = -0.75;
@@ -17,13 +15,10 @@
     accel_profile = "flat";
   };
 
-
-
-
   # Host-specific home-manager settings
   home.username = "blob";
   home.homeDirectory = "/home/blob";
-  home.stateVersion = "25.05"; # Match your NixOS version
+  home.stateVersion = "25.05";
 
   # audio effects and filters
   services.easyeffects.enable = true;

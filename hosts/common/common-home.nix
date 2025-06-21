@@ -14,91 +14,73 @@
 
   home = {
     packages = with pkgs; [
+ 
       # Development
       openjdk
+      git
       python312
+      nodejs
+      nixfmt-rfc-style
 
-      # System
-      killall
-      gnome-bluetooth
-      playerctl
-      bluez
-      bluez-tools
-      hyprshot
-      jq
-      libnotify
-      slurp
-      wl-clipboard
-      wireguard-tools
-      file
-      brightnessctl
-      pavucontrol
-      ncdu
-      blueman
-      dconf
-      entr # file watcher
-      lm_sensors
-      pulseaudio
-      (mpv.override { scripts = [
-        mpvScripts.uosc
-        mpvScripts.thumbfast
-        mpvScripts.mpris
-      ]; })
-      
-      # Terminal
+
+
+      # Terminals
       wezterm
+      ghostty
 
-      # Programs
-      waypaper
-      swww
-      obsidian
+      # CLI tools
+      htop
+      wget
+      ookla-speedtest
+      zoxide
+      fzf
+      eza
+      tree
+      jq
+      ncdu
+      entr
       superfile
-      libreoffice-qt
+      fastfetch
+
+      # Media & Applications
       inputs.zen-browser.packages."${system}".twilight
       kdePackages.dolphin # File manager
       kdePackages.ark # Archive manager
       kdePackages.gwenview # Image viewer
       qbittorrent
       vlc
-      better-control
       foliate # E reader
-      
-      # lobster
-      inputs.lobster.packages."${system}".lobster
+      libreoffice-qt
+      superfile
+      obsidian
+      zed-editor
 
-      # fastanime
+      
+      # Media
+      inputs.lobster.packages."${system}".lobster
       inputs.fastanime.packages."${system}".default
       ffmpeg
+      (mpv.override { scripts = [
+        mpvScripts.uosc
+        mpvScripts.thumbfast
+        mpvScripts.mpris
+      ]; })
       chafa
       ani-skip
       feh
 
-      # Utils
-      htop
-      networkmanagerapplet
-      git
-      wget
-      ookla-speedtest
-      zoxide # replacement for cd
-      fzf # fuzzy finder
-      eza # replacement for ls
-      tree
-
-      # extracting tools
+      # Archive tools
       p7zip
       unzip
       zip
       xz
 
-      # Cyber Security
+      # Security & Pentesting tools
       nmap
       traceroute
       whois
       dig
       metasploit
-      iw
-      aircrack-ng
-      inetutils
       john
       hashcat
       gobuster
@@ -106,6 +88,7 @@
       wireshark-qt
       bettercap
       asn
+      aircrack-ng
 
       # Fun
       sl
@@ -116,6 +99,8 @@
       pipes
       asciiquarium-transparent
       cava
+
+
     ];
 
     pointerCursor = {

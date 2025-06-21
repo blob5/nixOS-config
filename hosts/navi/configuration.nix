@@ -5,25 +5,34 @@
 { config, pkgs, ... }:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.download-buffer-size = 524288000; # 500 MiB
-  nixpkgs.config.allowUnfree = true;
+
 
   imports =
     [
       ./hardware-configuration.nix
 
-      ./services.nix
       ../../modules/virtualization/virtualization.nix
       ../common/common-packages.nix
-      ../common/common-configuration.nix
       ../../modules/programs/gaming/steam.nix
       ../../modules/programs/media-tools/media-tools.nix
       ../../modules/drivers/nvidia.nix
+      ../../modules/core/services.nix
+
+      ../../modules/services/audio.nix
+      ../../modules/services/sddm.nix
+
     ];
 
-
   programs.hyprland.enable = true;
+  services.hardware.openrgb.enable = true;
+
+  services.sunshine = {
+    enable = true;
+    autoStart = false;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
+
 
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
@@ -34,10 +43,12 @@
     # Development
     pwntools
     gdb
-    (blender.override {
-      cudaSupport = true;
-    })
+    # blender
   ];
 
+  # Original install version,
+  # This is only used by some packages for backwards compatibility.
+  # use channels if you want to update package versions.
+  # DO NOT UPDATE THIS UNLESS YOU KNOW WHAT YOU ARE DOING
   system.stateVersion = "24.11";
 }

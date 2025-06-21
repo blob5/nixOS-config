@@ -16,6 +16,8 @@
 
     power-profiles-daemon.enable = true;
 
+    dbus.enable = true;
+
   };
 
   virtualisation.docker.enable = true;

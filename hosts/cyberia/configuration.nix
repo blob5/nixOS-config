@@ -1,22 +1,20 @@
 { config, pkgs, ... }:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
   
   programs.niri.enable = true;
 
   imports =
     [
+      ## Services
+      ../../modules/services/audio.nix
+      ../../modules/services/sddm.nix
 
-      ./services.nix
-
+      ## Hardware configuration
       ./hardware-configuration.nix
       
+      ## 
       ../common/common-packages.nix
-      ../common/common-configuration.nix
       ../../modules/drivers/amd.nix
     ];
 
@@ -24,5 +22,10 @@
     xwayland-satellite # For XWayland support
   ];
 
+
+  # Original install version,
+  # This is only used by some packages for backwards compatibility.
+  # use channels if you want to update package versions.
+  # DO NOT UPDATE THIS UNLESS YOU KNOW WHAT YOU ARE DOING
   system.stateVersion = "24.05";
 }
