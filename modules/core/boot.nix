@@ -1,4 +1,10 @@
-{ config, pkgs, lib, systemSettings, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  systemSettings,
+  ...
+}:
 
 let
   hostSettings = import ../../hosts/${systemSettings.hostname}/settings.nix;
@@ -8,7 +14,6 @@ in
   # Disable Stylix Plymouth styling to prevent conflicts
   stylix.targets.plymouth.enable = false;
 
-
   # Enable Plymouth for a graphical boot splash
   boot.plymouth = {
     enable = true;
@@ -17,9 +22,10 @@ in
   };
 
   # if hasNvidia is true, add nvidia_drm.modeset=1 to kernel parameters
-  boot.kernelParams = if hostSettings.hasNvidia then [ "nvidia_drm.modeset=1" ] else [];
+  boot.kernelParams = if hostSettings.hasNvidia then [ "nvidia_drm.modeset=1" ] else [ ];
 
   boot.loader = {
+    efi.canTouchEfiVariables = hostSettings.bootloader.efiSupport;
     grub = {
       useOSProber = true;
       enable = true;
@@ -30,12 +36,14 @@ in
 
       minegrub-world-sel = {
         enable = true;
-        customIcons = [{
-          name = "nixos";
-          lineTop = "NixOS (${hostSettings.fileSystemCreationDate})";
-          lineBottom = "Survival Mode, No Cheats, Version: ${hostSettings.version}";
-          imgName = "nixos";
-        }];
+        customIcons = [
+          {
+            name = "nixos";
+            lineTop = "NixOS (${hostSettings.fileSystemCreationDate})";
+            lineBottom = "Survival Mode, No Cheats, Version: ${hostSettings.version}";
+            imgName = "nixos";
+          }
+        ];
       };
     };
   };
