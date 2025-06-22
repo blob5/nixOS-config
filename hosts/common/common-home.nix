@@ -41,6 +41,10 @@
       entr
       superfile
       fastfetch
+      spotdl
+
+      # Media Players
+      tauon
 
       # Media & Applications
       inputs.zen-browser.packages."${system}".twilight
@@ -111,6 +115,8 @@
       size = 24;
     };
   };
+
+
 
   programs.git = {
     enable = true;
