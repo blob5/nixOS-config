@@ -29,7 +29,7 @@
     enable = true;
     userName = "blob5";
     signing = {
-      key = "F0D60667EEF767DF";
+      key = "77EC7100CA8F93A1";
       signByDefault = true;
     };
   };
