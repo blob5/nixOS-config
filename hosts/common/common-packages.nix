@@ -19,6 +19,7 @@
     wireguard-tools
     dconf
     inetutils
+    ripgrep
 
 
     # System Services
