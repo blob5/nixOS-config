@@ -17,7 +17,6 @@
       platform = "qtct";
     };
     vesktop.enable = true;
-    spicetify.enable = true;
   };
 
   stylix.targets.gtk.extraCss = ''
