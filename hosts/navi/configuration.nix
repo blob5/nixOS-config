@@ -16,7 +16,6 @@
       ../../modules/programs/gaming/steam.nix
       ../../modules/programs/media-tools/media-tools.nix
       ../../modules/drivers/nvidia.nix
-      ../../modules/core/services.nix
 
       ../../modules/services/audio.nix
       ../../modules/services/sddm.nix
