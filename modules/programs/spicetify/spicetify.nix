@@ -1,32 +1,38 @@
 # modules/programs/spicetify/spicetify.nix
-{ inputs, config, lib, pkgs, ... }: {
-imports = [
-  # For home-manager
-  inputs.spicetify-nix.homeManagerModules.default
-];
+{ inputs, config, lib, pkgs, ... }: 
 
-programs.spicetify =
-let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
-in
 {
-  enable = true;
+  imports = [
+    inputs.spicetify-nix.homeManagerModules.default
+  ];
+  
+  programs.spicetify =
+    let
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+    in
+    {
+      enable = true;
+      
+      enabledExtensions = with spicePkgs.extensions; [
+        adblock
+        hidePodcasts
+        autoVolume
+        shuffle # shuffle+
+        betterGenres
+      ];
+      
+      enabledCustomApps = with spicePkgs.apps; [
+        newReleases
+      ];
+      
+      enabledSnippets = with spicePkgs.snippets; [
+        pointer
+        removeTheArtistsAndCreditsSectionsFromTheSidebar
+        hideMiniPlayerButton
+        hideWhatsNewButton
+        hideFriendActivityButton
+      ];
 
-  enabledExtensions = with spicePkgs.extensions; [
-    adblock
-    hidePodcasts
-    autoVolume
-    shuffle # shuffle+ (special characters are sanitized out of extension names)
-    betterGenres
-
-  ];
-  enabledCustomApps = with spicePkgs.apps; [
-    newReleases
-    #ncsVisualizer
-  ];
-  enabledSnippets = with spicePkgs.snippets; [
-    #rotatingCoverart
-    pointer
-  ];
- };
+      theme = spicePkgs.themes.defaultDynamic;
+    };
 }
