@@ -18,9 +18,16 @@
 
     dbus.enable = true;
 
+    sunshine = {
+      enable = true;
+      autoStart = false;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
   };
 
   virtualisation.docker.enable = true;
+
 
   # COnfigure keymap
   services.xserver.xkb = {

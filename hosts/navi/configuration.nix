@@ -24,12 +24,6 @@
   programs.hyprland.enable = true;
   services.hardware.openrgb.enable = true;
 
-  services.sunshine = {
-    enable = true;
-    autoStart = false;
-    capSysAdmin = true;
-    openFirewall = true;
-  };
 
 
   # Host-specific system packages
