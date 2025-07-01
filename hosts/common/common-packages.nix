@@ -7,7 +7,7 @@
 
     ../../modules/core/default.nix
 
-    ../../modules/programs/editors/lazyvim.nix
+    # ../../modules/programs/editors/lazyvim.nix
   ];
 
   # System-level configurations

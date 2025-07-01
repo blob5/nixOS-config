@@ -15,6 +15,7 @@
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     hyprland.url = "github:hyprwm/Hyprland";
     nixcord.url = "github:kaylorben/nixcord";
+    nixvim.url = "github:dc-tec/nixvim";
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
