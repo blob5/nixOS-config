@@ -12,7 +12,6 @@
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     niri.url = "github:sodiboo/niri-flake";
     ags.url = "github:Aylur/ags";
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     hyprland.url = "github:hyprwm/Hyprland";
     nixcord.url = "github:kaylorben/nixcord";
     nixvim.url = "github:dc-tec/nixvim";
@@ -42,7 +41,6 @@
             ./hosts/${hostName}/configuration.nix
             inputs.minegrub-world-sel-theme.nixosModules.default
             stylix.nixosModules.stylix
-            { nixpkgs.overlays = [ inputs.hyprpanel.overlay ]; }
             home-manager.nixosModules.home-manager {
               home-manager.backupFileExtension = "backup";
               home-manager.useUserPackages = true;
