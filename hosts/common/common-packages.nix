@@ -6,8 +6,6 @@
   imports = [
 
     ../../modules/core/default.nix
-
-    # ../../modules/programs/editors/lazyvim.nix
   ];
 
   # System-level configurations
