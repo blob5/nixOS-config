@@ -14,6 +14,7 @@
       ../../modules/virtualization/virtualization.nix
       ../common/common-packages.nix
       ../../modules/programs/gaming/steam.nix
+      ../../modules/programs/gaming/minecraft.nix
       ../../modules/drivers/nvidia.nix
 
       ../../modules/services/audio.nix
