@@ -7,7 +7,7 @@
       openjdk
       git
       python312
-      nodejs
+      nodejs_24
       nixfmt-rfc-style
     ];
   };
