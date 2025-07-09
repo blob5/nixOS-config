@@ -1,7 +1,7 @@
-{ pkgs, systemSettings, ... }:
+{ inputs, pkgs, systemSettings, ... }:
 
 let
-  hostSettings = import ../../hosts/${systemSettings.hostname}/settings.nix;
+  hostSettings = import "${inputs.self}/hosts/${systemSettings.hostname}/settings.nix";
 in
 {
   # sddm

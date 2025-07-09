@@ -1,4 +1,5 @@
-# modules/desktop/compositors/hyprland/default.nix
+# modules/desktop/compositors/hyprland/hyprland.nix
+# Hyprland should also be enabled in the host configuration using the nixOS module
 { config, lib, pkgs, ... }:
 with lib;
 {

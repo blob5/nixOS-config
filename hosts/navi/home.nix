@@ -1,11 +1,39 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
   imports = [
-    ../common/common-home.nix
-    ../../modules/services/easyeffects.nix
+
+    # Services
+    ../../modules/services/home/easyeffects.nix
+
+    # Programs
+    ../../modules/programs/editors/vscode.nix
+    ../../modules/programs/terminals/wezterm/wezterm.nix
+    ../../modules/programs/terminals/kitty/kitty.nix
+    ../../modules/programs/terminals/zsh/zsh.nix
+    ../../modules/programs/spicetify/spicetify.nix
+    ../../modules/programs/nixcord.nix
+    ../../modules/programs/git.nix
+
+    # Desktop
     ../../modules/desktop/compositors/hyprland/hyprland.nix
+    ../../modules/desktop/waybar/waybar.nix
+    ../../modules/desktop/rofi/rofi.nix
+    ../../modules/desktop/fonts.nix
+    ../../modules/desktop/stylix/stylix.nix
+
+    # Packages
+    ../../modules/packages/home/applications.nix
+    ../../modules/packages/home/archive-tools.nix
+    ../../modules/packages/home/CLI-tools.nix
+    ../../modules/packages/home/cursor.nix
+    ../../modules/packages/home/development.nix
+    ../../modules/packages/home/entertainment.nix
+    ../../modules/packages/home/fun.nix
+    ../../modules/packages/home/home-manager.nix
+    ../../modules/packages/home/pentesting.nix
+    ../../modules/packages/home/terminals.nix
+
   ];
 
   hyprland = {
@@ -20,17 +48,6 @@
   home.homeDirectory = "/home/blob";
   home.stateVersion = "25.05";
 
-  # audio effects and filters
-  services.easyeffects.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
-
-  # Host-specific git settings
-  programs.git = {
-    enable = true;
-    userName = "blob5";
-    signing = {
-      key = "77EC7100CA8F93A1";
-      signByDefault = true;
-    };
-  };
 }

@@ -1,21 +1,32 @@
 { config, pkgs, ... }:
 
 {
-  
   programs.niri.enable = true;
 
   imports =
     [
-      ## Services
-      ../../modules/services/audio.nix
-      ../../modules/services/sddm.nix
-
       ## Hardware configuration
       ./hardware-configuration.nix
       
-      ## 
-      ../common/common-packages.nix
+      ## Services
+      ../../modules/services/nixos/audio.nix
+      ../../modules/services/nixos/sddm.nix
+
+      ## Drivers
       ../../modules/drivers/amd.nix
+
+      # Core
+      ../../modules/core/default.nix
+
+      # Packages
+      ../../modules/packages/nixos/services.nix
+      ../../modules/packages/nixos/syncthing.nix
+      ../../modules/packages/nixos/programs.nix
+      ../../modules/packages/nixos/sddm.nix
+      ../../modules/packages/nixos/utils.nix
+      ../../modules/packages/nixos/desktop.nix
+      ../../modules/packages/nixos/applications.nix
+
     ];
 
   environment.systemPackages = with pkgs; [

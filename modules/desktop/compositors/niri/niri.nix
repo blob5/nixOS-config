@@ -1,3 +1,4 @@
+# Niri should also be enabled in the host configuration using the nixOS module
 { config, lib, pkgs, ... }:
 with lib;
 {

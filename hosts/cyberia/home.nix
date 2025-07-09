@@ -2,9 +2,35 @@
 
 {
   imports = [
-    ../common/common-home.nix
-    ../../modules/desktop/waybar/waybar.nix
+    # Programs 
+    ../../modules/programs/editors/vscode.nix
+    ../../modules/programs/terminals/wezterm/wezterm.nix
+    ../../modules/programs/terminals/kitty/kitty.nix
+    ../../modules/programs/terminals/zsh/zsh.nix
+    ../../modules/programs/spicetify/spicetify.nix
+    ../../modules/programs/nixcord.nix
+    ../../modules/programs/git.nix
+
+    # Desktop
     ../../modules/desktop/compositors/niri/niri.nix
+    ../../modules/desktop/waybar/waybar.nix
+    ../../modules/desktop/rofi/rofi.nix
+    ../../modules/desktop/stylix/stylix.nix
+    ../../modules/desktop/fonts.nix
+
+
+    # Packages
+    ../../modules/packages/home/applications.nix
+    ../../modules/packages/home/arcive-tools.nix
+    ../../modules/packages/home/CLI-tools.nix
+    ../../modules/packages/home/cursor.nix
+    ../../modules/packages/home/development.nix
+    ../../modules/packages/home/entertainment.nix
+    ../../modules/packages/home/fun.nix
+    ../../modules/packages/home/home-manager.nix
+    ../../modules/packages/home/pentesting.nix
+    ../../modules/packages/home/terminals.nix
+
   ];
 
 
@@ -18,6 +44,7 @@
   home.username = "blob";
   home.homeDirectory = "/home/blob";
   home.stateVersion = "25.05"; # Match your NixOS version
+  
   nixpkgs.config.allowUnfree = true;
 
 }

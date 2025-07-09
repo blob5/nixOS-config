@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running 'nixos-help').
-
 { config, pkgs, ... }:
 
 {
@@ -11,15 +7,29 @@
     [
       ./hardware-configuration.nix
 
+      # Programs/services/modules
       ../../modules/virtualization/virtualization.nix
-      ../common/common-packages.nix
       ../../modules/programs/gaming/steam.nix
       ../../modules/programs/gaming/minecraft.nix
+
+      # Services
+      ../../modules/services/nixos/audio.nix
+      ../../modules/services/nixos/sddm.nix
+
+      # Core
+      ../../modules/core/default.nix
       ../../modules/drivers/nvidia.nix
 
-      ../../modules/services/audio.nix
-      ../../modules/services/sddm.nix
 
+
+      # Packages
+      ../../modules/packages/nixos/services.nix
+      ../../modules/packages/nixos/syncthing.nix
+      ../../modules/packages/nixos/programs.nix
+      ../../modules/packages/nixos/sddm.nix
+      ../../modules/packages/nixos/utils.nix
+      ../../modules/packages/nixos/desktop.nix
+      ../../modules/packages/nixos/applications.nix
     ];
 
   programs.hyprland.enable = true;
