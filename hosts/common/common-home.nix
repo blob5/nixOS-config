@@ -43,9 +43,6 @@
       fastfetch
       spotdl
 
-      # Media Players
-      tauon
-
       # Media & Applications
       inputs.zen-browser.packages."${system}".twilight
       kdePackages.dolphin # File manager
@@ -59,11 +56,10 @@
       obsidian
       zed-editor
       inputs.nixvim.packages.x86_64-linux.default
-      
+      tauon
 
-
       
-      # Media
+      # Media Entertainment 
       inputs.lobster.packages."${system}".lobster
       inputs.fastanime.packages."${system}".default
       ffmpeg
