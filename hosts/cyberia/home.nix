@@ -21,7 +21,7 @@
 
     # Packages
     ../../modules/packages/home/applications.nix
-    ../../modules/packages/home/arcive-tools.nix
+    ../../modules/packages/home/archive-tools.nix
     ../../modules/packages/home/CLI-tools.nix
     ../../modules/packages/home/cursor.nix
     ../../modules/packages/home/development.nix
