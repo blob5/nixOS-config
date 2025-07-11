@@ -25,7 +25,6 @@
     enable = true;
     enableSSHSupport = true;
   };
-}
 
   # waylock PAM configuration
   security.pam.services.waylock = {
