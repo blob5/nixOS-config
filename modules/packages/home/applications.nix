@@ -5,7 +5,7 @@
  
       # Media & Applications
       inputs.zen-browser.packages."${system}".twilight
-      kdePackages.dolphin # File manager
+      nautilus # File manager
       kdePackages.ark # Archive manager
       kdePackages.gwenview # Image viewer
       qbittorrent
