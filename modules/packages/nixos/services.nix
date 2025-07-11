@@ -19,6 +19,13 @@
 	systemd.user.units.swaync.enable = true;
 
   services.envfs.enable = true;
+  programs.nix-ld.enable = true;
+
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+}
 
   # waylock PAM configuration
   security.pam.services.waylock = {
