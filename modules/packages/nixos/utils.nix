@@ -11,7 +11,5 @@
     wireguard-tools
     dconf
     inetutils
-    ripgrep
-
   ];
 }

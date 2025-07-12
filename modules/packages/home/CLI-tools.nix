@@ -17,6 +17,9 @@
       superfile
       fastfetch
       spotdl
+      duf # Disk usage utility
+      lazydocker
+      ripgrep
     ];
   };
 }
