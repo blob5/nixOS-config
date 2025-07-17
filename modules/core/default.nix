@@ -10,5 +10,6 @@
     ./nix.nix
 		./users.nix
     ./services.nix
+		./defaultapps.nix
   ];
 }
