@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   services = {
@@ -26,7 +26,13 @@
     };
   };
 
-  virtualisation.docker.enable = true;
+   virtualisation.docker.enable = true;
+
+  # Prevent Docker service from starting at boot
+  systemd.services.docker.wantedBy = lib.mkForce [ ]; # disables autostart
+
+  # Allow the docker socket to trigger it on demand
+  systemd.sockets.docker.wantedBy = [ "sockets.target" ];
 
 
   # COnfigure keymap
