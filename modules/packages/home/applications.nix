@@ -16,7 +16,6 @@
       obsidian
       zed-editor
       inputs.nixvim.packages.x86_64-linux.default
-      tauon
       picard
     ];
   };
