@@ -1,10 +1,16 @@
-{ inputs, pkgs, systemSettings, userSettings, ... }: {
+{ inputs, pkgs, systemSettings, userSettings, ... }: 
+
+{
+  imports = [
+    inputs.zen-browser.homeModules.twilight
+  ];
+  programs.zen-browser.enable = true;
+
 
   home = {
     packages = with pkgs; [
  
       # Media & Applications
-      inputs.zen-browser.packages."${system}".twilight
       nautilus # File manager
       kdePackages.ark # Archive manager
       kdePackages.gwenview # Image viewer
@@ -14,7 +20,6 @@
       libreoffice-qt
       superfile
       obsidian
-      zed-editor
       inputs.nixvim.packages.x86_64-linux.default
       picard
     ];
