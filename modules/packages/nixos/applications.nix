@@ -11,8 +11,6 @@
     networkmanagerapplet
   ];
 
-  programs.firefox.enable = true;
   programs.wireshark.enable = true;
-
 
 }
