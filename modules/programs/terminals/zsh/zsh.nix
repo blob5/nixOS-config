@@ -33,7 +33,7 @@ in
       ls = "eza"; # replace ls with eza
       please = "sudo !!";
 
-      anime = "fastanime --provider allanime --fzf --preview --icons --normalize-titles --sub-lang eng --quality 1080 --continue --remote-history --translation-type dub --player mpv anilist";
+      anime = "fastanime";
 
       # aliases for my custom functions
       nixos-btw = "myfsinfo";

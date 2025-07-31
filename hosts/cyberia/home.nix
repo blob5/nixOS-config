@@ -10,6 +10,8 @@
     ../../modules/programs/spicetify/spicetify.nix
     ../../modules/programs/nixcord.nix
     ../../modules/programs/git.nix
+    ../../modules/programs/fastanime/fastanime.nix
+
 
     # Desktop
     ../../modules/desktop/compositors/niri/niri.nix
