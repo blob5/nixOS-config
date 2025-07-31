@@ -33,7 +33,7 @@ in
       ls = "eza"; # replace ls with eza
       please = "sudo !!";
 
-      anime = "fastanime";
+      anime = "fastanime anilist";
 
       # aliases for my custom functions
       nixos-btw = "myfsinfo";
