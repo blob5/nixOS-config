@@ -6,10 +6,10 @@ let
 in
 {
 
-  # Import the fastanime zsh completions
-  home.file.".config/zsh/completions/fastanime.zsh".source = builtins.fetchurl {
-    url = "https://raw.githubusercontent.com/Benexl/FastAnime/refs/heads/master/completions/fastanime.zsh";
-    sha256 = "1bqgfvfwjxk0kl7fqc3vspza4w8cgnq8w6n1k616f45in7hl87c9";
+  # Import the viu zsh completions
+  home.file.".config/zsh/completions/viu.zsh".source = builtins.fetchurl {
+    url = "https://raw.githubusercontent.com/Benexl/viu/refs/heads/master/completions/viu.zsh";
+    sha256 = "1cw3rbhrrqc8nann9ymjdmqpn1pa1gj4f15n92cwvc4pb2amcfcf";
   };
 
   programs.zsh = {
@@ -33,7 +33,7 @@ in
       ls = "eza"; # replace ls with eza
       please = "sudo !!";
 
-      anime = "fastanime anilist";
+      anime = "viu anilist";
 
       # aliases for my custom functions
       nixos-btw = "myfsinfo";
@@ -190,8 +190,8 @@ in
         grep -r "$1" . | fzf
       }
 
-      # Load zsh fastanime completions
-      source ~/.config/zsh/completions/fastanime.zsh
+      # Load zsh viu completions
+      source ~/.config/zsh/completions/viu.zsh
 
 
       eval "$(zoxide init zsh)"

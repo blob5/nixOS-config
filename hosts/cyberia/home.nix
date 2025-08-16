@@ -10,7 +10,7 @@
     ../../modules/programs/spicetify/spicetify.nix
     ../../modules/programs/nixcord.nix
     ../../modules/programs/git.nix
-    ../../modules/programs/fastanime/fastanime.nix
+    ../../modules/programs/viu/viu.nix
 
 
     # Desktop

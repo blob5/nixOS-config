@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
-    fastanime.url = "github:Benexl/fastanime";
+    fastanime.url = "github:blob5/viu-fix";
     lobster.url = "github:justchokingaround/lobster";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
     stylix.url = "github:danth/stylix";  
