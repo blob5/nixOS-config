@@ -5,7 +5,7 @@
  
       # Media Entertainment 
       inputs.lobster.packages."${system}".lobster
-      inputs.fastanime.packages."${system}".default
+      inputs.viu.packages."${system}".default
       ffmpeg
       (mpv.override { scripts = [
         mpvScripts.uosc
