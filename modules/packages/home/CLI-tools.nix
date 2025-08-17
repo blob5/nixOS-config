@@ -5,7 +5,7 @@
 
     # CLI tools
       htop
-      wget
+      aria2
       ookla-speedtest
       zoxide
       fzf
