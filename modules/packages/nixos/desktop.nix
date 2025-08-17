@@ -8,7 +8,6 @@
     
     # Desktop
     waylock
-    swaynotificationcenter
     playerctl
     hyprshot
     libnotify

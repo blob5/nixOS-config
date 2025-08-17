@@ -22,6 +22,7 @@
       obsidian
       inputs.nixvim.packages.x86_64-linux.default
       picard
+      mako
     ];
   };
 }

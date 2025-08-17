@@ -3,7 +3,7 @@
 {
   imports = [
     # Services
-    ../../modules/services/home/swaync.nix
+    ../../modules/services/home/mako/mako.nix
 
 
     # Programs 
