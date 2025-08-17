@@ -2,6 +2,10 @@
 
 {
   imports = [
+    # Services
+    ../../modules/services/home/swaync.nix
+
+
     # Programs 
     ../../modules/programs/editors/vscode.nix
     ../../modules/programs/terminals/wezterm/wezterm.nix

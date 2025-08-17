@@ -5,6 +5,7 @@
 
     # Services
     ../../modules/services/home/easyeffects.nix
+    ../../modules/services/home/swaync.nix
 
     # Programs
     ../../modules/programs/editors/vscode.nix

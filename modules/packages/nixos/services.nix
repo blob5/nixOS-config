@@ -16,8 +16,6 @@
 
   ];
 
-	systemd.user.units.swaync.enable = true;
-
   services.envfs.enable = true;
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
