@@ -7,9 +7,6 @@
     [
       ./hardware-configuration.nix
 
-      # Programs/services/modules
-      ../../modules/virtualization/virtualization.nix
-
       # Core
       ../../modules/core/default.nix
 
