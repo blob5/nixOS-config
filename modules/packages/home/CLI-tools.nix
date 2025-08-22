@@ -20,6 +20,7 @@
       duf # Disk usage utility
       lazydocker
       ripgrep
+      micro
     ];
   };
 }
