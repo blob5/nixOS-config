@@ -7,6 +7,8 @@ A modular, customizable NixOS configuration using Flakes that features multiple 
 #### ⚠️ Warning
 This setup is modular but still tailored to my personal environment. While I don't recommend using it directly as a plug-and-play solution, you're welcome to copy and adapt specific parts that suit your needs.
 
+## Waybar
+<img alt="image" src="https://github.com/user-attachments/assets/d979534e-615a-421e-a61e-b1241754a3cc" />
 
 ## 🚀 Programs
 
