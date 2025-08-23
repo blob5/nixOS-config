@@ -13,7 +13,6 @@
     lm_sensors
     iw
     home-manager
-
   ];
 
   services.envfs.enable = true;
