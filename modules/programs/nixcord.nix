@@ -3,13 +3,13 @@
 {
   programs.nixcord = {
     enable = true;
-    discord.enable = false; # Disable the default Discord client
-  };
-  programs.nixcord = {
-    vesktop = {
+    discord = {
       enable = true;
+      vencord.enable = true; # Disable the default Discord client
       autoscroll.enable = true;
+      openASAR.enable = true;
     };
+    
     config.plugins = {
       callTimer.enable = true;
       betterGifPicker.enable = true;
