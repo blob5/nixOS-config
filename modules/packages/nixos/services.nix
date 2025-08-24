@@ -13,7 +13,7 @@
     lm_sensors
     iw
     home-manager
-    ddcutil
+    ddcutil # for controlling monitor settings
   ];
 
   services.envfs.enable = true;
