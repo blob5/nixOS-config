@@ -19,8 +19,9 @@
       spotdl
       duf # Disk usage utility
       lazydocker
-      ripgrep
+      ripgrep # better grep
       micro
+      fd # better find
     ];
   };
 }
