@@ -14,6 +14,8 @@
     roboto
     roboto-mono
     dejavu_fonts
+    inter-nerdfont
+    material-symbols
   ];
 
   fonts.fontconfig.enable = true;
