@@ -2,9 +2,6 @@
 
 If a wallpaper isn't mentioned here I probably couldn't find the original.
 
-opal58
-https://x.com/Opal_00_58
-
 supra
 https://x.com/yessirSupra
 
@@ -23,6 +20,3 @@ https://x.com/hrn_yc/status/1479288681756246016
 
 mikuFlowers
 https://www.pixiv.net/en/artworks/109275847
-
-ugeChan
-https://www.pixiv.net/en/artworks/76646067
