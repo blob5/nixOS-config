@@ -2,5 +2,5 @@
 { ... }: 
 
 {
-  home.file.".config/viu/config.ini".source = ./config.ini;
+  home.file.".config/viu/config.toml".source = ./config.toml;
 }
