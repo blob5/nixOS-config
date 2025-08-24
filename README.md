@@ -41,6 +41,7 @@ My configuration is organized into logical directories to make maintenance and c
 │   ├── core/             # Core system configurations
 │   ├── desktop/          # Desktop environment configurations
 │   ├── drivers/          # Hardware drivers (AMD, NVIDIA)
+│   ├── packages/         # Packages and configurations
 │   ├── programs/         # Application configurations
 │   ├── services/         # System services
 │   └── virtualization/   # VM and container support
