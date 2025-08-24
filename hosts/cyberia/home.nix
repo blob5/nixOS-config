@@ -15,6 +15,7 @@
     ../../modules/programs/nixcord.nix
     ../../modules/programs/git.nix
     ../../modules/programs/viu/viu.nix
+    ../../modules/programs/anime4k/anime4k.nix
 
 
     # Desktop
