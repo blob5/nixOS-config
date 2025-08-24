@@ -13,6 +13,7 @@
     lm_sensors
     iw
     home-manager
+    ddcutil
   ];
 
   services.envfs.enable = true;
