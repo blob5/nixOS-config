@@ -14,6 +14,7 @@
     iw
     home-manager
     ddcutil # for controlling monitor settings
+    gpu-screen-recorder
   ];
 
   services.envfs.enable = true;
