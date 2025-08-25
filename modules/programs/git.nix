@@ -6,7 +6,7 @@
     userName = "blob5";
     userEmail = "101657201+blob5@users.noreply.github.com";
     signing = {
-      key = "F1C140E19A2300F1";
+      key = "77EC7100CA8F93A1";
       signByDefault = true;
     };
   };
