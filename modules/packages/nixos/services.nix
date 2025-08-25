@@ -15,6 +15,7 @@
     home-manager
     ddcutil # for controlling monitor settings
     gpu-screen-recorder
+    frp
   ];
 
   services.envfs.enable = true;
