@@ -21,6 +21,7 @@
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
   services.frp.enable = true;
+  services.frp.role = "client";
 
   programs.gnupg.agent = {
     enable = true;
