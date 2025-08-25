@@ -20,7 +20,6 @@ in
     after = [
       "network-online.target"
       "tailscaled.service"
-      "sddm.service"
     ];
     wants = [ "network-online.target" ];
     wantedBy = [ "multi-user.target" ];
