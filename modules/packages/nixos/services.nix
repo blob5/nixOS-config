@@ -15,12 +15,12 @@
     home-manager
     ddcutil # for controlling monitor settings
     gpu-screen-recorder
-    frp
   ];
 
   services.envfs.enable = true;
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
+  services.frp.enable = true;
 
   programs.gnupg.agent = {
     enable = true;
