@@ -22,6 +22,7 @@
       ripgrep # better grep
       micro
       fd # better find
+      zellij
     ];
   };
 }
