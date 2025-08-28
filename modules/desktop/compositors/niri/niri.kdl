@@ -18,6 +18,7 @@ prefer-no-csd
 layout {
     gaps 6
     center-focused-column "never"
+    background-color "transparent"
     
     preset-column-widths {
         proportion 0.25
@@ -61,9 +62,8 @@ layout {
 
 // Window rules
 window-rule {
-    geometry-corner-radius 12.0
+    geometry-corner-radius 20
     clip-to-geometry true
-    draw-border-with-background false
 }
 
 window-rule {
@@ -264,6 +264,20 @@ window-rule {
 window-rule {
     match title="Error"
     open-floating true
+}
+
+layer-rule {
+    match namespace="^swww-daemon$"
+    place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^quickshell-wallpaper$"
+}
+
+layer-rule {
+    match namespace="^quickshell-overview$"
+    place-within-backdrop true
 }
 
 hotkey-overlay {
