@@ -7,9 +7,12 @@
   programs.zen-browser.enable = true;
 
 
+
   home = {
     packages = with pkgs; [
- 
+      # Quickshell Nocaalia configuration
+      inputs.noctalia.packages.${system}.default
+
       # Media & Applications
       nautilus # File manager
       kdePackages.ark # Archive manager
