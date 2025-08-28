@@ -15,6 +15,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     nixcord.url = "github:kaylorben/nixcord";
     nixvim.url = "github:dc-tec/nixvim";
+    noctalia.url = "github:noctalia-dev/noctalia-shell";
   };
 
   outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
