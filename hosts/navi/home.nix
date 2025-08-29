@@ -6,6 +6,7 @@
     # Services
     ../../modules/services/home/easyeffects.nix
     ../../modules/services/home/mako/mako.nix
+    ../../modules/services/home/openrgb.nix
 
     # Programs
     ../../modules/programs/editors/vscode.nix
