@@ -7,9 +7,6 @@ A modular, customizable NixOS configuration using Flakes that features multiple 
 #### ⚠️ Warning
 This setup is modular but still tailored to my personal environment. While I don't recommend using it directly as a plug-and-play solution, you're welcome to copy and adapt specific parts that suit your needs.
 
-## Waybar preview
-<img alt="image" src="https://github.com/user-attachments/assets/d979534e-615a-421e-a61e-b1241754a3cc" />
-
 ## 🚀 Programs
 
 - **Window Managers/Compositors**:
@@ -23,7 +20,7 @@ This setup is modular but still tailored to my personal environment. While I don
   - [VSCode](https://code.visualstudio.com/)
 - **Shell**: [ZSH](https://ohmyz.sh/)
 - **Application Launcher**: [Rofi](https://github.com/davatorium/rofi)
-- **Status Bar**: [Waybar](https://github.com/Alexays/Waybar)
+- **Status Bar**: [noctalia shell](https://github.com/noctalia-dev/noctalia-shell)
 - **Theming**: [Stylix](https://github.com/danth/stylix)
 
 ## 📁 Project Structure
@@ -35,8 +32,9 @@ My configuration is organized into logical directories to make maintenance and c
 ├── flake.nix             # Main flake configuration
 ├── hosts/                # Host-specific configurations
 │   ├── common/           # Shared configurations
-│   ├── cyberia/          # Specific host configuration
-│   └── navi/             # Specific host configuration
+│   ├── cyberia/          # Laptop
+│   ├── navi/             # Desktop
+│   └── core/             # Server
 ├── modules/              # Modular configuration components
 │   ├── core/             # Core system configurations
 │   ├── desktop/          # Desktop environment configurations
