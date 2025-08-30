@@ -13,7 +13,6 @@
   # For example, the waybar-dev alias in zsh.nix configuration files
   flakeRoot = "$HOME/.config/nixos";
 
-
   bootloader = {
     efiSupport = true;
     device = "nodev";
