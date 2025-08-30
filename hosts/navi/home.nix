@@ -10,6 +10,7 @@
 
     # Programs
     ../../modules/programs/editors/vscode.nix
+    ../../modules/programs/editors/vim.nix
     ../../modules/programs/terminals/wezterm/wezterm.nix
     ../../modules/programs/terminals/kitty/kitty.nix
     ../../modules/programs/terminals/zsh/zsh.nix
@@ -21,7 +22,6 @@
 
     # Desktop
     ../../modules/desktop/compositors/hyprland/hyprland.nix
-    ../../modules/desktop/waybar/waybar.nix
     ../../modules/desktop/rofi/rofi.nix
     ../../modules/desktop/fonts.nix
     ../../modules/desktop/stylix/stylix.nix
