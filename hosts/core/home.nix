@@ -6,7 +6,8 @@
 
     # Programs 
     ../../modules/programs/terminals/zsh/zsh.nix
-    ./git.nix
+    ../../modules/programs/git.nix
+
 
     # Desktop
     ../../modules/desktop/fonts.nix
