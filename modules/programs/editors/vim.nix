@@ -3,6 +3,11 @@
 {
   programs.nixvim = {
     enable = true;
+
+    colorschemes.monokai-pro = {
+      enable = true;
+      settings.transparent_background = true;
+    };
     
     plugins = {
       treesitter = { # syntax highlighting
