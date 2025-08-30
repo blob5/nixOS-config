@@ -10,7 +10,7 @@ in
     sddm = {
       wayland.enable = true;
       enable = true;
-      theme = "sddm-astronaut-theme";
+      theme = "where-is-my-sddm-theme";
       extraPackages = with pkgs.kdePackages; [
             qtmultimedia
             qtsvg

@@ -6,8 +6,7 @@
   environment.systemPackages = with pkgs; [
 
     # sddm
-    catppuccin-sddm
-    sddm-astronaut
+    where-is-my-sddm-theme
 
   ];
 }
