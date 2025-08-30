@@ -50,7 +50,7 @@
   # Host-specific home-manager settings
   home.username = "blob";
   home.homeDirectory = "/home/blob";
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 
   nixpkgs.config.allowUnfree = true;
 
