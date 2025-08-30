@@ -14,11 +14,11 @@
     ags.url = "github:Aylur/ags";
     hyprland.url = "github:hyprwm/Hyprland";
     nixcord.url = "github:kaylorben/nixcord";
-    nixvim.url = "github:dc-tec/nixvim";
+    nixvim.url = "github:nix-community/nixvim";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
 
 
@@ -26,7 +26,7 @@
       hosts = {
         cyberia = import ./hosts/cyberia/settings.nix;
         navi = import ./hosts/navi/settings.nix;
-	core = import ./hosts/core/settings.nix;
+	      core = import ./hosts/core/settings.nix;
       };
 
       userSettings = {
@@ -42,7 +42,7 @@
           modules = [
             ./hosts/${hostName}/configuration.nix
             inputs.minegrub-world-sel-theme.nixosModules.default
-            stylix.nixosModules.stylix
+            inputs.stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager {
               home-manager.backupFileExtension = "backup";
               home-manager.useUserPackages = true;
@@ -52,6 +52,7 @@
               home-manager.sharedModules = [
                 inputs.nixcord.homeModules.nixcord
                 inputs.stylix.homeModules.stylix
+                inputs.nixvim.homeModules.nixvim
               ];
 
               home-manager.extraSpecialArgs = {
