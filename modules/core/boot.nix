@@ -32,7 +32,7 @@ in
       efiSupport = hostSettings.bootloader.efiSupport;
       device = "${hostSettings.bootloader.device}";
 
-      configurationLimit = 10;
+      configurationLimit = 5;
 
       minegrub-world-sel = {
         enable = true;
