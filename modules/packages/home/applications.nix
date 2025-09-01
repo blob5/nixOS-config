@@ -25,6 +25,7 @@
       obsidian
       picard
       mako
+      moonlight-qt
     ];
   };
 }
