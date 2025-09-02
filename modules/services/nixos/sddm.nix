@@ -1,22 +1,34 @@
 { inputs, pkgs, systemSettings, ... }:
-
 let
   hostSettings = import "${inputs.self}/hosts/${systemSettings.hostname}/settings.nix";
 in
 {
-  # sddm
+  # Add the theme to system packages with Qt6 variant
+  environment.systemPackages = [
+    (pkgs.where-is-my-sddm-theme.override {
+      variants = [ "qt6" ];
+    })
+  ];
+
+  # SDDM configuration
   services.displayManager = {
     sessionPackages = [ pkgs.${hostSettings.compositor} ];
     sddm = {
-      wayland.enable = true;
       enable = true;
+      wayland.enable = true;
       theme = "where_is_my_sddm_theme";
-      extraPackages = with pkgs.kdePackages; [
-            qtmultimedia
-            qtsvg
-            qtvirtualkeyboard
-        ];
       package = pkgs.kdePackages.sddm;
+      extraPackages = with pkgs.kdePackages; [
+        qtmultimedia
+        qtsvg
+        qtvirtualkeyboard
+        qt5compat
+      ];
+      settings = {
+        General = {
+          GreeterEnvironment = "QT_SCALE_FACTOR=1";
+        };
+      };
     };
   };
 }
