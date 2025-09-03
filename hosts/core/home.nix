@@ -23,6 +23,13 @@
   ];
 
 
+  home = {
+    packages = with pkgs; [
+      hyperion-ng
+    ];
+  };
+
+
   # Host-specific home-manager settings
   home.username = "blob";
   home.homeDirectory = "/home/blob";
