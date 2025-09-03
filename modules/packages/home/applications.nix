@@ -26,6 +26,7 @@
       picard
       mako
       moonlight-qt
+      spotify-player
     ];
   };
 }
