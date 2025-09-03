@@ -71,6 +71,12 @@ in
         sudo tune2fs -l "$DEVICE" | grep 'Filesystem created:'
       }
 
+      # Pull request tracker for nixpkgs
+      nixpr() {
+        curl -s "https://blog.nyaw.xyz/api/pr-stat?pr=$1" | jq
+      }
+
+
 
       # Waybar development mode
       # This function starts waybar in a loop, 
