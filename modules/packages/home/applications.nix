@@ -13,6 +13,9 @@
       # Quickshell Nocaalia configuration
       inputs.noctalia.packages.${system}.default
 
+      # Vicinae launcher
+      inputs.vicinae.packages."${system}".default
+
       # Media & Applications
       nautilus # File manager
       kdePackages.ark # Archive manager
