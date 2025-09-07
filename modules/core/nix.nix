@@ -2,15 +2,27 @@
 
 
 {
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    download-buffer-size = 52428800; # 50 MiB
+    auto-optimise-store = true;
+  };
 
-	nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.download-buffer-size = 524288000; # 500 MiB
+  # Avoid freezing the system under memory pressure
+  services.earlyoom.enable = true;
+  services.earlyoom.enableNotifications = true; # Possible DoS vector if untrusted users on same pc.
+
+  zramSwap = {
+    enable = true;
+    algorithm = "lz4";
+  };
+
+
   nixpkgs.config = {
     allowUnfree = true;
   };
 
   # Garbage collection
-	nix.settings.auto-optimise-store = true;
 	nix.gc = {
 		automatic = true;
 		persistent = false;
