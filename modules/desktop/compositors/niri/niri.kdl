@@ -288,10 +288,11 @@ hotkey-overlay {
 // Spawn at startup
 spawn-at-startup "polkit-gnome-authentication-agent-1"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "waybar"
+spawn-at-startup "noctalia-shell"
 spawn-at-startup "wl-paste" "--type" "text"
 spawn-at-startup "wl-paste" "--type" "image"
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "vicinae server"
 
 // Key bindings
 binds {
@@ -348,8 +349,8 @@ binds {
     
     // Applications  
     "Mod+Return" { spawn "wezterm"; }
-    "Mod+R" { spawn "rofi" "-show" "drun" "-show-icons"; }
-    "Mod+E" { spawn "dolphin"; }
+    "Mod+R" { spawn "vicinae"; }
+    "Mod+E" { spawn "nautilus"; }
     "Mod+B" { spawn "zen"; }
     
     // System
