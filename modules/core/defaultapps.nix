@@ -26,6 +26,8 @@
     "application/json" = [ "code.desktop" ];
     "application/x-yaml" = [ "code.desktop" ];
     "application/xml" = [ "code.desktop" ];
+
+    "x-scheme-handler/terminal" = [ "wezterm.desktop" ];
   };
 
 }
