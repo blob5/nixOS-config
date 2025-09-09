@@ -20,13 +20,13 @@
 
     sunshine = {
       enable = true;
-      autoStart = false;
+      autoStart = true;
       capSysAdmin = true;
       openFirewall = true;
     };
   };
 
-   virtualisation.docker.enable = true;
+  virtualisation.docker.enable = true;
 
   # Prevent Docker service from starting at boot
   systemd.services.docker.wantedBy = lib.mkForce [ ]; # disables autostart
