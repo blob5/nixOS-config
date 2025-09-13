@@ -26,7 +26,7 @@ in
       ];
       settings = {
         General = {
-          GreeterEnvironment = "QT_SCALE_FACTOR=1";
+          GreeterEnvironment = "QT_AUTO_SCREEN_SCALE_FACTOR=1,QT_SCALE_FACTOR=auto";
         };
       };
     };
