@@ -22,7 +22,6 @@
 
     # Desktop
     ../../modules/desktop/compositors/hyprland/hyprland.nix
-    ../../modules/desktop/rofi/rofi.nix
     ../../modules/desktop/fonts.nix
     ../../modules/desktop/stylix/stylix.nix
 

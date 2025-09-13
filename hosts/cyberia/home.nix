@@ -20,7 +20,6 @@
 
     # Desktop
     ../../modules/desktop/compositors/niri/niri.nix
-    ../../modules/desktop/rofi/rofi.nix
     ../../modules/desktop/stylix/stylix.nix
     ../../modules/desktop/fonts.nix
 
