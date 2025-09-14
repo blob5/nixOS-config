@@ -27,7 +27,6 @@ with lib;
     };
   };
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
   config = {
     # Include your common hyprland.conf content here
     home.file.".config/hypr/hyprland.conf".text = ''
