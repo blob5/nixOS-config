@@ -24,6 +24,7 @@
     ../../modules/desktop/compositors/hyprland/hyprland.nix
     ../../modules/desktop/fonts.nix
     ../../modules/desktop/stylix/stylix.nix
+    ../../modules/desktop/rofi/rofi.nix
 
     # Packages
     ../../modules/packages/home/applications.nix

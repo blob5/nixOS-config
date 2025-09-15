@@ -16,7 +16,6 @@
     nixcord.url = "github:kaylorben/nixcord";
     nixvim.url = "github:nix-community/nixvim";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
-    vicinae.url = "github:vicinaehq/vicinae";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
