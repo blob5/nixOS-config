@@ -9,6 +9,7 @@
     better-control
     waypaper
     networkmanagerapplet
+    protonvpn-gui
   ];
 
   programs.wireshark.enable = true;
