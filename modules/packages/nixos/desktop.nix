@@ -15,5 +15,6 @@
     wl-clipboard
     pavucontrol
     blueman
+    wlsunset
   ];
 }
