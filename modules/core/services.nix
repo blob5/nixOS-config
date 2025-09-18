@@ -18,6 +18,8 @@
 
     dbus.enable = true;
 
+    gnome.gnome-keyring.enable = true;
+
     sunshine = {
       enable = true;
       autoStart = true;
