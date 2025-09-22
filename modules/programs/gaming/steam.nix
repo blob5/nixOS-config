@@ -8,7 +8,10 @@
 
   programs = {
     gamemode.enable = true; # Add "gamemoderun %command%" to launch options to use gamemode
-    steam.enable = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+    };
   };
 }
 
