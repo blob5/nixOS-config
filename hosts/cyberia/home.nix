@@ -4,6 +4,7 @@
   imports = [
     # Services
     ../../modules/services/home/mako/mako.nix
+    ../../modules/services/home/udiskie.nix
 
 
     # Programs 
