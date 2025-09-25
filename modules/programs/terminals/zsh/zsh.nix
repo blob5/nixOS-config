@@ -29,6 +29,7 @@ in
       q = "exit";
       c = "code .";
       r = "code ~/.config/nixos";
+      m = "micro";
       spf = "superfile";
       cd = "z"; # replace cd with zoxide
       ls = "eza"; # replace ls with eza
