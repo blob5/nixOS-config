@@ -23,6 +23,7 @@
       micro
       fd # better find
       zellij
+      lazygit
     ];
   };
 }
