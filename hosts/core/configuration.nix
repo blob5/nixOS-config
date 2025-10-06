@@ -21,7 +21,7 @@
       ../../modules/packages/nixos/utils.nix
 
     ];
-
+  networking.firewall.allowedTCPPorts = [ 19400 ];
 
   # Original install version,
   # This is only used by some packages for backwards compatibility.
