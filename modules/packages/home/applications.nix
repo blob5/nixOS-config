@@ -20,13 +20,13 @@
       qbittorrent
       vlc
       foliate # E reader
-      libreoffice-qt
       superfile
       obsidian
-      picard
       mako
       moonlight-qt
-      spotify-player
+      spotify-player # Spotify CLI client
+      heroic # Game launcher
+      ollama-cuda # Local LLMs with NVIDIA GPU support
     ];
   };
 }

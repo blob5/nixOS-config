@@ -27,12 +27,15 @@
   };
 
   # waylock PAM configuration
-  security.pam.services.waylock = {
-    text = ''
-      auth      include login
-      account   include login
-      password  include login
-      session   include login
-    '';
+  security.pam.services = {
+    login.enableGnomeKeyring = true;
+    waylock = {
+      text = ''
+        auth      include login
+        account   include login
+        password  include login
+        session   include login
+      '';
+    };
   };
 }

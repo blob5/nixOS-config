@@ -4,7 +4,7 @@
     packages = with pkgs; [
 
     # CLI tools
-      htop
+      btop
       aria2
       ookla-speedtest
       zoxide

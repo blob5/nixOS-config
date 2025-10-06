@@ -4,6 +4,7 @@
   imports = [
     # Services
     ../../modules/services/home/mako/mako.nix
+    ../../modules/services/home/udiskie.nix
 
 
     # Programs 
@@ -20,9 +21,9 @@
 
     # Desktop
     ../../modules/desktop/compositors/niri/niri.nix
-    ../../modules/desktop/rofi/rofi.nix
     ../../modules/desktop/stylix/stylix.nix
     ../../modules/desktop/fonts.nix
+    ../../modules/desktop/rofi/rofi.nix
 
 
     # Packages

@@ -7,6 +7,7 @@
     ../../modules/services/home/easyeffects.nix
     ../../modules/services/home/mako/mako.nix
     ../../modules/services/home/openrgb.nix
+    ../../modules/services/home/udiskie.nix
 
     # Programs
     ../../modules/programs/editors/vscode.nix
@@ -22,9 +23,9 @@
 
     # Desktop
     ../../modules/desktop/compositors/hyprland/hyprland.nix
-    ../../modules/desktop/rofi/rofi.nix
     ../../modules/desktop/fonts.nix
     ../../modules/desktop/stylix/stylix.nix
+    ../../modules/desktop/rofi/rofi.nix
 
     # Packages
     ../../modules/packages/home/applications.nix

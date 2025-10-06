@@ -16,7 +16,7 @@ This setup is modular but still tailored to my personal environment. While I don
   - [Kitty](https://sw.kovidgoyal.net/kitty/)
   - [WezTerm](https://wezfurlong.org/wezterm/)
 - **Text Editors**:
-  - [LazyVim](https://github.com/LazyVim/LazyVim)
+  - [NixVim](https://github.com/nix-community/nixvim)
   - [VSCode](https://code.visualstudio.com/)
 - **Shell**: [ZSH](https://ohmyz.sh/)
 - **Application Launcher**: [Rofi](https://github.com/davatorium/rofi)
@@ -30,8 +30,8 @@ My configuration is organized into logical directories to make maintenance and c
 ```
 .
 ├── flake.nix             # Main flake configuration
+├── dev-shells            # Development shells
 ├── hosts/                # Host-specific configurations
-│   ├── common/           # Shared configurations
 │   ├── cyberia/          # Laptop
 │   ├── navi/             # Desktop
 │   └── core/             # Server

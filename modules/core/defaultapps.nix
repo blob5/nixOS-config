@@ -2,7 +2,6 @@
 { ... }:
 
 {
-
   xdg.mime.defaultApplications = {
     "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
 
@@ -15,6 +14,7 @@
     "image/bmp" = [ "org.kde.gwenview.desktop" ];
     "image/tiff" = [ "org.kde.gwenview.desktop" ];
 
+    # Text and code
     "text/plain" = [ "code.desktop" ];
     "text/x-python" = [ "code.desktop" ];
     "text/x-c" = [ "code.desktop" ];
@@ -26,6 +26,10 @@
     "application/json" = [ "code.desktop" ];
     "application/x-yaml" = [ "code.desktop" ];
     "application/xml" = [ "code.desktop" ];
-  };
 
+    # PDF files → Zen Browser
+    "application/pdf" = [ "zen-twilight.desktop" ];
+
+    "x-scheme-handler/terminal" = [ "wezterm.desktop" ];
+  };
 }
