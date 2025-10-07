@@ -1,4 +1,11 @@
 {
+
+  xdg.autostart.entries.easyeffects = {
+    name = "EasyEffects";
+    exec = "easyeffects --gapplication-service";
+    comment = "Start EasyEffects audio effects daemon";
+  };
+
   services.easyeffects = {
     enable = true;
     preset = "microphone-filter";
