@@ -11,6 +11,6 @@
 
   programs.java = {
     enable = true;
-    package = pkgs.jdk24;
+    package = pkgs.jdk25;
   };
 }
