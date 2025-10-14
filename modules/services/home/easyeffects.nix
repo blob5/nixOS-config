@@ -1,9 +1,23 @@
+{ pkgs, ... }:
 {
 
-  xdg.autostart.entries.easyeffects = {
-    name = "EasyEffects";
-    exec = "easyeffects --gapplication-service";
-    comment = "Start EasyEffects audio effects daemon";
+  systemd.user.services.easyeffects = {
+    Unit = {
+      Description = "Easyeffects daemon";
+      After = [ "graphical-session.target" "pipewire.service" "pipewire-pulse.service" ];
+      Requires = [ "pipewire.service" ];
+    };
+
+    Service = {
+      Type = "simple";
+      ExecStart = "${pkgs.easyeffects}/bin/easyeffects --gapplication-service --load-preset microphone-filter";
+      Restart = "on-failure";
+      RestartSec = 5;
+    };
+
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
   };
 
   services.easyeffects = {
