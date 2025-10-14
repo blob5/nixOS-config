@@ -25,7 +25,6 @@
       # Packages
       ../../modules/packages/nixos/services.nix
       ../../modules/packages/nixos/syncthing.nix
-      ../../modules/packages/nixos/sddm.nix
       ../../modules/packages/nixos/utils.nix
       ../../modules/packages/nixos/desktop.nix
       ../../modules/packages/nixos/applications.nix

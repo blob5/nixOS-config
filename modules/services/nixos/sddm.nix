@@ -5,8 +5,8 @@ in
 {
   # Add the theme to system packages with Qt6 variant
   environment.systemPackages = [
-    (pkgs.where-is-my-sddm-theme.override {
-      variants = [ "qt6" ];
+    (pkgs.sddm-astronaut.override {
+      embeddedTheme = "hyprland_kath";
     })
   ];
 
@@ -16,7 +16,7 @@ in
     sddm = {
       enable = true;
       wayland.enable = true;
-      theme = "where_is_my_sddm_theme";
+      theme = "sddm-astronaut-theme";
       package = pkgs.kdePackages.sddm;
       extraPackages = with pkgs.kdePackages; [
         qtmultimedia
