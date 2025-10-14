@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-
   systemd.user.services.easyeffects = {
     Unit = {
       Description = "Easyeffects daemon";
@@ -40,11 +39,11 @@
             wet = 0.0;
           };
 
-          # Noise gate
+          # Noise gate - optimized for close-mic male voice
           "gate#0" = {
             attack = 5.0;
             bypass = false;
-            "curve-threshold" = -42.0;
+            "curve-threshold" = -38.0;
             "curve-zone" = -3.0;
             dry = -100.0;
             "hpf-frequency" = 80.0;
@@ -58,7 +57,7 @@
             makeup = 0.0;
             "output-gain" = 0.0;
             reduction = -20.0;
-            release = 150.0;
+            release = 120.0;
             sidechain = {
               input = "Internal";
               lookahead = 0.0;
@@ -72,13 +71,13 @@
             wet = 0.0;
           };
 
-          # De‑esser
+          # De‑esser - tuned for male sibilance
           "deesser#0" = {
             bypass = false;
             detection = "RMS";
-            "f1-freq" = 4000.0;
+            "f1-freq" = 5000.0;
             "f1-level" = -3.0;
-            "f2-freq" = 6000.0;
+            "f2-freq" = 7000.0;
             "f2-level" = -3.0;
             "f2-q" = 1.8;
             "input-gain" = 0.0;
@@ -86,14 +85,14 @@
             makeup = 0.0;
             mode = "Wide";
             "output-gain" = 0.0;
-            ratio = 4.0;
+            ratio = 3.5;
             "sc-listen" = false;
-            threshold = -25.0;
+            threshold = -20.0;
           };
 
-          # Compressor 
+          # Compressor - optimized for streaming voice
           "compressor#0" = {
-            attack = 5.0;
+            attack = 4.0;
             "boost-amount" = 0.0;
             "boost-threshold" = -72.0;
             bypass = false;
@@ -104,11 +103,11 @@
             knee = 6.0;
             "lpf-frequency" = 20000.0;
             "lpf-mode" = "off";
-            makeup = 6.0;
+            makeup = 4.0;
             mode = "Downward";
             "output-gain" = 0.0;
-            ratio = 5.0;
-            release = 150.0;
+            ratio = 3.0;
+            release = 100.0;
             "release-threshold" = -40.0;
             sidechain = {
               lookahead = 3.0;
@@ -120,30 +119,32 @@
               type = "Feed-forward";
             };
             "stereo-split" = false;
-            threshold = -30.0;
+            threshold = -20.0;
             wet = 0.0;
           };
 
-          # Equalizer
+          # Equalizer - with high-pass filter as first band
           "equalizer#0" = {
             balance = 0.0;
             bypass = false;
             "input-gain" = 0.0;
             left = {
+              # High-pass filter (80Hz rolloff)
               band0 = {
                 frequency = 80.0;
-                gain = -2.0;
+                gain = -12.0;  # Steep cut for high-pass effect
                 mode = "BWC (MT)";
                 mute = false;
-                q = 1.0;
+                q = 0.7;       # Lower Q for broader cut
                 slope = "x2";
                 solo = false;
-                type = "Bell";
+                type = "High-pass";  # This is the key - use High-pass type
                 width = 4.0;
               };
+              # Rest of EQ bands...
               band1 = {
-                frequency = 100.0;
-                gain = 3.0;
+                frequency = 120.0;
+                gain = 2.0;
                 mode = "RLC (MT)";
                 mute = false;
                 q = 0.7;
@@ -153,7 +154,7 @@
                 width = 4.0;
               };
               band2 = {
-                frequency = 300.0;
+                frequency = 250.0;
                 gain = -1.5;
                 mode = "BWC (MT)";
                 mute = false;
@@ -164,8 +165,8 @@
                 width = 4.0;
               };
               band3 = {
-                frequency = 3000.0;
-                gain = 2.5;
+                frequency = 2000.0;
+                gain = 2.0;
                 mode = "BWC (BT)";
                 mute = false;
                 q = 1.0;
@@ -175,8 +176,19 @@
                 width = 4.0;
               };
               band4 = {
-                frequency = 12000.0;
-                gain = 2.0;
+                frequency = 4000.0;
+                gain = 1.5;
+                mode = "BWC (BT)";
+                mute = false;
+                q = 1.5;
+                slope = "x2";
+                solo = false;
+                type = "Bell";
+                width = 4.0;
+              };
+              band5 = {
+                frequency = 10000.0;
+                gain = 1.5;
                 mode = "LRX (MT)";
                 mute = false;
                 q = 0.7;
@@ -187,25 +199,25 @@
               };
             };
             mode = "IIR";
-            "num-bands" = 5;
+            "num-bands" = 6;
             "output-gain" = 0.0;
             "pitch-left" = 0.0;
             "pitch-right" = 0.0;
             right = {
               band0 = {
                 frequency = 80.0;
-                gain = -2.0;
+                gain = -12.0;
                 mode = "BWC (MT)";
                 mute = false;
-                q = 1.0;
+                q = 0.7;
                 slope = "x2";
                 solo = false;
-                type = "Bell";
+                type = "High-pass";
                 width = 4.0;
               };
               band1 = {
-                frequency = 100.0;
-                gain = 3.0;
+                frequency = 120.0;
+                gain = 2.0;
                 mode = "RLC (MT)";
                 mute = false;
                 q = 0.7;
@@ -215,7 +227,7 @@
                 width = 4.0;
               };
               band2 = {
-                frequency = 300.0;
+                frequency = 250.0;
                 gain = -1.5;
                 mode = "BWC (MT)";
                 mute = false;
@@ -226,8 +238,8 @@
                 width = 4.0;
               };
               band3 = {
-                frequency = 3000.0;
-                gain = 2.5;
+                frequency = 2000.0;
+                gain = 2.0;
                 mode = "BWC (BT)";
                 mute = false;
                 q = 1.0;
@@ -237,8 +249,19 @@
                 width = 4.0;
               };
               band4 = {
-                frequency = 12000.0;
-                gain = 2.0;
+                frequency = 4000.0;
+                gain = 1.5;
+                mode = "BWC (BT)";
+                mute = false;
+                q = 1.5;
+                slope = "x2";
+                solo = false;
+                type = "Bell";
+                width = 4.0;
+              };
+              band5 = {
+                frequency = 10000.0;
+                gain = 1.5;
                 mode = "LRX (MT)";
                 mute = false;
                 q = 0.7;
@@ -270,7 +293,7 @@
             release = 10.0;
             "sidechain-preamp" = 0.0;
             "stereo-link" = 100.0;
-            threshold = -3.0;
+            threshold = -6.0;
           };
 
           plugins_order = [
@@ -278,7 +301,7 @@
             "gate#0"
             "deesser#0"
             "compressor#0"
-            "equalizer#0"
+            "equalizer#0"  # High-pass is handled here as first EQ band
             "limiter#0"
           ];
         };
