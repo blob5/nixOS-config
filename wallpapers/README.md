@@ -22,5 +22,4 @@ mikuFlowers
 https://www.pixiv.net/en/artworks/109275847
 
 to / garashi teto
-
-https://danbooru.donmai.us/posts/6572083
+https://x.com/_tgrs_/status/1688521478155980800
