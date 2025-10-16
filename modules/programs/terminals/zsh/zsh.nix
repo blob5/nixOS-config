@@ -28,7 +28,7 @@ in
       n = "nvim";
       q = "exit";
       c = "code .";
-      r = "code ~/.config/nixos";
+      r = "code ~/.config/nixos 2>/dev/null";
       m = "micro";
       spf = "superfile";
       cd = "z"; # replace cd with zoxide
