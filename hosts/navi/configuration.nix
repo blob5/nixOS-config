@@ -46,7 +46,9 @@
     # Development
     pwntools
     gdb
-    # blender
+    blender
+    anki-bin
+    davinci-resolve-studio
   ];
 
   # Original install version,
