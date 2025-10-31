@@ -26,7 +26,6 @@
       moonlight-qt
       spotify-player # Spotify CLI client
       heroic # Game launcher
-      ollama-cuda # Local LLMs with NVIDIA GPU support
     ];
   };
 }
