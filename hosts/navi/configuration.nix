@@ -49,6 +49,7 @@
     blender
     anki-bin
     davinci-resolve-studio
+    darktable
   ];
 
   # Original install version,
