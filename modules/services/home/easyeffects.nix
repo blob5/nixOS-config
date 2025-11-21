@@ -1,5 +1,24 @@
 { pkgs, ... }:
 {
+
+    systemd.user.services.easyeffects = {
+    Unit = {
+      Description = "Easyeffects daemon";
+      After = [ "graphical-session.target" "pipewire.service" "pipewire-pulse.service" ];
+      Requires = [ "pipewire.service" ];
+    };
+
+    Service = {
+      ExecStart = "${pkgs.easyeffects}/bin/easyeffects --gapplication-service --load-preset microphone-filter";
+      Restart = "on-failure";
+      RestartSec = 5;
+    };
+
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+  };
+
   services.easyeffects = {
     enable = true;
     preset = "microphone-filter";
