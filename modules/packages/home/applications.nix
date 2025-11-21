@@ -24,7 +24,6 @@
       obsidian
       mako
       moonlight-qt
-      spotify-player # Spotify CLI client
       heroic # Game launcher
       remmina # Remote desktop client
     ];
