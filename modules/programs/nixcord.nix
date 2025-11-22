@@ -5,16 +5,21 @@
     enable = true;
     discord = {
       enable = true;
-      vencord.enable = true; # Disable the default Discord client
+      equicord.enable = true;
       autoscroll.enable = true;
-      openASAR.enable = true;
+      openASAR.enable = false;
+      vencord.enable = false;
     };
     
     config.plugins = {
+      gifCollections = {
+        enable = true;
+        preventDuplicates = true;
+        onlyShowCollections = true;
+      };
       callTimer.enable = true;
-      betterGifPicker.enable = true;
+      betterGifPicker.enable = false;
       fakeNitro.enable = true;
-      favoriteGifSearch.enable = true;
       fixSpotifyEmbeds.enable = true;
       forceOwnerCrown.enable = true;
       friendsSince.enable = true;
@@ -37,7 +42,7 @@
       openInApp.enable = true;
       shikiCodeblocks = {
         enable = true;
-        theme = "https://raw.githubusercontent.com/shikijs/shiki/refs/heads/v0/packages/shiki/themes/github-dark.json";
+        theme = "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/2d87559c7601a928b9f7e0f0dda243d2fb6d4499/packages/tm-themes/themes/github-dark-default.json";
         useDevIcon = "COLOR";
       };
       silentMessageToggle.enable = true;
@@ -47,7 +52,7 @@
       };
       volumeBooster = {
         enable = true;
-        multiplier = 5;
+        multiplier = 5.0;
       };
       webScreenShareFixes.enable = true;
       webKeybinds.enable = true;
