@@ -8,7 +8,7 @@
     };
 
     Service = {
-      Type = lib.mkForce "simple";
+      Type = lib.mkForce "simple"; # module uses 'dbus' which causes weird timeout issues.
       ExecStart = "${pkgs.easyeffects}/bin/easyeffects --gapplication-service --load-preset microphone-filter";
       Restart = "on-failure";
       RestartSec = 5;
