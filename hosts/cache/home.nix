@@ -24,10 +24,8 @@
     ../../modules/packages/home/CLI-tools.nix
     ../../modules/packages/home/cursor.nix
     ../../modules/packages/home/development.nix
-    ../../modules/packages/home/entertainment.nix
     ../../modules/packages/home/fun.nix
     ../../modules/packages/home/home-manager.nix
-    ../../modules/packages/home/pentesting.nix
     ../../modules/packages/home/terminals.nix
 
   ];
