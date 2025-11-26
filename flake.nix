@@ -7,7 +7,7 @@
     viu.url = "github:benexl/viu";
     lobster.url = "github:justchokingaround/lobster";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
-    stylix.url = "github:danth/stylix";  
+    stylix.url = "github:nix-community/stylix";  
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     niri.url = "github:sodiboo/niri-flake";
