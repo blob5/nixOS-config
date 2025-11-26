@@ -42,7 +42,7 @@
       openInApp.enable = true;
       shikiCodeblocks = {
         enable = true;
-        theme = "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/2d87559c7601a928b9f7e0f0dda243d2fb6d4499/packages/tm-themes/themes/github-dark-default.json";
+        theme = "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/ecd9fb1b4a38381df95048c19cf9b8bdcbb1ec09/packages/tm-themes/themes/github-dark-default.json";
         useDevIcon = "COLOR";
       };
       silentMessageToggle.enable = true;
