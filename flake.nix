@@ -26,7 +26,8 @@
       hosts = {
         cyberia = import ./hosts/cyberia/settings.nix;
         navi = import ./hosts/navi/settings.nix;
-	      core = import ./hosts/core/settings.nix;
+	core = import ./hosts/core/settings.nix;
+	cache =  import .hosts/cache/settings.nix;
       };
 
       userSettings = {
