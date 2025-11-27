@@ -50,6 +50,7 @@
     anki-bin
     davinci-resolve-studio
     darktable
+    ungoogled-chromium
   ];
 
   # Original install version,
