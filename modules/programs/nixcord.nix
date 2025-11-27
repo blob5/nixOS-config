@@ -40,11 +40,6 @@
       mutualGroupDMs.enable = true;
       newGuildSettings.enable = true;
       openInApp.enable = true;
-      shikiCodeblocks = {
-        enable = true;
-        theme = "https://raw.githubusercontent.com/shikijs/textmate-grammars-themes/ecd9fb1b4a38381df95048c19cf9b8bdcbb1ec09/packages/tm-themes/themes/github-dark-default.json";
-        useDevIcon = "COLOR";
-      };
       silentMessageToggle.enable = true;
       spotifyCrack = {
         enable = true;
