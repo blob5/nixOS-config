@@ -35,7 +35,7 @@
   services.hardware.openrgb.motherboard = "amd";
   services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
 
-
+  hardware.wooting.enable = true;
 
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
