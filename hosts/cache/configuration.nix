@@ -12,9 +12,6 @@
       ../../modules/services/nixos/audio.nix
       ../../modules/services/nixos/sddm.nix
 
-      ## Drivers
-      ../../modules/drivers/amd.nix
-
       # Core
       ../../modules/core/default.nix
 
@@ -34,6 +31,27 @@
     kdePackages.ark
     kdePackages.gwenview    
   ];
+
+  services.tlp.enable = true;
+  services.auto-cpufreq.enable = true;
+  services.thermald.enable = true;
+  hardware.enableAllFirmware = true;
+  hardware.firmware = [ pkgs.iwlwifi-firmware ];
+  services.xserver.libinput.enable = true;
+
+  services.logind.extraConfig = ''
+    HandleLidSwitch=suspend
+  '';
+
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      intel-vaapi-driver
+    ];
+  };
+
 
 
   # Original install version,
