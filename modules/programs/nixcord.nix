@@ -59,7 +59,6 @@
       };
       betterSettings.enable = true;
       homeTyping.enable = true;
-      WhosWatching.enable = true;
     };
   };
 }
