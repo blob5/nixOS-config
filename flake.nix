@@ -7,7 +7,7 @@
     viu.url = "github:benexl/viu";
     lobster.url = "github:justchokingaround/lobster";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
-    stylix.url = "github:nix-community/stylix";  
+    stylix.url = "github:nix-community/stylix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     niri.url = "github:sodiboo/niri-flake";
@@ -26,8 +26,8 @@
       hosts = {
         cyberia = import ./hosts/cyberia/settings.nix;
         navi = import ./hosts/navi/settings.nix;
-	core = import ./hosts/core/settings.nix;
-	cache =  import .hosts/cache/settings.nix;
+        core = import ./hosts/core/settings.nix;
+	      cache =  import ./hosts/cache/settings.nix;
       };
 
       userSettings = {
@@ -47,6 +47,7 @@
             home-manager.nixosModules.home-manager {
               home-manager.backupFileExtension = "backup";
               home-manager.useUserPackages = true;
+              home-manager.useGlobalPkgs = true;
               home-manager.users.${userSettings.username} = { config, ... }: {
                 imports = [ ./hosts/${hostName}/home.nix ];
               };
