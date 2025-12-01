@@ -35,6 +35,5 @@
   home.homeDirectory = "/home/blob";
   home.stateVersion = "25.11"; # Match your NixOS version
   
-  nixpkgs.config.allowUnfree = true;
 
 }

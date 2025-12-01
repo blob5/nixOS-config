@@ -3,7 +3,7 @@
   hostname = "navi";
   timezone = "Europe/Amsterdam";
   locale = "en_US.UTF-8";
-  version = "25.11";
+  version = "24.11";
   hasNvidia = true;
   fileSystemCreationDate = "24 March 18:17:35 2025";
   compositor = "hyprland";
