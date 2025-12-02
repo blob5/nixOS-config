@@ -12,6 +12,7 @@
       pipes
       asciiquarium-transparent
       cava
+      lolcat
     ];
   };
 }
