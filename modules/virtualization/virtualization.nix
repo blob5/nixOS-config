@@ -6,7 +6,6 @@
   users.users.blob.extraGroups = [ "libvirtd" "kvm" "input" ];
   
   environment.systemPackages = with pkgs; [
-    virt-manager
     virt-viewer
     spice 
     spice-gtk
@@ -18,10 +17,12 @@
     libguestfs
     looking-glass-client
   ];
-  
+  programs.virt-manager.enable = true;
+
   virtualisation = {
     libvirtd = {
       enable = true;
+      firewallBackend = "nftables";
       qemu = {
         runAsRoot = true;
         swtpm.enable = true;
