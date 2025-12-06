@@ -34,7 +34,6 @@
 
   services.thermald.enable = true;
   hardware.enableAllFirmware = true;
-  hardware.firmware = [ pkgs.iwlwifi-firmware ];
   services.xserver.libinput.enable = true;
 
   hardware.opengl = {
