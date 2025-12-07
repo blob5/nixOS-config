@@ -29,12 +29,7 @@
 
     gnome.gnome-keyring.enable = true;
 
-    sunshine = {
-      enable = true;
-      autoStart = true;
-      capSysAdmin = true;
-      openFirewall = true;
-    };
+
   };
 
   virtualisation.docker.enable = true;

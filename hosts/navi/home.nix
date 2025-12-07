@@ -8,6 +8,7 @@
     ../../modules/services/home/mako/mako.nix
     ../../modules/services/home/openrgb.nix
     ../../modules/services/home/udiskie.nix
+    ../../modules/services/home/sunshine.nix
 
     # Programs
     ../../modules/programs/editors/vscode.nix
