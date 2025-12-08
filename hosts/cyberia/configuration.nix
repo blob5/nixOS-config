@@ -31,6 +31,7 @@
     xwayland-satellite # For XWayland support
   ];
 
+  programs.virt-manager.enable = true; 
 
   # Original install version,
   # This is only used by some packages for backwards compatibility.
