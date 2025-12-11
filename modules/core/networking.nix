@@ -16,6 +16,8 @@ in
   # Probably not smart to have this on for servers or machines with remote mounts.
   systemd.services.NetworkManager-wait-online.enable = false;
 
+  services.netbird.enable = true;
+
   # Auto-connect to Tailscale on boot
   systemd.services.tailscale-autoconnect = {
     description = "Auto-connect to Tailscale after login";
