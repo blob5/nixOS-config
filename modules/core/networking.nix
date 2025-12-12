@@ -17,19 +17,4 @@ in
   systemd.services.NetworkManager-wait-online.enable = false;
 
   services.netbird.enable = true;
-
-  # Auto-connect to Tailscale on boot
-  systemd.services.tailscale-autoconnect = {
-    description = "Auto-connect to Tailscale after login";
-    after = [
-      "network-online.target"
-      "tailscaled.service"
-    ];
-    wants = [ "network-online.target" ];
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.tailscale}/bin/tailscale up";
-    };
-  };
 }
