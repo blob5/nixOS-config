@@ -225,7 +225,7 @@ sub_lang = "eng"
 # Use IPC communication with the player for advanced features like episode
 # navigation.
 # Type: boolean
-use_ipc = false
+use_ipc = true
 
 #
 # Downloads
