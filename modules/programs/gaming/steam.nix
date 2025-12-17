@@ -4,6 +4,8 @@
   environment.systemPackages = with pkgs; [
       protonup-qt # managing Proton versions
       mangohud # Performance overlay add "mangohud %command%" to launch options
+      wineWowPackages.waylandFull
+      winetricks
     ];
 
   programs = {
