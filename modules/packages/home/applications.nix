@@ -26,6 +26,9 @@
       moonlight-qt
       heroic # Game launcher
       remmina # Remote desktop client
+      lutris
+      morgen
+      element-desktop
     ];
   };
 }
