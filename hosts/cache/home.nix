@@ -7,7 +7,6 @@
 
     # Programs 
     ../../modules/programs/editors/vscode.nix
-    ../../modules/programs/terminals/kitty/kitty.nix
     ../../modules/programs/terminals/zsh/zsh.nix
     ../../modules/programs/git.nix
 
@@ -19,17 +18,28 @@
 
 
     # Packages
-    ../../modules/packages/home/applications.nix
     ../../modules/packages/home/archive-tools.nix
     ../../modules/packages/home/CLI-tools.nix
     ../../modules/packages/home/cursor.nix
-    ../../modules/packages/home/development.nix
     ../../modules/packages/home/fun.nix
     ../../modules/packages/home/home-manager.nix
     ../../modules/packages/home/terminals.nix
 
   ];
 
+  home = {
+    packages = with pkgs; [
+      # Quickshell Nocaalia configuration
+      inputs.noctalia.packages.${system}.default
+
+      # Media & Applications
+      nautilus # File manager
+      kdePackages.ark # Archive manager
+      kdePackages.gwenview # Image viewer
+      vlc
+      obsidian
+    ];
+  };
 
   hyprland = {
     monitors = [ "DP-1, 1920x1080@60, 0x0, 1" ];
