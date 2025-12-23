@@ -37,7 +37,6 @@
         collapseDeleted = true;
         ignoreSelf = true;
       };
-      mutualGroupDMs.enable = true;
       newGuildSettings.enable = true;
       openInApp.enable = true;
       silentMessageToggle.enable = true;
