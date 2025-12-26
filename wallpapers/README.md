@@ -26,3 +26,12 @@ https://x.com/_tgrs_/status/1688521478155980800
 
 hatsune
 https://x.com/DA00O01/status/1995434178645774613/photo/1
+
+mikuRain & mikuFireworks
+https://www.pixiv.net/en/artworks/88571343
+
+mikuSun
+https://www.pixiv.net/en/artworks/128032920
+
+mikuSpace
+https://www.pixiv.net/en/artworks/87951954
