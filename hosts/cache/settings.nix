@@ -6,7 +6,7 @@
   version = "25.11";
   hasNvidia = false;
   fileSystemCreationDate = "21 November 21:44:02 2024";
-  compositor = "hyprland";
+  compositor = "niri";
   gpgkey = "56C537693D9CD600";
   cudaSupport = false;
 
