@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports = [
@@ -29,7 +29,7 @@
 
   home = {
     packages = with pkgs; [
-      # Quickshell Nocaalia configuration
+      # Quickshell Noctalia configuration
       inputs.noctalia.packages.${system}.default
 
       # Media & Applications
