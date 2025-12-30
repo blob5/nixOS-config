@@ -11,10 +11,11 @@
     ../../modules/programs/git.nix
 
     # Desktop
-    ../../modules/desktop/compositors/hyprland/hyprland.nix
     ../../modules/desktop/stylix/stylix.nix
     ../../modules/desktop/fonts.nix
     ../../modules/desktop/rofi/rofi.nix
+    ../../modules/desktop/compositors/niri/niri.nix
+
 
 
     # Packages
@@ -41,17 +42,15 @@
     ];
   };
 
-  hyprland = {
-    monitors = [ "DP-1, 1920x1080@60, 0x0, 1" ];
-    input.sensitivity = -0.75;
+
+  niri = {
+    monitors = [ "eDP-1,1920x1080@60,0x0,1" ];
+    input.sensitivity = 0.5;
     input.kb_layout = "us";
-    accel_profile = "flat";
   };
 
   # Host-specific home-manager settings
   home.username = "blob";
   home.homeDirectory = "/home/blob";
   home.stateVersion = "25.11"; # Match your NixOS version
-  
-
 }
