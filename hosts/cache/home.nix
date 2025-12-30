@@ -9,6 +9,8 @@
     ../../modules/programs/editors/vscode.nix
     ../../modules/programs/terminals/zsh/zsh.nix
     ../../modules/programs/git.nix
+    ../../modules/programs/terminals/wezterm/wezterm.nix
+
 
     # Desktop
     ../../modules/desktop/stylix/stylix.nix
