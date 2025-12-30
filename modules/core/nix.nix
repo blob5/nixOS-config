@@ -1,6 +1,11 @@
-{ ... }:
+{
+  systemSettings,
+  ...
+}:
 
-
+let
+  hostSettings = import ../../hosts/${systemSettings.hostname}/settings.nix;
+in
 {
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
@@ -31,7 +36,7 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    cudaSupport = true;
+    cudaSupport = hostSettings.cudaSupport;
   };
 
   # Garbage collection

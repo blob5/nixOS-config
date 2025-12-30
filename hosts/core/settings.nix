@@ -8,6 +8,7 @@
   fileSystemCreationDate = "25 August 18:10:04 2025";
   compositor = "";
   gpgkey = "F1C140E19A2300F1";
+  cudaSupport = false;
 
   # This is mostly used to reference the location of the source files outside of the Nix store
   # For example, the waybar-dev alias in zsh.nix configuration files
