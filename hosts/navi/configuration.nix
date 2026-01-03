@@ -40,7 +40,6 @@
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
     # Drawing
-    krita
     opentabletdriver
 
     # Development
