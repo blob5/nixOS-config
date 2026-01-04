@@ -32,8 +32,6 @@
   };
   services.spice-vdagentd.enable = true;
 
-  virtualisation.vmware.host.enable = true;
-
   # Enable huge pages for better performance
   boot.kernel.sysctl = {
     "vm.nr_hugepages" = 1024;
