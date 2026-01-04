@@ -4,19 +4,19 @@
   programs.nixcord = {
     enable = true;
     discord = {
-      enable = true;
-      equicord.enable = true;
+      enable = false;
+      equicord.enable = false;
       autoscroll.enable = true;
-      openASAR.enable = false;
-      vencord.enable = false;
+      openASAR.enable = true;
+      vencord.enable = true;
+    };
+
+    vesktop = {
+      enable = true;
+      autoscroll.enable = true;
     };
     
     config.plugins = {
-      gifCollections = {
-        enable = true;
-        preventDuplicates = true;
-        onlyShowCollections = true;
-      };
       callTimer.enable = true;
       betterGifPicker.enable = false;
       fakeNitro.enable = true;
@@ -57,7 +57,6 @@
         notices = true;
       };
       betterSettings.enable = true;
-      homeTyping.enable = true;
     };
   };
 }
