@@ -36,6 +36,8 @@
   hardware.enableAllFirmware = true;
   services.libinput.enable = true;
 
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -43,8 +45,6 @@
       intel-vaapi-driver
     ];
   };
-
-
 
   # Original install version,
   # This is only used by some packages for backwards compatibility.

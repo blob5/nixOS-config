@@ -33,6 +33,9 @@
     xwayland-satellite # For XWayland support
   ];
 
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+
+
   programs.virt-manager.enable = true; 
 
   # Original install version,
