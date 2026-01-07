@@ -2,7 +2,7 @@
   description = "NixOS";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/pull/476347/head";
+    nixpkgs.url = "github:nixos/nixpkgs/pull/476347/head"; # PR:476347 vesktop: fix permission denied electron build
     home-manager.url = "github:nix-community/home-manager";
     viu.url = "github:benexl/viu";
     lobster.url = "github:justchokingaround/lobster";
