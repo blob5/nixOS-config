@@ -37,6 +37,8 @@
 
   hardware.wooting.enable = true;
 
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
     # Drawing

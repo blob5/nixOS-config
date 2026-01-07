@@ -2,7 +2,7 @@
   description = "NixOS";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/pull/476347/head";
     home-manager.url = "github:nix-community/home-manager";
     viu.url = "github:benexl/viu";
     lobster.url = "github:justchokingaround/lobster";
@@ -16,6 +16,7 @@
     nixcord.url = "github:kaylorben/nixcord";
     nixvim.url = "github:nix-community/nixvim";
     noctalia.url = "github:noctalia-dev/noctalia-shell";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -41,16 +42,25 @@
         nixpkgs.lib.nixosSystem {
           system = hostSettings.system;
           modules = [
+            {
+              nixpkgs.overlays = [
+                inputs.nix-cachyos-kernel.overlays.pinned
+              ];
+            }
+
             ./hosts/${hostName}/configuration.nix
             inputs.minegrub-world-sel-theme.nixosModules.default
             inputs.stylix.nixosModules.stylix
+            
             home-manager.nixosModules.home-manager {
               home-manager.backupFileExtension = "backup";
               home-manager.useUserPackages = true;
               home-manager.useGlobalPkgs = true;
+              
               home-manager.users.${userSettings.username} = { config, ... }: {
                 imports = [ ./hosts/${hostName}/home.nix ];
-              };
+            };
+
               home-manager.sharedModules = [
                 inputs.nixcord.homeModules.nixcord
                 inputs.stylix.homeModules.stylix
