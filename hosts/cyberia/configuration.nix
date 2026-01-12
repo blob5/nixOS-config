@@ -11,7 +11,6 @@
       ## Services
       ../../modules/services/nixos/audio.nix
       ../../modules/services/nixos/sddm.nix
-      ../../modules/services/nixos/sunshine.nix
 
 
       ## Drivers
