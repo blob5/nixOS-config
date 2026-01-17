@@ -42,7 +42,7 @@
   ];
 
   hyprland = {
-    monitors = [ "DP-1,2560x1440@165,0x0,1" "HDMI-A-2,1920x1080@75,2560x-130,1,transform,3" ];
+    monitors = [ "DP-1,2560x1440@165,0x0,1" "HDMI-A-1,1920x1080@75,2560x-130,1,transform,3" ];
     input.sensitivity = -0.75;
     input.kb_layout = "us";
     accel_profile = "flat";
