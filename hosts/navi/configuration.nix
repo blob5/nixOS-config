@@ -20,7 +20,7 @@
 
       # Core
       ../../modules/core/default.nix
-      ../../modules/drivers/nvidia.nix
+      ../../modules/drivers/amd.nix
 
 
 
@@ -38,6 +38,7 @@
   services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
 
   hardware.wooting.enable = true;
+  services.lact.enable = true;
 
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
