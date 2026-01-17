@@ -21,8 +21,6 @@ in
     themePackages = [ pkgs.adi1090x-plymouth-themes ];
   };
 
-  # if hasNvidia is true, add nvidia_drm.modeset=1 to kernel parameters
-  boot.kernelParams = if hostSettings.hasNvidia then [ "nvidia_drm.modeset=1" ] else [ ];
 
   boot.loader = {
     efi.canTouchEfiVariables = hostSettings.bootloader.efiSupport;

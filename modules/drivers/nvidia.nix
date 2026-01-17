@@ -4,6 +4,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
+  boot.kernelParams = [ "nvidia_drm.modeset=1" ];
 
   environment.systemPackages = with pkgs; [
     cudaPackages.cudatoolkit

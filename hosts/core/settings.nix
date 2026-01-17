@@ -4,7 +4,6 @@
   timezone = "Europe/Amsterdam";
   locale = "en_US.UTF-8";
   version = "25.11";
-  hasNvidia = false;
   fileSystemCreationDate = "25 August 18:10:04 2025";
   compositor = "";
   gpgkey = "F1C140E19A2300F1";
