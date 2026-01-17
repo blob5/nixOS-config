@@ -31,5 +31,6 @@
     "application/pdf" = [ "zen-twilight.desktop" ];
 
     "x-scheme-handler/terminal" = [ "wezterm.desktop" ];
+    "x-scheme-handler/steam" = [ "steam.desktop" ];
   };
 }
