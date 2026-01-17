@@ -26,36 +26,51 @@ for path in mvtools_paths:
             log(f"Failed to load {path}: {e}")
 
 # Get video from mpv
-try:
-    clip = video_in
-    log(f"Got video_in: {clip.format}")
-except Exception as e:
-    log(f"Failed to get video_in: {e}")
-    raise
+clip = video_in
+log(f"Got video_in: {clip.format}")
 
-# Get target FPS (default to 60 if not set)
-try:
-    dst_fps = display_fps
-except:
-    dst_fps = 60.0
+# 1️⃣ Declare source color properties (CRITICAL)
+clip = core.std.SetFrameProps(
+    clip,
+    _Matrix=1,      # BT.709
+    _Transfer=1,    # BT.709
+    _Primaries=1,   # BT.709
+    _ColorRange=1  # limited
+)
 
-# Convert to compatible format
-clip = core.resize.Bicubic(clip, format=vs.YUV420P8)
+# 2️⃣ Convert to a MVTools-friendly SDR format
+clip = core.resize.Bicubic(
+    clip,
+    format=vs.YUV420P8,
+    matrix_s="709",
+    transfer_s="709",
+    primaries_s="709",
+    range_s="limited"
+)
 
 # Ensure clip has valid FPS
-if not hasattr(clip, 'fps') or clip.fps_num == 0 or clip.fps_den == 0:
+if clip.fps_num == 0 or clip.fps_den == 0:
     clip = core.std.AssumeFPS(clip, fpsnum=24000, fpsden=1001)
 
 log(f"Source FPS: {clip.fps_num}/{clip.fps_den}")
 
-# Create super clip and analyze motion
+# Motion analysis
 super = core.mv.Super(clip, pel=2)
 backward = core.mv.Analyse(super, isb=True, blksize=16)
 forward = core.mv.Analyse(super, isb=False, blksize=16)
 log("Motion analysis complete")
 
-# Interpolate to 165fps for high refresh rate displays
+# Interpolate to 60fps
 clip = core.mv.FlowFPS(clip, super, backward, forward, num=60, den=1)
 log(f"Interpolation complete - Output: {clip.fps_num}/{clip.fps_den}")
+
+# 3️⃣ Reassert SDR metadata after MVTools
+clip = core.std.SetFrameProps(
+    clip,
+    _Matrix=1,
+    _Transfer=1,
+    _Primaries=1,
+    _ColorRange=1
+)
 
 clip.set_output()
