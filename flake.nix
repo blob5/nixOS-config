@@ -2,14 +2,14 @@
   description = "NixOS";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/pull/476347/head"; # PR:476347 vesktop: fix permission denied electron build
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
     viu.url = "github:benexl/viu";
     lobster.url = "github:justchokingaround/lobster";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
     stylix.url = "github:nix-community/stylix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
+    minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme/commit/7d1c4450ecaffc03a70f8dbd471a9e0d4fd149e8";
     niri.url = "github:sodiboo/niri-flake";
     ags.url = "github:Aylur/ags";
     hyprland.url = "github:hyprwm/Hyprland";
