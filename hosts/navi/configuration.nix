@@ -38,7 +38,8 @@
   services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
 
   hardware.wooting.enable = true;
-  services.lact.enable = true;
+  services.lact.enable = true; # AMD overclocking tool
+  hardware.amdgpu.overdrive.enable = true; # Enable AMD overclocking functionality
 
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
