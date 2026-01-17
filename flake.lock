@@ -770,16 +770,17 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1768650982,
-        "narHash": "sha256-gBlP4aQQ0f3L6S1gWbidbflnp0p5hsJ8qmbyArZ8LO4=",
+        "lastModified": 1768124005,
+        "narHash": "sha256-vCypm/mhyu056NDCSfilYylf7ypVDekNX577lgvwTj4=",
         "owner": "Lxtharia",
         "repo": "minegrub-world-sel-theme",
-        "rev": "b6d7490db8dd70ca907660af4a8bdc51a815ef75",
+        "rev": "a296611d2b92d466e86535d27f791e76425cbcc5",
         "type": "github"
       },
       "original": {
         "owner": "Lxtharia",
         "repo": "minegrub-world-sel-theme",
+        "rev": "a296611d2b92d466e86535d27f791e76425cbcc5",
         "type": "github"
       }
     },
