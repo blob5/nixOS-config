@@ -14,6 +14,8 @@
       };
     };
 
+    seatd.enable = true;
+
     upower.enable = true; # needed for hyprpanel
 
     pcscd.enable = true; # needed for gpg
@@ -28,6 +30,7 @@
 
     gnome.gnome-keyring.enable = true;
 
+    xserver.enable = true;
 
   };
 

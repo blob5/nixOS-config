@@ -15,7 +15,7 @@ in
     sessionPackages = [ pkgs.${hostSettings.compositor} ];
     sddm = {
       enable = true;
-      wayland.enable = true;
+      wayland.enable = false;
       theme = "sddm-astronaut-theme";
       package = pkgs.kdePackages.sddm;
       extraPackages = with pkgs.kdePackages; [
@@ -24,11 +24,6 @@ in
         qtvirtualkeyboard
         qt5compat
       ];
-      settings = {
-        General = {
-          GreeterEnvironment = "QT_AUTO_SCREEN_SCALE_FACTOR=1,QT_SCALE_FACTOR=auto";
-        };
-      };
     };
   };
 }
