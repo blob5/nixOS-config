@@ -9,7 +9,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
     stylix.url = "github:nix-community/stylix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme/a296611d2b92d466e86535d27f791e76425cbcc5"; # commit before breaking change. fix: https://github.com/Lxtharia/minegrub-world-sel-theme/pull/44
+    minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     niri.url = "github:sodiboo/niri-flake";
     ags.url = "github:Aylur/ags";
     hyprland.url = "github:hyprwm/Hyprland";
