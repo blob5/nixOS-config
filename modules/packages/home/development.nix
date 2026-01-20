@@ -5,7 +5,7 @@
  
       # Development
       git
-      nixfmt-rfc-style
+      nixfmt
     ];
   };
 
