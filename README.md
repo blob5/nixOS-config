@@ -34,7 +34,8 @@ My configuration is organized into logical directories to make maintenance and c
 ├── hosts/                # Host-specific configurations
 │   ├── cyberia/          # Laptop
 │   ├── navi/             # Desktop
-│   └── core/             # Server
+│   ├── core/             # Server
+│   └── cache/            # Old Laptop
 ├── modules/              # Modular configuration components
 │   ├── core/             # Core system configurations
 │   ├── desktop/          # Desktop environment configurations
