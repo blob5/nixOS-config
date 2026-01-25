@@ -33,7 +33,6 @@ in
       spf = "superfile";
       cd = "z"; # replace cd with zoxide
       ls = "eza"; # replace ls with eza
-      please = "sudo !!";
 
       anime = "viu anilist";
 
@@ -78,7 +77,12 @@ in
         curl -s "https://blog.nyaw.xyz/api/pr-stat?pr=$1" | jq
       }
 
+      # Allow bang (!) history
+      setopt BANG_HIST
 
+      please() {
+        sudo $(fc -ln -1)
+      }
 
       # Waybar development mode
       # This function starts waybar in a loop, 
