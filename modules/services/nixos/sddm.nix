@@ -15,7 +15,10 @@ in
     sessionPackages = [ pkgs.${hostSettings.compositor} ];
     sddm = {
       enable = true;
-      wayland.enable = true;
+      wayland = {
+        enable = true;
+        compositor = "kwin";
+      };
       theme = "sddm-astronaut-theme";
       package = pkgs.kdePackages.sddm;
       extraPackages = with pkgs.kdePackages; [
