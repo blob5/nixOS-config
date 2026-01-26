@@ -11,7 +11,6 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
     niri.url = "github:sodiboo/niri-flake";
-    ags.url = "github:Aylur/ags";
     hyprland.url = "github:hyprwm/Hyprland";
     nixcord.url = "github:kaylorben/nixcord";
     nixvim.url = "github:nix-community/nixvim";
