@@ -47,14 +47,13 @@
   environment.systemPackages = with pkgs; [
     # Drawing
     opentabletdriver
-
-    # Development
+    
+    darktable # color grading
     pwntools
     gdb
-    blender
-    anki-bin
-    davinci-resolve-studio
-    ungoogled-chromium
+    blender 
+    # davinci-resolve-studio
+    ungoogled-chromium # for wooting
   ];
 
   # Original install version,
