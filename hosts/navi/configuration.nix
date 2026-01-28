@@ -51,8 +51,8 @@
     darktable # color grading
     pwntools
     gdb
-    blender 
-    # davinci-resolve-studio
+    blender
+    davinci-resolve
     ungoogled-chromium # for wooting
   ];
 
