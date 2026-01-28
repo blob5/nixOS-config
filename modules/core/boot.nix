@@ -14,6 +14,10 @@ in
   # Disable Stylix Plymouth styling to prevent conflicts
   stylix.targets.plymouth.enable = false;
 
+  boot.extraModulePackages = with config.boot.kernelPackages; [
+    zenpower
+  ];
+
   # Enable Plymouth for a graphical boot splash
   boot.plymouth = {
     enable = true;
