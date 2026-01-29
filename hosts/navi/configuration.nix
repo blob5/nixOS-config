@@ -11,6 +11,7 @@
       ../../modules/virtualization/virtualization.nix
       ../../modules/programs/gaming/steam.nix
       ../../modules/programs/gaming/minecraft.nix
+      ../../modules/programs/wine.nix
 
       # Services
       ../../modules/services/nixos/audio.nix
@@ -54,6 +55,7 @@
     blender
     davinci-resolve
     ungoogled-chromium # for wooting
+    bottles
   ];
 
   # Original install version,
