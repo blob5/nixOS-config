@@ -17,6 +17,7 @@
       ../../modules/services/nixos/audio.nix
       ../../modules/services/nixos/sddm.nix
       ../../modules/services/nixos/sunshine.nix
+      ../../modules/services/home/openrgb.nix
 
 
       # Core
@@ -34,9 +35,9 @@
     ];
 
   programs.hyprland.enable = true;
-  services.hardware.openrgb.enable = true;
   services.hardware.openrgb.motherboard = "amd";
-  services.hardware.openrgb.package = pkgs.openrgb-with-all-plugins;
+  services.hardware.openrgb.startupProfile = "/home/blob/.config/OpenRGB/gaming.orp";
+
 
   hardware.wooting.enable = true;
   services.lact.enable = true; # AMD overclocking tool
@@ -48,6 +49,7 @@
   environment.systemPackages = with pkgs; [
     # Drawing
     opentabletdriver
+    openrgb-with-all-plugins
     
     darktable # color grading
     pwntools

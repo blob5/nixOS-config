@@ -1,18 +1,20 @@
 { pkgs, ... }:
 {
+  services.udev.packages = [ pkgs.openrgb-with-all-plugins ];
+  boot.kernelModules = [ "i2c-dev i2c-piix4" ];
+
   systemd.user.services.openrgb = {
-  Unit = {
-    Description = "OpenRGB with profile";
-    After = [ "graphical-session.target" ];
+    description = "OpenRGB with profile";
+    after = [ "graphical-session.target" "network.target" ];
+    wants = [ "graphical-session.target" ];
+
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.openrgb-with-all-plugins}/bin/openrgb --profile gaming --startminimized";
+      Restart = "on-failure";
+      RestartSec = 5;
+    };
+
+    wantedBy = [ "graphical-session.target" ];
   };
-  Service = {
-    Type = "simple";
-    ExecStart = "${pkgs.openrgb}/bin/openrgb --profile gaming --startminimized";
-    Restart = "on-failure";
-    RestartSec = 5;
-  };
-  Install = {
-    WantedBy = [ "default.target" ];
-  };
-};
 }

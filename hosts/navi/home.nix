@@ -6,7 +6,6 @@
     # Services
     ../../modules/services/home/easyeffects.nix
     ../../modules/services/home/mako/mako.nix
-    ../../modules/services/home/openrgb.nix
     ../../modules/services/home/udiskie.nix
 
     # Programs
