@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   services.udev.packages = [ pkgs.openrgb-with-all-plugins ];
-  boot.kernelModules = [ "i2c-dev i2c-piix4" ];
+  boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
 
   systemd.user.services.openrgb = {
     description = "OpenRGB with profile";

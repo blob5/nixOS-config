@@ -35,8 +35,10 @@
     ];
 
   programs.hyprland.enable = true;
+
   services.hardware.openrgb.motherboard = "amd";
   services.hardware.openrgb.startupProfile = "/home/blob/.config/OpenRGB/gaming.orp";
+  hardware.i2c.enable = true;
 
 
   hardware.wooting.enable = true;
