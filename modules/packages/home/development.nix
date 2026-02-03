@@ -6,6 +6,7 @@
       # Development
       git
       nixfmt
+      python315
     ];
   };
 
