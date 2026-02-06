@@ -60,6 +60,7 @@
     davinci-resolve
     ungoogled-chromium # for wooting
     bottles
+    gale
   ];
 
   # Original install version,
