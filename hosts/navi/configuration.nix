@@ -40,6 +40,16 @@
   services.hardware.openrgb.startupProfile = "/home/blob/.config/OpenRGB/gaming.orp";
   hardware.i2c.enable = true;
 
+  networking = {
+    interfaces = {
+      enp42s0 = {
+        wakeOnLan.enable = true;
+      };
+    };
+    firewall = {
+      allowedUDPPorts = [ 9 ];
+    };
+  };
 
   hardware.wooting.enable = true;
   services.lact.enable = true; # AMD overclocking tool
