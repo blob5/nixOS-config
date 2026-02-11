@@ -1,6 +1,7 @@
 {
   system = "x86_64-linux";
   hostname = "core";
+  username = "blob";
   timezone = "Europe/Amsterdam";
   locale = "en_US.UTF-8";
   version = "25.11";
