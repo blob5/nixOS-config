@@ -61,6 +61,8 @@ This setup is modular but still tailored to my personal environment. While I don
    ```
    # edit the target host settings before building
    $EDITOR hosts/<name>/settings.nix
+   # Add host to hosts list in flake.nix
+   $EDITOR flake.nix
    ```
 
 6. Build for a host (examples):
