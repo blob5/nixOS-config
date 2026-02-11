@@ -1,12 +1,12 @@
 {
   system = "x86_64-linux";
-  hostname = "cache";
+  hostname = "template";
   timezone = "Europe/Amsterdam";
   locale = "en_US.UTF-8";
   version = "25.11";
-  fileSystemCreationDate = "21 November 21:44:02 2024";
-  compositor = "niri";
-  gpgkey = "56C537693D9CD600";
+  fileSystemCreationDate = "CHANGE_ME";
+  compositor = ""; # e.g. "hyprland" or "niri"
+  gpgkey = "CHANGE_ME";
   cudaSupport = false;
 
   user = {
@@ -16,7 +16,7 @@
     dotfilesDir = "~/.config/nixos";
     extraGroups = [ "networkmanager" "wheel" "docker" "wireshark" "syncthing" "libvirt" "kvm" "input" "i2c" "dialout" ];
     sshAuthorizedKeys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMsCampY/bxZa3GuirZUoQf7PhvnaWZOsekcBLaGTWps 101657201+blob5@users.noreply.github.com"
+      "ssh-ed25519 CHANGE_ME"
     ];
   };
 

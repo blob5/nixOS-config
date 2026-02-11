@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
   imports = [
@@ -10,7 +10,6 @@
     # Programs 
     ../../modules/programs/editors/vscode.nix
     ../../modules/programs/terminals/wezterm/wezterm.nix
-    ../../modules/programs/terminals/kitty/kitty.nix
     ../../modules/programs/terminals/zsh/zsh.nix
     ../../modules/programs/spicetify/spicetify.nix
     ../../modules/programs/nixcord.nix
@@ -48,8 +47,8 @@
   };
 
   # Host-specific home-manager settings
-  home.username = "blob";
-  home.homeDirectory = "/home/blob";
+  home.username = userSettings.username;
+  home.homeDirectory = userSettings.homeDirectory;
   home.stateVersion = "25.11"; # Match your NixOS version
   
 

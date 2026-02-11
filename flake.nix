@@ -30,14 +30,11 @@
 	      cache =  import ./hosts/cache/settings.nix;
       };
 
-      userSettings = {
-        username = "blob";
-        name = "blob";
-        dotfilesDir = "~/.config/nixos";
-      };
-
       # Function to create a NixOS configuration for a given host
       mkNixosConfiguration = hostName: hostSettings:
+        let
+          userSettings = hostSettings.user;
+        in
         nixpkgs.lib.nixosSystem {
           system = hostSettings.system;
           modules = [

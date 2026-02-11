@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
   imports = [
@@ -48,8 +48,8 @@
   };
 
   # Host-specific home-manager settings
-  home.username = "blob";
-  home.homeDirectory = "/home/blob";
+  home.username = userSettings.username;
+  home.homeDirectory = userSettings.homeDirectory;
   home.stateVersion = "24.11";
 
 }

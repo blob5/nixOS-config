@@ -1,4 +1,4 @@
-{ config, inputs, pkgs, ... }:
+{ config, inputs, pkgs, userSettings, ... }:
 
 {
   imports = [
@@ -52,7 +52,7 @@
   };
 
   # Host-specific home-manager settings
-  home.username = "blob";
-  home.homeDirectory = "/home/blob";
+  home.username = userSettings.username;
+  home.homeDirectory = userSettings.homeDirectory;
   home.stateVersion = "25.11"; # Match your NixOS version
 }
