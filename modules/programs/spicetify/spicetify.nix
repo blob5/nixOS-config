@@ -16,8 +16,6 @@
       enabledExtensions = with spicePkgs.extensions; [
         hidePodcasts
         autoVolume
-        shuffle # shuffle+
-        betterGenres
       ];
       
       enabledCustomApps = with spicePkgs.apps; [
@@ -32,6 +30,6 @@
         hideFriendActivityButton
       ];
 
-      theme = spicePkgs.themes.defaultDynamic;
+      theme = spicePkgs.themes.lucid;
     };
 }
