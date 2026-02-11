@@ -2,10 +2,10 @@
 
 {
   environment.systemPackages = with pkgs; [
-      wineWowPackages.stagingFull
+      wineWow64Packages.stagingFull
       winetricks
       wineasio
       bottles # easy wine prefix management
-      wineWowPackages.yabridge
+      wineWow64Packages.yabridge
     ];
 }
