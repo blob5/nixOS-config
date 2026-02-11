@@ -17,7 +17,7 @@
       ../../modules/services/nixos/audio.nix
       ../../modules/services/nixos/sddm.nix
       ../../modules/services/nixos/sunshine.nix
-      ../../modules/services/home/openrgb.nix
+      ../../modules/services/nixos/openrgb.nix
 
 
       # Core

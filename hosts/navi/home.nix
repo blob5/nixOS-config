@@ -8,6 +8,7 @@
     ../../modules/services/home/mako/mako.nix
     ../../modules/services/home/udiskie.nix
 
+
     # Programs
     ../../modules/programs/editors/vscode.nix
     ../../modules/programs/editors/vim.nix
