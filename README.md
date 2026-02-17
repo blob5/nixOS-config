@@ -111,12 +111,5 @@ My configuration is organized into logical directories to make maintenance and c
 │   └── virtualization/   # VM and container support
 └── wallpapers/           # Collection of system wallpapers
 ```
-
-## 🛠️ Tips
-
-- Host-specific settings live in `hosts/<name>/settings.nix`.
-- Compositor configuration lives in `modules/desktop/compositors/`.
-- Wallpaper credits are in `wallpapers/README.md`.
-
 ## 🙏 Credits
 This configuration draws inspiration from many sources. While some files include credits to their original authors, other components have been adapted and modified from various repositories across the NixOS and ricing community.
