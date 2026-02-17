@@ -1,4 +1,10 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, systemSettings, ... }:
+
+let
+  hostSettings = import ../../hosts/${systemSettings.hostname}/settings.nix;
+  servicesCfg = hostSettings.services or {};
+  dockerCfg = servicesCfg.docker or {};
+in
 
 {
   services = {
@@ -34,7 +40,7 @@
 
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker.enable = dockerCfg.enable or false;
 
   # Prevent Docker service from starting at boot
   systemd.services.docker.wantedBy = lib.mkForce [ ]; # disables autostart

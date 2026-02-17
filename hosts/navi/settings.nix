@@ -8,7 +8,12 @@
   fileSystemCreationDate = "24 March 18:17:35 2025";
   compositor = "hyprland";
   gpgkey = "77EC7100CA8F93A1";
-  cudaSupport = false;
+  cudaSupport = true;
+  cpuVendor = "amd";
+
+  services = {
+    docker.enable = true;
+  };
 
   user = {
     username = "blob";

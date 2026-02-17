@@ -1,6 +1,7 @@
 {
   system = "x86_64-linux";
   hostname = "template";
+  username = "template";
   timezone = "Europe/Amsterdam";
   locale = "en_US.UTF-8";
   version = "25.11";
@@ -8,6 +9,11 @@
   compositor = ""; # e.g. "hyprland" or "niri"
   gpgkey = "CHANGE_ME";
   cudaSupport = false;
+  cpuVendor = "CHANGE_ME"; # e.g. "amd" or "intel"
+
+  services = {
+    docker.enable = false;
+  };
 
   user = {
     username = "blob";

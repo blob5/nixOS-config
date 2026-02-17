@@ -9,6 +9,11 @@
   compositor = "niri";
   gpgkey = "0C8572762374F0F2";
   cudaSupport = false;
+  cpuVendor = "amd";
+
+  services = {
+    docker.enable = true;
+  };
 
   user = {
     username = "blob";
