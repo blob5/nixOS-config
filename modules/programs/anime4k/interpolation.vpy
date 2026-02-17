@@ -61,7 +61,7 @@ forward = core.mv.Analyse(super, isb=False, blksize=16)
 log("Motion analysis complete")
 
 # Interpolate to 60fps
-clip = core.mv.FlowFPS(clip, super, backward, forward, num=60, den=1)
+clip = core.mv.FlowFPS(clip, super, backward, forward, num=96, den=1)
 log(f"Interpolation complete - Output: {clip.fps_num}/{clip.fps_den}")
 
 # 3️⃣ Reassert SDR metadata after MVTools
