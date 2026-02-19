@@ -29,6 +29,7 @@
       lutris
       morgen
       element-desktop
+      gnome-calculator
     ];
   };
 }
