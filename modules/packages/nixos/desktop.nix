@@ -9,9 +9,9 @@
     # Desktop
     waylock
     playerctl
-    hyprshot
     libnotify
-    slurp
+    slurp # Screenshot selection tool
+    grim # Screenshot tool
     wl-clipboard
     pavucontrol
     blueman
