@@ -17,20 +17,20 @@
       nautilus # File manager
       kdePackages.ark # Archive manager
       kdePackages.gwenview # Image viewer
-      qbittorrent
-      vlc
+      qbittorrent # Torrent client
+      vlc # Media player
       foliate # E reader
-      superfile
-      obsidian
-      mako
-      moonlight-qt
+      superfile # Terminal file manager
+      obsidian # Note-taking app
+      mako # Notification daemon
+      moonlight-qt # Game streaming client
       heroic # Game launcher
       remmina # Remote desktop client
-      lutris
-      morgen
-      element-desktop
+      lutris # Game manager
+      element-desktop # Matrix client
       gnome-calculator
-      baobab
+      baobab # Disk usage analyzer
+      tesseract4 # image to text engine
     ];
   };
 }
