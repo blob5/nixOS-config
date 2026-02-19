@@ -11,7 +11,6 @@ let
     mpv-unwrapped = mpv-unwrapped-with-vapoursynth;
     scripts = with pkgs.mpvScripts; [
       uosc       # Modern UI
-      thumbfast  # Fast thumbnails
       mpris      # Media player remote interface
     ];
   };
