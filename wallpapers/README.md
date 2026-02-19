@@ -35,3 +35,6 @@ https://www.pixiv.net/en/artworks/128032920
 
 mikuSpace
 https://www.pixiv.net/en/artworks/87951954
+
+francescaPrelatiFate
+Francesca Prelati Fate/strange Fake Episode 7
