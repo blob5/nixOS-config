@@ -30,6 +30,7 @@
       morgen
       element-desktop
       gnome-calculator
+      baobab
     ];
   };
 }
