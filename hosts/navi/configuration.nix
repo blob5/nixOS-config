@@ -22,7 +22,7 @@
 
       # Core
       ../../modules/core/default.nix
-      ../../modules/drivers/nvidia.nix
+      ../../modules/drivers/amd.nix
 
 
 
