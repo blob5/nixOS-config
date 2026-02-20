@@ -60,7 +60,7 @@ backward = core.mv.Analyse(super, isb=True, blksize=16)
 forward = core.mv.Analyse(super, isb=False, blksize=16)
 log("Motion analysis complete")
 
-# Interpolate to 60fps
+# Interpolate to 96fps
 clip = core.mv.FlowFPS(clip, super, backward, forward, num=96, den=1)
 log(f"Interpolation complete - Output: {clip.fps_num}/{clip.fps_den}")
 
