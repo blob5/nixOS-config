@@ -13,4 +13,6 @@
 
   programs.wireshark.enable = true;
 
+  programs.kdeconnect.enable = true;
+
 }
