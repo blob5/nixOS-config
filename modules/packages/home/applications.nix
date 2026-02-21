@@ -7,7 +7,6 @@
   programs.zen-browser.enable = true;
 
 
-
   home = {
     packages = with pkgs; [
       # Quickshell Noctalia configuration
@@ -17,6 +16,7 @@
       nautilus # File manager
       kdePackages.ark # Archive manager
       kdePackages.gwenview # Image viewer
+      kdePackages.qttools # Qt development tools required for KDE connect noctalia plugin
       qbittorrent # Torrent client
       vlc # Media player
       foliate # E reader
