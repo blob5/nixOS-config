@@ -22,7 +22,6 @@
       foliate # E reader
       superfile # Terminal file manager
       obsidian # Note-taking app
-      mako # Notification daemon
       moonlight-qt # Game streaming client
       heroic # Game launcher
       remmina # Remote desktop client

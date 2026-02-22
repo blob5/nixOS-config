@@ -2,9 +2,6 @@
 
 {
   imports = [
-    # Services
-    ../../modules/services/home/mako/mako.nix
-
     # Programs 
     ../../modules/programs/editors/vscode.nix
     ../../modules/programs/terminals/zsh/zsh.nix

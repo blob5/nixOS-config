@@ -27,7 +27,6 @@
   environment.systemPackages = with pkgs; [
     obsidian
     nautilus
-    mako
     kdePackages.ark
     kdePackages.gwenview    
   ];
