@@ -41,3 +41,6 @@ Francesca Prelati Fate/strange Fake Episode 7
 
 blackHole
 https://www.reddit.com/r/Invincible/comments/1c6bdcn/after_season_1_i_painted_and_posted_my_fave/
+
+madokaMagica
+https://www.pixiv.net/en/artworks/124110783
