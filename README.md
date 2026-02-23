@@ -70,7 +70,8 @@ $EDITOR flake.nix                   # add your host to the hosts list
 
 *Subsequent rebuilds* (substituters already active from `nix.conf`):
 ```bash
-sudo nixos-rebuild switch --flake .#<name>
+update
+rebuild 
 ```
 
 *First install* — pass substituters explicitly since `nix.conf` from this flake hasn't been applied yet:
