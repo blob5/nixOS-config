@@ -40,9 +40,9 @@ This setup is modular but still tailored to my personal environment. While I don
 
 2. Clone:
    ```
-   git clone https://github.com/blob5/nixos-config.git
+   git clone https://github.com/blob5/nixos-config.git --depth 1
    or
-   git clone git@github.com:blob5/nixOS-config.git
+   git clone git@github.com:blob5/nixOS-config.git --depth 1
    cd nixos-config
    ```
 
