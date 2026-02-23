@@ -21,9 +21,6 @@ https://x.com/hrn_yc/status/1479288681756246016
 mikuFlowers
 https://www.pixiv.net/en/artworks/109275847
 
-to / garashi teto
-https://x.com/_tgrs_/status/1688521478155980800
-
 hatsune
 https://x.com/DA00O01/status/1995434178645774613/photo/1
 
@@ -44,3 +41,12 @@ https://www.reddit.com/r/Invincible/comments/1c6bdcn/after_season_1_i_painted_an
 
 madokaMagica
 https://www.pixiv.net/en/artworks/124110783
+
+washiya0
+https://x.com/washiya0/status/1956017647902151118
+
+abyssWashiya0
+https://x.com/washiya0/status/1963255715725762575
+
+westernVeilNebula
+https://apod.nasa.gov/apod/ap251001.html
