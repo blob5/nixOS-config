@@ -29,58 +29,64 @@ This setup is modular but still tailored to my personal environment. While I don
 - `git` and `gpg` (optional for signing)
 - A target host definition under `hosts/`
 
-## ⚙️ Installation / Bootstrap
 
-1. Generate SSH key (optional for GitHub):
-   ```
-   ssh-keygen -t ed25519 -C "your_email@example.com"
-   eval "$(ssh-agent -s)"
-   ssh-add ~/.ssh/id_ed25519
-   ```
+## ⚙️ Installation
 
-2. Clone:
-   ```
-   git clone https://github.com/blob5/nixos-config.git --depth 1
-   or
-   git clone git@github.com:blob5/nixOS-config.git --depth 1
-   cd nixos-config
-   ```
+Prefer to do things yourself? Follow these steps:
 
-3. Create or copy a host:
-   ```
-   # copy the template and rename it
-   cp -r hosts/template hosts/<name>
-   ```
+**1. Generate SSH key** *(optional, for GitHub access)*
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+```
 
-4. Generate hardware config and move it into the host:
-   ```
-   sudo nixos-generate-config --show-hardware-config > hosts/<name>/hardware-configuration.nix
-   ```
+**2. Clone the repo**
+```bash
+# HTTPS
+git clone https://github.com/blob5/nixos-config.git --depth 1
+# or SSH
+git clone git@github.com:blob5/nixOS-config.git --depth 1
+cd nixos-config
+```
 
-5. Update host settings:
-   ```
-   # edit the target host settings before building
-   $EDITOR hosts/<name>/settings.nix
-   # Add host to hosts list in flake.nix
-   $EDITOR flake.nix
-   ```
+**3. Create a host from the template**
+```bash
+cp -r hosts/template hosts/<name>
+```
 
-6. Build for a host (examples):
-   ```
-   sudo nixos-rebuild switch --flake .#navi
-   sudo nixos-rebuild switch --flake .#cyberia
-   ```
+**4. Generate and save hardware config**
+```bash
+sudo nixos-generate-config --show-hardware-config > hosts/<name>/hardware-configuration.nix
+```
 
-7. (Optional) Generate GPG key:
-   ```
-   gpg --full-generate-key
-   ```
+**5. Configure your host**
+```bash
+$EDITOR hosts/<name>/settings.nix   # set hostname, user, WM, etc.
+$EDITOR flake.nix                   # add your host to the hosts list
+```
 
+**6. Build**
+
+*Subsequent rebuilds* (substituters already active from `nix.conf`):
+```bash
+sudo nixos-rebuild switch --flake .#<name>
+```
+
+*First install* — pass substituters explicitly since `nix.conf` from this flake hasn't been applied yet:
+```bash
+SUBS="https://cache.nixos.org https://cache.flox.dev https://nix-community.cachix.org https://hyprland.cachix.org https://attic.xuyh0120.win/lantian https://cache.garnix.io"
+KEYS="cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs= hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc= lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc= cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+
+sudo nixos-install --flake .#<name> \
+  --option substituters "$SUBS" \
+  --option trusted-public-keys "$KEYS"
+```
 
 ## 🧭 Hosts Overview
 
 | Host     | Type    | Notes |
-|----------|---------|------|
+|----------|---------|-------|
 | `navi`   | Desktop | Hyprland / AMD |
 | `cyberia`| Laptop  | Niri / AMD |
 | `core`   | Server  | Headless |
@@ -90,17 +96,17 @@ This setup is modular but still tailored to my personal environment. While I don
 
 ## 📁 Project Structure
 
-My configuration is organized into logical directories to make maintenance and customization straightforward:
-
 ```
 .
 ├── flake.nix             # Main flake configuration
+├── install.sh            # Interactive installer script
 ├── dev-shells            # Development shells
 ├── hosts/                # Host-specific configurations
 │   ├── cyberia/          # Laptop
 │   ├── navi/             # Desktop
 │   ├── core/             # Server
-│   └── cache/            # Old Laptop
+│   ├── cache/            # Old Laptop
+│   └── template/         # Base template for new hosts
 ├── modules/              # Modular configuration components
 │   ├── core/             # Core system configurations
 │   ├── desktop/          # Desktop environment configurations
@@ -111,5 +117,6 @@ My configuration is organized into logical directories to make maintenance and c
 │   └── virtualization/   # VM and container support
 └── wallpapers/           # Collection of system wallpapers
 ```
+
 ## 🙏 Credits
 This configuration draws inspiration from many sources. While some files include credits to their original authors, other components have been adapted and modified from various repositories across the NixOS and ricing community.
