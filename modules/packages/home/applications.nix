@@ -25,7 +25,6 @@
       moonlight-qt # Game streaming client
       heroic # Game launcher
       remmina # Remote desktop client
-      lutris # Game manager
       element-desktop # Matrix client
       gnome-calculator
       baobab # Disk usage analyzer
