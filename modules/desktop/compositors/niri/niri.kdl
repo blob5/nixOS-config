@@ -347,7 +347,7 @@ binds {
     Mod+M { quit; }
     
     // Applications  
-    "Mod+Return" { spawn "wezterm"; }
+    "Mod+Return" { spawn "kitty"; }
     "Mod+R" { spawn "rofi" "-show" "drun" "-show-icons"; }
     "Mod+E" { spawn "nautilus"; }
     "Mod+B" { spawn "zen"; }
