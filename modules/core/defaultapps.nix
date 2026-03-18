@@ -2,6 +2,7 @@
 { ... }:
 
 {
+  # Set default applications for various MIME types
   xdg.mime.defaultApplications = {
     "inode/directory" = [ "org.gnome.Nautilus.desktop" ];
 
