@@ -10,6 +10,7 @@ environment {
     QT_QPA_PLATFORM "wayland;xcb"
     QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
     SDL_VIDEODRIVER "wayland"
+    SSH_AUTH_SOCK "/run/user/1000/gcr/ssh"
 }
 // this is to ask the clients to omit their client-side decorations if possible.
 prefer-no-csd
