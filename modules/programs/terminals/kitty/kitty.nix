@@ -3,7 +3,7 @@
 let
   frappeTheme = pkgs.fetchurl {
     url = "https://raw.githubusercontent.com/catppuccin/kitty/main/themes/frappe.conf";
-    sha256 = "sha256-boYuT8Ptiy1598hptuKX88lKOIbixOAwCvGX6ln92iQ=";
+    sha256 = "sha256-qRiyPWo1Mq7YRc8esaf+aYnTqzxthHVvNp97CPGbxZg=";
   };
 in
 {
