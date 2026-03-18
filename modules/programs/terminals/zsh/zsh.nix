@@ -33,8 +33,7 @@ in
       spf = "superfile";
       cd = "z"; # replace cd with zoxide
       ls = "eza"; # replace ls with eza
-      ssh ="TERM=xterm-256color ssh";
-
+      ssh ="TERM=xterm-256color ssh"; # ensure correct terminal type for ssh sessions
       anime = "viu anilist";
 
       # aliases for my custom functions
