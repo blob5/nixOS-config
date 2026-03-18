@@ -33,7 +33,6 @@
     ../../modules/packages/home/fun.nix
     ../../modules/packages/home/home-manager.nix
     ../../modules/packages/home/pentesting.nix
-    ../../modules/packages/home/terminals.nix
 
   ];
 
