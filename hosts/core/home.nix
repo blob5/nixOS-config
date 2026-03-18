@@ -9,7 +9,7 @@
     ../../modules/programs/git.nix
 
 
-    # Desktop
+    # system
     ../../modules/desktop/fonts.nix
 
 

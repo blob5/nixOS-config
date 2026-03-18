@@ -24,6 +24,7 @@
     ../../modules/desktop/fonts.nix
     ../../modules/desktop/stylix/stylix.nix
     ../../modules/desktop/rofi/rofi.nix
+    ../../modules/desktop/desktop-entries.nix
 
     # Packages
     ../../modules/packages/home/applications.nix

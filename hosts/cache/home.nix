@@ -14,6 +14,7 @@
     ../../modules/desktop/fonts.nix
     ../../modules/desktop/rofi/rofi.nix
     ../../modules/desktop/compositors/niri/niri.nix
+    ../../modules/desktop/desktop-entries.nix
 
 
 
