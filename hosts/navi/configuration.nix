@@ -47,7 +47,7 @@
       };
     };
     firewall = {
-      allowedUDPPorts = [ 9 ];
+      allowedUDPPorts = [ 9 ]; # required for wake on lan
     };
   };
 
@@ -55,7 +55,8 @@
   services.lact.enable = true; # AMD overclocking tool
   hardware.amdgpu.overdrive.enable = true; # Enable AMD overclocking functionality
 
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  hardware.firmware = [pkgs.linux-firmware];
 
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
