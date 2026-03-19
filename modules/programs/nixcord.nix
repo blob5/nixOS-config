@@ -4,7 +4,7 @@
   programs.nixcord = {
     enable = true;
     discord = {
-      enable = true;
+      enable = false;
       equicord.enable = false;
       autoscroll.enable = true;
       openASAR.enable = true;
@@ -12,7 +12,7 @@
     };
 
     vesktop = {
-      enable = false;
+      enable = true;
       autoscroll.enable = true;
     };
     
