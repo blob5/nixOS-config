@@ -1,10 +1,18 @@
-{ pkgs, systemSettings, ... }:
+{ pkgs, hostSettings, ... }:
 
 let
-  hostSettings = import ../../hosts/${systemSettings.hostname}/settings.nix;
+  patchedNetbird = pkgs.netbird.override {
+    buildGoModule = pkgs.buildGo125Module;
+  };
 in
 {
-  networking.hostName = "${hostSettings.hostname}";
+  warnings = [
+    ''
+      TEMPORARY PIN: netbird is pinned to buildGo125Module.
+      Remove this override once netbird is compatible with the default Go version.
+    ''
+  ];
+  networking.hostName = hostSettings.hostname;
   networking.networkmanager.enable = true;
   networking.wireguard.enable = true;
   networking.firewall.enable = true;
@@ -16,5 +24,11 @@ in
   # Probably not smart to have this on for servers or machines with remote mounts.
   systemd.services.NetworkManager-wait-online.enable = false;
 
-  services.netbird.enable = true;
+  services.netbird = {
+    enable = true;
+    package = patchedNetbird;
+    ui.package = pkgs.netbird-ui.override {
+      netbird = patchedNetbird;
+    };
+  };
 }
