@@ -1,9 +1,6 @@
 # modules/programs/terminals/zsh/zsh.nix
-{ inputs, systemSettings, flakeRoot, ... }: 
+{ hostSettings, ... }:
 
-let
-  hostSettings = import "${inputs.self}/hosts/${systemSettings.hostname}/settings.nix";
-in
 {
 
   # Import the viu zsh completions

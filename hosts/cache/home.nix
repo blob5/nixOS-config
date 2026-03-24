@@ -30,7 +30,7 @@
   home = {
     packages = with pkgs; [
       # Quickshell Noctalia configuration
-      inputs.noctalia.packages.${system}.default
+      inputs.noctalia.packages.${pkgs.system}.default
 
       # Media & Applications
       nautilus # File manager

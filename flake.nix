@@ -73,6 +73,7 @@
 
               home-manager.extraSpecialArgs = {
                 inherit inputs;
+                inherit hostSettings;
                 systemSettings = hostSettings;
                 inherit userSettings;
               };
@@ -80,6 +81,7 @@
           ];
           specialArgs = {
             inherit inputs;
+            inherit hostSettings;
             systemSettings = hostSettings;
             inherit userSettings;
           };

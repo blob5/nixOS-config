@@ -1,8 +1,6 @@
 # modules/services/openrgb.nix
-{ pkgs, systemSettings, inputs, ... }:
-let
-  hostSettings = import "${inputs.self}/hosts/${systemSettings.hostname}/settings.nix";
-in
+{ pkgs, hostSettings, ... }:
+
 {
   # Required for i2c access by OpenRGB
   boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];

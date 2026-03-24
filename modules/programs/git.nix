@@ -1,8 +1,5 @@
-{ inputs, systemSettings, ... }: 
+{ hostSettings, ... }:
 
-let
-  hostSettings = import "${inputs.self}/hosts/${systemSettings.hostname}/settings.nix";
-in
 {
   # Host-specific git settings
   programs.git = {

@@ -1,7 +1,6 @@
-{ pkgs, lib, systemSettings, ... }:
+{ lib, hostSettings, ... }:
 
 let
-  hostSettings = import ../../hosts/${systemSettings.hostname}/settings.nix;
   servicesCfg = hostSettings.services or {};
   dockerCfg = servicesCfg.docker or {};
 in

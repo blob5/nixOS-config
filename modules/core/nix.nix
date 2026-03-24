@@ -1,11 +1,8 @@
 {
-  systemSettings,
+  hostSettings,
   ...
 }:
 
-let
-  hostSettings = import ../../hosts/${systemSettings.hostname}/settings.nix;
-in
 {
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];

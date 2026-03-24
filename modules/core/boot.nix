@@ -2,12 +2,11 @@
   config,
   pkgs,
   lib,
-  systemSettings,
+  hostSettings,
   ...
 }:
 
 let
-  hostSettings = import ../../hosts/${systemSettings.hostname}/settings.nix;
   cpuVendor = hostSettings.cpuVendor or null;
 in
 {

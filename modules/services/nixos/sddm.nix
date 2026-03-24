@@ -1,7 +1,5 @@
-{ inputs, pkgs, systemSettings, ... }:
-let
-  hostSettings = import "${inputs.self}/hosts/${systemSettings.hostname}/settings.nix";
-in
+{ pkgs, hostSettings, ... }:
+
 {
   # Add the theme to system packages with Qt6 variant
   environment.systemPackages = [
@@ -12,7 +10,10 @@ in
 
   # SDDM configuration
   services.displayManager = {
-    sessionPackages = [ pkgs.${hostSettings.compositor} ];
+    sessionPackages =
+      if hostSettings.compositor != ""
+      then [ pkgs.${hostSettings.compositor} ]
+      else [ ];
     sddm = {
       enable = true;
       wayland = {
