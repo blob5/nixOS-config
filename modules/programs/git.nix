@@ -16,6 +16,7 @@ in
     signing = {
       key = "${hostSettings.gpgkey}";
       signByDefault = true;
+      format = "openpgp";
     };
   };
 }
