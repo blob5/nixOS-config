@@ -21,7 +21,7 @@ This setup is modular but still tailored to my personal environment. While I don
 - **Shell**: [ZSH](https://ohmyz.sh/)
 - **Application Launcher**: [Rofi](https://github.com/davatorium/rofi)
 - **Status Bar**: [noctalia shell](https://github.com/noctalia-dev/noctalia-shell)
-- **Theming**: [Stylix](https://github.com/danth/stylix)
+- **Theming**: Native Home Manager GTK/Qt theming
 
 ## ✅ Requirements
 

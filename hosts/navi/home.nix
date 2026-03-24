@@ -22,7 +22,7 @@
     # Desktop
     ../../modules/desktop/compositors/hyprland/hyprland.nix
     ../../modules/desktop/fonts.nix
-    ../../modules/desktop/stylix/stylix.nix
+    ../../modules/desktop/theme.nix
     ../../modules/desktop/rofi/rofi.nix
     ../../modules/desktop/desktop-entries.nix
 
@@ -48,6 +48,6 @@
   # Host-specific home-manager settings
   home.username = userSettings.username;
   home.homeDirectory = userSettings.homeDirectory;
-  home.stateVersion = "24.11";
+  home.stateVersion = "26.05";
 
 }

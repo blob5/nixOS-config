@@ -12,8 +12,6 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
 
-    stylix.url = "github:nix-community/stylix";
-
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
@@ -59,8 +57,6 @@
 
             ./hosts/${hostName}/configuration.nix
             inputs.minegrub-world-sel-theme.nixosModules.default
-            inputs.stylix.nixosModules.stylix
-            
             home-manager.nixosModules.home-manager {
               home-manager.backupFileExtension = "backup";
               home-manager.useUserPackages = true;
@@ -72,7 +68,6 @@
 
               home-manager.sharedModules = [
                 inputs.nixcord.homeModules.nixcord
-                inputs.stylix.homeModules.stylix
                 inputs.nixvim.homeModules.nixvim
               ];
 

@@ -8,7 +8,7 @@
 
     # Desktop
     # ../../modules/desktop/fonts.nix
-    # ../../modules/desktop/stylix/stylix.nix
+    # ../../modules/desktop/theme.nix
 
     # Packages
     # ../../modules/packages/home/CLI-tools.nix

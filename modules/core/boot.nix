@@ -11,10 +11,6 @@ let
   cpuVendor = hostSettings.cpuVendor or null;
 in
 {
-
-  # Disable Stylix Plymouth styling to prevent conflicts
-  stylix.targets.plymouth.enable = false;
-
   boot.extraModulePackages = with config.boot.kernelPackages;
     lib.mkIf (cpuVendor == "amd") [ zenpower ];
 
