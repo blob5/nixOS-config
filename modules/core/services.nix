@@ -21,7 +21,7 @@ in
 
     seatd.enable = true;
 
-    upower.enable = true; # needed for hyprpanel
+    upower.enable = true; # for battery status and power management
 
     pcscd.enable = true; # needed for gpg
 
@@ -36,6 +36,8 @@ in
     gnome.gnome-keyring.enable = true;
 
     xserver.enable = true;
+
+    gvfs.enable = true; # for virtual filesystem support "trash, network shares, etc."
 
   };
 
