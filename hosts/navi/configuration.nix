@@ -34,7 +34,10 @@
       ../../modules/packages/nixos/applications.nix
     ];
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
 
   services.hardware.openrgb.motherboard = "amd";
   services.hardware.openrgb.startupProfile = "/home/blob/.config/OpenRGB/gaming.orp";
