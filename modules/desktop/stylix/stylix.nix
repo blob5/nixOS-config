@@ -8,7 +8,6 @@
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
 
   stylix.polarity = "dark";
-  gtk.gtk4.theme = null;
   stylix.targets = {
     gtk.enable = true;
     kde.enable = true;
