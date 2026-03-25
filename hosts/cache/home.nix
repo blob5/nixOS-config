@@ -10,7 +10,7 @@
 
 
     # Desktop
-    ../../modules/desktop/theme.nix
+    ../../modules/desktop/stylix/stylix.nix
     ../../modules/desktop/fonts.nix
     ../../modules/desktop/rofi/rofi.nix
     ../../modules/desktop/compositors/niri/niri.nix

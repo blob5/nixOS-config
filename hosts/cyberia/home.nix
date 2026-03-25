@@ -19,7 +19,7 @@
 
     # Desktop
     ../../modules/desktop/compositors/niri/niri.nix
-    ../../modules/desktop/theme.nix
+    ../../modules/desktop/stylix/stylix.nix
     ../../modules/desktop/fonts.nix
     ../../modules/desktop/rofi/rofi.nix
     ../../modules/desktop/desktop-entries.nix
