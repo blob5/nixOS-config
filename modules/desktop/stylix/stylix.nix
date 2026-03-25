@@ -33,7 +33,7 @@
     in
     "${themePackage}/share/color-schemes/${colorSchemeSlug}.colors";
 
-
+  # GTK CSS so buttons have a more visible border
   stylix.targets.gtk.extraCss = ''
     button {
       color: @theme_fg_color;
