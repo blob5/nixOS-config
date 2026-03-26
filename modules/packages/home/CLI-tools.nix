@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs,hostSettings, ... }: {
 
   home = {
     packages = with pkgs; [
@@ -24,6 +24,14 @@
       fd # better find
       zellij
       lazygit
+      bat
+      bat-extras.core
+      glib 
     ];
+  };
+  # Nix search for CLI
+  programs.nh = {
+    enable = true;
+    flake = "${hostSettings.flakeRoot}";
   };
 }
