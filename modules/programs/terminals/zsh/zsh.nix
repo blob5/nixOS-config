@@ -16,31 +16,43 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      ll = "ls -l";
+      # nix
       rebuild = "sudo nixos-rebuild switch --flake ~/.config/nixos";
       upgrade = "sudo nixos-rebuild switch --flake ~/.config/nixos --upgrade";
       update = "nix flake update --flake ~/.config/nixos";
       repair = "sudo nix-store --verify --repair";
-      vi = "vim";
+      clean = "nh clean all --ask";
+
+      # nix search aliases
+      ns = "nh search --limit 5";
+
+      # Shortcuts
       n = "nvim";
       q = "exit";
-      c = "code .";
+      c = "clear"; # or Ctrl+L
       r = "code ~/.config/nixos 2>/dev/null";
       m = "micro";
       spf = "superfile";
-      cd = "z"; # replace cd with zoxide
-      ls = "eza"; # replace ls with eza
+      lg = "lazygit";
+      ld = "lazydocker";
+
+      # Replace common commands with better alternatives
+      cd = "z"; # zoxide for smarter directory navigation
+      ls = "eza"; # eza for ls with colors
+      l = "ls -l --color=auto";
+      tree = "eza --tree --git-ignore";
+      man = "batman"; # colored man
+      tf = "tail -f \"$@\" | bat --paging=never -l log";
+      fdb = "fd -X bat"; # fd with bat preview
+      rgb = "batgrep"; # ripgrep with bat preview
+      fzf = "fzf --preview \"bat --color=always --style=numbers --line-range=:500 {}\""; # fzf with bat preview panel      
+
       ssh ="TERM=xterm-256color ssh"; # ensure correct terminal type for ssh sessions
       anime = "viu anilist";
 
       # aliases for my custom functions
-      nixos-btw = "myfsinfo";
+      nixos-btw = "myfsinfo"; # print filesystem creation date
 
-      # Text manipulation aliases
-      clr = "clear";  # Clear screen
-      cll = "clear && ls";  # Clear screen and list files
-      cla = "clear && ls -la";  # Clear screen and list all files
-      
       # Development alias
       waybar-dev = "_waybar_dev";
 
@@ -50,19 +62,19 @@
       gc = "git commit";
       gp = "git push";
       gl = "git pull";
-      
-      # System aliases
-      clean = "sudo nix-collect-garbage -d";
-      
-      
+      glog = "git log --graph --pretty=format:'\''%C(magenta)%h%Creset %w(72,1,2)%Cgreen(%cr) -%C(bold green)%d%Creset %s %C(bold blue)<%an>%Creset'\'' --abbrev-commit --date=relative";
+
       # File operations
-      cp = "cp -i";  # Interactive copy
-      mv = "mv -i";  # Interactive move
-      rm = "rm -i";  # Interactive remove
-      
+      cp = "cp -i";  # Confirm before overwriting
+      mv = "mv -i";  # Confirm before overwriting
+      rm = "gio trash"; # move to trash instead of deleting
     };
 
     initContent = ''
+
+      # Global aliases for colored help output
+      alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+      alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
       
       myfsinfo() {
         DEVICE=$(df / | awk 'NR==2 {print $1}')
