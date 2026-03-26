@@ -11,10 +11,11 @@
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
+      package = pkgs.steam.override {
+        extraEnv = {
+          GAMEMODERUN = "1";
+        };
+      };
     };
   };
 }
-
-
-# You can combine launch options like this:
-# gamemoderun mangohud %command%
