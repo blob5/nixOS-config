@@ -24,7 +24,7 @@
 
     nixcord.url = "github:kaylorben/nixcord";
 
-    nixvim.url = "github:nix-community/nixvim";
+    wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
 
     noctalia.url = "github:noctalia-dev/noctalia-shell";
 

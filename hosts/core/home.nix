@@ -5,6 +5,7 @@
     # Services
 
     # Programs 
+    ../../modules/programs/editors/neovim-wrapper.nix
     ../../modules/programs/terminals/zsh/zsh.nix
     ../../modules/programs/git.nix
 

@@ -3,6 +3,7 @@
 {
   imports = [
     # Programs 
+    ../../modules/programs/editors/neovim-wrapper.nix
     ../../modules/programs/editors/vscode.nix
     ../../modules/programs/terminals/zsh/zsh.nix
     ../../modules/programs/git.nix

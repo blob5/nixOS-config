@@ -10,7 +10,7 @@
 
     # Programs
     ../../modules/programs/editors/vscode.nix
-    ../../modules/programs/editors/vim.nix
+    ../../modules/programs/editors/neovim-wrapper.nix
     ../../modules/programs/terminals/kitty/kitty.nix
     ../../modules/programs/terminals/zsh/zsh.nix
     ../../modules/programs/spicetify/spicetify.nix
