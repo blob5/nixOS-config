@@ -72,7 +72,6 @@
               home-manager.sharedModules = [
                 inputs.nixcord.homeModules.nixcord
                 inputs.stylix.homeModules.stylix
-                inputs.nixvim.homeModules.nixvim
               ];
 
               home-manager.extraSpecialArgs = {

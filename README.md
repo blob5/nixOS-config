@@ -16,7 +16,7 @@ This setup is modular but still tailored to my personal environment. While I don
   - [Kitty](https://sw.kovidgoyal.net/kitty/)
   - [WezTerm](https://wezfurlong.org/wezterm/)
 - **Text Editors**:
-  - [NixVim](https://github.com/nix-community/nixvim)
+  - [Neovim-wrapper-module](https://github.com/BirdeeHub/nix-wrapper-modules)
   - [VSCode](https://code.visualstudio.com/)
 - **Shell**: [ZSH](https://ohmyz.sh/)
 - **Application Launcher**: [Rofi](https://github.com/davatorium/rofi)
