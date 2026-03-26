@@ -18,7 +18,7 @@
     vesktop.enable = true;
   };
 
-  # Fix for theming in some KDE apps
+  # Fix for theming in some KDE apps. Thanks to https://github.com/nix-community/stylix/issues/1958#issuecomment-3607824025
   xdg.configFile.kdeglobals.source =
     let
       themePackage = builtins.head (
