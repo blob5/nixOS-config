@@ -67,7 +67,7 @@
       # File operations
       cp = "cp -i";  # Confirm before overwriting
       mv = "mv -i";  # Confirm before overwriting
-      rm = "gio trash"; # move to trash instead of deleting
+      trash = "gio trash"; # move to trash instead of deleting
     };
 
     initContent = ''
