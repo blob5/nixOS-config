@@ -1,17 +1,6 @@
 { pkgs, hostSettings, ... }:
 
-let
-  patchedNetbird = pkgs.netbird.override {
-    buildGoModule = pkgs.buildGo125Module;
-  };
-in
 {
-  warnings = [
-    ''
-      TEMPORARY PIN: netbird is pinned to buildGo125Module.
-      Remove this override once netbird is compatible with the default Go version.
-    ''
-  ];
   networking.hostName = hostSettings.hostname;
   networking.networkmanager.enable = true;
   networking.wireguard.enable = true;
@@ -26,9 +15,5 @@ in
 
   services.netbird = {
     enable = true;
-    package = patchedNetbird;
-    ui.package = pkgs.netbird-ui.override {
-      netbird = patchedNetbird;
-    };
   };
 }
