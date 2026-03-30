@@ -30,6 +30,7 @@
       baobab # Disk usage analyzer
       tesseract4 # image to text engine
       signal-desktop # Encrypted messaging app
+      solaar # Logitech device manager
     ];
   };
 }
