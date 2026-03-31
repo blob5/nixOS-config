@@ -13,6 +13,22 @@ if ok_telescope then
 	telescope.setup({})
 end
 
+local ok_nvim_tree, nvim_tree = pcall(require, "nvim-tree")
+if ok_nvim_tree then
+	nvim_tree.setup({
+		view = {
+			width = 32,
+			side = "left",
+		},
+		renderer = {
+			group_empty = true,
+		},
+		update_focused_file = {
+			enable = true,
+		},
+	})
+end
+
 local ok_gitsigns, gitsigns = pcall(require, "gitsigns")
 if ok_gitsigns then
 	gitsigns.setup({})
@@ -57,5 +73,6 @@ if ok_alpha then
 end
 
 vim.keymap.set("n", "<leader>w", "<cmd>write<CR>", { desc = "Write buffer" })
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file tree" })
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Live grep" })

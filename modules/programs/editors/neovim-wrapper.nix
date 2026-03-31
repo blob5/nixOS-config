@@ -11,6 +11,7 @@ let
       specs.start = with pkgs.vimPlugins; [
         plenary-nvim
         nvim-web-devicons
+        nvim-tree-lua
         alpha-nvim
         telescope-nvim
         gitsigns-nvim
