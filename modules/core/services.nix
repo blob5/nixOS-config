@@ -37,6 +37,8 @@ in
 
     xserver.enable = true;
 
+    omnisearch.enable = true; # meta search engine # https://git.bwaaa.monster/omnisearch/about/
+
     gvfs.enable = true; # for virtual filesystem support "trash, network shares, etc."
 
   };

@@ -10,6 +10,8 @@
 
     lobster.url = "github:justchokingaround/lobster";
 
+    omnisearch.url = "git+https://git.bwaaa.monster/omnisearch";
+
     spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
 
     stylix.url = "github:nix-community/stylix";
@@ -58,6 +60,7 @@
             }
 
             ./hosts/${hostName}/configuration.nix
+            inputs.omnisearch.nixosModules.default
             inputs.minegrub-world-sel-theme.nixosModules.default
             inputs.stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager {
