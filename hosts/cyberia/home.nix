@@ -48,7 +48,7 @@
   # Host-specific home-manager settings
   home.username = userSettings.username;
   home.homeDirectory = userSettings.homeDirectory;
-  home.stateVersion = "25.11"; # Match your NixOS version
+  home.stateVersion = "26.05"; # Match your NixOS version
   
 
 }
