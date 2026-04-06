@@ -1,7 +1,6 @@
 {
   system = "x86_64-linux";
   hostname = "navi";
-  username = "blob";
   timezone = "Europe/Amsterdam";
   locale = "en_US.UTF-8";
   version = "24.11";

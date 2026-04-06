@@ -2,7 +2,6 @@
   enable = false; # Set to true to enable this host configuration, false to ignore it
   system = "x86_64-linux"; # e.g. "x86_64-linux" or "aarch64-linux"
   hostname = "template"; # The hostname of the machine, e.g. "my-laptop" or "my-desktop"
-  username = "template"; # The username of the primary user, e.g. "alice" or "bob"
   timezone = "Europe/Amsterdam"; # The timezone of the machine, e.g. "Europe/Amsterdam" or "America/New_York"
   locale = "en_US.UTF-8"; # The locale of the machine, e.g. "en_US.UTF-8" or "de_DE.UTF-8"
   version = "25.11";
@@ -16,7 +15,7 @@
   };
 
   user = {
-    username = "CHANGE_ME";
+    username = "CHANGE_ME"; # Primary username, e.g. "alice" or "bob"
     name = "CHANGE_ME";
     homeDirectory = "/home/CHANGE_ME";
     dotfilesDir = "~/.config/nixos";

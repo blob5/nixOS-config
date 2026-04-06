@@ -1,5 +1,5 @@
 # modules/services/openrgb.nix
-{ pkgs, hostSettings, ... }:
+{ pkgs, userSettings, ... }:
 
 {
   # Required for i2c access by OpenRGB
@@ -7,7 +7,7 @@
   services.udev.packages = [ pkgs.openrgb-with-all-plugins ];
 
   # Home manager user service
-  home-manager.users.${hostSettings.username} = {
+  home-manager.users.${userSettings.username} = {
     systemd.user.services.openrgb = {
       Unit = {
         Description = "OpenRGB with profile";
