@@ -27,9 +27,6 @@ https://x.com/DA00O01/status/1995434178645774613/photo/1
 mikuRain & mikuFireworks
 https://www.pixiv.net/en/artworks/88571343
 
-mikuSun
-https://www.pixiv.net/en/artworks/128032920
-
 mikuSpace
 https://www.pixiv.net/en/artworks/87951954
 
@@ -42,14 +39,26 @@ https://www.reddit.com/r/Invincible/comments/1c6bdcn/after_season_1_i_painted_an
 madokaMagica
 https://www.pixiv.net/en/artworks/124110783
 
-washiya0
-https://x.com/washiya0/status/1956017647902151118
-
-abyssWashiya0
-https://x.com/washiya0/status/1963255715725762575
-
 westernVeilNebula
 https://apod.nasa.gov/apod/ap251001.html
 
 clouds
 https://whvn.cc/e89l8k
+
+mikuFisheye
+https://whvn.cc/5ykdq8
+
+blackhole
+https://whvn.cc/3q5lmy
+
+cantarella
+https://whvn.cc/qr3j1r
+
+kanadeOtonose
+https://whvn.cc/xele1l
+
+irizaKatouField
+https://whvn.cc/qzwxgq
+
+irizaKatouClouds
+https://whvn.cc/3qkzqv
