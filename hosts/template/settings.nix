@@ -1,13 +1,14 @@
 {
-  system = "x86_64-linux";
-  hostname = "template";
-  username = "template";
-  timezone = "Europe/Amsterdam";
-  locale = "en_US.UTF-8";
+  enable = false; # Set to true to enable this host configuration, false to ignore it
+  system = "x86_64-linux"; # e.g. "x86_64-linux" or "aarch64-linux"
+  hostname = "template"; # The hostname of the machine, e.g. "my-laptop" or "my-desktop"
+  username = "template"; # The username of the primary user, e.g. "alice" or "bob"
+  timezone = "Europe/Amsterdam"; # The timezone of the machine, e.g. "Europe/Amsterdam" or "America/New_York"
+  locale = "en_US.UTF-8"; # The locale of the machine, e.g. "en_US.UTF-8" or "de_DE.UTF-8"
   version = "25.11";
   compositor = ""; # e.g. "hyprland" or "niri"
-  gpgkey = "CHANGE_ME";
-  cudaSupport = false;
+  gpgkey = "CHANGE_ME"; # gpg key used for things like signing commits.
+  cudaSupport = false; # Set to true if the machine has an NVIDIA GPU and you want to enable CUDA support
   cpuVendor = "CHANGE_ME"; # e.g. "amd" or "intel"
 
   services = {

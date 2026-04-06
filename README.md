@@ -63,8 +63,10 @@ sudo nixos-generate-config --show-hardware-config > hosts/<name>/hardware-config
 **5. Configure your host**
 ```bash
 $EDITOR hosts/<name>/settings.nix   # set hostname, user, WM, etc.
-$EDITOR flake.nix                   # add your host to the hosts list
 ```
+
+Hosts are auto-discovered from `hosts/*/settings.nix`.
+By default, every host is enabled unless `enable = false;` is set in its `settings.nix`.
 
 **6. Build**
 

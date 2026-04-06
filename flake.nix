@@ -33,15 +33,29 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
+      hostsDir = ./hosts;
 
+      importHostSettings = hostName: import (hostsDir + "/${hostName}/settings.nix");
 
-      # Import host settings from their respective directories
-      hosts = {
-        cyberia = import ./hosts/cyberia/settings.nix;
-        navi = import ./hosts/navi/settings.nix;
-        core = import ./hosts/core/settings.nix;
-	      cache =  import ./hosts/cache/settings.nix;
-      };
+      # Discover hosts from ./hosts/*/settings.nix and allow per-host opt-out.
+      hosts =
+        let
+          hostEntries = builtins.readDir hostsDir;
+          hostNames = builtins.filter
+            (name:
+              hostEntries.${name} == "directory"
+              && builtins.pathExists (hostsDir + "/${name}/settings.nix")
+              && name != "template"
+              && ((importHostSettings name).enable or true)
+            )
+            (builtins.attrNames hostEntries);
+        in
+        builtins.listToAttrs (map
+          (name: {
+            inherit name;
+            value = importHostSettings name;
+          })
+          hostNames);
 
       # Function to create a NixOS configuration for a given host
       mkNixosConfiguration = hostName: hostSettings:
