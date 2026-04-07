@@ -26,6 +26,9 @@
       # nix search aliases
       ns = "nh search --limit 5";
 
+      # test internet connectivity
+      online = "ping 1.1.1.1";
+
       # Shortcuts
       n = "nvim";
       q = "exit";
