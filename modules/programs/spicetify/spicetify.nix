@@ -30,6 +30,6 @@
         hideFriendActivityButton
       ];
 
-      theme = spicePkgs.themes.dribbblishDynamic;
+      theme = spicePkgs.themes.bloom;
     };
 }
