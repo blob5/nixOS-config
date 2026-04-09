@@ -3,7 +3,7 @@
 {
   programs.dconf.enable = true;
   
-  users.users.blob.extraGroups = [ "libvirtd" "kvm" "input" ];
+  users.users.blob.extraGroups = [ "libvirtd" "kvm" "input" "video" "render" ];
   
   environment.systemPackages = with pkgs; [
     virt-viewer
@@ -16,6 +16,7 @@
     qemu
     libguestfs
     looking-glass-client
+    quickemu # quickly create optimized vms
   ];
   programs.virt-manager.enable = true;
 
