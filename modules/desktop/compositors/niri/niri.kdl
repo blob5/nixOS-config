@@ -349,6 +349,7 @@ binds {
     // Applications  
     "Mod+Backspace" { spawn "kitty"; }
     "Mod+R" { spawn "rofi" "-show" "drun" "-show-icons"; }
+    "Mod+G" { spawn "rofi -show calc -modi calc -no-show-match -no-sort -reuse-result -automatic-save-to-history"}
     "Mod+E" { spawn "nautilus"; }
     "Mod+B" { spawn "zen"; }
     
