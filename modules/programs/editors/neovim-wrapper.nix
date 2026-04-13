@@ -43,7 +43,7 @@ let
         procps
         aider-chat
         nixd
-        nixfmt-rfc-style
+        nixfmt
       ];
     })
   ];
