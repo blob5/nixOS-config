@@ -43,12 +43,6 @@
 
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
-  # swap file for laptop hibernation
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 16*1024; # 16 GiB same as RAM
-  }];
-
   programs.virt-manager.enable = true; 
 
   # Original install version,
