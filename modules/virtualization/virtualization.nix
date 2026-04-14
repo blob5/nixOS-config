@@ -1,13 +1,24 @@
-{ pkgs, ... }:
+{
+  lib,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 {
   programs.dconf.enable = true;
-  
-  users.users.blob.extraGroups = [ "libvirtd" "kvm" "input" "video" "render" ];
-  
+
+  users.users.${userSettings.username}.extraGroups = lib.mkAfter [
+    "libvirtd"
+    "kvm"
+    "input"
+    "video"
+    "render"
+  ];
+
   environment.systemPackages = with pkgs; [
     virt-viewer
-    spice 
+    spice
     spice-gtk
     spice-protocol
     virtio-win
@@ -37,4 +48,4 @@
   boot.kernel.sysctl = {
     "vm.nr_hugepages" = 1024;
   };
-} 
+}
