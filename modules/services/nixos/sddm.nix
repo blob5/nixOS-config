@@ -11,9 +11,7 @@
   # SDDM configuration
   services.displayManager = {
     sessionPackages =
-      if hostSettings.compositor != ""
-      then [ pkgs.${hostSettings.compositor} ]
-      else [ ];
+      if hostSettings.compositor != "" then [ pkgs.${hostSettings.compositor} ] else [ ];
     sddm = {
       enable = true;
       wayland = {

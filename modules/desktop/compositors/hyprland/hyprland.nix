@@ -1,15 +1,20 @@
 # modules/desktop/compositors/hyprland/hyprland.nix
 # Hyprland should also be enabled in the host configuration using the nixOS module
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 with lib;
 {
   options.hyprland = {
     monitors = mkOption {
       type = types.listOf types.str;
-      default = [];
+      default = [ ];
       example = [ "DP-1,2560x1440@144,0x0,1" ];
     };
-    
+
     input = {
       sensitivity = mkOption {
         type = types.float;
@@ -20,7 +25,7 @@ with lib;
         default = "us";
       };
     };
-    
+
     accel_profile = mkOption {
       type = types.str;
       default = "flat";
@@ -31,10 +36,10 @@ with lib;
     # Include your common hyprland.conf content here
     home.file.".config/hypr/hyprland.conf".text = ''
       ${builtins.readFile ./hyprland.conf}
-      
+
       # Generated from options
       ${concatStringsSep "\n" (map (m: "monitor=${m}") config.hyprland.monitors)}
-      
+
       input {
         kb_layout = ${config.hyprland.input.kb_layout}
         sensitivity = ${toString config.hyprland.input.sensitivity}

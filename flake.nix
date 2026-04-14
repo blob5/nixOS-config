@@ -10,7 +10,7 @@
 
     lobster.url = "github:justchokingaround/lobster";
 
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     stylix.url = "github:nix-community/stylix";
 
@@ -31,7 +31,13 @@
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
       hostsDir = ./hosts;
 
@@ -41,24 +47,24 @@
       hosts =
         let
           hostEntries = builtins.readDir hostsDir;
-          hostNames = builtins.filter
-            (name:
-              hostEntries.${name} == "directory"
-              && builtins.pathExists (hostsDir + "/${name}/settings.nix")
-              && name != "template"
-              && ((importHostSettings name).enable or true)
-            )
-            (builtins.attrNames hostEntries);
+          hostNames = builtins.filter (
+            name:
+            hostEntries.${name} == "directory"
+            && builtins.pathExists (hostsDir + "/${name}/settings.nix")
+            && name != "template"
+            && ((importHostSettings name).enable or true)
+          ) (builtins.attrNames hostEntries);
         in
-        builtins.listToAttrs (map
-          (name: {
+        builtins.listToAttrs (
+          map (name: {
             inherit name;
             value = importHostSettings name;
-          })
-          hostNames);
+          }) hostNames
+        );
 
       # Function to create a NixOS configuration for a given host
-      mkNixosConfiguration = hostName: hostSettings:
+      mkNixosConfiguration =
+        hostName: hostSettings:
         let
           userSettings = hostSettings.user;
         in
@@ -74,14 +80,17 @@
             ./hosts/${hostName}/configuration.nix
             inputs.minegrub-world-sel-theme.nixosModules.default
             inputs.stylix.nixosModules.stylix
-            home-manager.nixosModules.home-manager {
+            home-manager.nixosModules.home-manager
+            {
               home-manager.backupFileExtension = "backup";
               home-manager.useUserPackages = true;
               home-manager.useGlobalPkgs = true;
-              
-              home-manager.users.${userSettings.username} = { config, ... }: {
-                imports = [ ./hosts/${hostName}/home.nix ];
-            };
+
+              home-manager.users.${userSettings.username} =
+                { config, ... }:
+                {
+                  imports = [ ./hosts/${hostName}/home.nix ];
+                };
 
               home-manager.sharedModules = [
                 inputs.nixcord.homeModules.nixcord
@@ -103,7 +112,8 @@
             inherit userSettings;
           };
         };
-    in {
+    in
+    {
       # Generate configurations for all hosts
       nixosConfigurations = nixpkgs.lib.mapAttrs mkNixosConfiguration hosts;
     };

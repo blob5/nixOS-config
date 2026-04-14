@@ -1,9 +1,10 @@
-{ pkgs,hostSettings, ... }: {
+{ pkgs, hostSettings, ... }:
+{
 
   home = {
     packages = with pkgs; [
 
-    # CLI tools
+      # CLI tools
       btop
       aria2
       ookla-speedtest
@@ -26,7 +27,7 @@
       lazygit
       bat
       bat-extras.core
-      glib 
+      glib
     ];
   };
   # Nix search for CLI

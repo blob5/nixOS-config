@@ -1,66 +1,78 @@
-{ inputs, pkgs, lib, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 let
   wrappedNvim = inputs.wrappers.lib.evalPackage [
-    ({ wlib, ... }: {
-      pkgs    = pkgs;
-      imports = [ wlib.wrapperModules.neovim ];
+    (
+      { wlib, ... }:
+      {
+        pkgs = pkgs;
+        imports = [ wlib.wrapperModules.neovim ];
 
-      settings.config_directory = ./nvim-config;
+        settings.config_directory = ./nvim-config;
 
-      specs.start = with pkgs.vimPlugins; [
-        # ui
-        alpha-nvim
-        bufferline-nvim
-        dressing-nvim
-        indent-blankline-nvim
-        lualine-nvim
-        nvim-web-devicons
-        render-markdown-nvim
+        specs.start = with pkgs.vimPlugins; [
+          # ui
+          alpha-nvim
+          bufferline-nvim
+          dressing-nvim
+          indent-blankline-nvim
+          lualine-nvim
+          nvim-web-devicons
+          render-markdown-nvim
 
-        # editing
-        comment-nvim
-        hardtime-nvim
-        nvim-autopairs
+          # editing
+          comment-nvim
+          hardtime-nvim
+          nvim-autopairs
 
-        # navigation
-        fzf-lua
-        nvim-tree-lua
+          # navigation
+          fzf-lua
+          nvim-tree-lua
 
-        # git
-        gitsigns-nvim
+          # git
+          gitsigns-nvim
 
-        # lsp
-        nvim-lspconfig
+          # lsp
+          nvim-lspconfig
 
-        # ai
-        opencode-nvim
+          # ai
+          opencode-nvim
 
-        # misc
-        nui-nvim
-        plenary-nvim
-        which-key-nvim
-      ];
+          # misc
+          nui-nvim
+          plenary-nvim
+          which-key-nvim
+        ];
 
-      extraPackages = with pkgs; [
-        # tools
-        fd
-        fzf
-        lsof
-        procps
-        ripgrep
+        extraPackages = with pkgs; [
+          # tools
+          fd
+          fzf
+          lsof
+          procps
+          ripgrep
 
-        # ai
-        opencode
+          # ai
+          opencode
 
-        # nix
-        nixd
-        nixfmt
-      ];
-    })
+          # nix
+          nixd
+          nixfmt
+        ];
+      }
+    )
   ];
 in
 {
-  home.packages = [ wrappedNvim pkgs.nixd pkgs.nixfmt-rfc-style ];
+  home.packages = [
+    wrappedNvim
+    pkgs.nixd
+    pkgs.nixfmt-rfc-style
+  ];
 
   home.sessionVariables = {
     EDITOR = lib.getExe wrappedNvim;

@@ -1,9 +1,13 @@
 { pkgs, lib, ... }:
 {
-    systemd.user.services.easyeffects = {
+  systemd.user.services.easyeffects = {
     Unit = {
       Description = "Easyeffects daemon";
-      After = [ "graphical-session.target" "pipewire.service" "pipewire-pulse.service" ];
+      After = [
+        "graphical-session.target"
+        "pipewire.service"
+        "pipewire-pulse.service"
+      ];
       Requires = [ "pipewire.service" ];
     };
 
@@ -25,7 +29,7 @@
     extraPresets = {
       "microphone-filter" = {
         input = {
-          blocklist = [];
+          blocklist = [ ];
 
           # Noise suppression
           "rnnoise#0" = {
@@ -132,13 +136,13 @@
               # High-pass filter (80Hz rolloff)
               band0 = {
                 frequency = 80.0;
-                gain = -12.0;  # Steep cut for high-pass effect
+                gain = -12.0; # Steep cut for high-pass effect
                 mode = "BWC (MT)";
                 mute = false;
-                q = 0.7;       # Lower Q for broader cut
+                q = 0.7; # Lower Q for broader cut
                 slope = "x2";
                 solo = false;
-                type = "High-pass";  # This is the key - use High-pass type
+                type = "High-pass"; # This is the key - use High-pass type
                 width = 4.0;
               };
               # Rest of EQ bands...
@@ -301,7 +305,7 @@
             "gate#0"
             "deesser#0"
             "compressor#0"
-            "equalizer#0"  # High-pass is handled here as first EQ band
+            "equalizer#0" # High-pass is handled here as first EQ band
             "limiter#0"
           ];
         };

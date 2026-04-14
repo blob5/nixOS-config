@@ -2,14 +2,14 @@
 
 {
 
-	imports = [
-		./bluetooth.nix
+  imports = [
+    ./bluetooth.nix
     ./boot.nix
-		./locale.nix
-		./networking.nix
+    ./locale.nix
+    ./networking.nix
     ./nix.nix
-		./users.nix
+    ./users.nix
     ./services.nix
-		./defaultapps.nix
+    ./defaultapps.nix
   ];
 }

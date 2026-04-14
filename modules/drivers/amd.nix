@@ -7,7 +7,11 @@
 
   hardware.enableRedistributableFirmware = true;
 
-  boot.initrd.kernelModules = [ "amdgpu" "zenpower" "msr" ];
+  boot.initrd.kernelModules = [
+    "amdgpu"
+    "zenpower"
+    "msr"
+  ];
 
   boot.kernelParams = [
     "amdgpu.gpu_recovery=1"

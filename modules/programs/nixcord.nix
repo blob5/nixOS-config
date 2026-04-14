@@ -15,7 +15,7 @@
       enable = true;
       autoscroll.enable = true;
     };
-    
+
     config.plugins = {
       callTimer.enable = true;
       betterGifPicker.enable = false;

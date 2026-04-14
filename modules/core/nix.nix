@@ -5,17 +5,20 @@
 
 {
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     download-buffer-size = 52428800; # 50 MiB
     auto-optimise-store = true;
     substituters = [
-        "https://cache.nixos.org"
-        "https://cache.flox.dev"
-        "https://nix-community.cachix.org"
-        "https://hyprland.cachix.org"
-        "https://attic.xuyh0120.win/lantian" # nix-cachyos-kernel
-        "https://cache.garnix.io"
-      ];
+      "https://cache.nixos.org"
+      "https://cache.flox.dev"
+      "https://nix-community.cachix.org"
+      "https://hyprland.cachix.org"
+      "https://attic.xuyh0120.win/lantian" # nix-cachyos-kernel
+      "https://cache.garnix.io"
+    ];
     trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="
@@ -34,17 +37,16 @@
     algorithm = "lz4";
   };
 
-
   nixpkgs.config = {
     allowUnfree = true;
     cudaSupport = hostSettings.cudaSupport;
   };
 
   # Garbage collection
-	nix.gc = {
-		automatic = true;
-		persistent = false;
-		dates = "daily";
-		options = "--delete-older-than 7d";
-	};
+  nix.gc = {
+    automatic = true;
+    persistent = false;
+    dates = "daily";
+    options = "--delete-older-than 7d";
+  };
 }

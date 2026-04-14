@@ -1,14 +1,14 @@
 { ... }:
 
 {
-   # Audio
+  # Audio
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    
+
     # Disable Automatic Gain Control (AGC)
     extraConfig.pipewire = {
       "context.properties" = {
@@ -18,7 +18,7 @@
         "default.clock.max-quantum" = 32;
       };
     };
-    
+
     extraConfig.pipewire-pulse = {
       "context.modules" = [
         {
@@ -33,7 +33,7 @@
           };
         }
       ];
-      
+
       # Disable echo cancellation and automatic gain control
       "stream.properties" = {
         "node.latency" = "32/48000";

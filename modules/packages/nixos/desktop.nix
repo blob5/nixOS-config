@@ -5,7 +5,6 @@
   # System-level configurations
   environment.systemPackages = with pkgs; [
 
-    
     # Desktop
     waylock
     playerctl

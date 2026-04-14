@@ -1,6 +1,12 @@
 # modules/programs/terminals/wezterm/wezterm.nix
-{ config, lib, pkgs, ... }: {
-  
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;

@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   stylix.enable = true;
@@ -41,7 +46,7 @@
     }
   '';
 
-  stylix.icons ={
+  stylix.icons = {
     enable = true;
     package = pkgs.adwaita-icon-theme;
     dark = "Adwaita";

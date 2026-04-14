@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
@@ -19,13 +20,14 @@
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nixd";
       "nix.serverSettings"."nixd"."formatting"."command" = [ "nixfmt" ];
-      
+
       # General settings
       "files.autoSave" = "onWindowChange";
       "redhat.telemetry.enabled" = false;
       "workbench.colorTheme" = "GitHub Dark Default";
-      "editor.fontFamily" =  "'JetBrainsMono Nerd Font', 'FiraCode Nerd Font', 'Font Awesome 6 Free Solid', 'Font Awesome 5 Free Solid', 'Font Awesome 6 Free', 'Font Awesome 5 Free', 'Symbola', monospace";
-      
+      "editor.fontFamily" =
+        "'JetBrainsMono Nerd Font', 'FiraCode Nerd Font', 'Font Awesome 6 Free Solid', 'Font Awesome 5 Free Solid', 'Font Awesome 6 Free', 'Font Awesome 5 Free', 'Symbola', monospace";
+
       # Git settings
       "git.autofetch" = true;
 

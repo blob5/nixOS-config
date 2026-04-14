@@ -48,9 +48,9 @@
       tf = "tail -f \"$@\" | bat --paging=never -l log";
       fdb = "fd -X bat"; # fd with bat preview
       rgb = "batgrep"; # ripgrep with bat preview
-      fzf = "fzf --preview \"bat --color=always --style=numbers --line-range=:500 {}\""; # fzf with bat preview panel      
+      fzf = "fzf --preview \"bat --color=always --style=numbers --line-range=:500 {}\""; # fzf with bat preview panel
 
-      ssh ="TERM=xterm-256color ssh"; # ensure correct terminal type for ssh sessions
+      ssh = "TERM=xterm-256color ssh"; # ensure correct terminal type for ssh sessions
       anime = "viu anilist";
 
       # aliases for my custom functions
@@ -68,8 +68,8 @@
       glog = "git log --graph --pretty=format:'\''%C(magenta)%h%Creset %w(72,1,2)%Cgreen(%cr) -%C(bold green)%d%Creset %s %C(bold blue)<%an>%Creset'\'' --abbrev-commit --date=relative";
 
       # File operations
-      cp = "cp -i";  # Confirm before overwriting
-      mv = "mv -i";  # Confirm before overwriting
+      cp = "cp -i"; # Confirm before overwriting
+      mv = "mv -i"; # Confirm before overwriting
       trash = "gio trash"; # move to trash instead of deleting
     };
 
@@ -78,7 +78,7 @@
       # Global aliases for colored help output
       alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
       alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
-      
+
       myfsinfo() {
         DEVICE=$(df / | awk 'NR==2 {print $1}')
         sudo tune2fs -l "$DEVICE" | grep 'Filesystem created:'
@@ -222,7 +222,6 @@
       eval "$(zoxide init zsh)"
     '';
 
-    
     history = {
       expireDuplicatesFirst = true;
       ignoreSpace = false;

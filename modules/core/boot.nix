@@ -10,7 +10,8 @@ let
   cpuVendor = hostSettings.cpuVendor or null;
 in
 {
-  boot.extraModulePackages = with config.boot.kernelPackages;
+  boot.extraModulePackages =
+    with config.boot.kernelPackages;
     lib.mkIf (cpuVendor == "amd") [ zenpower ];
 
   # Enable Plymouth for a graphical boot splash
@@ -19,7 +20,6 @@ in
     theme = lib.mkForce "dark_planet";
     themePackages = [ pkgs.adi1090x-plymouth-themes ];
   };
-
 
   boot.loader = {
     efi.canTouchEfiVariables = hostSettings.bootloader.efiSupport;
