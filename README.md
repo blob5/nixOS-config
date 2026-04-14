@@ -65,6 +65,8 @@ sudo nixos-generate-config --show-hardware-config > hosts/<name>/hardware-config
 $EDITOR hosts/<name>/settings.nix   # set hostname, user, WM, etc.
 ```
 
+Set `role = "desktop"`, `"laptop"`, or `"server"` in `settings.nix`.
+
 Hosts are auto-discovered from `hosts/*/settings.nix`.
 By default, every host is enabled unless `enable = false;` is set in its `settings.nix`.
 

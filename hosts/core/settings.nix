@@ -1,6 +1,7 @@
 {
   system = "x86_64-linux";
   hostname = "core";
+  role = "server";
   timezone = "Europe/Amsterdam";
   locale = "en_US.UTF-8";
   version = "25.11";
@@ -9,7 +10,7 @@
   gpgkey = "F1C140E19A2300F1";
   cudaSupport = false;
   cpuVendor = "amd";
-  
+
   services = {
     docker.enable = true;
   };
@@ -19,7 +20,18 @@
     name = "blob";
     homeDirectory = "/home/blob";
     dotfilesDir = "~/.config/nixos";
-    extraGroups = [ "networkmanager" "wheel" "docker" "wireshark" "syncthing" "libvirt" "kvm" "input" "i2c" "dialout" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+      "wireshark"
+      "syncthing"
+      "libvirt"
+      "kvm"
+      "input"
+      "i2c"
+      "dialout"
+    ];
     sshAuthorizedKeys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMsCampY/bxZa3GuirZUoQf7PhvnaWZOsekcBLaGTWps 101657201+blob5@users.noreply.github.com"
     ];

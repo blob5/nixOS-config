@@ -1,8 +1,10 @@
 { lib, hostSettings, ... }:
 
 let
-  servicesCfg = hostSettings.services or {};
-  dockerCfg = servicesCfg.docker or {};
+  servicesCfg = hostSettings.services or { };
+  dockerCfg = servicesCfg.docker or { };
+  role = hostSettings.role or "desktop";
+  isGraphical = role != "server";
 in
 
 {
@@ -19,25 +21,25 @@ in
       };
     };
 
-    seatd.enable = true;
+    seatd.enable = isGraphical;
 
-    upower.enable = true; # for battery status and power management
+    upower.enable = isGraphical; # for battery status and power management
 
     pcscd.enable = true; # needed for gpg
 
-    printing.enable = true;
+    printing.enable = isGraphical;
 
-    power-profiles-daemon.enable = true;
+    power-profiles-daemon.enable = isGraphical;
 
     dbus.enable = true;
 
-    udisks2.enable = true;
+    udisks2.enable = isGraphical;
 
-    gnome.gnome-keyring.enable = true;
+    gnome.gnome-keyring.enable = isGraphical;
 
-    xserver.enable = true;
+    xserver.enable = isGraphical;
 
-    gvfs.enable = true; # for virtual filesystem support "trash, network shares, etc."
+    gvfs.enable = isGraphical; # for virtual filesystem support "trash, network shares, etc."
 
   };
 
@@ -49,9 +51,8 @@ in
   # Allow the docker socket to trigger it on demand
   systemd.sockets.docker.wantedBy = [ "sockets.target" ];
 
-
-  # COnfigure keymap
-  services.xserver.xkb = {
+  # Configure keymap for graphical hosts
+  services.xserver.xkb = lib.mkIf isGraphical {
     layout = "us";
     variant = "";
   };

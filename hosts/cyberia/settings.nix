@@ -1,6 +1,7 @@
 {
   system = "x86_64-linux";
   hostname = "cyberia";
+  role = "laptop";
   timezone = "Europe/Amsterdam";
   locale = "en_US.UTF-8";
   version = "25.11";
@@ -19,7 +20,18 @@
     name = "blob";
     homeDirectory = "/home/blob";
     dotfilesDir = "~/.config/nixos";
-    extraGroups = [ "networkmanager" "wheel" "docker" "wireshark" "syncthing" "libvirt" "kvm" "input" "i2c" "dialout" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+      "wireshark"
+      "syncthing"
+      "libvirt"
+      "kvm"
+      "input"
+      "i2c"
+      "dialout"
+    ];
     sshAuthorizedKeys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMsCampY/bxZa3GuirZUoQf7PhvnaWZOsekcBLaGTWps 101657201+blob5@users.noreply.github.com"
     ];
