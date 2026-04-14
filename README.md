@@ -46,7 +46,7 @@ ssh-add ~/.ssh/id_ed25519
 # HTTPS
 git clone https://github.com/blob5/nixos-config.git --depth 1
 # or SSH
-git clone git@github.com:blob5/nixOS-config.git --depth 1
+git clone git@github.com:blob5/nixos-config.git --depth 1
 cd nixos-config
 ```
 
@@ -102,8 +102,8 @@ sudo nixos-install --flake .#<name> \
 ```
 .
 ├── flake.nix             # Main flake configuration
-├── install.sh            # Interactive installer script
-├── dev-shells            # Development shells
+├── flake.lock            # Flake input lockfile
+├── README.md
 ├── hosts/                # Host-specific configurations
 │   ├── cyberia/          # Laptop
 │   ├── navi/             # Desktop
