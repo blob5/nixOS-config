@@ -2,37 +2,20 @@
 
 {
 
+  imports = [
+    ./hardware-configuration.nix
 
-  imports =
-    [
-      ./hardware-configuration.nix
+    ../common/system/graphical.nix
 
-      # Programs/services/modules
-      ../../modules/virtualization/virtualization.nix
-      ../../modules/programs/gaming/steam.nix
-      ../../modules/programs/gaming/minecraft.nix
-      ../../modules/programs/wine.nix
-
-      # Services
-      ../../modules/services/nixos/audio.nix
-      ../../modules/services/nixos/sddm.nix
-      ../../modules/services/nixos/sunshine.nix
-      ../../modules/services/nixos/openrgb.nix
-
-
-      # Core
-      ../../modules/core/default.nix
-      ../../modules/drivers/amd.nix
-
-
-
-      # Packages
-      ../../modules/packages/nixos/services.nix
-      ../../modules/packages/nixos/syncthing.nix
-      ../../modules/packages/nixos/utils.nix
-      ../../modules/packages/nixos/desktop.nix
-      ../../modules/packages/nixos/applications.nix
-    ];
+    # Programs/services/modules
+    ../../modules/virtualization/virtualization.nix
+    ../../modules/programs/gaming/steam.nix
+    ../../modules/programs/gaming/minecraft.nix
+    ../../modules/programs/wine.nix
+    ../../modules/services/nixos/sunshine.nix
+    ../../modules/services/nixos/openrgb.nix
+    ../../modules/drivers/amd.nix
+  ];
 
   programs.hyprland = {
     enable = true;
@@ -59,14 +42,14 @@
   hardware.amdgpu.overdrive.enable = true; # Enable AMD overclocking functionality
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  hardware.firmware = [pkgs.linux-firmware];
+  hardware.firmware = [ pkgs.linux-firmware ];
 
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
     # Drawing
     opentabletdriver
     openrgb-with-all-plugins
-    
+
     darktable # color grading
     pwntools
     gdb

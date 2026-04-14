@@ -1,26 +1,19 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ## Hardware configuration
-      ./hardware-configuration.nix
-      
-      ## Services
-      ../../modules/services/nixos/audio.nix
+  imports = [
+    ## Hardware configuration
+    ./hardware-configuration.nix
 
-      ## Drivers
-      ../../modules/drivers/amd.nix
+    ../common/system/base.nix
 
-      # Core
-      ../../modules/core/default.nix
+    ## Services
+    ../../modules/services/nixos/audio.nix
 
-      # Packages
-      ../../modules/packages/nixos/services.nix
-      ../../modules/packages/nixos/syncthing.nix
-      ../../modules/packages/nixos/utils.nix
+    ## Drivers
+    ../../modules/drivers/amd.nix
 
-    ];
+  ];
   networking.firewall.allowedTCPPorts = [ 19400 ]; # for hyperion
 
   # Original install version,

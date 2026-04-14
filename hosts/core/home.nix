@@ -1,27 +1,21 @@
-{ config, pkgs, userSettings, ... }:
+{
+  config,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 {
   imports = [
-    # Services
-
-    # Programs 
-    ../../modules/programs/editors/neovim-wrapper.nix
-    ../../modules/programs/terminals/zsh/zsh.nix
-    ../../modules/programs/git.nix
-
+    ../common/home/base.nix
 
     # system
     ../../modules/desktop/fonts.nix
 
-
     # Packages
-    ../../modules/packages/home/archive-tools.nix
-    ../../modules/packages/home/CLI-tools.nix
     ../../modules/packages/home/development.nix
-    ../../modules/packages/home/home-manager.nix
 
   ];
-
 
   home = {
     packages = with pkgs; [
@@ -30,11 +24,9 @@
     ];
   };
 
-
   # Host-specific home-manager settings
   home.username = userSettings.username;
   home.homeDirectory = userSettings.homeDirectory;
   home.stateVersion = "25.11"; # Match your NixOS version
-  
 
 }

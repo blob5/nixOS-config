@@ -1,30 +1,20 @@
-{ config, inputs, pkgs, userSettings, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 {
   imports = [
-    # Programs 
-    ../../modules/programs/editors/neovim-wrapper.nix
-    ../../modules/programs/editors/vscode.nix
-    ../../modules/programs/terminals/zsh/zsh.nix
-    ../../modules/programs/git.nix
+    ../common/home/desktop.nix
+
+    # Programs
     ../../modules/programs/terminals/wezterm/wezterm.nix
 
-
     # Desktop
-    ../../modules/desktop/stylix/stylix.nix
-    ../../modules/desktop/fonts.nix
-    ../../modules/desktop/rofi/rofi.nix
     ../../modules/desktop/compositors/niri/niri.nix
-    ../../modules/desktop/desktop-entries.nix
-
-
-
-    # Packages
-    ../../modules/packages/home/archive-tools.nix
-    ../../modules/packages/home/CLI-tools.nix
-    ../../modules/packages/home/cursor.nix
-    ../../modules/packages/home/fun.nix
-    ../../modules/packages/home/home-manager.nix
 
   ];
 
@@ -41,7 +31,6 @@
       obsidian
     ];
   };
-
 
   niri = {
     monitors = [ "eDP-1,1920x1080@60,0x0,1" ];

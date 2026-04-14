@@ -12,30 +12,16 @@
     };
   };
 
-  imports =
-    [
-      ## Hardware configuration
-      ./hardware-configuration.nix
-      
-      ## Services
-      ../../modules/services/nixos/audio.nix
-      ../../modules/services/nixos/sddm.nix
+  imports = [
+    ## Hardware configuration
+    ./hardware-configuration.nix
 
+    ../common/system/graphical.nix
 
-      ## Drivers
-      ../../modules/drivers/amd.nix
+    ## Drivers
+    ../../modules/drivers/amd.nix
 
-      # Core
-      ../../modules/core/default.nix
-
-      # Packages
-      ../../modules/packages/nixos/services.nix
-      ../../modules/packages/nixos/syncthing.nix
-      ../../modules/packages/nixos/utils.nix
-      ../../modules/packages/nixos/desktop.nix
-      ../../modules/packages/nixos/applications.nix
-
-    ];
+  ];
 
   environment.systemPackages = with pkgs; [
     xwayland-satellite # For XWayland support
@@ -43,7 +29,7 @@
 
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
-  programs.virt-manager.enable = true; 
+  programs.virt-manager.enable = true;
 
   # Original install version,
   # This is only used by some packages for backwards compatibility.

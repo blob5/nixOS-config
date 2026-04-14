@@ -1,43 +1,23 @@
-{ config, pkgs, userSettings, ... }:
+{
+  config,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 {
   imports = [
+    ../common/home/desktop.nix
+
     ../../modules/services/home/udiskie.nix
-
-
-    # Programs 
-    ../../modules/programs/editors/vscode.nix
-    ../../modules/programs/editors/neovim-wrapper.nix
-    ../../modules/programs/terminals/kitty/kitty.nix
-    ../../modules/programs/terminals/zsh/zsh.nix
-    ../../modules/programs/spicetify/spicetify.nix
-    ../../modules/programs/nixcord.nix
-    ../../modules/programs/git.nix
-    ../../modules/programs/viu/viu.nix
-    ../../modules/programs/anime4k/anime4k.nix
-
 
     # Desktop
     ../../modules/desktop/compositors/niri/niri.nix
-    ../../modules/desktop/stylix/stylix.nix
-    ../../modules/desktop/fonts.nix
-    ../../modules/desktop/rofi/rofi.nix
-    ../../modules/desktop/desktop-entries.nix
-
 
     # Packages
-    ../../modules/packages/home/applications.nix
-    ../../modules/packages/home/archive-tools.nix
-    ../../modules/packages/home/CLI-tools.nix
-    ../../modules/packages/home/cursor.nix
-    ../../modules/packages/home/development.nix
-    ../../modules/packages/home/entertainment.nix
-    ../../modules/packages/home/fun.nix
-    ../../modules/packages/home/home-manager.nix
     ../../modules/packages/home/pentesting.nix
 
   ];
-
 
   niri = {
     monitors = [ "eDP-1,1920x1080@60,0x0,1" ];
@@ -49,6 +29,5 @@
   home.username = userSettings.username;
   home.homeDirectory = userSettings.homeDirectory;
   home.stateVersion = "26.05"; # Match your NixOS version
-  
 
 }

@@ -3,32 +3,19 @@
 {
   programs.niri.enable = true;
 
-  imports =
-    [
-      ## Hardware configuration
-      ./hardware-configuration.nix
-      
-      ## Services
-      ../../modules/services/nixos/audio.nix
-      ../../modules/services/nixos/sddm.nix
+  imports = [
+    ## Hardware configuration
+    ./hardware-configuration.nix
 
-      # Core
-      ../../modules/core/default.nix
+    ../common/system/graphical.nix
 
-      # Packages
-      ../../modules/packages/nixos/services.nix
-      ../../modules/packages/nixos/syncthing.nix
-      ../../modules/packages/nixos/utils.nix
-      ../../modules/packages/nixos/desktop.nix
-      ../../modules/packages/nixos/applications.nix
-
-    ];
+  ];
 
   environment.systemPackages = with pkgs; [
     obsidian
     nautilus
     kdePackages.ark
-    kdePackages.gwenview    
+    kdePackages.gwenview
   ];
 
   services.thermald.enable = true;
