@@ -4,44 +4,55 @@ let
     ({ wlib, ... }: {
       pkgs    = pkgs;
       imports = [ wlib.wrapperModules.neovim ];
+
       settings.config_directory = ./nvim-config;
+
       specs.start = with pkgs.vimPlugins; [
-        plenary-nvim
-        nvim-web-devicons
-        nui-nvim
-        dressing-nvim
-        render-markdown-nvim
+        # ui
         alpha-nvim
         bufferline-nvim
-        lualine-nvim
-        nvim-tree-lua
+        dressing-nvim
         indent-blankline-nvim
-        gitsigns-nvim
-        nvim-autopairs
+        lualine-nvim
+        nvim-web-devicons
+        render-markdown-nvim
+
+        # editing
         comment-nvim
         hardtime-nvim
-        which-key-nvim
+        nvim-autopairs
+
+        # navigation
         fzf-lua
+        nvim-tree-lua
+
+        # git
+        gitsigns-nvim
+
+        # lsp
         nvim-lspconfig
-        # aider.nvim is not yet in nixpkgs vimPlugins — fetch it directly:
-        (pkgs.vimUtils.buildVimPlugin {
-          pname = "aider-nvim";
-          version = "unstable";
-          src = pkgs.fetchFromGitHub {
-            owner = "joshuavial";
-            repo  = "aider.nvim";
-            rev   = "main";
-            hash  = "sha256-JJP1om3cJQC1/0wh2GFQCnMhPBgCKsiLZxc+xiuxjzg=";
-          };
-        })
+
+        # ai
+        opencode-nvim
+
+        # misc
+        nui-nvim
+        plenary-nvim
+        which-key-nvim
       ];
+
       extraPackages = with pkgs; [
-        ripgrep
+        # tools
         fd
         fzf
         lsof
         procps
-        aider-chat
+        ripgrep
+
+        # ai
+        opencode
+
+        # nix
         nixd
         nixfmt
       ];
@@ -50,6 +61,7 @@ let
 in
 {
   home.packages = [ wrappedNvim pkgs.nixd pkgs.nixfmt-rfc-style ];
+
   home.sessionVariables = {
     EDITOR = lib.getExe wrappedNvim;
     VISUAL = lib.getExe wrappedNvim;
