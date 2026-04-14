@@ -71,7 +71,7 @@ in
   home.packages = [
     wrappedNvim
     pkgs.nixd
-    pkgs.nixfmt-rfc-style
+    pkgs.nixfmt
   ];
 
   home.sessionVariables = {
