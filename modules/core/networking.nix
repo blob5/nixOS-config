@@ -1,11 +1,10 @@
-{ pkgs, hostSettings, ... }:
+{ hostSettings, ... }:
 
 {
   networking.hostName = hostSettings.hostname;
   networking.networkmanager.enable = true;
   networking.wireguard.enable = true;
   networking.firewall.enable = true;
-  networking.nat.enable = true;
   networking.nftables.enable = true;
 
   networking.firewall.checkReversePath = "loose"; # This is needed for libvirt guest-to-guest communication.
