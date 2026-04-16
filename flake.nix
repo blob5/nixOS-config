@@ -74,6 +74,7 @@
             {
               nixpkgs.overlays = [
                 inputs.nix-cachyos-kernel.overlays.pinned
+                (import ./pkgs/overlay.nix)
               ];
             }
 
