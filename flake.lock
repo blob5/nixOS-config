@@ -692,8 +692,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1776422725,
-        "narHash": "sha256-ZRBn3AkcYW6X3EvrLdIELppRDLlDbylkSM9Z/Om9e+Q=",
+        "lastModified": 1776454599,
+        "narHash": "sha256-Z0L2YRniWJmuIjGSQsP01mN44Yb6/ReuABP8GAlD/0s=",
         "path": "/home/blob/lazyspotify-nix-flake",
         "type": "path"
       },

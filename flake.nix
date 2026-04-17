@@ -79,7 +79,6 @@
             {
               nixpkgs.overlays = [
                 inputs.nix-cachyos-kernel.overlays.pinned
-                inputs.lazyspotify-nix.overlays.default
                 (import ./pkgs/overlay.nix)
               ];
             }
