@@ -685,6 +685,23 @@
         "type": "github"
       }
     },
+    "lazyspotify-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1776422725,
+        "narHash": "sha256-ZRBn3AkcYW6X3EvrLdIELppRDLlDbylkSM9Z/Om9e+Q=",
+        "path": "/home/blob/lazyspotify-nix-flake",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/blob/lazyspotify-nix-flake",
+        "type": "path"
+      }
+    },
     "lobster": {
       "inputs": {
         "nixpkgs": "nixpkgs_2",
@@ -1183,6 +1200,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "lazyspotify-nix": "lazyspotify-nix",
         "lobster": "lobster",
         "minegrub-world-sel-theme": "minegrub-world-sel-theme",
         "niri": "niri",

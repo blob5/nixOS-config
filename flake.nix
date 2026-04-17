@@ -29,6 +29,11 @@
     noctalia.url = "github:noctalia-dev/noctalia-shell";
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+
+    lazyspotify-nix = {
+      url = "path:/home/blob/lazyspotify-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -74,6 +79,7 @@
             {
               nixpkgs.overlays = [
                 inputs.nix-cachyos-kernel.overlays.pinned
+                inputs.lazyspotify-nix.overlays.default
                 (import ./pkgs/overlay.nix)
               ];
             }
