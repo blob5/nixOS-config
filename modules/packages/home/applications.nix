@@ -30,7 +30,8 @@
       tesseract4 # image to text engine
       signal-desktop # Encrypted messaging app
       solaar # Logitech device manager
-      inputs.lazyspotify-nix.packages.${pkgs.system}.default
+      inputs.lazyspotify-nix.packages.${pkgs.system}.default # spotify for the terminal
+      proton-vpn-cli
     ];
   };
 }
