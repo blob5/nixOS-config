@@ -267,6 +267,12 @@ window-rule {
     open-floating true
 }
 
+switch-events {
+    lid-close {
+        spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"
+    }
+}
+
 layer-rule {
     match namespace="^swww-daemon$"
     place-within-backdrop true
