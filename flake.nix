@@ -6,8 +6,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    viu.url = "github:benexl/viu";
-
     lobster.url = "github:justchokingaround/lobster";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";

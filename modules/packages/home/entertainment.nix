@@ -19,27 +19,6 @@ let
     ];
   };
 
-  # Wrap viu to use our VapourSynth-enabled mpv
-  viu-wrapped = pkgs.symlinkJoin {
-    name = "viu-with-vapoursynth-mpv";
-    paths = [ inputs.viu.packages."${pkgs.system}".default ];
-    buildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      # Remove the original viu wrapper to avoid double wrapping
-      rm -f $out/bin/viu
-      # Copy the actual viu Python script
-      if [ -e ${inputs.viu.packages."${pkgs.system}".default}/bin/.viu-wrapped ]; then
-        cp ${inputs.viu.packages."${pkgs.system}".default}/bin/.viu-wrapped $out/bin/viu
-      else
-        cp ${inputs.viu.packages."${pkgs.system}".default}/bin/viu $out/bin/viu
-      fi
-      chmod +x $out/bin/viu
-      # Wrap viu to prepend our VapourSynth mpv to PATH
-      wrapProgram $out/bin/viu \
-        --prefix PATH : "${mpv-with-vapoursynth}/bin"
-    '';
-  };
-
   # Wrap lobster to use our VapourSynth-enabled mpv
   lobster-wrapped = pkgs.symlinkJoin {
     name = "lobster-with-vapoursynth-mpv";
@@ -66,7 +45,6 @@ in
   home.packages = with pkgs; [
     # Media Entertainment
     lobster-wrapped # Movie streaming with VapourSynth interpolation support
-    viu-wrapped # Anime streaming with VapourSynth interpolation support
     mpv-with-vapoursynth # Media player with VapourSynth for frame interpolation
     ffmpeg # Video/audio processing
 

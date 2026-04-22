@@ -3,12 +3,6 @@
 
 {
 
-  # Import the viu zsh completions
-  home.file.".config/zsh/completions/viu.zsh".source = builtins.fetchurl {
-    url = "https://raw.githubusercontent.com/Benexl/viu/refs/heads/master/completions/viu.zsh";
-    sha256 = "1cw3rbhrrqc8nann9ymjdmqpn1pa1gj4f15n92cwvc4pb2amcfcf";
-  };
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -51,7 +45,6 @@
       fzf = "fzf --preview \"bat --color=always --style=numbers --line-range=:500 {}\""; # fzf with bat preview panel
 
       ssh = "TERM=xterm-256color ssh"; # ensure correct terminal type for ssh sessions
-      anime = "viu anilist";
 
       # aliases for my custom functions
       nixos-btw = "myfsinfo"; # print filesystem creation date
@@ -214,10 +207,6 @@
       function qgrep() {
         grep -r "$1" . | fzf
       }
-
-      # Load zsh viu completions
-      source ~/.config/zsh/completions/viu.zsh
-
 
       eval "$(zoxide init zsh)"
     '';
