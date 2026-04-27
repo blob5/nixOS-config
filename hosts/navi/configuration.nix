@@ -56,7 +56,6 @@
     blender
     davinci-resolve
     ungoogled-chromium # for wooting
-    bottles
     gale
   ];
 
