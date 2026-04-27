@@ -91,16 +91,6 @@ if comment then comment.setup({}) end
 local ibl = try("ibl")
 if ibl then ibl.setup({}) end
 
-local hardtime = try("hardtime")
-if hardtime then
-  hardtime.setup({
-    disabled_filetypes = {
-      "NvimTree", "alpha", "help", "checkhealth",
-      "lazy", "mason", "qf", "terminal",
-    },
-  })
-end
-
 -- opencode.nvim — replaces aider.nvim
 local opencode_ok, opencode = pcall(require, "opencode")
 if opencode_ok then
