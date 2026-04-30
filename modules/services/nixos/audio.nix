@@ -9,13 +9,12 @@
     alsa.support32Bit = true;
     pulse.enable = true;
 
-    # Disable Automatic Gain Control (AGC)
     extraConfig.pipewire = {
       "context.properties" = {
         "default.clock.rate" = 48000;
-        "default.clock.quantum" = 32;
-        "default.clock.min-quantum" = 32;
-        "default.clock.max-quantum" = 32;
+        "default.clock.quantum" = 128;
+        "default.clock.min-quantum" = 64;
+        "default.clock.max-quantum" = 256;
       };
     };
 
@@ -24,26 +23,18 @@
         {
           name = "libpipewire-module-protocol-pulse";
           args = {
-            "pulse.min.req" = "32/48000";
-            "pulse.default.req" = "32/48000";
-            "pulse.max.req" = "32/48000";
-            "pulse.min.quantum" = "32/48000";
-            "pulse.max.quantum" = "32/48000";
-            "pulse.min.frag" = "1";
+            "pulse.min.req" = "64/48000";
+            "pulse.default.req" = "128/48000";
+            "pulse.max.req" = "256/48000";
+            "pulse.min.quantum" = "64/48000";
+            "pulse.max.quantum" = "256/48000";
           };
         }
       ];
 
-      # Disable echo cancellation and automatic gain control
       "stream.properties" = {
-        "node.latency" = "32/48000";
-        "resample.quality" = 1;
-        # Disable echo cancellation
-        "channelmix.normalize" = false;
-        "channelmix.mix-lfe" = false;
-        "channelmix.upmix" = false;
-        "channelmix.lfe-cutoff" = 0;
-        # Disable automatic gain control
+        "node.latency" = "128/48000";
+        "resample.quality" = 5;
         "session.suspend-timeout-seconds" = 5;
         "node.autoconnect" = true;
       };
