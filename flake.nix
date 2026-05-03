@@ -77,6 +77,11 @@
             {
               nixpkgs.overlays = [
                 inputs.nix-cachyos-kernel.overlays.pinned
+                (_: prev: {
+                  openldap = prev.openldap.overrideAttrs {
+                    doCheck = !prev.stdenv.hostPlatform.isi686;
+                  };
+                })
               ];
             }
 

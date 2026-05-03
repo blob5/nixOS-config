@@ -32,6 +32,7 @@
       solaar # Logitech device manager
       inputs.lazyspotify-nix.packages.${pkgs.system}.default # spotify for the terminal
       proton-vpn-cli
+      bottles # windows software on linux
     ];
   };
 }
