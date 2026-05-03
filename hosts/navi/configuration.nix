@@ -44,6 +44,24 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   hardware.firmware = [ pkgs.linux-firmware ];
 
+  nixpkgs.config.rocmSupport = true;
+  nixpkgs.config.packageOverrides = pkgs: {
+    blender-rocm = pkgs.pkgsRocm.blender.overrideAttrs (old: {
+      # Disable OSL to avoid LLVM 19 vs 22 symbol collisions in Blender.
+      cmakeFlags =
+        (builtins.filter
+          (flag: flag != (pkgs.lib.cmakeBool "WITH_CYCLES_OSL" true))
+          old.cmakeFlags)
+        ++ [ (pkgs.lib.cmakeBool "WITH_CYCLES_OSL" false) ];
+      buildInputs = builtins.filter
+        (pkg: pkg != pkgs.python313Packages.openshadinglanguage)
+        old.buildInputs;
+      pythonPath = builtins.filter
+        (pkg: pkg != pkgs.python313Packages.openshadinglanguage)
+        old.pythonPath;
+    });
+  };
+
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
     # Drawing
@@ -53,7 +71,7 @@
     darktable # color grading
     pwntools
     gdb
-    blender
+    blender-rocm
     davinci-resolve
     ungoogled-chromium # for wooting
     gale
