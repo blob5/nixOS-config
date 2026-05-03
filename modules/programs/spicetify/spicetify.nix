@@ -35,25 +35,16 @@
       ];
 
       theme = {
-        name = "Glassify";
+        name = "Liquify";
 
-        src = pkgs.runCommand "spicetify-glassify-theme" { } ''
-          mkdir -p "$out"
-          cp ${pkgs.fetchurl {
-            url = "https://spicetify-glassify.sanooj.uk/spice/user.css";
-            hash = "sha256-a/QjdsS3lygsRGA1cD0vITeClfeSWPjKnCiH/+aRw0w=";
-          }} "$out/user.css"
-          cp ${pkgs.fetchurl {
-            url = "https://spicetify-glassify.sanooj.uk/spice/theme.js";
-            hash = "sha256-ChTIMwJD3efk58A6evM2RVXPCzttdevLScKYnY3U5LE=";
-          }} "$out/theme.js"
-          cp ${pkgs.fetchurl {
-            url = "https://spicetify-glassify.sanooj.uk/spice/color.ini";
-            hash = "sha256-/JfB/GXbuBw0s3eGztfpVmfSq2EQI+MzF/5zBMEgbjs=";
-          }} "$out/color.ini"
-        '';
-      }; 
+        src = pkgs.fetchFromGitHub {
+          owner = "NMWplays";
+          repo = "Liquify";
+          rev = "9c7aad2e3c411205520f6e7efe2bb718a718d5a0";
+          hash = "sha256-aUB7DmJNWWGCA/Gu2u5z45aF52q2QK9mVkTCVLxngcc=";
+        };
+      };
 
-      colorScheme = "dark";
+      colorScheme = "Base";
     };
 }
