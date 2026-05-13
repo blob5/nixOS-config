@@ -46,6 +46,9 @@ https://apod.nasa.gov/apod/ap251001.html
 clouds
 https://whvn.cc/e89l8k
 
+cloud2
+https://whvn.cc/6l2rgq
+
 mikuFisheye
 https://whvn.cc/5ykdq8
 

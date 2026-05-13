@@ -26,7 +26,6 @@ let
 
           # editing
           comment-nvim
-          hardtime-nvim
           nvim-autopairs
 
           # navigation

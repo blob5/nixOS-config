@@ -6,8 +6,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    viu.url = "github:benexl/viu";
-
     lobster.url = "github:justchokingaround/lobster";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
@@ -30,10 +28,6 @@
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
-    lazyspotify-nix = {
-      url = "path:/home/blob/lazyspotify-nix-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -79,6 +73,11 @@
             {
               nixpkgs.overlays = [
                 inputs.nix-cachyos-kernel.overlays.pinned
+                (_: prev: {
+                  openldap = prev.openldap.overrideAttrs {
+                    doCheck = !prev.stdenv.hostPlatform.isi686;
+                  };
+                })
               ];
             }
 

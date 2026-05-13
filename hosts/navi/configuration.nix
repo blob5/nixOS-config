@@ -44,6 +44,8 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   hardware.firmware = [ pkgs.linux-firmware ];
 
+  nixpkgs.config.rocmSupport = true;
+
   # Host-specific system packages
   environment.systemPackages = with pkgs; [
     # Drawing
@@ -56,7 +58,6 @@
     blender
     davinci-resolve
     ungoogled-chromium # for wooting
-    bottles
     gale
   ];
 

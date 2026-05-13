@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -6,7 +6,7 @@
 
     # System Services
     gnome-bluetooth
-    swww
+    awww
     brightnessctl
     bluez
     bluez-tools

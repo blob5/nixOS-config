@@ -7,7 +7,6 @@
     ../../../modules/programs/terminals/kitty/kitty.nix
     ../../../modules/programs/spicetify/spicetify.nix
     ../../../modules/programs/nixcord.nix
-    ../../../modules/programs/viu/viu.nix
     ../../../modules/programs/anime4k/anime4k.nix
     ../../../modules/desktop/stylix/stylix.nix
     ../../../modules/desktop/fonts.nix

@@ -28,6 +28,7 @@
       bat
       bat-extras.core
       glib
+      gh
     ];
   };
   # Nix search for CLI
