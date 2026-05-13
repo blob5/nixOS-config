@@ -9,6 +9,7 @@
 
     ## Services
     ../../modules/services/nixos/audio.nix
+    ../../modules/virtualization/virtualization.nix
 
     ## Drivers
     ../../modules/drivers/amd.nix
