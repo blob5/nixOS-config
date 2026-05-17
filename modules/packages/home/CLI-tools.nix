@@ -29,6 +29,7 @@
       bat-extras.core
       glib
       gh
+      ani-cli
     ];
   };
   # Nix search for CLI
