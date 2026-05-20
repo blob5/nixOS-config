@@ -14,9 +14,6 @@
     # Desktop
     ../../modules/desktop/compositors/niri/niri.nix
 
-    # Packages
-    ../../modules/packages/home/pentesting.nix
-
   ];
 
   niri = {
