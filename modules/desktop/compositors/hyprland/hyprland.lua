@@ -25,6 +25,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("vesktop", { workspace = "2" })
     hl.exec_cmd("steam -silent")
     hl.exec_cmd("kdeconnectd")
+    hl.exec_cmd("zen-twilight", { workspace = "1"})
 end)
 
 
