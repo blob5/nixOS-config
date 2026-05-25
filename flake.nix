@@ -16,10 +16,6 @@
 
     minegrub-world-sel-theme.url = "github:Lxtharia/minegrub-world-sel-theme";
 
-    niri.url = "github:sodiboo/niri-flake";
-
-    hyprland.url = "github:hyprwm/Hyprland";
-
     nixcord.url = "github:kaylorben/nixcord";
 
     wrappers.url = "github:BirdeeHub/nix-wrapper-modules";
