@@ -3,14 +3,22 @@
 {
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
 
-    extraConfig = ''
-      # Force GitHub SSH over HTTPS port 443:
-      # https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port
-      Host github.com
-        HostName ssh.github.com
-        Port 443
-        User git
-    '';
+    settings."*" = {
+      AddKeysToAgent = "no";
+      Compression = "no";
+      ControlPath = "~/.ssh/master-%r@%n:%p";
+      ForwardAgent = "no";
+      HashKnownHosts = "no";
+      ServerAliveCountMax = 3;
+      ServerAliveInterval = 30;
+      UserKnownHostsFile = "~/.ssh/known_hosts";
+    };
+    settings."github.com" = {
+      hostname = "ssh.github.com";
+      port = 443;
+      user = "git";
+    };
   };
 }
