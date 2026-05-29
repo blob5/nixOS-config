@@ -42,6 +42,10 @@ let
   };
 in
 {
+  imports = [
+    ../../programs/jellyfin-mpv-shim.nix
+  ];
+
   home.packages = with pkgs; [
     # Media Entertainment
     lobster-wrapped # Movie streaming with VapourSynth interpolation support

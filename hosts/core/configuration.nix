@@ -10,6 +10,9 @@
     ## Services
     ../../modules/services/nixos/audio.nix
     ../../modules/virtualization/virtualization.nix
+    
+    # Services
+    ../../modules/services/nixos/jellyfin.nix
 
     ## Drivers
     ../../modules/drivers/amd.nix
