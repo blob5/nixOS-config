@@ -8,12 +8,13 @@
   systemd.user.services.protonvpn = {
     Unit = {
       Description = "ProtonVPN connection";
-      After = [ "network.target" ];
+      After = [ "network-online.target" "dbus.service" ];
+      Wants = [ "network-online.target" ];
     };
 
     Service = {
       Type = "oneshot";
-      ExecStart = "${pkgs.proton-vpn-cli}/bin/protonvpn connect --fastest";
+      ExecStart = "${pkgs.proton-vpn-cli}/bin/protonvpn connect";
       ExecStop = "${pkgs.proton-vpn-cli}/bin/protonvpn disconnect";
       RemainAfterExit = true;
     };

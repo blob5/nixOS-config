@@ -35,7 +35,7 @@ in
 
     udisks2.enable = isGraphical;
 
-    gnome.gnome-keyring.enable = isGraphical;
+    gnome.gnome-keyring.enable = true;
 
     xserver.enable = isGraphical;
 
