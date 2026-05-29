@@ -60,5 +60,6 @@ in
     chafa
     ani-skip
     feh
+    ani-cli
   ];
 }
