@@ -12,7 +12,8 @@
     ../../modules/desktop/fonts.nix
 
     # Services
-    ../../modules/services/home/qbittorrent-protonvpn.nix
+    ../../modules/services/home/qbittorrent.nix
+    ../../modules/services/home/protonvpn.nix
 
     # Packages
     ../../modules/packages/home/development.nix
@@ -22,7 +23,6 @@
   home = {
     packages = with pkgs; [
       hyperion-ng
-      proton-vpn-cli
     ];
   };
 
