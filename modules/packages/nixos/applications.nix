@@ -9,9 +9,13 @@
     better-control
     waypaper
     networkmanagerapplet
+    wireshark
   ];
 
-  programs.wireshark.enable = true;
+  programs.wireshark = {
+    dumpcap.enable = true;
+    enable = true;
+  };
 
   programs.kdeconnect.enable = true;
 
