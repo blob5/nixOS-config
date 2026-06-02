@@ -12,7 +12,6 @@
     ../../modules/desktop/fonts.nix
 
     # Services
-    ../../modules/services/home/qbittorrent.nix
     ../../modules/services/home/protonvpn.nix
 
     # Packages
