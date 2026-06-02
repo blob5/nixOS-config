@@ -15,16 +15,8 @@ let
     ];
   };
 
-  jellyfin-mpv-shim-vs = pkgs.symlinkJoin {
-    name = "jellyfin-mpv-shim";
-    paths = [ pkgs.jellyfin-mpv-shim ];
-    buildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram $out/bin/jellyfin-mpv-shim \
-        --prefix PATH : "${mpv-with-vapoursynth}/bin"
-    '';
-  };
-
+  # No wrapper needed – we’ll point to the custom mpv via mpv_ext_path.
+  # (keep your other wrappers like lobster-wrapped if you use them)
   lobster-wrapped = pkgs.symlinkJoin {
     name = "lobster-with-vapoursynth-mpv";
     paths = [ inputs.lobster.packages."${pkgs.system}".default ];
@@ -52,23 +44,27 @@ in
     vapoursynth-bestsource
     chafa
     ani-skip
-    feh
     ani-cli
   ];
 
   services.jellyfin-mpv-shim = {
     enable  = true;
-    package = jellyfin-mpv-shim-vs;
+    package = pkgs.jellyfin-mpv-shim;   # use the original, un‑wrapped package
     settings = {
       always_transcode    = false;
       direct_paths        = true;
       remote_direct_paths = true;
       local_kbps          = 2147483;
       remote_kbps         = 1000000;
-      mpv_ext             = true;
-      mpv_ext_ipc         = "/tmp/jellyfin-mpv-shim.sock";
-      mpv_ext_start       = true;
-      mpv_ext_package     = mpv-with-vapoursynth;
+
+      # External MPV configuration
+      mpv_ext         = true;
+      mpv_ext_start   = true;
+      mpv_ext_ipc     = "/tmp/jellyfin-mpv-shim.sock";
+      mpv_ext_path    = "${mpv-with-vapoursynth}/bin/mpv";
+      
+      thumbnail_osc_builtin = false;
+
     };
   };
 }
