@@ -14,6 +14,7 @@
       package = pkgs.steam.override {
         extraEnv = {
           GAMEMODERUN = "1";
+          MANGOHUD_CONFIG="no_display";
         };
       };
     };
