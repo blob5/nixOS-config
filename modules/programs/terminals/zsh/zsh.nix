@@ -162,6 +162,7 @@
       bindkey "^[[1;5C" forward-word  # ctrl+left arrow
       bindkey "^[[1;5D" backward-word # ctrl+right arrow
       bindkey "^H" backward-kill-word # ctrl+backspace
+      bindkey "^R" history-incremental-search-backward # ctrl+r history search
       bindkey "^F" autosuggest-accept # ctrl+f accept autosuggestion
 
 
