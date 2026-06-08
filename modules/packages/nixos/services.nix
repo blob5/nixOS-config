@@ -14,12 +14,12 @@
     iw
     home-manager
     ddcutil # for controlling monitor settings
-    gpu-screen-recorder
   ];
 
   services.envfs.enable = true;
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
+  programs.gpu-screen-recorder.enable = true;
 
   programs.gnupg.agent = {
     enable = true;
