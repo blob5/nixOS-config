@@ -20,7 +20,7 @@ hl.monitor({
 -- --- Startup Executions (Hyprland Event Hook) ---
 hl.on("hyprland.start", function()
     hl.exec_cmd("swww-daemon")
-    hl.exec_cmd("noctalia -d")
+    hl.exec_cmd("noctalia")
     hl.exec_cmd("spotify", { workspace = "2" })
     hl.exec_cmd("vesktop", { workspace = "2" })
     hl.exec_cmd("steam -silent")
