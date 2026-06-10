@@ -1,9 +1,20 @@
 {
   hostSettings,
+  inputs,
+  lib,
   ...
 }:
 
 {
+  # Map the flake registry to flake input
+  nix.registry = lib.mkForce {
+    nixpkgs.flake = inputs.nixpkgs;
+  };
+
+  # Ensure legacy tools like nix-env/nix-shell use the flake input
+  environment.etc."nix/inputs/nixpkgs".source = inputs.nixpkgs.outPath;
+  nix.nixPath = [ "nixpkgs=/etc/nix/inputs/nixpkgs" ];
+
   nix.settings = {
     experimental-features = [
       "nix-command"
