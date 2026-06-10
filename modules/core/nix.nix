@@ -20,6 +20,7 @@
       "nix-command"
       "flakes"
     ];
+    trusted-users = [ "root" "@wheel" ];
     download-buffer-size = 52428800; # 50 MiB
     auto-optimise-store = true;
     substituters = [
@@ -44,8 +45,9 @@
   services.earlyoom.enableNotifications = true; # Possible DoS vector if untrusted users on same pc.
 
   zramSwap = {
-    enable = false;
+    enable = true;
     algorithm = "lz4";
+    memoryPercent = 50;
   };
 
   nixpkgs.config = {
