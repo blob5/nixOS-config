@@ -17,6 +17,8 @@
   ];
 
   services.envfs.enable = true;
+  services.fstrim.enable = true;
+  services.fwupd.enable = true;
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
   programs.gpu-screen-recorder.enable = true;
