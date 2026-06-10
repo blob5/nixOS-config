@@ -143,6 +143,9 @@
         };
     in
     {
+      # Set a standard formatter
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+
       # Generate configurations for all hosts
       nixosConfigurations = nixpkgs.lib.mapAttrs mkNixosConfiguration hosts;
     };
