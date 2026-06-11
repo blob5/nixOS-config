@@ -6,14 +6,12 @@
     discord = {
       enable = false;
       equicord.enable = false;
-      autoscroll.enable = true;
       openASAR.enable = true;
       vencord.enable = true;
     };
 
     vesktop = {
       enable = true;
-      autoscroll.enable = true;
     };
 
     config.plugins = {
