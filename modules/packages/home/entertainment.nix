@@ -15,8 +15,6 @@ let
     ];
   };
 
-  # No wrapper needed – we’ll point to the custom mpv via mpv_ext_path.
-  # (keep your other wrappers like lobster-wrapped if you use them)
   lobster-wrapped = pkgs.symlinkJoin {
     name = "lobster-with-vapoursynth-mpv";
     paths = [ inputs.lobster.packages."${pkgs.system}".default ];
@@ -35,6 +33,9 @@ let
   };
 in
 {
+  # 1. EXPORT THE CUSTOM MPV TO OTHER MODULES
+  _module.args.customMpv = mpv-with-vapoursynth;
+
   home.packages = with pkgs; [
     mpv-with-vapoursynth
     lobster-wrapped
@@ -47,9 +48,12 @@ in
     ani-cli
   ];
 
+  # The nixpkgs.overlays block has been removed for better performance 
+  # and isolation, since we now explicitly pass the package.
+
   services.jellyfin-mpv-shim = {
     enable  = true;
-    package = pkgs.jellyfin-mpv-shim;   # use the original, un‑wrapped package
+    package = pkgs.jellyfin-mpv-shim;
     settings = {
       always_transcode    = false;
       direct_paths        = true;
@@ -57,14 +61,12 @@ in
       local_kbps          = 2147483;
       remote_kbps         = 1000000;
 
-      # External MPV configuration
       mpv_ext         = true;
       mpv_ext_start   = true;
       mpv_ext_ipc     = "/tmp/jellyfin-mpv-shim.sock";
       mpv_ext_path    = "${mpv-with-vapoursynth}/bin/mpv";
       
       thumbnail_osc_builtin = false;
-
     };
   };
 }

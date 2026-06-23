@@ -13,6 +13,7 @@
 
     # Desktop
     ../../modules/desktop/compositors/hyprland/hyprland.nix
+    ../../modules/desktop/seanime.nix
 
   ];
 
