@@ -51,6 +51,7 @@
     # Drawing
     opentabletdriver
     openrgb-with-all-plugins
+    krita
 
     darktable # color grading
     pwntools
