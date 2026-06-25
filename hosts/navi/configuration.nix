@@ -60,6 +60,7 @@
     davinci-resolve
     ungoogled-chromium # for wooting
     gale
+    ollama
   ];
 
   # Original install version,

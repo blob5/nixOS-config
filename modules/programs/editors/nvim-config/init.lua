@@ -7,7 +7,6 @@ vim.opt.number         = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors  = true
 vim.opt.clipboard      = "unnamedplus"
-vim.opt.autoread       = true  -- required by opencode.nvim for buffer reloading
 vim.opt.shiftwidth  = 2
 vim.opt.tabstop     = 2
 vim.opt.expandtab   = true  -- spaces instead of tabs
@@ -66,7 +65,7 @@ if lualine then
     options  = { theme = "auto", globalstatus = true },
     sections = {
       lualine_z = {
-        { require("opencode").statusline },
+        -- Removed opencode.statusline reference
       },
     },
   })
@@ -91,13 +90,7 @@ if comment then comment.setup({}) end
 local ibl = try("ibl")
 if ibl then ibl.setup({}) end
 
--- opencode.nvim — replaces aider.nvim
-local opencode_ok, opencode = pcall(require, "opencode")
-if opencode_ok then
-  vim.g.opencode_opts = {
-    -- provider defaults to terminal; override here if needed
-  }
-end
+-- Removed opencode.nvim section entirely
 
 local alpha = try("alpha")
 if alpha then
@@ -114,7 +107,7 @@ if alpha then
     "   ░   ░ ░     ░  ░ ░ ░ ▒        ░  ░ ▒ ░░      ░   ",
     "         ░ ░   ░      ░ ░        ░    ░         ░   ",
     "",
-    "              editor  ·  ai  ·  terminal              ",
+    "              editor  ·  terminal              ",
   }
 
   dashboard.section.header.opts = { hl = "Keyword", position = "center" }
@@ -143,26 +136,15 @@ end
 
 local map = function(lhs, rhs, desc)
   vim.keymap.set("n", lhs, rhs, { desc = desc })
-  vim.keymap.set({ "n", "t" }, "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Move to left pane" })
-  vim.keymap.set({ "n", "t" }, "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Move to pane below" })
-  vim.keymap.set({ "n", "t" }, "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Move to pane above" })
-  vim.keymap.set({ "n", "t" }, "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Move to right pane" })
 end
+
+-- Window navigation keymaps (moved outside the map function)
+vim.keymap.set({ "n", "t" }, "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Move to left pane" })
+vim.keymap.set({ "n", "t" }, "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Move to pane below" })
+vim.keymap.set({ "n", "t" }, "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Move to pane above" })
+vim.keymap.set({ "n", "t" }, "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Move to right pane" })
 
 map("<leader>w",  "<cmd>write<CR>",          "Write buffer")
 map("<leader>e",  "<cmd>NvimTreeToggle<CR>",  "Toggle file tree")
 map("<leader>ff", "<cmd>FzfLuaFindFiles<CR>", "Find files")
 map("<leader>fg", "<cmd>FzfLuaLiveGrep<CR>",  "Live grep")
-
--- opencode.nvim keymaps
-if opencode_ok then
-  vim.keymap.set({ "n", "x" }, "<leader>Ao", function() require("opencode").toggle() end,   { desc = "Toggle opencode" })
-  vim.keymap.set({ "n", "x" }, "<leader>Aa", function() require("opencode").ask("@this: ", { submit = true }) end, { desc = "Ask opencode" })
-  vim.keymap.set({ "n", "x" }, "<leader>As", function() require("opencode").select() end,   { desc = "Select opencode action" })
-
-  vim.keymap.set({ "n", "x" }, "go",  function() return require("opencode").operator("@this ") end,        { desc = "Add range to opencode", expr = true })
-  vim.keymap.set("n",          "goo", function() return require("opencode").operator("@this ") .. "_" end, { desc = "Add line to opencode",  expr = true })
-
-  vim.keymap.set("n", "<S-C-u>", function() require("opencode").command("session.half.page.up") end,   { desc = "Scroll opencode up" })
-  vim.keymap.set("n", "<S-C-d>", function() require("opencode").command("session.half.page.down") end, { desc = "Scroll opencode down" })
-end

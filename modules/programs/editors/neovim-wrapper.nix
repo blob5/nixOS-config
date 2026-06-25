@@ -38,9 +38,6 @@ let
           # lsp
           nvim-lspconfig
 
-          # ai
-          opencode-nvim
-
           # misc
           nui-nvim
           plenary-nvim
@@ -54,9 +51,6 @@ let
           lsof
           procps
           ripgrep
-
-          # ai
-          opencode
 
           # nix
           nixd
