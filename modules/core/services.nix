@@ -33,7 +33,7 @@ in
 
     dbus.enable = true;
 
-    udisks2.enable = isGraphical;
+    udisks2.enable = true;
 
     gnome.gnome-keyring.enable = true;
 
