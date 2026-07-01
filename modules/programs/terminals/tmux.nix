@@ -1,10 +1,11 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   programs.tmux = {
     enable = true;
-    mouse = true;
-    historyLimit = 50000;
-    terminal = "screen-256color";
+    plugins = [
+      pkgs.tmuxPlugins.sensible
+      pkgs.tmuxPlugins.tokyo-night-tmux
+    ];
   };
 }

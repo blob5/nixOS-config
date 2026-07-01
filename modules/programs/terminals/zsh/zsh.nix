@@ -43,6 +43,8 @@
       fdb = "fd -X bat"; # fd with bat preview
       rgb = "batgrep"; # ripgrep with bat preview
       fzf = "fzf --preview \"bat --color=always --style=numbers --line-range=:500 {}\""; # fzf with bat preview panel
+      t = "tmux new -s";
+      ta = "tmux attach -t";
 
       ssh = "TERM=xterm-256color ssh"; # ensure correct terminal type for ssh sessions
 
