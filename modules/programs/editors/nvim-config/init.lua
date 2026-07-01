@@ -63,11 +63,6 @@ local lualine = try("lualine")
 if lualine then
   lualine.setup({
     options  = { theme = "auto", globalstatus = true },
-    sections = {
-      lualine_z = {
-        -- Removed opencode.statusline reference
-      },
-    },
   })
 end
 
@@ -89,8 +84,6 @@ if comment then comment.setup({}) end
 
 local ibl = try("ibl")
 if ibl then ibl.setup({}) end
-
--- Removed opencode.nvim section entirely
 
 local alpha = try("alpha")
 if alpha then
