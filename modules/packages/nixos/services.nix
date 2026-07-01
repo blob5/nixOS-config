@@ -1,5 +1,8 @@
-{ pkgs, ... }:
-
+{ hostSettings, pkgs, ... }:
+let
+  role = hostSettings.role or "desktop";
+  isGraphical = role != "server";
+in
 {
 
   environment.systemPackages = with pkgs; [
@@ -21,7 +24,7 @@
   services.fwupd.enable = true;
   programs.nix-ld.enable = true;
   programs.zsh.enable = true;
-  programs.gpu-screen-recorder.enable = true;
+  programs.gpu-screen-recorder.enable = isGraphical;
 
   programs.gnupg.agent = {
     enable = true;
