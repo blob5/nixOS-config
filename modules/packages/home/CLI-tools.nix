@@ -21,7 +21,6 @@
       duf # Disk usage utility
       lazydocker
       ripgrep # better grep
-      micro
       fd # better find
       zellij
       lazygit
@@ -35,5 +34,12 @@
   programs.nh = {
     enable = true;
     flake = "${hostSettings.flakeRoot}";
+  };
+
+  programs.micro = {
+    enable = true;
+    settings = {
+      clipboard = "terminal";
+    };
   };
 }
