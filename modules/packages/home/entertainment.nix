@@ -10,7 +10,7 @@ let
   mpv-with-vapoursynth = pkgs.mpv.override {
     mpv-unwrapped = mpv-unwrapped-with-vapoursynth;
     scripts = with pkgs.mpvScripts; [
-      uosc
+      modernz
       mpris
     ];
   };
