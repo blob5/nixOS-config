@@ -72,3 +72,6 @@ https://www.nasa.gov/image-detail/amf-art002e021219/
 
 bisBiswasPurpleStorm
 https://whvn.cc/5yk6k9
+
+nixOS
+https://github.com/thatmechguy/Nix-wallpapers/blob/main/custom%20p-b.png
